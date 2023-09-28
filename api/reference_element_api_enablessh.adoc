@@ -1,0 +1,67 @@
+---
+permalink: api/reference_element_api_enablessh.html 
+sidebar: sidebar 
+keywords: SSH,enable,enabling,single,node,EnableSSH 
+summary: È possibile utilizzare il metodo EnableSsh per attivare il servizio SSH per un singolo nodo. Questo metodo non influisce sulla durata del timeout SSH a livello di cluster e non esenta il nodo dalla disattivazione di SSH da parte del timeout SSH globale. 
+---
+= EnableSsh
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `EnableSsh` Metodo per attivare il servizio Secure Shell (SSH) per un singolo nodo. Questo metodo non influisce sulla durata del timeout SSH a livello di cluster e non esenta il nodo dalla disattivazione di SSH da parte del timeout SSH globale.
+
+
+
+== Parametro
+
+Questo metodo non ha alcun parametro di input.
+
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+attivato
+ a| 
+Lo stato del servizio SSH per questo nodo.
+ a| 
+booleano
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "method": "EnableSsh",
+  "params": {
+     },
+  "id" : 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+  "id" : 1,
+  "result" : {"enabled": true}
+}
+----

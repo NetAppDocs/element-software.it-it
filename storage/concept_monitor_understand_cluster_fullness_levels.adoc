@@ -1,0 +1,57 @@
+---
+permalink: storage/concept_monitor_understand_cluster_fullness_levels.html 
+sidebar: sidebar 
+keywords: cluster fullness levels, understanding, fullness levels 
+summary: 'Il software cluster running Element genera errori del cluster per avvisare l"amministratore dello storage quando il cluster sta esaurendo la capacità. Sono disponibili tre livelli di riempimento del cluster, tutti visualizzati nell"interfaccia utente di NetApp Element: Avviso, errore e critico.' 
+---
+= Comprendere i livelli di completezza del cluster
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il software cluster running Element genera errori del cluster per avvisare l'amministratore dello storage quando il cluster sta esaurendo la capacità. Sono disponibili tre livelli di riempimento del cluster, tutti visualizzati nell'interfaccia utente di NetApp Element: Avviso, errore e critico.
+
+Il sistema utilizza il codice di errore BlockClusterFull per avvisare della completezza dello storage a blocchi del cluster. È possibile visualizzare i livelli di severità di pienezza del cluster dalla scheda Avvisi dell'interfaccia utente di Element.
+
+Il seguente elenco include informazioni sui livelli di severità di BlockClusterFull:
+
+* *Attenzione*
++
+Si tratta di un avviso configurabile dal cliente che viene visualizzato quando la capacità dei blocchi del cluster si avvicina al livello di gravità dell'errore. Per impostazione predefinita, questo livello è impostato al 3% sotto il livello di errore e può essere regolato tramite l'interfaccia utente e l'API Element. È necessario aggiungere più capacità o liberare capacità il prima possibile.
+
+* *Errore*
++
+Quando il cluster si trova in questo stato, in caso di perdita di un nodo, la capacità del cluster non sarà sufficiente per ricostruire la protezione dei dati Double Helix. La creazione di nuovi volumi, i cloni e gli snapshot vengono bloccati mentre il cluster si trova in questo stato. Questo non è uno stato sicuro o consigliato per qualsiasi cluster. È necessario aggiungere ulteriore capacità o liberare immediatamente capacità.
+
+* *Critico*
++
+Questo errore critico si è verificato perché il cluster è consumato al 100%. Si trova in uno stato di sola lettura e non è possibile effettuare nuove connessioni iSCSI al cluster. Una volta raggiunta questa fase, è necessario liberare o aggiungere immediatamente ulteriore capacità.
+
+
+
+Il sistema utilizza il codice di errore MetadataClusterFull per avvisare sulla completezza dello storage dei metadati del cluster. È possibile visualizzare la completezza dello storage dei metadati del cluster dalla sezione Cluster Capacity (capacità cluster) nella pagina Overview (Panoramica) della scheda Reporting (rapporti) nell'interfaccia utente di Element.
+
+Il seguente elenco include informazioni sui livelli di severità MetadataClusterFull:
+
+* *Attenzione*
++
+Si tratta di un avviso configurabile dal cliente che viene visualizzato quando la capacità dei metatdati del cluster si avvicina al livello di gravità dell'errore. Per impostazione predefinita, questo livello è impostato al 3% sotto il livello di errore e può essere regolato tramite l'API Element. È necessario aggiungere più capacità o liberare capacità il prima possibile.
+
+* *Errore*
++
+Quando il cluster si trova in questo stato, in caso di perdita di un nodo, la capacità del cluster non sarà sufficiente per ricostruire la protezione dei dati Double Helix. La creazione di nuovi volumi, i cloni e gli snapshot vengono bloccati mentre il cluster si trova in questo stato. Questo non è uno stato sicuro o consigliato per qualsiasi cluster. È necessario aggiungere ulteriore capacità o liberare immediatamente capacità.
+
+* *Critico*
++
+Questo errore critico si è verificato perché il cluster è consumato al 100%. Si trova in uno stato di sola lettura e non è possibile effettuare nuove connessioni iSCSI al cluster. Una volta raggiunta questa fase, è necessario liberare o aggiungere immediatamente ulteriore capacità.
+
+
+
+
+NOTE: Quanto segue si applica alle soglie del cluster a due nodi:
+
+* L'errore di fullness dei metadati è inferiore del 20% al livello critico.
+* L'errore di fullness del blocco è un disco a 1 blocco (inclusa la capacità inutilizzata) inferiore al livello critico, il che significa che due dischi a blocchi hanno una capacità inferiore al livello critico.
+

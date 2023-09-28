@@ -1,0 +1,77 @@
+---
+permalink: api/reference_element_api_setloginsessioninfo.html 
+sidebar: sidebar 
+keywords: authentication,login,session,info,timeout,setloginsessioninfo 
+summary: 'È possibile utilizzare il metodo SetLoginSessionInfo per impostare il periodo di validità dell"autenticazione di accesso per una sessione. Una volta trascorso il periodo di accesso senza attività sul sistema, l"autenticazione scade. Sono necessarie nuove credenziali di accesso per continuare l"accesso al cluster dopo lo scadere del periodo di accesso.' 
+---
+= SetLoginSessionInfo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `SetLoginSessionInfo` metodo per impostare il periodo di validità dell'autenticazione di accesso per una sessione. Una volta trascorso il periodo di accesso senza attività sul sistema, l'autenticazione scade. Sono necessarie nuove credenziali di accesso per continuare l'accesso al cluster dopo lo scadere del periodo di accesso.
+
+
+
+== Parametro
+
+Questo metodo ha il seguente parametro di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+timeout
+ a| 
+Periodo di scadenza dell'autenticazione del cluster. Formattato in HH:mm:ss. Ad esempio, è possibile utilizzare 01:30:00, 00:90:00 e 00:00:5400 per un periodo di timeout di 90 minuti. Il valore di timeout minimo è di 1 minuto. Quando un valore non viene fornito o viene impostato su zero, la sessione di accesso non presenta alcun valore di timeout.
+ a| 
+stringa
+ a| 
+30 minuti
+ a| 
+No
+
+|===
+
+
+== Valore restituito
+
+Questo metodo non ha alcun valore restituito.
+
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "method": "SetLoginSessionInfo",
+  "params": {
+    "timeout" : "01:30:00"
+   },
+   "id" : 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+  "id" : 1,
+  "result" : {}
+}
+----
+
+
+== Novità dalla versione
+
+9,6

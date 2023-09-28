@@ -1,0 +1,1110 @@
+---
+permalink: api/reference_element_api_app_b_access_control.html 
+sidebar: sidebar 
+keywords: access,control,type 
+summary: I metodi API Element disponibili variano in base al tipo di accesso impostato. 
+---
+= Controllo degli accessi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+I metodi API Element disponibili variano in base al tipo di accesso impostato.
+
+
+
+== account
+
+Per il tipo di accesso agli account sono disponibili i seguenti metodi:
+
+|===
+
+
+ a| 
+AddAccount
+
+
+
+ a| 
+GetAccountByID
+
+
+
+ a| 
+ModifyAccount
+
+
+
+ a| 
+GetAccountByName
+
+
+
+ a| 
+ListAccounts
+
+
+
+ a| 
+GetAccountEfficiency
+
+
+
+ a| 
+RemoveAccount
+
+|===
+
+
+== amministratore
+
+Tutti i metodi sono disponibili per il tipo di accesso amministratore.
+
+
+
+== ClusterAdmin
+
+Per il tipo di accesso di amministratore del cluster sono disponibili i seguenti metodi:
+
+|===
+
+
+ a| 
+AddClusterAdmin
+
+
+
+ a| 
+ListBackupTargets
+
+
+
+ a| 
+AddInitiatorsToVolumeAccessGroup
+
+
+
+ a| 
+ListBulkVolumeJobs
+
+
+
+ a| 
+AddLdapClusterAdmin
+
+
+
+ a| 
+ListClusterAdmins
+
+
+
+ a| 
+AddVirtualNetwork
+
+
+
+ a| 
+ListClusterPairs
+
+
+
+ a| 
+AddVirtualNetwork
+
+
+
+ a| 
+ListNodeFibreChannelPortInfo
+
+
+
+ a| 
+AddVolumetoVolumeAccessGroup
+
+
+
+ a| 
+ListBackupTargets
+
+
+
+ a| 
+CloneMultipleVolumes
+
+
+
+ a| 
+ListDrivehardware
+
+
+
+ a| 
+CompleteClusterPairing
+
+
+
+ a| 
+ListFiberChannelSessions
+
+
+
+ a| 
+CompleteVolumePairing
+
+
+
+ a| 
+ListFiberChannelPortInfo
+
+
+
+ a| 
+CreateBackupTarget
+
+
+
+ a| 
+ListGroupSnapshot
+
+
+
+ a| 
+CreateSchedule
+
+
+
+ a| 
+ListActivePairedVolumes
+
+
+
+ a| 
+CreateSnapshot
+
+
+
+ a| 
+ModifyBackupTarget
+
+
+
+ a| 
+CreateSupportBundle
+
+
+
+ a| 
+ModifyClusterAdmin
+
+
+
+ a| 
+CreateClusterSupportBundle
+
+
+
+ a| 
+ModifyGroupSnapshot
+
+
+
+ a| 
+CreateGroupSnapshot
+
+
+
+ a| 
+ModifyClusterFullThreshold
+
+
+
+ a| 
+CreateVolumeAccessGroup
+
+
+
+ a| 
+ModifyVolumeAccessGroup
+
+
+
+ a| 
+DeleteAllSupportBundles
+
+
+
+ a| 
+ModifyVolumeAccessGroupLunAssignments
+
+
+
+ a| 
+DeleteSnapshot
+
+
+
+ a| 
+ModifyVolumePair
+
+
+
+ a| 
+DeleteGroupSnapshot
+
+
+
+ a| 
+ModifyVirtualNetwork
+
+
+
+ a| 
+DeleteVolumeAccessGroup
+
+
+
+ a| 
+RemoveClusterAdmin
+
+
+
+ a| 
+DisableEncryptionAtRest
+
+
+
+ a| 
+RemoveVolumePair
+
+
+
+ a| 
+DisableLdapAuthentication
+
+
+
+ a| 
+RemoveVirtualNetwork
+
+
+
+ a| 
+DisableSnmp
+
+
+
+ a| 
+RemoveVolumesFromVolumeAccessGroup
+
+
+
+ a| 
+EnableEncryptionAtRest
+
+
+
+ a| 
+RemoveInitialisFromVolumeAccessGroup
+
+
+
+ a| 
+EnableLdapAuthentication
+
+
+
+ a| 
+RollbackToSnapshot
+
+
+
+ a| 
+EnableSnmp
+
+
+
+ a| 
+RollbackToGroupSnapshot
+
+
+
+ a| 
+GetBackupTarget
+
+
+
+ a| 
+SetLoginSessionInfo
+
+
+
+ a| 
+GetClusterFullThreshold
+
+
+
+ a| 
+SetNtpInfo
+
+
+
+ a| 
+GetClusterMasterNodeID
+
+
+
+ a| 
+SetSnmpACL
+
+
+
+ a| 
+GetHardwareConfig
+
+
+
+ a| 
+SetSnmpInfo
+
+
+
+ a| 
+GetLdapConfiguration
+
+
+
+ a| 
+SetSnmpTrapInfo
+
+
+
+ a| 
+GetLoginSessionInfo
+
+
+
+ a| 
+SetRemoteLoggingHost
+
+
+
+ a| 
+GetNtpInfo
+
+
+
+ a| 
+Spegnere
+
+
+
+ a| 
+GetNvramInfo
+
+
+
+ a| 
+StartBulkVolumeRead
+
+
+
+ a| 
+GetRawStats
+
+
+
+ a| 
+StartBulkVolumeWrite
+
+
+
+ a| 
+GetSnmpACL
+
+
+
+ a| 
+StartClusterPairing
+
+
+
+ a| 
+GetVolumeAccessGroupEfficiency
+
+
+
+ a| 
+StartVolumePairing
+
+
+
+ a| 
+GetVolumeAccessLunAssignments
+
+
+
+ a| 
+TestLdapAuthentication
+
+
+
+ a| 
+GetVirtualNetwork
+
+
+
+ a| 
+
+|===
+
+
+== dischi
+
+Per il tipo di accesso ai dischi sono disponibili i seguenti metodi:
+
+|===
+
+
+ a| 
+ListDrive
+
+
+
+ a| 
+RemoveDrives
+
+
+
+ a| 
+AddDrive
+
+
+
+ a| 
+SecureEraseDrive
+
+|===
+
+
+== nodi
+
+Per il tipo di accesso ai nodi sono disponibili i seguenti metodi:
+
+|===
+
+
+ a| 
+AddNode
+
+
+
+ a| 
+ListPendingNode
+
+
+
+ a| 
+ListActiveNode
+
+
+
+ a| 
+RemoveNode
+
+|===
+
+
+== leggi
+
+Per il tipo di accesso in lettura sono disponibili i seguenti metodi:
+
+|===
+
+
+ a| 
+GetAccountByID
+
+
+
+ a| 
+ListCloneJobs
+
+
+
+ a| 
+GetAccountByName
+
+
+
+ a| 
+ListDeletedVolumes
+
+
+
+ a| 
+GetAsyncResult
+
+
+
+ a| 
+ListDrivehardware
+
+
+
+ a| 
+GetClusterCapacity
+
+
+
+ a| 
+ListDrive
+
+
+
+ a| 
+GetDefaultQoS
+
+
+
+ a| 
+ListEvents
+
+
+
+ a| 
+GetDriveStats
+
+
+
+ a| 
+ListISCSISessions
+
+
+
+ a| 
+GetSoftwareUpgrade
+
+
+
+ a| 
+ListPendingNode
+
+
+
+ a| 
+GetVolumeStats
+
+
+
+ a| 
+ListSyncJobs
+
+
+
+ a| 
+ListAccounts
+
+
+
+ a| 
+ListVolumeAccessGroups
+
+
+
+ a| 
+ListActiveNode
+
+
+
+ a| 
+ListVolumeStatsByAccount
+
+
+
+ a| 
+ListActiveNode
+
+
+
+ a| 
+ListVolumeStatsByVolume
+
+
+
+ a| 
+ListActiveVolumes
+
+
+
+ a| 
+ListVolumeStatsByVolumeAccessGroup
+
+
+
+ a| 
+ListAllNode
+
+
+
+ a| 
+ListVolumesForAccount
+
+
+
+ a| 
+ListBackupTargets
+
+|===
+
+
+== creazione di report
+
+Per il tipo di accesso al reporting sono disponibili i seguenti metodi:
+
+|===
+
+
+ a| 
+ClearClusterFaults
+
+
+
+ a| 
+GetVolumeEfficiency
+
+
+
+ a| 
+GetAccountEfficiency
+
+
+
+ a| 
+GetVolumeStats
+
+
+
+ a| 
+GetClusterCapacity
+
+
+
+ a| 
+ListCloneJobs
+
+
+
+ a| 
+GetClusterHardwareInfo
+
+
+
+ a| 
+ListClusterFaults
+
+
+
+ a| 
+GetClusterInfo
+
+
+
+ a| 
+ListClusterPairs
+
+
+
+ a| 
+GetClusterMasterNodeID
+
+
+
+ a| 
+ListDrivehardware
+
+
+
+ a| 
+GetClusterStats
+
+
+
+ a| 
+ListEvents
+
+
+
+ a| 
+GetDriveHardwareInfo
+
+
+
+ a| 
+ListISCSISessions
+
+
+
+ a| 
+GetDriveStats
+
+
+
+ a| 
+Elenchi
+
+
+
+ a| 
+GetNetworkConfig
+
+
+
+ a| 
+ListServices
+
+
+
+ a| 
+GetNodeHardwareInfo
+
+
+
+ a| 
+ListSyncJobs
+
+
+
+ a| 
+GetNodeStats
+
+
+
+ a| 
+ListVirtualNetworks
+
+
+
+ a| 
+GetSnmpInfo
+
+
+
+ a| 
+ListVolumeStatsByAccount
+
+
+
+ a| 
+GetSnmpTrapInfo
+
+
+
+ a| 
+ListVolumeStatsByVolume
+
+
+
+ a| 
+GetVolumeAccessGroupEfficiency
+
+
+
+ a| 
+ListVolumeStatsByVolumeAccessGroup
+
+|===
+
+
+== repository
+
+Il metodo ListAllNodes è disponibile per il tipo di accesso ai repository.
+
+
+
+== volumi
+
+Per il tipo di accesso ai volumi sono disponibili i seguenti metodi:
+
+|===
+
+
+ a| 
+CreateVolume
+
+
+
+ a| 
+DeleteVolume
+
+
+
+ a| 
+ModifyBackupTarget
+
+
+
+ a| 
+CloneVolume
+
+
+
+ a| 
+DeleteVolumePairing
+
+
+
+ a| 
+ModifyVolumes
+
+
+
+ a| 
+CloneMultipleVolumes
+
+
+
+ a| 
+GetBackupTarget
+
+
+
+ a| 
+ModifyVolumePair
+
+
+
+ a| 
+CreateBackupTarget
+
+
+
+ a| 
+GetDefaultQoS
+
+
+
+ a| 
+PurgeDeletedVolume
+
+
+
+ a| 
+CreateSnapshot
+
+
+
+ a| 
+ListActiveVolumes
+
+
+
+ a| 
+RemoveBackupTarget
+
+
+
+ a| 
+CreateGroupSnapshot
+
+
+
+ a| 
+ListBackupTarget
+
+
+
+ a| 
+RemoveVolumePair
+
+
+
+ a| 
+CompleteVolumePairing
+
+
+
+ a| 
+ListGroupSnapshot
+
+
+
+ a| 
+RestoreDeletedVolume
+
+
+
+ a| 
+CloneMultipleVolumes
+
+
+
+ a| 
+ListVolumesForAccount
+
+
+
+ a| 
+RollbackToGroupSnapshot
+
+
+
+ a| 
+DeleteGroupSnapshot
+
+
+
+ a| 
+ListDeletedVolumes
+
+
+
+ a| 
+RollbackToSnapshot
+
+
+
+ a| 
+DeleteSnapshot
+
+
+
+ a| 
+ListGroupSnapshot
+
+
+
+ a| 
+StartBulkVolumeRead
+
+
+
+ a| 
+StartBulkVolumeWrite
+
+
+
+ a| 
+StartVolumePairing
+
+
+
+ a| 
+UpdateBulkVolumeStatus
+
+|===
+
+
+== di scrittura
+
+Per il tipo di accesso in scrittura sono disponibili i seguenti metodi:
+
+|===
+
+
+ a| 
+AddDrive
+
+
+
+ a| 
+RemoveNode
+
+
+
+ a| 
+AddNode
+
+
+
+ a| 
+RemoveAccount
+
+
+
+ a| 
+AddAccount
+
+
+
+ a| 
+RemoveVolumesFromVolumeAccessGroup
+
+
+
+ a| 
+AddVolumeToVolumeAccessGroup
+
+
+
+ a| 
+RemoveInitialisFromVolumeAccessGroup
+
+
+
+ a| 
+AddInitiatorsToVolumeAccessGroup
+
+
+
+ a| 
+DeleteVolumeAccessGroup
+
+
+
+ a| 
+CreateVolumeAccessGroup
+
+
+
+ a| 
+DeleteVolume
+
+
+
+ a| 
+ModifyVolumeAccessGroup
+
+
+
+ a| 
+RestoreDeletedVolume
+
+
+
+ a| 
+ModifyAccount
+
+
+
+ a| 
+PurgeDeletedVolume
+
+
+
+ a| 
+CreateVolume
+
+
+
+ a| 
+ModifyVolume
+
+
+
+ a| 
+CloneVolume
+
+
+
+ a| 
+GetAsyncResult
+
+
+
+ a| 
+RemoveDrives
+
+|===

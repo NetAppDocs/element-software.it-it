@@ -1,0 +1,101 @@
+---
+permalink: api/reference_element_api_testdrives.html 
+sidebar: sidebar 
+keywords: drive,drives,test,testing,validating,hardware,testdrives 
+summary: 'È possibile utilizzare il metodo TestDrives per eseguire una convalida dell"hardware su tutti i dischi del nodo. Questo metodo rileva i guasti hardware sui dischi e riporta i risultati dei test di convalida.' 
+---
+= TestDrive
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `TestDrives` metodo per eseguire una convalida dell'hardware su tutti i dischi del nodo. Questo metodo rileva i guasti hardware sui dischi e riporta i risultati dei test di convalida.
+
+
+
+== Parametri
+
+È possibile utilizzare solo `TestDrives` Metodo su nodi non "attivi" in un cluster.
+
+
+NOTE: Il test richiede circa 10 minuti.
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+forza
+ a| 
+Impostare su true per testare i dischi sul nodo.
+ a| 
+booleano
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+minuti
+ a| 
+Specifica il numero di minuti per l'esecuzione del test.
+ a| 
+intero
+ a| 
+10
+ a| 
+No
+
+|===
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+dettagli
+ a| 
+Informazioni sull'operazione di test riuscita o non riuscita.
+ a| 
+Oggetto JSON
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+   "method": "TestDrives",
+   "params": {
+              "force": true,
+              "minutes" : 10
+             },
+   "id" : 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una tabella contenente i risultati dei test per ogni disco nel nodo.
+
+
+
+== Novità dalla versione
+
+9,6

@@ -1,0 +1,125 @@
+---
+permalink: api/reference_element_api_listvolumestatsbyaccount.html 
+sidebar: sidebar 
+keywords: volumes,volume,stats,list,listing,account,listvolumestatsbyaccount,activity 
+summary: 'È possibile utilizzare il metodo ListVolumeStatsByAccount per elencare le misurazioni delle attività di volume di alto livello per ogni account. I valori vengono sommati da tutti i volumi di proprietà dell"account.' 
+---
+= ListVolumeStatsByAccount
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `ListVolumeStatsByAccount` metodo per elencare le misurazioni di volume di attività di alto livello per ogni account. I valori vengono sommati da tutti i volumi di proprietà dell'account.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+Include VirtualVolumes
+ a| 
+I volumi virtuali sono inclusi nella risposta per impostazione predefinita. Per escludere i volumi virtuali, impostare su false.
+ a| 
+booleano
+ a| 
+vero
+ a| 
+No
+
+
+
+ a| 
+account
+ a| 
+Un elenco di ID account per i quali restituire le statistiche del volume. Se omesso, vengono restituite le statistiche per tutti gli account.
+ a| 
+array intero
+ a| 
+Nessuno
+ a| 
+No
+
+|===
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+VolumeStats
+ a| 
+Elenco delle informazioni sulle attività di volume per ciascun account.*Nota:* il membro volumeID è 0 per ogni voce, in quanto i valori rappresentano la somma di tutti i volumi di proprietà dell'account.
+ a| 
+xref:reference_element_api_volumestats.adoc[VolumeStats] array
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+"method": "ListVolumeStatsByAccount",
+  "params": {"accounts": [3]},
+  "id": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "volumeStats": [
+      {
+        "accountID": 3,
+        "nonZeroBlocks": 155040175,
+        "readBytes": 3156273328128,
+        "readBytesLastSample": 0,
+        "readOps": 770574543,
+        "readOpsLastSample": 0,
+        "samplePeriodMSec": 500,
+        "timestamp": "2016-10-17T20:42:26.231661Z",
+        "unalignedReads": 0,
+        "unalignedWrites": 0,
+        "volumeAccessGroups": [],
+        "volumeID": 0,
+        "volumeSize": 1127428915200,
+        "writeBytes": 1051988406272,
+        "writeBytesLastSample": 0,
+        "writeOps": 256833107,
+        "writeOpsLastSample": 0,
+        "zeroBlocks": 120211025
+      }
+    ]
+  }
+}
+----
+
+
+== Novità dalla versione
+
+9,6

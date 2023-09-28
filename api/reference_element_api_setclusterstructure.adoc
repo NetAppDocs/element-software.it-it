@@ -1,0 +1,85 @@
+---
+permalink: api/reference_element_api_setclusterstructure.html 
+sidebar: sidebar 
+keywords: storage,cluster,configuration,info,restore,set,setting,setclusterstructure 
+summary: 'È possibile utilizzare il metodo SetClusterStructure per ripristinare le informazioni di configurazione del cluster di storage da un backup. Quando si chiama il metodo, si passa l"oggetto clusterStructure contenente le informazioni di configurazione che si desidera ripristinare come parametro params.' 
+---
+= SetClusterStructure
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `SetClusterStructure` metodo per ripristinare le informazioni di configurazione del cluster di storage da un backup. Quando si chiama il metodo, si passa l'oggetto clusterStructure contenente le informazioni di configurazione che si desidera ripristinare come parametro params.
+
+
+
+== Parametro
+
+Questo metodo ha il seguente parametro di input:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+parametri
+ a| 
+Oggetto JSON contenente le informazioni di configurazione del cluster di storage corrente.
+ a| 
+xref:reference_element_api_clusterstructure.adoc[Struttura del clusterStructure]
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo ha i seguenti valori restituiti:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+risultato
+ a| 
+Handle asincrono dei risultati.
+ a| 
+AsyncHandle
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "method": "SetClusterStructure",
+  "params": <insert clusterStructure object here>,
+  "id" : 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+	"id": 1,
+	"result" : {
+	"asyncHandle": 1
+	}
+}
+----
+
+
+== Novità dalla versione
+
+10,3

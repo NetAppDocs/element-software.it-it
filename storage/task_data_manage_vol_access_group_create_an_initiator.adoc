@@ -1,0 +1,54 @@
+---
+permalink: storage/task_data_manage_vol_access_group_create_an_initiator.html 
+sidebar: sidebar 
+keywords: initiator, create, fc, iscsi, aliases, chap 
+summary: È possibile creare iniziatori iSCSI o Fibre Channel e, facoltativamente, assegnarli alias. 
+---
+= Creare un iniziatore
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile creare iniziatori iSCSI o Fibre Channel e, facoltativamente, assegnarli alias.
+
+È inoltre possibile assegnare attributi CHAP basati su initator utilizzando una chiamata API. Per aggiungere un nome account CHAP e le credenziali per ogni iniziatore, è necessario utilizzare `CreateInitiator` Chiamata API per rimuovere e aggiungere l'accesso e gli attributi CHAP. L'accesso initiator può essere limitato a una o più VLAN specificando uno o più virtualNetworkID tramite `CreateInitiators` e. `ModifyInitiators` Chiamate API. Se non viene specificata alcuna rete virtuale, l'iniziatore può accedere a tutte le reti.
+
+Per ulteriori informazioni, vedere le informazioni di riferimento API.
+link:../api/index.html["Gestire lo storage con l'API Element"]
+
+.Fasi
+. Fare clic su *Gestione* > *iniziatori*.
+. Fare clic su *Crea iniziatore*.
+. Eseguire la procedura per creare un singolo iniziatore o più iniziatori:
++
+[cols="25,75"]
+|===
+| Opzione | Fasi 
+
+
+ a| 
+Creare un singolo iniziatore
+ a| 
+.. Fare clic su *Crea un singolo iniziatore*.
+.. Immettere l'IQN o il WWPN dell'iniziatore nel campo *IQN/WWPN*.
+.. Immettere un nome descrittivo per l'iniziatore nel campo *Alias*.
+.. Fare clic su *Crea iniziatore*.
+
+
+
+
+ a| 
+Creare più iniziatori
+ a| 
+.. Fare clic su *creazione di iniziatori in blocco*.
+.. Inserire un elenco di IQN o WWPN nella casella di testo.
+.. Fare clic su *Aggiungi iniziatori*.
+.. Scegliere un iniziatore dall'elenco risultante e fare clic sull'icona Aggiungi corrispondente nella colonna *Alias* per aggiungere un alias per l'iniziatore.
+.. Fare clic sul segno di spunta per confermare il nuovo alias.
+.. Fare clic su *Create initiator* (Crea iniziatori).
+
+
+|===
+

@@ -1,0 +1,51 @@
+---
+permalink: api/reference_element_api_protectionschemeresiliency.html 
+sidebar: sidebar 
+keywords: object,objects,protectionSchemeResiliency 
+summary: 'L"oggetto ProtectionSchemeResiliency contiene informazioni sulla possibilità di riparare automaticamente un cluster di storage per uno schema di protezione specifico in caso di uno o più guasti all"interno della relativa ProtectionDomainType associata. Un cluster di storage viene considerato healed quando può continuare a leggere e scrivere i dati attraverso il guasto di un singolo nodo di storage (uno stato noto come tolleranza del nodo).' 
+---
+= ProtectionSchemeResiliency
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto ProtectionSchemeResiliency contiene informazioni sulla possibilità di riparare automaticamente un cluster di storage per uno schema di protezione specifico in caso di uno o più guasti all'interno della relativa ProtectionDomainType associata. Un cluster di storage viene considerato healed quando può continuare a leggere e scrivere i dati attraverso il guasto di un singolo nodo di storage (uno stato noto come tolleranza del nodo).
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+ProtectionScheme
+ a| 
+Lo schema di protezione corrente di questo cluster di storage. L'unico valore possibile è doubleHelix.
+ a| 
+stringa
+
+
+
+ a| 
+SostenibileFailuresForBlockData
+ a| 
+Il numero previsto di guasti simultanei che possono verificarsi senza perdere la capacità di riparare automaticamente a uno stato di tolleranza del nodo per i dati.
+ a| 
+intero
+
+
+
+ a| 
+SostenibileFailuresForMetadata
+ a| 
+Il numero previsto di errori simultanei che possono verificarsi senza perdere la capacità di correggere automaticamente lo stato di tolleranza del nodo per i metadati.
+ a| 
+intero
+
+|===

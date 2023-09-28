@@ -1,0 +1,33 @@
+---
+permalink: storage/task_replication_pair_clusters.html 
+sidebar: sidebar 
+keywords: pair clusters, replication, connect clusters, data protection 
+summary: 'Per utilizzare la funzionalità di replica in tempo reale, è necessario associare due cluster come primo passo. Dopo aver associato e connesso due cluster, è possibile configurare i volumi attivi su un cluster per la replica continua su un secondo cluster, fornendo una protezione continua dei dati (CDP).' 
+---
+= Associare i cluster per la replica
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Per utilizzare la funzionalità di replica in tempo reale, è necessario associare due cluster come primo passo. Dopo aver associato e connesso due cluster, è possibile configurare i volumi attivi su un cluster per la replica continua su un secondo cluster, fornendo una protezione continua dei dati (CDP).
+
+.Di cosa hai bisogno
+* È necessario disporre dei privilegi di amministratore del cluster per uno o entrambi i cluster associati.
+* Tutti i MIPS e i SIPS dei nodi vengono instradati l'uno verso l'altro.
+* Meno di 2000 ms di latenza di andata e ritorno tra i cluster.
+* Entrambi i cluster di storage devono avere nomi di cluster univoci, MVIP, SVIP e tutti gli indirizzi IP dei nodi.
+* La differenza tra le versioni software degli elementi sui cluster non è superiore a una versione principale. Se la differenza è maggiore, uno dei cluster deve essere aggiornato per eseguire la replica dei dati.
+
+
+
+NOTE: L'associazione dei cluster richiede una connettività completa tra i nodi della rete di gestione. La replica richiede la connettività tra i singoli nodi sulla rete del cluster di storage.
+
+È possibile associare un cluster a un massimo di quattro altri cluster per la replica dei volumi. È inoltre possibile associare tra loro i cluster all'interno del gruppo di cluster.
+
+
+
+== Trova ulteriori informazioni
+
+xref:reference_prereq_network_port_requirements.adoc[Requisiti delle porte di rete]

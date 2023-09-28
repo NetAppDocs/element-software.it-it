@@ -1,0 +1,88 @@
+---
+permalink: storage/task_monitor_information_about_system_events.html 
+sidebar: sidebar 
+keywords: system events, monitor, view event log 
+summary: È possibile visualizzare informazioni sui vari eventi rilevati nel sistema. Il sistema aggiorna i messaggi degli eventi ogni 30 secondi. Il registro eventi visualizza gli eventi chiave per il cluster. 
+---
+= Visualizza informazioni sugli eventi di sistema
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile visualizzare informazioni sui vari eventi rilevati nel sistema. Il sistema aggiorna i messaggi degli eventi ogni 30 secondi. Il registro eventi visualizza gli eventi chiave per il cluster.
+
+. Nell'interfaccia utente di Element, selezionare *Reporting* > *Event Log*.
++
+Per ogni evento, vengono visualizzate le seguenti informazioni:
+
++
+|===
+
+
+| Elemento | Descrizione 
+
+
+ a| 
+ID
+ a| 
+ID univoco associato a ciascun evento.
+
+
+
+ a| 
+Tipo di evento
+ a| 
+Il tipo di evento registrato, ad esempio eventi API o eventi clone.
+
+
+
+ a| 
+Messaggio
+ a| 
+Messaggio associato all'evento.
+
+
+
+ a| 
+Dettagli
+ a| 
+Informazioni che aiutano a identificare il motivo per cui si è verificato l'evento.
+
+
+
+ a| 
+ID servizio
+ a| 
+Il servizio che ha segnalato l'evento (se applicabile).
+
+
+
+ a| 
+Nodo
+ a| 
+Il nodo che ha riportato l'evento (se applicabile).
+
+
+
+ a| 
+ID disco
+ a| 
+L'unità che ha segnalato l'evento (se applicabile).
+
+
+
+ a| 
+Ora dell'evento
+ a| 
+L'ora in cui si è verificato l'evento.
+
+|===
+
+
+
+
+== Trova ulteriori informazioni
+
+xref:reference_monitor_event_types.adoc[Tipi di evento]

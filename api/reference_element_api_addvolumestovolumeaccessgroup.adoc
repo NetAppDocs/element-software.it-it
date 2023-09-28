@@ -1,0 +1,126 @@
+---
+permalink: api/reference_element_api_addvolumestovolumeaccessgroup.html 
+sidebar: sidebar 
+keywords: volume,volumes,adding,add,access,group,addvolumestovolumeaccessgroup 
+summary: È possibile utilizzare il metodo AddVolumesToVolumeAccessGroup per aggiungere volumi a un gruppo di accesso a un volume specifico. 
+---
+= AddVolumesToVolumeAccessGroup
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `AddVolumesToVolumeAccessGroup` metodo per aggiungere volumi a un gruppo di accesso a un volume specificato.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+volumi
+ a| 
+Elenco di ID volume da aggiungere al gruppo di accesso al volume.
+ a| 
+array intero
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+VolumeAccessGroupID
+ a| 
+VolumeAccessGroupID del gruppo di accesso al volume a cui vengono aggiunti i volumi.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+Sì
+
+|===
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+VolumeAccessGroup
+ a| 
+Oggetto contenente informazioni sul gruppo di accesso al volume appena modificato.
+ a| 
+xref:reference_element_api_volumeaccessgroup.adoc[VolumeAccessGroup]
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+   "method": "AddVolumesToVolumeAccessGroup",
+   "params": {
+      "volumeAccessGroupID": 96,
+      "volumes": [1,2]
+   },
+   "id": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "volumeAccessGroup": {
+      "attributes": {},
+      "deletedVolumes": [
+        346
+      ],
+      "initiatorIDs": [
+        116,
+        117
+      ],
+      "initiators": [
+        "iqn.1993-08.org.debian:01:181324777",
+        "iqn.1993-08.org.debian:01:181324888"
+      ],
+      "name": "northbanktest",
+      "volumeAccessGroupID": 96,
+      "volumes": [
+        1,
+        2
+      ]
+    }
+  }
+}
+----
+
+
+== Novità dalla versione
+
+9,6

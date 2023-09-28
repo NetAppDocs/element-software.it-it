@@ -1,0 +1,83 @@
+---
+permalink: api/reference_element_api_clearclusterfaults.html 
+sidebar: sidebar 
+keywords: cluster,clear,clearing,fault,faults,support bundles,ClearClusterFaults 
+summary: È possibile utilizzare il metodo ClearClusterFaults per cancellare informazioni sugli errori rilevati in precedenza e quelli attuali. I guasti risolti e quelli non risolti possono essere cancellati. 
+---
+= ClearClusterFaults
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `ClearClusterFaults` metodo per cancellare le informazioni sui guasti rilevati in precedenza e correnti. I guasti risolti e quelli non risolti possono essere cancellati.
+
+
+
+== Parametro
+
+Questo metodo ha il seguente parametro di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+FaultTypes (tipi di errore)
+ a| 
+Determina i tipi di guasti da eliminare. Valori possibili:
+
+* corrente:
++
+Guasti rilevati attualmente e non risolti.
+
+* Risolto: Guasti precedentemente rilevati e risolti.
+* All (tutti): Guasti attuali e risolti. Lo stato di guasto può essere determinato dal campo "`rerisolto`" dell'oggetto guasto.
+
+ a| 
+stringa
+ a| 
+risolto
+ a| 
+No
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo non ha valori restituiti.
+
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+   "method": "ClearClusterFaults",
+   "params": {},
+  "id" : 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+  "id" : 1,
+    "result" : {}
+}
+----
+
+
+== Novità dalla versione
+
+9,6

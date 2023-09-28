@@ -1,0 +1,24 @@
+---
+permalink: storage/task_data_protection_copy_a_snapshot_schedule.html 
+sidebar: sidebar 
+keywords: snapshot schedule, copy, maintain, schedule attributes 
+summary: È possibile copiare una pianificazione e mantenerne gli attributi correnti. 
+---
+= Copiare una pianificazione di snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile copiare una pianificazione e mantenerne gli attributi correnti.
+
+. Fare clic su *Data Protection* > *Schedules*.
+. Fare clic sull'icona Actions (azioni) per il programma che si desidera copiare.
+. Nel menu visualizzato, fare clic su *Crea copia*.
++
+Viene visualizzata la finestra di dialogo *Create Schedule* (Crea pianificazione), contenente gli attributi correnti della pianificazione.
+
+. *Opzionale:* inserire un nome e gli attributi aggiornati per la nuova pianificazione.
+. Fare clic su *Crea pianificazione*.
+

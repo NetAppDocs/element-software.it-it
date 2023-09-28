@@ -1,0 +1,130 @@
+---
+permalink: api/reference_element_api_listidpconfigurations.html 
+sidebar: sidebar 
+keywords: configs configurations,idp configs,list 
+summary: È possibile utilizzare il metodo ListIdpConfigurations per elencare le configurazioni per gli IDP di terze parti. Facoltativamente, è possibile fornire il flag enabledOnly per recuperare la configurazione IdP attualmente attivata oppure un UID metadati IdP o un nome IdP per eseguire query sulle informazioni per una configurazione IdP specifica. 
+---
+= ListIdpconfigurazioni
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `ListIdpConfigurations` Metodo per elencare le configurazioni per gli IDP di terze parti. In alternativa, è possibile fornire il `enabledOnly` Flag per recuperare la configurazione IdP attualmente attivata o un UID metadati IdP o un nome IdP per eseguire query sulle informazioni di una configurazione IdP specifica.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+AbilitataOnly
+ a| 
+Filtra il risultato per restituire la configurazione IdP attualmente attivata.
+ a| 
+booleano
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+ID configurazione idpID
+ a| 
+UUID per la configurazione IdP di terze parti.
+ a| 
+UUID
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+Nome ID
+ a| 
+Recupera le informazioni di configurazione IdP per un nome IdP specifico.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+IdpConfigInfos
+ a| 
+Informazioni sulle configurazioni IdP di terze parti.
+ a| 
+link:reference_element_api_idpconfiginfo.html["IdpConfigInfo"] array
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "method": "ListIdpConfigurations",
+  "params": {}
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+    "result": {
+        "idpConfigInfo": {
+        "enabled": true,
+        "idpConfigurationID": "f983c602-12f9-4c67-b214-bf505185cfed",
+        "idpMetadata": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n
+        <EntityDescriptor xmlns=\"urn:oasis:names:tc:SAML:2.0:metadata\"\r\n
+        xmlns:ds=\"http://www.w3.org/2000/09/xmldsig#\"\r\n
+        xmlns:shibmd=\"urn:mace:shibboleth:metadata:1.0\"\r\n
+        xmlns:xml=\"http://www.w3.org/XML/1998/namespace\"\r\n
+        ...</Organization>\r\n
+        </EntityDescriptor>",
+        "idpName": "https://privider.name.url.com",
+        "serviceProviderCertificate": "-----BEGIN CERTIFICATE-----\n
+        MI...BHi\n
+        -----END CERTIFICATE-----\n",
+        "spMetadataUrl": "https://10.193.100.100/auth/ui/saml2"
+        }
+    }
+}
+----
+
+
+== Novità dalla versione
+
+12,0

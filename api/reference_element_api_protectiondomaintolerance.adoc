@@ -1,0 +1,42 @@
+---
+permalink: api/reference_element_api_protectiondomaintolerance.html 
+sidebar: sidebar 
+keywords: object,objects,protectionDomainTolerance 
+summary: 'L"oggetto ProtectionDomainTolerance contiene informazioni sulla capacità del cluster di storage di continuare a leggere e scrivere dati in caso di uno o più errori, tutti all"interno di un singolo dominio di protezione del tipo di dominio di protezione associato.' 
+---
+= ProtectionDomainTolerance
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto ProtectionDomainTolerance contiene informazioni sulla capacità del cluster di storage di continuare a leggere e scrivere dati in caso di uno o più errori, tutti all'interno di un singolo dominio di protezione del tipo di dominio di protezione associato.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+ProtectionSchemeTolerances
+ a| 
+Un elenco di oggetti (uno per ogni schema di protezione) contenente informazioni sulla tolleranza di errore per il tipo di dominio di protezione associato.
+ a| 
+xref:reference_element_api_protectionschemetolerance.adoc[ProtectionSchemeTolerance] array
+
+
+
+ a| 
+AbleFailuresForEnsemble
+ a| 
+Il numero di errori simultanei all'interno del tipo di dominio di protezione associato che possono verificarsi senza perdere il quorum dell'ensemble.
+ a| 
+intero
+
+|===

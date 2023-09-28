@@ -1,0 +1,67 @@
+---
+permalink: storage/concept_troubleshoot_basic_mdss_drive_troubleshooting.html 
+sidebar: sidebar 
+keywords: mdss drives, troubleshoot, multi-drive slice service 
+summary: 'È possibile ripristinare i metadati o le unità slice aggiungendoli di nuovo al cluster nel caso in cui uno o entrambi i dischi di metadati si guastino. È possibile eseguire l"operazione di ripristino nell"interfaccia utente di NetApp Element se la funzione MDSS è già attivata sul nodo.' 
+---
+= Risoluzione dei problemi di base dei dischi MDSS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile ripristinare i dischi di metadati (o slice) aggiungendoli di nuovo al cluster nel caso in cui uno o entrambi i dischi di metadati si guastino. È possibile eseguire l'operazione di ripristino nell'interfaccia utente di NetApp Element se la funzione MDSS è già attivata sul nodo.
+
+Se uno o entrambi i dischi di metadati in un nodo presentano un guasto, il servizio slice viene arrestato e i dati di entrambi i dischi vengono sottoposti a backup su dischi diversi nel nodo.
+
+I seguenti scenari delineano possibili scenari di guasto e forniscono consigli di base per correggere il problema:
+
+
+
+== Errore del disco slice del sistema
+
+* In questo scenario, lo slot 2 viene verificato e riportato a uno stato disponibile.
+* Il disco slice del sistema deve essere ripopolato prima che il servizio slice possa essere riportato online.
+* Sostituire il disco slice di sistema, quando il disco slice di sistema diventa disponibile, aggiungere il disco e il disco slot 2 contemporaneamente.
+
+
+
+NOTE: Non è possibile aggiungere l'unità nello slot 2 da sola come unità di metadati. È necessario aggiungere entrambe le unità al nodo contemporaneamente.
+
+
+
+== Lo slot 2 non funziona
+
+* In questo scenario, il disco slice del sistema viene verificato e riportato a uno stato disponibile.
+* Sostituire lo slot 2 con uno spare, quando lo slot 2 diventa disponibile, aggiungere contemporaneamente il disco slice di sistema e il disco slot 2.
+
+
+
+
+== Errore del disco slice di sistema e dello slot 2
+
+* È necessario sostituire sia l'unità slice di sistema che lo slot 2 con un disco libero. Quando entrambi i dischi diventano disponibili, aggiungere contemporaneamente l'unità slice di sistema e l'unità slot 2.
+
+
+
+
+== Ordine delle operazioni
+
+* Sostituire il disco hardware guasto con un disco libero (sostituire entrambi i dischi se sono guasti).
+* Aggiungere nuovamente i dischi al cluster una volta ripopolati e che si trovano in uno stato disponibile.
+
+
+
+
+== Verificare le operazioni
+
+* Verificare che i dischi nello slot 0 (o interno) e nello slot 2 siano identificati come dischi metadati nell'elenco Active Drives (dischi attivi).
+* Verificare che il bilanciamento di tutte le sezioni sia stato completato (nel registro eventi non sono presenti ulteriori messaggi di spostamento delle sezioni per almeno 30 minuti).
+
+
+
+
+== Per ulteriori informazioni
+
+xref:task_troubleshoot_add_mdss_drives.adoc[Aggiungere dischi MDSS]

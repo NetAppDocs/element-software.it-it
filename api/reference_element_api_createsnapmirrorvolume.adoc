@@ -1,0 +1,134 @@
+---
+permalink: api/reference_element_api_createsnapmirrorvolume.html 
+sidebar: sidebar 
+keywords: SnapMirror,endpoints,create,creating,volume,volumes,CreateSnapMirrorVolume 
+summary: 'L"interfaccia utente Web Element utilizza il metodo CreateSnapMirrorVolume per creare un volume sul sistema ONTAP remoto.' 
+---
+= CreateSnapMirrorVolume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'interfaccia utente Web Element utilizza `CreateSnapMirrorVolume` Metodo per creare un volume sul sistema ONTAP remoto.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+SnapMirrorEndpointID
+ a| 
+L'ID endpoint del sistema storage ONTAP remoto che comunica con il cluster storage Element.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+server virtuale
+ a| 
+Il nome del Vserver.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+nome
+ a| 
+Il nome del volume ONTAP di destinazione.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+tipo
+ a| 
+Il tipo di volume. Valori possibili:
+
+* rw: Volume di lettura/scrittura
+* ls: Volume di condivisione del carico
+* dp: Volume di protezione dei dati
+
+
+Se non viene fornito alcun tipo, il tipo predefinito è dp.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+aggregato
+ a| 
+Aggregato ONTAP contenente in cui creare il volume. È possibile utilizzare ListSnapMirrorAggregates per ottenere informazioni sugli aggregati ONTAP disponibili.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+dimensione
+ a| 
+La dimensione del volume in byte.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+Sì
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo ha i seguenti valori restituiti:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+SnapMirrorVolume
+ a| 
+Informazioni su un volume SnapMirror.
+ a| 
+xref:reference_element_api_snapmirrorvolume.adoc[SnapMirrorVolume]
+
+|===
+
+
+== Novità dalla versione
+
+10,1

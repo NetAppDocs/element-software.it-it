@@ -1,0 +1,42 @@
+---
+permalink: api/reference_element_api_loggingserver.html 
+sidebar: sidebar 
+keywords: object,objects,loggingServer 
+summary: 'L"oggetto loggingServer contiene informazioni sugli host di registrazione configurati per il cluster di storage. È possibile utilizzare GetRemoteLoggingHosts per determinare quali sono gli host di registrazione correnti e quindi utilizzare SetRemoteLoggingHosts per impostare l"elenco desiderato di host di registrazione correnti e nuovi.' 
+---
+= Server di loggingServer
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto loggingServer contiene informazioni sugli host di registrazione configurati per il cluster di storage. È possibile utilizzare `GetRemoteLoggingHosts` per determinare quali sono gli host di registrazione correnti e utilizzarli `SetRemoteLoggingHosts` per impostare l'elenco desiderato di host di registrazione correnti e nuovi.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+host
+ a| 
+Indirizzo IP del server di log.
+ a| 
+stringa
+
+
+
+ a| 
+porta
+ a| 
+Numero di porta utilizzato per comunicare con il server di log.
+ a| 
+intero
+
+|===

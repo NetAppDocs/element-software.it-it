@@ -1,0 +1,44 @@
+---
+permalink: storage/task_system_manage_nodes_view_individual_node_details.html 
+sidebar: sidebar 
+keywords: nodes, view, details, vlan, mip, cip, sip, virtual id 
+summary: 'È possibile visualizzare i dettagli dei singoli nodi, ad esempio i tag di servizio, i dettagli dei dischi e la grafica per l"utilizzo e le statistiche dei dischi. La pagina nodi della scheda Cluster fornisce la colonna Version (versione) in cui è possibile visualizzare la versione software di ciascun nodo.' 
+---
+= Visualizza i dettagli del nodo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile visualizzare i dettagli dei singoli nodi, ad esempio i tag di servizio, i dettagli dei dischi e la grafica per l'utilizzo e le statistiche dei dischi. La pagina nodi della scheda Cluster fornisce la colonna Version (versione) in cui è possibile visualizzare la versione software di ciascun nodo.
+
+.Fasi
+. Fare clic su *Cluster* > *Nodes*.
+. Per visualizzare i dettagli di un nodo specifico, fare clic sull'icona *azioni* di un nodo.
+. Fare clic su *View Details* (Visualizza dettagli).
+. Esaminare i dettagli del nodo:
++
+** *Node ID*: L'ID generato dal sistema per il nodo.
+** *Node Name* (Nome nodo): Il nome host del nodo.
+** *IOPS 4k disponibili*: Gli IOPS configurati per il nodo.
+** *Node role*: Ruolo del nodo nel cluster. Valori possibili:
++
+*** Cluster Master: Nodo che esegue attività amministrative a livello di cluster e contiene MVIP e SVIP.
+*** Ensemble Node: Nodo che partecipa al cluster. Esistono 3 o 5 nodi di ensemble a seconda delle dimensioni del cluster.
+*** Fibre Channel: Un nodo nel cluster.
+
+
+** *Node Type*: Il tipo di modello del nodo.
+** *Active Drives*: Il numero di dischi attivi nel nodo.
+** *IP di gestione*: L'indirizzo IP di gestione (MIP) assegnato al nodo per le attività di amministrazione della rete da 1 GbE o 10 GbE.
+** *Cluster IP*: L'indirizzo IP del cluster (CIP) assegnato al nodo utilizzato per la comunicazione tra i nodi dello stesso cluster.
+** *Storage IP*: L'indirizzo IP (SIP) dello storage assegnato al nodo utilizzato per il rilevamento della rete iSCSI e per tutto il traffico della rete dati.
+** *Management VLAN ID* (ID VLAN di gestione): L'ID virtuale per la rete locale di gestione.
+** *Storage VLAN ID*: L'ID virtuale per la rete locale di storage.
+** *Version*: La versione del software in esecuzione su ciascun nodo.
+** *Replication Port* (porta di replica): La porta utilizzata sui nodi per la replica remota.
+** *Service Tag*: Numero di service tag univoco assegnato al nodo.
+
+
+

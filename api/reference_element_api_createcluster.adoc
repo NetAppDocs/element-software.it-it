@@ -1,0 +1,222 @@
+---
+permalink: api/reference_element_api_createcluster.html 
+sidebar: sidebar 
+keywords: CreateCluster,cluster,create,creating,initialize,initializing 
+summary: 'È possibile utilizzare il metodo CreateCluster per inizializzare il nodo in un cluster che ha la proprietà degli indirizzi "mvip" e "svip". Ogni nuovo cluster viene inizializzato utilizzando l"IP di gestione del primo nodo del cluster. Questo metodo aggiunge automaticamente tutti i nodi configurati nel cluster. È necessario utilizzare questo metodo solo una volta ogni volta che viene inizializzato un nuovo cluster.' 
+---
+= CreateCluster
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `CreateCluster` metodo per inizializzare il nodo in un cluster che ha la proprietà degli indirizzi "mvip" e "svip". Ogni nuovo cluster viene inizializzato utilizzando l'IP di gestione (MIP) del primo nodo del cluster. Questo metodo aggiunge automaticamente tutti i nodi configurati nel cluster. È necessario utilizzare questo metodo solo una volta ogni volta che viene inizializzato un nuovo cluster.
+
+
+NOTE: Dopo aver effettuato l'accesso al nodo master del cluster ed eseguito xref:reference_element_api_getbootstrapconfig.adoc[GetBootStrapConfig] Metodo per ottenere gli indirizzi IP per gli altri nodi che si desidera includere nel cluster, è possibile eseguire il metodo CreateCluster sul nodo master del cluster.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+AccetteEula
+ a| 
+Indicare l'accettazione del Contratto di licenza con l'utente finale al momento della creazione del cluster. Per accettare l'EULA, impostare questo parametro su true.
+ a| 
+booleano
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+attributi
+ a| 
+Elenco delle coppie nome-valore nel formato oggetto JSON.
+ a| 
+Oggetto JSON
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+EnableSoftwareEncryptionAtRest
+ a| 
+Attivare questo parametro per utilizzare la crittografia basata su software a riposo. Il valore predefinito è false su tutti i cluster. Una volta attivata, la crittografia software a riposo non può essere disattivata nel cluster.
+ a| 
+booleano
+ a| 
+vero
+ a| 
+No
+
+
+
+ a| 
+mvip
+ a| 
+Indirizzo IP mobile (virtuale) per il cluster sulla rete di gestione.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+nodi
+ a| 
+Indirizzi CIP/SIP dell'insieme iniziale di nodi che compongono il cluster. L'IP di questo nodo deve essere presente nell'elenco.
+ a| 
+array di stringhe
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+Numero d'ordine
+ a| 
+Numero ordine di vendita alfanumerico. Richiesto su piattaforme basate su software.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No (piattaforme basate su hardware)
+
+Sì (piattaforme basate su software)
+
+
+
+ a| 
+password
+ a| 
+Password iniziale per l'account di amministrazione del cluster.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+Numero di serie
+ a| 
+Numero di serie alfanumerico a nove cifre. Potrebbe essere richiesto sulle piattaforme basate su software.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No (piattaforme basate su hardware)
+
+Sì (piattaforme basate su software)
+
+
+
+ a| 
+svip
+ a| 
+Indirizzo IP mobile (virtuale) per il cluster sulla rete di storage (iSCSI).
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+nome utente
+ a| 
+Nome utente dell'amministratore del cluster.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+Sì
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo non ha valori restituiti.
+
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "method": "CreateCluster",
+  "params": {
+    "acceptEula": true,
+    "mvip": "10.0.3.1",
+    "svip": "10.0.4.1",
+    "username": "Admin1",
+    "password": "9R7ka4rEPa2uREtE",
+    "attributes": {
+      "clusteraccountnumber": "axdf323456"
+    },
+    "nodes": [
+      "10.0.2.1",
+      "10.0.2.2",
+      "10.0.2.3",
+      "10.0.2.4"
+    ]
+  },
+  "id": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+"id" : 1,
+"result" : {}
+}
+----
+
+
+== Novità dalla versione
+
+9,6
+
+[discrete]
+== Trova ulteriori informazioni
+
+* link:reference_element_api_getbootstrapconfig.html["GetBootstrapConfig"]
+* https://www.netapp.com/data-storage/solidfire/documentation/["Pagina delle risorse NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Documentazione per le versioni precedenti dei prodotti SolidFire ed Element di NetApp"^]
+

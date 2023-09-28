@@ -1,0 +1,36 @@
+---
+permalink: storage/concept_system_monitoring_and_troubleshooting.html 
+sidebar: sidebar 
+keywords: trouble, troubleshoot, monitor, element, alert, event 
+summary: È necessario monitorare il sistema a scopo diagnostico e ottenere informazioni sulle tendenze delle performance e sugli stati delle varie operazioni del sistema. Potrebbe essere necessario sostituire nodi o SSD per scopi di manutenzione. 
+---
+= Risolvere i problemi del sistema
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È necessario monitorare il sistema a scopo diagnostico e ottenere informazioni sulle tendenze delle performance e sugli stati delle varie operazioni del sistema. Potrebbe essere necessario sostituire nodi o SSD per scopi di manutenzione.
+
+* link:task_monitor_information_about_system_events.html["Visualizza informazioni sugli eventi di sistema"]
+* link:reference_monitor_status_of_running_tasks.html["Visualizzare lo stato delle attività in esecuzione"]
+* link:task_monitor_system_alerts.html["Visualizzare gli avvisi di sistema"]
+* link:task_monitor_node_performance_activity.html["Visualizzare l'attività delle performance dei nodi"]
+* link:task_monitor_volume_performance.html["Visualizza le performance dei volumi"]
+* link:task_monitor_iscsi_sessions.html["Visualizzare le sessioni iSCSI"]
+* link:task_monitor_fibre_channel_sessions.html["Visualizzare le sessioni Fibre Channel"]
+* link:concept_troubleshoot_drives.html["Risolvere i problemi relativi ai dischi"]
+* link:concept_troubleshoot_nodes.html["Risolvere i problemi dei nodi"]
+* link:concept_per_node_work_with_utilities.html["Utilizzo di utility per nodo per nodi di storage"]
+* link:concept_mnode_work_with_the_management_node.html["Lavorare con il nodo di gestione"]
+* link:concept_monitor_understand_cluster_fullness_levels.html["Comprendere i livelli di completezza del cluster"]
+
+
+
+
+== Per ulteriori informazioni
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
+

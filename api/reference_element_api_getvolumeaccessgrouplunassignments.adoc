@@ -1,0 +1,105 @@
+---
+permalink: api/reference_element_api_getvolumeaccessgrouplunassignments.html 
+sidebar: sidebar 
+keywords: volume,access,group,groups,LUN,mapping,assignment,get,getting,GetVolumeAccessGroupLunAssignments 
+summary: È possibile utilizzare il metodo GetVolumeAccessGroupLunAssignments per recuperare i dettagli sulle mappature LUN di un gruppo di accesso a un volume specificato. 
+---
+= GetVolumeAccessGroupLunAssignments
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `GetVolumeAccessGroupLunAssignments` Metodo per recuperare i dettagli sulle mappature LUN di un gruppo di accesso a un volume specificato.
+
+
+
+== Parametro
+
+Questo metodo ha il seguente parametro di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+VolumeAccessGroupID
+ a| 
+Un ID univoco del gruppo di accesso al volume utilizzato per restituire informazioni.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+Sì
+
+|===
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+VolumeAccessGroupLunAssignments
+ a| 
+Un elenco di tutte le porte Fibre Channel fisiche o una porta per un singolo nodo.
+ a| 
+Oggetto JSON
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+   "method": "GetVolumeAccessGroupLunAssignments",
+   "params": {
+      "volumeAccessGroupID": 5
+    },
+  "id" : 1
+   }
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+  "id" : 1,
+  "result" : {
+    "volumeAccessGroupLunAssignments" : {
+       "volumeAccessGroupID" : 5,
+       "lunAssignments" : [
+          {"volumeID" : 5, "lun" : 0},
+          {"volumeID" : 6, "lun" : 1},
+          {"volumeID" : 7, "lun" : 2},
+          {"volumeID" : 8, "lun" : 3}
+       ],
+       "deletedLunAssignments" : [
+           {"volumeID" : 44, "lun" : 44}
+       ]
+    }
+  }
+}
+----
+
+
+== Novità dalla versione
+
+9,6

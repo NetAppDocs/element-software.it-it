@@ -1,0 +1,23 @@
+---
+permalink: storage/task_replication_manage_volume_relationships.html 
+sidebar: sidebar 
+keywords: volume pairing reversal, volume pair, replication 
+summary: 'È possibile gestire le relazioni dei volumi in molti modi, ad esempio mettendo in pausa la replica, invertendo l"accoppiamento dei volumi, modificando la modalità di replica, eliminando una coppia di volumi o eliminando una coppia di cluster.' 
+---
+= Gestire le relazioni dei volumi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile gestire le relazioni dei volumi in molti modi, ad esempio mettendo in pausa la replica, invertendo l'accoppiamento dei volumi, modificando la modalità di replica, eliminando una coppia di volumi o eliminando una coppia di cluster.
+
+
+
+== Trova ulteriori informazioni
+
+* xref:task_replication_pause_replication.adoc[Mettere in pausa la replica]
+* xref:task_replication_change_the_mode.adoc[Modificare la modalità di replica]
+* xref:task_replication_delete_volume_pairs.adoc[Eliminare le coppie di volumi]
+

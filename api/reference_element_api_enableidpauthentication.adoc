@@ -1,0 +1,75 @@
+---
+permalink: api/reference_element_api_enableidpauthentication.html 
+sidebar: sidebar 
+keywords: IdP,idp,authentication,enable 
+summary: 'È possibile utilizzare il metodo EnableIdpAuthentication per abilitare il supporto per l"autenticazione utilizzando IDP di terze parti per il cluster. Una volta attivata l"autenticazione IdP, gli amministratori LDAP e del cluster non possono più accedere al cluster tramite interfacce utente supportate e le sessioni autenticate attive vengono invalidate/disconnesse. Solo gli utenti autenticati da IDP di terze parti possono accedere al cluster tramite le interfacce utente supportate.' 
+---
+= EnableIdpAuthentication
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `EnableIdpAuthentication` Metodo per abilitare il supporto per l'autenticazione utilizzando IDP di terze parti per il cluster. Una volta attivata l'autenticazione IdP, gli amministratori LDAP e del cluster non possono più accedere al cluster tramite interfacce utente supportate e le sessioni autenticate attive vengono invalidate/disconnesse. Solo gli utenti autenticati da IDP di terze parti possono accedere al cluster tramite le interfacce utente supportate.
+
+
+
+== Parametri
+
+Questo metodo ha il seguente parametro di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+ID configurazione idpID
+ a| 
+UUID per la configurazione IdP di terze parti. Se esiste una sola configurazione IdP, l'impostazione predefinita è quella di attivare tale configurazione. Se si dispone di una sola IdpConfiguration, non è necessario fornire il parametro idpConfigurationID.
+ a| 
+UUID
+ a| 
+Nessuno
+ a| 
+No
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo non ha valori restituiti.
+
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "method": "EnableIdpAuthentication",
+  "params": {
+    "idpConfigurationID": "f983c602-12f9-4c67-b214-bf505185cfed",
+  }
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+"result": {}
+}
+----
+
+
+== Novità dalla versione
+
+12,0

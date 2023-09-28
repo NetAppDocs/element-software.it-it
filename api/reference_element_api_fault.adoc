@@ -1,0 +1,174 @@
+---
+permalink: api/reference_element_api_fault.html 
+sidebar: sidebar 
+keywords: object,objects,fault 
+summary: 'L"oggetto fault contiene informazioni sugli errori rilevati nel cluster. Il metodo ListClusterFaults restituisce informazioni sugli errori del cluster.' 
+---
+= guasto
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto fault contiene informazioni sugli errori rilevati nel cluster. Il `ListClusterFaults` il metodo restituisce informazioni sugli errori del cluster.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+ID clusterFaultID
+ a| 
+L'ID univoco associato a ciascun guasto del cluster.
+ a| 
+intero
+
+
+
+ a| 
+codice
+ a| 
+Il codice di guasto per il guasto specifico rilevato. Per ulteriori dettagli, vedere Cluster Fault Codes (codici di errore del cluster).
+ a| 
+stringa
+
+
+
+ a| 
+dati
+ a| 
+Ulteriori informazioni specifiche sui guasti.
+ a| 
+Oggetto JSON
+
+
+
+ a| 
+data
+ a| 
+L'ora corrente nel formato UTC+0.
+ a| 
+Stringa ISO 8601
+
+
+
+ a| 
+dettagli
+ a| 
+La descrizione del guasto con ulteriori dettagli.
+ a| 
+stringa
+
+
+
+ a| 
+ID del driver
+ a| 
+Il primo ID del disco nell'elenco driveID. Se l'elenco driveID è vuoto (il che significa che non sono stati restituiti guasti che riguardano i dischi), questo valore è 0.
+ a| 
+intero
+
+
+
+ a| 
+ID del driver
+ a| 
+Un elenco di valori ID unità per le unità a cui si riferisce questo guasto. Incluso per i guasti relativi ai dischi. In caso contrario, si tratta di un array vuoto.
+ a| 
+array intero
+
+
+
+ a| 
+NodeHardwareFaultID
+ a| 
+L'identificatore assegnato a un guasto hardware sul cluster.
+ a| 
+intero
+
+
+
+ a| 
+ID NodeID
+ a| 
+L'ID del nodo a cui si riferisce questo guasto. Incluso per gli errori di nodo e disco, altrimenti impostato su 0.
+ a| 
+intero
+
+
+
+ a| 
+risolto
+ a| 
+Stato risolto del guasto. Valori possibili:
+
+* Vero: Il guasto non viene più rilevato.
+* Falso: Il guasto è ancora presente.
+
+ a| 
+booleano
+
+
+
+ a| 
+ResolvedDate
+ a| 
+La data e l'ora in cui il guasto è stato risolto.
+ a| 
+Stringa ISO 8601
+
+
+
+ a| 
+ID servizio
+ a| 
+Il servizio associato al guasto. Questo valore è "0" (zero) se il guasto non è associato a un servizio.
+ a| 
+intero
+
+
+
+ a| 
+severità
+ a| 
+La gravità del guasto. Valori possibili:
+
+* Attenzione: Si tratta di un problema minore. Il cluster funziona e gli aggiornamenti sono consentiti a questo livello di gravità.
+* Errore: Un errore che generalmente non dovrebbe influire sul servizio (ad eccezione del possibile peggioramento delle performance o perdita di ha). Alcune funzioni potrebbero essere disattivate.
+* Critico: Un guasto grave che influisce sul servizio. Il sistema non è in grado di fornire richieste API o i/o client ed è a rischio di perdita di dati.
+* BestPractice: Guasti attivati da una configurazione di sistema non ottimale.
+
+ a| 
+stringa
+
+
+
+ a| 
+tipo
+ a| 
+Il tipo di guasto. Valori possibili:
+
+* Nodo: Un guasto che interessa un intero nodo.
+* Drive (disco): Un guasto che interessa un singolo disco.
+* Cluster: Un errore che interessa l'intero cluster.
+* Service (Servizio): Un errore che interessa un servizio nel cluster.
+* Volume: Un errore che interessa un singolo volume.
+
+ a| 
+stringa
+
+|===
+
+
+== Trova ulteriori informazioni
+
+* xref:reference_element_api_listclusterfaults.adoc[ListClusterFaults]
+* link:../storage/reference_monitor_cluster_fault_codes.html["Codici di guasto del cluster"]
+

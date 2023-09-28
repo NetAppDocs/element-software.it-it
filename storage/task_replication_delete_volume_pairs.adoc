@@ -1,0 +1,20 @@
+---
+permalink: storage/task_replication_delete_volume_pairs.html 
+sidebar: sidebar 
+keywords: volume pairs, delete 
+summary: 'È possibile eliminare una coppia di volumi se si desidera rimuovere un"associazione di coppia tra due volumi.' 
+---
+= Eliminare le coppie di volumi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile eliminare una coppia di volumi se si desidera rimuovere un'associazione di coppia tra due volumi.
+
+. Selezionare *Data Protection* > *Volume Pairs*.
+. Fare clic sull'icona Actions (azioni) per la coppia di volumi che si desidera eliminare.
+. Fare clic su *Delete* (Elimina).
+. Confermare il messaggio.
+

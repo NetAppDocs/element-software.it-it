@@ -1,0 +1,191 @@
+---
+permalink: api/reference_element_api_drivestats.html 
+sidebar: sidebar 
+keywords: object,objects,driveStats 
+summary: 'L"oggetto driveStats contiene misurazioni di attività di alto livello per un singolo disco. È possibile recuperare le informazioni di misurazione con il metodo API GetDriveStats.' 
+---
+= DriveStats
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto driveStats contiene misurazioni di attività di alto livello per un singolo disco. È possibile recuperare le informazioni di misurazione con il metodo API `GetDriveStats`.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+ActiveSessions
+ a| 
+Numero di sessioni iSCSI che attualmente utilizzano questo disco (presente solo per i dischi metadati).
+ a| 
+intero
+
+
+
+ a| 
+ID del driver
+ a| 
+ID univoco del disco nel cluster.
+ a| 
+intero
+
+
+
+ a| 
+FailedDieCount
+ a| 
+Numero di elementi hardware del disco guasti.
+ a| 
+intero
+
+
+
+ a| 
+LifeRemainingPercent
+ a| 
+Indicatore di usura dei supporti dell'unità.
+ a| 
+intero
+
+
+
+ a| 
+LifetimeReadBytes
+ a| 
+Byte totali letti da questo disco per la durata del disco.
+ a| 
+intero
+
+
+
+ a| 
+Lifetime WriteBytes
+ a| 
+Byte totali scritti su questo disco per tutta la durata del disco.
+ a| 
+intero
+
+
+
+ a| 
+PowerOnHours
+ a| 
+Numero di ore di accensione del disco.
+ a| 
+intero
+
+
+
+ a| 
+ReadByte
+ a| 
+Byte totali letti dal disco a causa delle operazioni del client.
+ a| 
+intero
+
+
+
+ a| 
+ReadOps
+ a| 
+Operazioni di lettura totali sul disco dovute alle operazioni del client.
+ a| 
+intero
+
+
+
+ a| 
+RiallocatedSettori
+ a| 
+Numero di settori danneggiati sostituiti in questo disco.
+ a| 
+intero
+
+
+
+ a| 
+ReserveCapacityPercent
+ a| 
+La capacità di riserva disponibile del disco.
+ a| 
+intero
+
+
+
+ a| 
+data e ora
+ a| 
+L'ora corrente nel formato UTC+0.
+ a| 
+Stringa di dati ISO 8601
+
+
+
+ a| 
+Capacità totale
+ a| 
+Capacità totale del disco, in byte.
+ a| 
+intero
+
+
+
+ a| 
+Uncorrectable Errors (errori non correggibili)
+ a| 
+Il valore degli errori non correggibili riportato dal sistema DI monitoraggio Smart (Self-Monitoring, Analysis and Reporting Technology) nel disco.
+ a| 
+intero
+
+
+
+ a| 
+UsedCapacity
+ a| 
+Capacità utilizzata del disco, in byte.
+ a| 
+intero
+
+
+
+ a| 
+UsedMemory
+ a| 
+Quantità di memoria attualmente utilizzata dal nodo che ospita questo disco.
+ a| 
+intero
+
+
+
+ a| 
+WriteByte
+ a| 
+Byte totali scritti sul disco a causa dell'attività del client.
+ a| 
+intero
+
+
+
+ a| 
+SwriteOps
+ a| 
+Operazioni totali di scrittura sul disco a causa dell'attività del client.
+ a| 
+intero
+
+|===
+
+
+== Trova ulteriori informazioni
+
+xref:reference_element_api_getdrivestats.adoc[GetDriveStats]

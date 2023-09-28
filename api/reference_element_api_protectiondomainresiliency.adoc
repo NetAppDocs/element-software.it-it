@@ -1,0 +1,51 @@
+---
+permalink: api/reference_element_api_protectiondomainresiliency.html 
+sidebar: sidebar 
+keywords: object,objects,protectionDomainResiliency 
+summary: 'L"oggetto ProtectionDomainResiliency contiene lo stato di resilienza di questo cluster di storage. La resilienza indica la capacità del cluster di storage di risanare automaticamente da uno o più guasti, tutti all"interno di un singolo dominio di protezione del tipo di dominio di protezione associato. Un cluster di storage viene considerato healed quando può continuare a leggere e scrivere i dati attraverso il guasto di un singolo nodo di storage (uno stato noto come tolleranza del nodo).' 
+---
+= ProtectionDomainResiliency
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto ProtectionDomainResiliency contiene lo stato di resilienza di questo cluster di storage. La resilienza indica la capacità del cluster di storage di risanare automaticamente da uno o più guasti, tutti all'interno di un singolo dominio di protezione del tipo di dominio di protezione associato. Un cluster di storage viene considerato healed quando può continuare a leggere e scrivere i dati attraverso il guasto di un singolo nodo di storage (uno stato noto come tolleranza del nodo).
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+ProtectionSchemeResilienze
+ a| 
+Un elenco di oggetti (uno per ogni schema di protezione) contenente informazioni sulla resilienza degli errori per il tipo di dominio di protezione associato.
+ a| 
+xref:reference_element_api_protectionschemeresiliency.adoc[ProtectionSchemeResiliency] array
+
+
+
+ a| 
+SingleFailureThresholdBytesForBlockData
+ a| 
+Il numero massimo di byte che è possibile memorizzare nel cluster di storage prima di perdere la capacità di riparare automaticamente a uno stato di tolleranza del nodo.
+ a| 
+intero
+
+
+
+ a| 
+AbleFailuresForEnsemble
+ a| 
+Il numero previsto di errori simultanei che possono verificarsi senza perdere la capacità di correggere automaticamente uno stato di tolleranza del nodo per il quorum dell'ensemble.
+ a| 
+intero
+
+|===

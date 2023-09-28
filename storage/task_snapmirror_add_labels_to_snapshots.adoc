@@ -1,0 +1,31 @@
+---
+permalink: storage/task_snapmirror_add_labels_to_snapshots.html 
+sidebar: sidebar 
+keywords: snapmirror labels, add labels to snapshots, specify retention policies, group snapshots 
+summary: 'Le etichette SnapMirror specificano il criterio di conservazione delle snapshot sull"endpoint SnapMirror. È possibile aggiungere etichette alle istantanee e raggruppare le istantanee.' 
+---
+= Aggiungere le etichette SnapMirror alle snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le etichette SnapMirror specificano il criterio di conservazione delle snapshot sull'endpoint SnapMirror. È possibile aggiungere etichette alle istantanee e raggruppare le istantanee.
+
+È possibile visualizzare le etichette disponibili da una finestra di dialogo relazione SnapMirror esistente o da Gestore di sistema NetApp ONTAP.
+
+
+IMPORTANT: Quando si aggiunge un'etichetta a uno snapshot di gruppo, le etichette esistenti alle singole istantanee vengono sovrascritte.
+
+.Di cosa hai bisogno
+* SnapMirror è attivato sul cluster.
+* L'etichetta che si desidera aggiungere esiste già in ONTAP.
+
+
+.Fasi
+. Fare clic su *Data Protection* > *Snapshot* o sulla pagina *Group Snapshot*.
+. Fare clic sull'icona *Actions* per lo snapshot o lo snapshot di gruppo a cui si desidera aggiungere un'etichetta SnapMirror.
+. Nella finestra di dialogo *Edit Snapshot* (Modifica snapshot), inserire il testo nel campo *SnapMirror Label* (etichetta SnapMirror). L'etichetta deve corrispondere all'etichetta di una regola nel criterio applicato alla relazione SnapMirror.
+. Fare clic su *Save Changes* (Salva modifiche).
+

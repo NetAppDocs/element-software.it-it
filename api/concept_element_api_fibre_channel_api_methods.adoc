@@ -1,0 +1,29 @@
+---
+permalink: api/concept_element_api_fibre_channel_api_methods.html 
+sidebar: sidebar 
+keywords: fibre,channel,method,API,fibre channel 
+summary: È possibile utilizzare i metodi API Fibre Channel per aggiungere, modificare o rimuovere i membri del nodo Fibre Channel di un cluster di storage. 
+---
+= Metodi API Fibre Channel
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare i metodi API Fibre Channel per aggiungere, modificare o rimuovere i membri del nodo Fibre Channel di un cluster di storage.
+
+* xref:reference_element_api_getvolumeaccessgrouplunassignments.adoc[GetVolumeAccessGroupLunAssignments]
+* xref:reference_element_api_listfibrechannelportinfo.adoc[ListFiberChannelPortInfo]
+* xref:reference_element_api_listfibrechannelsessions.adoc[ListFiberChannelSessions]
+* xref:reference_element_api_listnodefibrechannelportinfo.adoc[ListNodeFibreChannelPortInfo]
+* xref:reference_element_api_modifyvolumeaccessgrouplunassignments.adoc[ModifyVolumeAccessGroupLunAssignments]
+
+
+
+
+== Trova ulteriori informazioni
+
+* https://www.netapp.com/data-storage/solidfire/documentation/["Pagina delle risorse NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Documentazione per le versioni precedenti dei prodotti SolidFire ed Element di NetApp"^]
+

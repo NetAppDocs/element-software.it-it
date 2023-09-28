@@ -1,0 +1,200 @@
+---
+permalink: hardware/task_sfseries_driverepl.html 
+sidebar: sidebar 
+keywords: SSDs, drives, replacement, sf-series, nodes 
+summary: È possibile sostituire a caldo un disco a stato solido guasto con un disco sostitutivo. 
+---
+= Sostituire le unità per i nodi di storage della serie SF
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile sostituire a caldo un disco a stato solido guasto con un disco sostitutivo.
+
+.Di cosa hai bisogno
+* Si dispone di un disco sostitutivo.
+* Si dispone di un braccialetto per le scariche elettrostatiche (ESD) o si sono prese altre precauzioni antistatiche.
+* Hai contattato il supporto NetApp per verificare che l'SSD debba essere sostituito e per ricevere assistenza con la procedura di risoluzione corretta.
++
+Quando si contatta il supporto NetApp, è necessario il codice di matricola o il numero di serie. Il supporto collaborerà con te per ottenere un disco sostitutivo in base al tuo Service Level Agreement.
+
+
+
+.A proposito di questa attività
+Le istruzioni si applicano ai seguenti modelli di nodi di storage SolidFire:
+
+* SF2405
+* SF4805
+* SF9605
+* SF9608
+* SF19210
+* SF38410
+
+
+[NOTE]
+====
+A seconda della versione del software Element in uso, i seguenti nodi non sono supportati:
+
+* A partire dai nodi storage Element 12,7, SF2405 e SF9608.
+* A partire dai nodi storage di 12,0, SF3010, SF6010 e SF9010 elementi.
+
+
+====
+La seguente figura mostra la posizione delle unità in uno chassis SF9605:
+
+image::../media/sf_drives.gif[Questa figura mostra i dischi nello chassis SolidFire.]
+
+
+NOTE: La figura precedente è un esempio. SF9608 ha un diverso layout dei dischi che include solo otto dischi numerati da uno a otto, da sinistra a destra.
+
+Lo slot 0 contiene il disco di metadati per il nodo. Se si sta sostituendo l'unità nello slot 0, è necessario applicare l'adesivo incluso nella scatola di spedizione sull'unità sostitutiva, in modo da poterla identificare separatamente dal resto.
+
+[NOTE]
+====
+Seguire queste Best practice durante la gestione dei dischi:
+
+* Evitare le scariche elettrostatiche (ESD) mantenendo l'unità nella busta ESD fino a quando non si è pronti per l'installazione.
+* Non inserire utensili metallici o coltelli nel sacchetto ESD.
+* Aprire il sacchetto ESD manualmente o tagliare la parte superiore con un paio di forbici.
+* Conservare il sacchetto ESD e il materiale di imballaggio nel caso in cui sia necessario restituire un'unità in un secondo momento.
+* Indossare sempre un braccialetto antistatico collegato a terra su una superficie non verniciata dello chassis.
+* Utilizzare sempre entrambe le mani durante la rimozione, l'installazione o il trasporto di un disco.
+* Non forzare mai un disco nello chassis.
+* Non impilare i dischi l'uno sull'altro.
+* Utilizzare sempre imballaggi approvati per la spedizione delle unità.
+
+
+====
+Ecco una panoramica di alto livello dei passaggi:
+
+* <<Rimuovere l'unità dal cluster>>
+* <<Sostituire l'unità dal telaio>>
+* <<Aggiungere l'unità al cluster>>
+
+
+
+
+== Rimuovere l'unità dal cluster
+
+Il sistema SolidFire mette un disco in uno stato di errore se l'autodiagnosi del disco indica al nodo che si è verificato un errore o se la comunicazione con il disco si interrompe per cinque minuti e mezzo o più. Il sistema visualizza un elenco dei dischi guasti. Rimuovere un disco guasto dall'elenco dei dischi guasti nel software NetApp Element.
+
+.Fasi
+. Nell'interfaccia utente di Element, selezionare *Cluster* > *Drives*.
+. Selezionare *Failed* per visualizzare l'elenco dei dischi guasti.
+. Annotare il numero di slot del disco guasto.
++
+Queste informazioni sono necessarie per individuare il disco guasto nello chassis.
+
+. Rimuovere il disco guasto utilizzando uno dei seguenti metodi:
++
+[cols="2*"]
+|===
+| Opzione | Fasi 
+
+
+ a| 
+Per rimuovere singoli dischi
+ a| 
+.. Selezionare *azioni* per l'unità che si desidera rimuovere.
+.. Selezionare *Rimuovi*.
+
+
+
+
+ a| 
+Per rimuovere più dischi
+ a| 
+.. Selezionare tutte le unità che si desidera rimuovere e selezionare *azioni in blocco*.
+.. Selezionare *Rimuovi*.
+
+
+|===
+
+
+
+
+== Sostituire l'unità dal telaio
+
+Dopo aver rimosso un disco guasto dall'elenco dei dischi guasti nell'interfaccia utente di Element, è possibile sostituire fisicamente il disco guasto dallo chassis.
+
+.Fasi
+. Disimballare l'unità sostitutiva e posizionarla su una superficie piana e priva di scariche elettrostatiche vicino al rack.
++
+Conservare il materiale di imballaggio per quando si restituisce il disco guasto a NetApp.
+
+. Far corrispondere il numero di slot del disco guasto dell'interfaccia utente Element con il numero sullo chassis.
++
+La seguente figura mostra un esempio di numerazione degli slot delle unità:
+
++
+image::../media/sf_series_drive_numbers.gif[Questa figura mostra la numerazione dei dischi per i nodi di storage SolidFire.]
+
++
+[cols="2*"]
+|===
+| Elemento | Descrizione 
+
+
+ a| 
+1
+ a| 
+Numeri degli slot delle unità
+
+|===
+. Premere il cerchio rosso sull'unità che si desidera rimuovere per rilasciare l'unità.
++
+La chiusura a scatto si apre.
+
+. Estrarre l'unità dallo chassis e posizionarla su una superficie piana e priva di elettricità statica.
+. Premere il cerchio rosso sull'unità sostitutiva prima di inserirla nello slot.
+. Inserire l'unità sostitutiva e premere il cerchio rosso per chiudere il fermo.
+. Informare il supporto NetApp in merito alla sostituzione del disco.
++
+Il supporto NetApp fornirà istruzioni per la restituzione del disco guasto.
+
+
+
+
+
+== Aggiungere l'unità al cluster
+
+Dopo aver installato un nuovo disco nello chassis, viene registrato come disponibile. È necessario aggiungere il disco al cluster utilizzando l'interfaccia utente Element prima che possa partecipare al cluster.
+
+.Fasi
+. Nell'interfaccia utente di Element, fare clic su *Cluster* > *Drives*.
+. Fare clic su *Available* (disponibile) per visualizzare l'elenco dei dischi disponibili.
+. Scegliere una delle seguenti opzioni per aggiungere dischi:
++
+[cols="2*"]
+|===
+| Opzione | Fasi 
+
+
+ a| 
+Per aggiungere singoli dischi
+ a| 
+.. Selezionare il pulsante *azioni* dell'unità che si desidera aggiungere.
+.. Selezionare *Aggiungi*.
+
+
+
+
+ a| 
+Per aggiungere più dischi
+ a| 
+.. Selezionare le caselle di controllo delle unità da aggiungere, quindi selezionare *azioni in blocco*.
+.. Selezionare *Aggiungi*.
+
+
+|===
+
+
+
+
+== Trova ulteriori informazioni
+
+* https://www.netapp.com/data-storage/solidfire/documentation/["Pagina delle risorse NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Documentazione per le versioni precedenti dei prodotti SolidFire ed Element di NetApp"^]
+

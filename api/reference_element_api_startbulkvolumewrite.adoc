@@ -1,0 +1,172 @@
+---
+permalink: api/reference_element_api_startbulkvolumewrite.html 
+sidebar: sidebar 
+keywords: volume,bulk,start,starting,write,session,startbulkvolumewrite 
+summary: È possibile utilizzare il metodo StartBulkVolumeWrite per avviare una sessione di scrittura su un volume specifico. 
+---
+= StartBulkVolumeWrite
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `StartBulkVolumeWrite` metodo per avviare una sessione di scrittura di un volume in blocco su un volume specificato.
+
+Solo due processi di volume in blocco possono essere eseguiti contemporaneamente su un volume. Quando si inizializza la sessione, i dati vengono scritti in un volume di storage Element da un'origine di backup esterna. L'accesso ai dati esterni viene effettuato da un server Web in esecuzione su un nodo di storage Element. Le informazioni sull'interazione con il server per l'accesso ai dati esterni vengono trasmesse da uno script in esecuzione sul sistema di storage.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+formato
+ a| 
+Il formato dei dati del volume. Può essere:
+
+* `uncompressed`: Ogni byte del volume viene restituito senza compressione.
+* `native`: Vengono restituiti dati opachi più piccoli e memorizzati e scritti in modo più efficiente su una successiva scrittura di volume in blocco.
+
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+ID volume
+ a| 
+L'ID del volume in cui si desidera eseguire la scrittura.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+script
+ a| 
+Il nome di uno script eseguibile. Se non viene fornito alcun nome di script, la chiave e l'URL sono necessari per accedere ai nodi di storage degli elementi. Lo script viene eseguito sul nodo primario e la chiave e l'URL vengono restituiti allo script in modo da poter contattare il server Web locale.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+Parametri di scriptParameters
+ a| 
+Parametri JSON da passare allo script.
+ a| 
+Oggetto JSON
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+attributi
+ a| 
+Attributi JSON per il processo di volume in blocco.
+ a| 
+Oggetto JSON
+ a| 
+Nessuno
+ a| 
+No
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo ha i seguenti valori restituiti:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+AsyncHandle
+ a| 
+L'ID del processo asincrono da controllare per il completamento.
+ a| 
+intero
+
+
+
+ a| 
+chiave
+ a| 
+Chiave opaca che identifica in modo univoco la sessione.
+ a| 
+stringa
+
+
+
+ a| 
+url
+ a| 
+URL per accedere al server Web del nodo.
+ a| 
+stringa
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+   "method": "StartBulkVolumeWrite",
+   "params": {
+      "volumeID" : 5,
+      "format"  : "native",
+   },
+   "id": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+   "id" : 1,
+   "result" : {
+      "asyncHandle" : 1,
+      "key" : "11eed8f086539205beeaadd981aad130",
+      "url" : "https://127.0.0.1:44000/"
+   }
+}
+----
+
+
+== Novità dalla versione
+
+9,6

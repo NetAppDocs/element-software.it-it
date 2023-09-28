@@ -1,0 +1,18 @@
+---
+permalink: concepts/concept_intro_management_node.html 
+sidebar: sidebar 
+keywords: what is, element mnode, management node, mnode 
+summary: 'Il nodo di gestione (mNode) è una macchina virtuale che viene eseguita in parallelo con uno o più cluster di storage basati su software Element. Viene utilizzato per aggiornare e fornire servizi di sistema, tra cui monitoraggio e telemetria, gestire le risorse e le impostazioni del cluster, eseguire test e utility di sistema e abilitare l"accesso al supporto NetApp per la risoluzione dei problemi.' 
+---
+= Nodo di gestione per software Element
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il link:../mnode/task_mnode_work_overview.html["Nodo di gestione (mNode)"] È una macchina virtuale che viene eseguita in parallelo con uno o più cluster di storage basati su software Element. Viene utilizzato per aggiornare e fornire servizi di sistema, tra cui monitoraggio e telemetria, gestire le risorse e le impostazioni del cluster, eseguire test e utility di sistema e abilitare l'accesso al supporto NetApp per la risoluzione dei problemi.
+
+Il nodo di gestione interagisce con un cluster di storage per eseguire azioni di gestione, ma non è membro del cluster di storage. I nodi di gestione raccolgono periodicamente informazioni sul cluster tramite chiamate API e inviano tali informazioni a Active IQ per il monitoraggio remoto (se abilitato). I nodi di gestione sono inoltre responsabili del coordinamento degli aggiornamenti software dei nodi del cluster.
+
+A partire dalla release Element 11.3, il nodo di gestione funziona come un host microservice, consentendo aggiornamenti più rapidi di servizi software selezionati al di fuori delle release principali. Questi microservizi o. link:../concepts/concept_intro_management_services_for_afa.html["servizi di gestione"] vengono aggiornati frequentemente come bundle di servizi.

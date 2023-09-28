@@ -1,0 +1,17 @@
+---
+permalink: storage/concept_snapmirror_disaster_recovery.html 
+sidebar: sidebar 
+keywords: dr, disaster recovery, snapmirror 
+summary: In caso di problemi con un volume o un cluster che esegue il software NetApp Element, utilizzare la funzionalità SnapMirror per interrompere la relazione e il failover verso il volume di destinazione. 
+---
+= Disaster recovery con SnapMirror
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+In caso di problemi con un volume o un cluster che esegue il software NetApp Element, utilizzare la funzionalità SnapMirror per interrompere la relazione e il failover verso il volume di destinazione.
+
+
+NOTE: Se il cluster originale è completamente guasto o non esiste, contattare il supporto NetApp per ulteriore assistenza.

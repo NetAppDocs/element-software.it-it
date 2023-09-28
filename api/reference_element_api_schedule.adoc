@@ -1,0 +1,220 @@
+---
+permalink: api/reference_element_api_schedule.html 
+sidebar: sidebar 
+keywords: object,objects,schedule 
+summary: 'L"oggetto schedule contiene informazioni su una pianificazione creata per creare autonomamente un"istantanea di un volume. È possibile recuperare le informazioni di pianificazione per tutte le pianificazioni con il metodo API ListSchedules.' 
+---
+= pianificazione
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto schedule contiene informazioni su una pianificazione creata per creare autonomamente un'istantanea di un volume. È possibile recuperare le informazioni di pianificazione per tutti i programmi con `ListSchedules` Metodo API.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+attributi
+ a| 
+Indica la frequenza dell'occorrenza della pianificazione. Valori possibili:
+
+* Giorno della settimana
+* Giorno del mese
+* Intervallo di tempo
+
+ a| 
+Oggetto JSON
+
+
+
+ a| 
+HasError
+ a| 
+Indica se la pianificazione presenta o meno errori. Valori possibili:
+
+* vero
+* falso
+
+ a| 
+booleano
+
+
+
+ a| 
+ore
+ a| 
+Mostra le ore che trascorreranno prima della creazione dello snapshot successivo. I valori possibili sono compresi tra 0 e 24.
+ a| 
+intero
+
+
+
+ a| 
+LastRunStatus
+ a| 
+Indica lo stato dell'ultimo snapshot pianificato. Valori possibili:
+
+* Successo
+* Non riuscito
+
+ a| 
+stringa
+
+
+
+ a| 
+LastRunTimeStart
+ a| 
+Indica l'ultima volta in cui è stata avviata la pianificazione.
+ a| 
+Stringa di dati ISO 8601
+
+
+
+ a| 
+minuti
+ a| 
+Mostra i minuti che trascorreranno prima della creazione dello snapshot successivo. I valori possibili sono compresi tra 0 e 59.
+ a| 
+intero
+
+
+
+ a| 
+monthdays
+ a| 
+Indica i giorni del mese in cui verrà creata una snapshot.
+ a| 
+array
+
+
+
+ a| 
+in pausa
+ a| 
+Indica se la pianificazione è in pausa o meno. Valori possibili:
+
+* vero
+* falso
+
+ a| 
+booleano
+
+
+
+ a| 
+ricorrente
+ a| 
+Indica se la pianificazione è ricorrente o meno. Valori possibili:
+
+* vero
+* falso
+
+ a| 
+booleano
+
+
+
+ a| 
+RunNextInterval
+ a| 
+Indica se la pianificazione verrà eseguita o meno alla successiva attivazione dello scheduler. Se true, la pianificazione verrà eseguita la prossima volta che lo scheduler sarà attivo, quindi questo valore viene reimpostato su false. Valori possibili:
+
+* vero
+* falso
+
+ a| 
+booleano
+
+
+
+ a| 
+ScheduleId
+ a| 
+L'ID univoco della pianificazione.
+ a| 
+intero
+
+
+
+ a| 
+ScheduleInfo
+ a| 
+Include il nome univoco assegnato alla pianificazione, il periodo di conservazione per lo snapshot creato e l'ID del volume del volume da cui è stato creato lo snapshot.
+ a| 
+Oggetto JSON
+
+
+
+ a| 
+Nome scheduleName
+ a| 
+Il nome univoco assegnato alla pianificazione.
+ a| 
+stringa
+
+
+
+ a| 
+Tipo di scheduleType
+ a| 
+Al momento sono supportati solo i tipi di snapshot pianificati.
+ a| 
+stringa
+
+
+
+ a| 
+SnapMirrorLabel
+ a| 
+L'etichetta SnapMirrorLabel da applicare all'istantanea o all'istantanea di gruppo creata, contenuta in scheduleInfo. Se non impostato, questo valore è nullo.
+ a| 
+stringa
+
+
+
+ a| 
+Data di inizio
+ a| 
+Indica la data alla prima volta in cui inizia o inizierà il programma; formattata in ora UTC.
+ a| 
+Stringa di dati ISO 8601
+
+
+
+ a| 
+ToDeleted
+ a| 
+Indica se la pianificazione è contrassegnata per l'eliminazione. Valori possibili:
+
+* vero
+* falso
+
+ a| 
+booleano
+
+
+
+ a| 
+giorni feriali
+ a| 
+Indica i giorni della settimana in cui verrà creata una snapshot.
+ a| 
+array
+
+|===
+
+
+== Trova ulteriori informazioni
+
+xref:reference_element_api_listschedules.adoc[Elenchi]

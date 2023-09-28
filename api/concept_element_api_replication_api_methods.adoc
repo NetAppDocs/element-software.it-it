@@ -1,0 +1,36 @@
+---
+permalink: api/concept_element_api_replication_api_methods.html 
+sidebar: sidebar 
+keywords: replication,api,methods 
+summary: 'I metodi API di replica consentono di collegare due cluster per la protezione continua dei dati (CDP). Quando si collegano due cluster, i volumi attivi all"interno di un cluster possono essere replicati in modo continuo in un secondo cluster per fornire il ripristino dei dati. Associando i volumi per la replica, è possibile proteggere i dati da eventi che potrebbero renderli inaccessibili.' 
+---
+= Metodi API di replica
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+I metodi API di replica consentono di collegare due cluster per la protezione continua dei dati (CDP). Quando si collegano due cluster, i volumi attivi all'interno di un cluster possono essere replicati in modo continuo in un secondo cluster per fornire il ripristino dei dati. Associando i volumi per la replica, è possibile proteggere i dati da eventi che potrebbero renderli inaccessibili.
+
+* xref:reference_element_api_cluster_pairing_order_of_operations.adoc[Ordine delle operazioni di abbinamento dei cluster]
+* xref:reference_element_api_volume_pairing_order_of_operations.adoc[Ordine delle operazioni di abbinamento dei volumi]
+* xref:reference_element_api_supported_modes_of_replication.adoc[Modalità di replica supportate per i cluster accoppiati]
+* xref:reference_element_api_completeclusterpairing.adoc[CompleteClusterPairing]
+* xref:reference_element_api_completevolumepairing.adoc[CompleteVolumePairing]
+* xref:reference_element_api_listclusterpairs.adoc[ListClusterPairs]
+* xref:reference_element_api_listactivepairedvolumes.adoc[ListActivePairedVolumes]
+* xref:reference_element_api_modifyvolumepair.adoc[ModifyVolumePair]
+* xref:reference_element_api_removeclusterpair.adoc[RemoveClusterPair]
+* xref:reference_element_api_removevolumepair.adoc[RemoveVolumePair]
+* xref:reference_element_api_startclusterpairing.adoc[StartClusterPairing]
+* xref:reference_element_api_startvolumepairing.adoc[StartVolumePairing]
+
+
+
+
+== Trova ulteriori informazioni
+
+* https://www.netapp.com/data-storage/solidfire/documentation/["Pagina delle risorse NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Documentazione per le versioni precedenti dei prodotti SolidFire ed Element di NetApp"^]
+

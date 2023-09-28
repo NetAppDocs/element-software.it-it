@@ -1,0 +1,26 @@
+---
+permalink: api/concept_element_api_snapshots_overview.html 
+sidebar: sidebar 
+keywords: snapshot,overview 
+summary: Uno snapshot di un volume è una copia point-in-time di un volume. È possibile utilizzare le snapshot per riportare un volume nello stato in cui si trovava al momento della creazione dello snapshot. 
+---
+= Panoramica delle istantanee
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Uno snapshot di un volume è una copia point-in-time di un volume. È possibile utilizzare le snapshot per riportare un volume nello stato in cui si trovava al momento della creazione dello snapshot.
+
+È possibile raggruppare le snapshot dei volumi in modo che sia possibile eseguire il backup o il rollback dei volumi correlati in modo coerente. Uno snapshot di gruppo acquisisce un'immagine point-in-time di tutti i file di slice del volume. È quindi possibile utilizzare l'immagine per eseguire il rollback di un gruppo di volumi in uno stato point-in-time e garantire che tutti i dati siano coerenti in tutti i volumi del gruppo.
+
+È possibile pianificare le snapshot dei volumi in modo che vengano eseguite autonomamente a intervalli definiti. È possibile definire gli intervalli in base all'ora, ai giorni della settimana o ai giorni del mese. È inoltre possibile utilizzare snapshot pianificate per garantire il backup degli snapshot sullo storage remoto a scopo di archiviazione.
+
+
+
+== Trova ulteriori informazioni
+
+* https://www.netapp.com/data-storage/solidfire/documentation/["Pagina delle risorse NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Documentazione per le versioni precedenti dei prodotti SolidFire ed Element di NetApp"^]
+

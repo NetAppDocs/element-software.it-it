@@ -1,0 +1,93 @@
+---
+permalink: api/reference_element_api_addkeyservertoproviderkmip.html 
+sidebar: sidebar 
+keywords: KMIP,key server,assigning to key provider,assign,addkeyservertoproviderkmip 
+summary: 'È possibile utilizzare il metodo AddKeyServerToProviderKmip per assegnare un server di chiavi KMIP (Key Management Interoperability Protocol) al provider di chiavi specificato. Durante l"assegnazione, il server viene contattato per verificarne la funzionalità. Se il server chiavi specificato è già assegnato al provider di chiavi specificato, non viene eseguita alcuna azione e non viene restituito alcun errore. È possibile rimuovere l"assegnazione utilizzando il metodo RemoveKeyServerFromProviderKmip.' 
+---
+= AddKeyServerToProviderKmip
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `AddKeyServerToProviderKmip` Metodo per assegnare un server di chiavi KMIP (Key Management Interoperability Protocol) al provider di chiavi specificato. Durante l'assegnazione, il server viene contattato per verificarne la funzionalità. Se il server chiavi specificato è già assegnato al provider di chiavi specificato, non viene eseguita alcuna azione e non viene restituito alcun errore. È possibile rimuovere l'assegnazione utilizzando `RemoveKeyServerFromProviderKmip` metodo.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+KeyProviderID
+ a| 
+L'ID del provider di chiavi a cui assegnare il server di chiavi.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+KeyServerID
+ a| 
+L'ID del server chiavi da assegnare.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+Sì
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo non ha alcun valore restituito. L'assegnazione viene considerata riuscita a condizione che non venga restituito alcun errore.
+
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "method": "AddKeyServerToProviderKmip",
+  "params": {
+    "keyProviderID": 1,
+    "keyServerID": 15
+    },
+"id": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+   "id": 1,
+   "result":
+      {}
+    }
+}
+----
+
+
+== Novità dalla versione
+
+11,7

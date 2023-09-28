@@ -1,0 +1,83 @@
+---
+permalink: storage/concept_data_manage_volumes_quality_of_service_policies.html 
+sidebar: sidebar 
+keywords: qos policies, manage, volumes, create, edit, delete 
+summary: 'Una policy di qualità del servizio consente di creare e salvare un"impostazione di qualità del servizio standardizzata che può essere applicata a molti volumi. È possibile creare, modificare ed eliminare i criteri QoS dalla pagina QoS Policies (Criteri QoS) nella scheda Management (Gestione).' 
+---
+= Gestire le policy di qualità del servizio
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Una policy di qualità del servizio (QoS) consente di creare e salvare un'impostazione di qualità del servizio standardizzata che può essere applicata a molti volumi. È possibile creare, modificare ed eliminare i criteri QoS dalla pagina QoS Policies (Criteri QoS) nella scheda Management (Gestione).
+
+
+NOTE: Se si utilizzano criteri QoS, non utilizzare QoS personalizzati su un volume. La QoS personalizzata sovrascrive e regola i valori dei criteri QoS per le impostazioni QoS del volume.
+
+https://www.youtube.com/embed/q9VCBRDtrnI?rel=0["Video NetApp: Policy di qualità del servizio SolidFire"]
+
+Vedere link:../concepts/concept_data_manage_volumes_solidfire_quality_of_service.html["Performance e qualità del servizio"].
+
+* Creare una policy QoS
+* Modificare un criterio QoS
+* Eliminare una policy QoS
+
+
+
+
+== Creare una policy QoS
+
+È possibile creare policy QoS e applicarle durante la creazione di volumi.
+
+. Selezionare *Management* > *QoS Policies*.
+. Fare clic su *Crea policy QoS*.
+. Inserire il nome * Policy Name*.
+. Inserire i valori**min IOPS**, *Max IOPS* e *Burst IOPS*.
+. Fare clic su *Crea policy QoS*.
+
+
+
+
+== Modificare un criterio QoS
+
+È possibile modificare il nome di un criterio QoS esistente o i valori associati al criterio. La modifica di un criterio QoS influisce su tutti i volumi associati al criterio.
+
+. Selezionare *Management* > *QoS Policies*.
+. Fare clic sull'icona Actions (azioni) per il criterio QoS che si desidera modificare.
+. Nel menu visualizzato, selezionare**Edit** (Modifica).
+. Nella finestra di dialogo *Edit QoS Policy* (Modifica policy QoS), modificare le seguenti proprietà come richiesto:
++
+** Nome policy
+** IOPS minimi
+** IOPS max
+** IOPS burst
+
+
+. Fare clic su *Save Changes* (Salva modifiche).
+
+
+
+
+== Eliminare una policy QoS
+
+È possibile eliminare una policy QoS se non è più necessaria. Quando si elimina un criterio QoS, tutti i volumi associati al criterio mantengono le impostazioni QoS ma non vengono associati a un criterio.
+
+
+NOTE: Se invece si tenta di disassociare un volume da un criterio QoS, è possibile modificare le impostazioni QoS per quel volume su customizzato.
+
+. Selezionare *Management* > *QoS Policies*.
+. Fare clic sull'icona Actions (azioni) per il criterio QoS che si desidera eliminare.
+. Nel menu visualizzato, selezionare *Delete* (Elimina).
+. Confermare l'azione.
+
+
+
+
+== Trova ulteriori informazioni
+
+* link:task_data_manage_volumes_remove_a_qos_policy_association_of_a_volume.html["Rimuovere l'associazione dei criteri QoS di un volume"]
+* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
+

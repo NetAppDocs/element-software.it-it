@@ -1,0 +1,19 @@
+---
+permalink: storage/concept_data_protection_volume_snapshot_backup_operations.html 
+sidebar: sidebar 
+keywords: volume snapshot, backup operations, back up volume snapshot, cluster, object store 
+summary: 'È possibile utilizzare la funzione di backup integrata per eseguire il backup di uno snapshot di un volume. È possibile eseguire il backup delle snapshot da un cluster SolidFire a un archivio di oggetti esterno o a un altro cluster SolidFire. Quando si esegue il backup di uno snapshot in un archivio di oggetti esterno, è necessario disporre di una connessione all"archivio di oggetti che consenta le operazioni di lettura/scrittura.' 
+---
+= Eseguire il backup di uno snapshot di un volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare la funzione di backup integrata per eseguire il backup di uno snapshot di un volume. È possibile eseguire il backup delle snapshot da un cluster SolidFire a un archivio di oggetti esterno o a un altro cluster SolidFire. Quando si esegue il backup di uno snapshot in un archivio di oggetti esterno, è necessario disporre di una connessione all'archivio di oggetti che consenta le operazioni di lettura/scrittura.
+
+* link:task_data_protection_back_up_a_volume_snapshot_to_an_amazon_s3_object_store["Eseguire il backup di uno snapshot di volume in un archivio di oggetti Amazon S3"]
+* link:task_data_protection_back_up_a_volume_snapshot_to_openstack_swift["Eseguire il backup di uno snapshot di volume in un archivio di oggetti OpenStack Swift"]
+* link:task_data_protection_back_up_volume_to_solidfire["Eseguire il backup di uno snapshot di volume in un cluster SolidFire"]
+

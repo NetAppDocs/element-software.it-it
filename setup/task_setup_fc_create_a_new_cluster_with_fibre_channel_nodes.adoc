@@ -1,0 +1,54 @@
+---
+permalink: setup/task_setup_fc_create_a_new_cluster_with_fibre_channel_nodes.html 
+sidebar: sidebar 
+keywords:  
+summary: 'È possibile creare un nuovo cluster dopo aver configurato i singoli nodi Fibre Channel. Quando si crea un cluster, viene creato automaticamente un account utente amministratore del cluster. L"amministratore del cluster dispone dell"autorizzazione per gestire tutti gli attributi del cluster e può creare altri account amministratore del cluster.' 
+---
+= Creare un nuovo cluster con nodi Fibre Channel
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile creare un nuovo cluster dopo aver configurato i singoli nodi Fibre Channel. Quando si crea un cluster, viene creato automaticamente un account utente amministratore del cluster. L'amministratore del cluster dispone dell'autorizzazione per gestire tutti gli attributi del cluster e può creare altri account amministratore del cluster.
+
+Durante la configurazione del nuovo nodo, gli indirizzi IP di gestione (MIP) 1G o 10G vengono assegnati a ciascun nodo. Per aprire la pagina Create a New Cluster (Crea nuovo cluster), è necessario utilizzare uno degli indirizzi IP del nodo creati durante la configurazione. L'indirizzo IP utilizzato dipende dalla rete scelta per la gestione del cluster.
+
+.Di cosa hai bisogno
+I singoli nodi Fibre Channel sono stati configurati.
+
+.Fasi
+. In una finestra del browser, inserire un indirizzo MIP del nodo.
+. In Create a New Cluster (Crea nuovo cluster), immettere le seguenti informazioni:
++
+** VIP di gestione: IP virtuale instradabile sulla rete 1GbE o 10GbE per le attività di gestione della rete.
+** VIP iSCSI (storage): IP virtuale sulla rete 10GbE per lo storage e il rilevamento iSCSI.
++
+
+NOTE: Non è possibile modificare l'SVIP dopo aver creato il cluster.
+
+** User name (Nome utente): Il nome utente principale di Cluster Admin per l'accesso autenticato al cluster. Salvare il nome utente per riferimenti futuri.
++
+
+NOTE: È possibile utilizzare lettere maiuscole e minuscole, caratteri speciali e numeri per il nome utente.
+
+** Password: Password per l'accesso autenticato al cluster. Salvare il nome utente per riferimenti futuri.
+La protezione dei dati bidirezionale è attivata per impostazione predefinita. Non è possibile modificare questa impostazione.
+
+
+. Leggere il Contratto di licenza con l'utente finale e fare clic su *Accetto*.
+. *Opzionale*: Nell'elenco nodi, assicurarsi che le caselle di controllo per i nodi che non devono essere inclusi nel cluster non siano selezionate.
+. Fare clic su *Create Cluster* (Crea cluster).
++
+Il sistema potrebbe impiegare diversi minuti per creare il cluster a seconda del numero di nodi nel cluster. Su una rete correttamente configurata, un piccolo cluster di cinque nodi dovrebbe richiedere meno di un minuto. Una volta creato il cluster, la finestra Create a New Cluster (Crea nuovo cluster) viene reindirizzata all'indirizzo URL MVIP del cluster e viene visualizzata l'interfaccia utente Web.
+
+
+
+
+
+== Trova ulteriori informazioni
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
+

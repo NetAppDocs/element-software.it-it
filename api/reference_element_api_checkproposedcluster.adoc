@@ -1,0 +1,125 @@
+---
+permalink: api/reference_element_api_checkproposedcluster.html 
+sidebar: sidebar 
+keywords: cluster,creation,check,proposed,checking,nodes,node,before,CheckProposedCluster 
+summary: È possibile utilizzare il metodo CheckProposedCluster per testare un set di nodi di storage prima di creare un cluster di storage con essi per identificare possibili errori o errori che si verificherebbero dal tentativo, come funzionalità di nodi misti non bilanciati o tipi di nodi non supportati per cluster di storage a due nodi. 
+---
+= CheckProposedCluster
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `CheckProposedCluster` metodo per testare un insieme di nodi di storage prima di creare un cluster di storage con essi per identificare possibili errori o errori che si verificherebbero dal tentativo, come funzionalità di nodi misti non bilanciati o tipi di nodi non supportati per cluster di storage a due nodi.
+
+
+
+== Parametri
+
+Questo metodo ha il seguente parametro di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+nodi
+ a| 
+Un elenco degli indirizzi IP dello storage del set iniziale di nodi di storage che compongono il cluster di storage.
+ a| 
+array di stringhe
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+forza
+ a| 
+Impostare su true per l'esecuzione su tutti i nodi di storage nel cluster di storage.
+ a| 
+booleano
+ a| 
+Nessuno
+ a| 
+No
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo ha i seguenti valori restituiti:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+ProposedClusterValid
+ a| 
+Indica se i nodi di storage proposti costituirebbero o meno un cluster di storage valido. Valori possibili:
+
+* vero
+* falso
+
+ a| 
+booleano
+
+
+
+ a| 
+ProposedClusterErrors
+ a| 
+Errori che si verificano se un cluster di storage è stato creato utilizzando i nodi di storage proposti.
+ a| 
+array di stringhe
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+	"method": "CheckProposedCluster",
+	"params": {
+	"nodes": [
+		"192.168.1.11",
+		"192.168.1.12",
+		"192.168.1.13",
+		"192.168.1.14"
+	]
+},
+	"id": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+	"id": 1,
+	"result": {
+		"proposedClusterValid": true,
+		"proposedClusterErrors": [ ]
+	}
+}
+----
+
+
+== Novità dalla versione
+
+11,0

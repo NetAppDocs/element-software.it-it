@@ -1,0 +1,215 @@
+---
+permalink: api/reference_element_api_enableldapauthentication.html 
+sidebar: sidebar 
+keywords: LDAP,auth,authentication,enable,enabling,EnableLdapAuthentication 
+summary: 'È possibile utilizzare il metodo EnableLdapAuthentication per configurare una connessione di directory LDAP per l"autenticazione LDAP a un cluster. Gli utenti che sono membri della directory LDAP possono quindi accedere al sistema di storage utilizzando le proprie credenziali LDAP.' 
+---
+= EnableLdapAuthentication
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `EnableLdapAuthentication` Metodo per configurare una connessione alla directory LDAP per l'autenticazione LDAP a un cluster. Gli utenti che sono membri della directory LDAP possono quindi accedere al sistema di storage utilizzando le proprie credenziali LDAP.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+AuthType
+ a| 
+Identifica il metodo di autenticazione dell'utente da utilizzare. Valori possibili:
+
+* `DirectBind`
+* `SearchAndBind`
+
+ a| 
+stringa
+ a| 
+SearchAndBind
+ a| 
+No
+
+
+
+ a| 
+GroupSearchBaseDN
+ a| 
+Il DN di base della struttura per avviare la ricerca della sottostruttura di gruppo.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+GroupSearchType
+ a| 
+Controlla il filtro di ricerca di gruppo predefinito utilizzato. Valori possibili:
+
+* NoGroups: Nessun supporto di gruppo.
+* ActiveDirectory: Appartenenza nidificata a tutti i gruppi Active Directory di un utente.
+* MemberDN: Gruppi di stile MemberDN (livello singolo).
+
+ a| 
+stringa
+ a| 
+ActiveDirectory
+ a| 
+No
+
+
+
+ a| 
+Server URI
+ a| 
+Elenco separato da virgole degli URI del server LDAP o LDAPS. È possibile aggiungere una porta personalizzata alla fine di un URI LDAP o LDAPS utilizzando i due punti seguiti dal numero della porta. Ad esempio, l'URI "ldap://1,2.3,4" utilizza la porta predefinita e l'URI "ldaps://1,2.3,4:123" utilizza la porta personalizzata 123.
+ a| 
+array di stringhe
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+UserSearchBaseDN
+ a| 
+Il DN di base della struttura per avviare la ricerca nella sottostruttura. Questo parametro è necessario quando si utilizza un AuthType di SearchAndBind.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+SearchBindDN
+ a| 
+Un DN completo con cui effettuare l'accesso per eseguire una ricerca LDAP per l'utente. Il DN richiede l'accesso in lettura alla directory LDAP. Questo parametro è necessario quando si utilizza un AuthType di SearchAndBind.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+SearchBindPassword
+ a| 
+La password per l'account searchBindDN utilizzato per la ricerca. Questo parametro è necessario quando si utilizza un AuthType di SearchAndBind.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+UserSearchFilter
+ a| 
+Il filtro di ricerca LDAP da utilizzare quando si esegue una query sul server LDAP. La stringa deve avere il testo segnaposto "%USERNAME%" che viene sostituito con il nome utente dell'utente autenticante. Ad esempio, (&(objectClass=person)(sAMAccountName=%USERNAME%)) utilizzerà il campo sAMAccountName in Active Directory per corrispondere al nome utente immesso al momento dell'accesso al cluster. Questo parametro è necessario quando si utilizza un AuthType di SearchAndBind.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+UserDNTemplate
+ a| 
+Modello di stringa utilizzato per definire un modello per la costruzione di un nome distinto utente (DN) completo. La stringa deve avere il testo segnaposto "%USERNAME%" che viene sostituito con il nome utente dell'utente autenticante. Questo parametro è necessario quando si utilizza un AuthType di DirectBind.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+GroupSearchCustomFilter
+ a| 
+Da utilizzare con il tipo di ricerca CustomFilter, un filtro LDAP da utilizzare per restituire il DNS dei gruppi di utenti. La stringa può contenere il testo segnaposto %USERNAME% e %USERDN% da sostituire con il nome utente e il nome utente completo in base alle necessità.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+Sì
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo non ha valori restituiti.
+
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "method": "EnableLdapAuthentication",
+  "params": {
+     "authType": "SearchAndBind",
+     "groupSearchBaseDN": "dc=prodtest,dc=solidfire,dc=net",
+     "groupSearchType": "ActiveDirectory",
+     "searchBindDN": "SFReadOnly@prodtest.solidfire.net",
+     "searchBindPassword": "zsw@#edcASD12",
+     "sslCert": "",
+     "userSearchBaseDN": "dc=prodtest,dc=solidfire,dc=net",
+     "userSearchFilter": "(&(objectClass=person)(sAMAccountName=%USERNAME%))",
+     "serverURIs":[
+           "ldaps://111.22.333.444",
+           "ldap://555.66.777.888"
+           ]
+       },
+  "id": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+"id": 1,
+"result": {
+  }
+}
+----
+
+
+== Novità dalla versione
+
+9,6

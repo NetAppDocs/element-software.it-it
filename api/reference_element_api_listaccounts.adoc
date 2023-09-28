@@ -1,0 +1,142 @@
+---
+permalink: api/reference_element_api_listaccounts.html 
+sidebar: sidebar 
+keywords: account,accounts,list,listing,all,listaccounts 
+summary: 'È possibile utilizzare ListAccounts per ottenere l"intero elenco degli account del tenant di storage, con il supporto paging opzionale. Gli account Element consentono l"accesso ai volumi.' 
+---
+= ListAccounts
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `ListAccounts` per ottenere l'intero elenco degli account del tenant di storage, con supporto paging opzionale. Gli account Element consentono l'accesso ai volumi.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+Include StorageContainers
+ a| 
+I container di storage dei volumi virtuali sono inclusi nella risposta per impostazione predefinita. Per escludere i contenitori di storage, impostare su false.
+ a| 
+booleano
+ a| 
+vero
+ a| 
+No
+
+
+
+ a| 
+StartAccountID
+ a| 
+Inizio AccountID per la restituzione. Se non esiste alcun account con questo ID account, l'account successivo per ordine ID account viene utilizzato come inizio dell'elenco. Per scorrere l'elenco, passare l'ID account dell'ultimo account nella risposta precedente + 1.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+limite
+ a| 
+Numero massimo di oggetti account da restituire.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+No
+
+|===
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+account
+ a| 
+L'elenco degli account.
+ a| 
+xref:reference_element_api_account.adoc[account] array
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+   "method": "ListAccounts",
+   "params": {
+     "startAccountID"  : 0,
+     "limit" : 1000
+   },
+   "id" : 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+   "result" : {
+    "accounts": [
+	{
+        "attributes": {},
+        "username": "jamesw",
+        "targetSecret": "168#5A757ru268)",
+        "volumes": [],
+        "enableChap": false,
+        "status": "active",
+        "accountID": 16,
+        "storageContainerID": "abcdef01-1234-5678-90ab-cdef01234567",
+        "initiatorSecret": "168#5A757ru268)"
+    },
+    {
+        "attributes": {},
+        "username": "jimmyd",
+        "targetSecret": "targetsecret",
+        "volumes": [],
+        "enableChap": true,
+        "status": "active",
+        "accountID": 5,
+        "storageContainerID": "abcdef01-1234-5678-90ab-cdef01234567",
+        "initiatorSecret": "initiatorsecret"
+    }
+  ]
+}
+}
+----
+
+
+== Novità dalla versione
+
+9,6

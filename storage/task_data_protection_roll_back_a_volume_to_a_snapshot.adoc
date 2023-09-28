@@ -1,0 +1,27 @@
+---
+permalink: storage/task_data_protection_roll_back_a_volume_to_a_snapshot.html 
+sidebar: sidebar 
+keywords: volume to snapshot roll back, snapshot roll back, revert changes 
+summary: È possibile eseguire il rollback di un volume a uno snapshot precedente in qualsiasi momento. In questo modo vengono ripristinate le modifiche apportate al volume dalla creazione dello snapshot. 
+---
+= Eseguire il rollback di un volume in uno snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile eseguire il rollback di un volume a uno snapshot precedente in qualsiasi momento. In questo modo vengono ripristinate le modifiche apportate al volume dalla creazione dello snapshot.
+
+.Fasi
+. Fare clic su *Data Protection* > *Snapshot*.
+. Fare clic sull'icona *Actions* per lo snapshot che si desidera utilizzare per il rollback del volume.
+. Nel menu visualizzato, selezionare *Rollback Volume to Snapshot* (Ripristina volume in snapshot).
+. *Opzionale:* per salvare lo stato corrente del volume prima di eseguire il rollback allo snapshot:
++
+.. Nella finestra di dialogo *Rollback to Snapshot*, selezionare *Save the current state as a snapshot* (Salva stato corrente del volume come snapshot).
+.. Immettere un nome per il nuovo snapshot.
+
+
+. Fare clic su *Rollback Snapshot*.
+

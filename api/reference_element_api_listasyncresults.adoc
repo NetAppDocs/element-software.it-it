@@ -1,0 +1,119 @@
+---
+permalink: api/reference_element_api_listasyncresults.html 
+sidebar: sidebar 
+keywords: async,asynchronous,result,results,get,list,listing,listasyncresults 
+summary: 'È possibile utilizzare ListAsyncResults per elencare i risultati di tutti i metodi asincroni attualmente in esecuzione e completati nel sistema. L"esecuzione di query sui risultati asincroni con ListAsyncResults non causa la scadenza di asyncHandle completati; è possibile utilizzare GetAsyncResult per eseguire query su uno qualsiasi degli asyncHandle restituiti da ListAsyncResults.' 
+---
+= ListAsyncResults
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `ListAsyncResults` elencare i risultati di tutti i metodi asincroni attualmente in esecuzione e completati nel sistema. Query dei risultati asincroni con `ListAsyncResults` Non provoca la scadenza di asyncHandle completati; è possibile utilizzare `GetAsyncResult` Per eseguire una query su uno qualsiasi degli asyncHandle restituiti da `ListAsyncResults`.
+
+
+
+== Parametro
+
+Questo metodo ha il seguente parametro di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+AsyncResultTypes
+ a| 
+Un elenco facoltativo di tipi di risultati. È possibile utilizzare questo elenco per limitare i risultati solo a questi tipi di operazioni. Valori possibili:
+
+* DriveAdd: Operazioni che comportano l'aggiunta di un disco al cluster da parte del sistema.
+* BulkVolume: Operazioni di copia tra volumi, come backup o ripristini.
+* Clone: Operazioni di cloning del volume.
+* DriveRemoval (Rimozione unità): Operazioni che coinvolgono il sistema durante la copia dei dati da un disco in preparazione alla rimozione dal cluster.
+* RtfiPendingNode: Operazioni che coinvolgono il sistema installando software compatibile su un nodo prima di aggiungerlo al cluster.
+
+ a| 
+array di stringhe
+ a| 
+Nessuno
+ a| 
+No
+
+|===
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+AsyncHandles
+ a| 
+Risultato di un array di metodi asincroni serializzati.
+ a| 
+Array di oggetti JSON
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+   "method": "ListAsyncResults",
+   "params": {
+   },
+   "id": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+   "id": 1,
+   "result": {
+     "asyncHandles": [
+       {
+         "asyncResultID": 47,
+         "completed": true,
+         "createTime": "2016-01-01T22:29:19Z",
+         "data": {
+           "cloneID": 26,
+           "message": "Clone complete.",
+           "volumeID": 48
+         },
+         "lastUpdateTime": "2016-01-01T22:45:43Z",
+         "resultType": "Clone",
+         "success": true
+      },
+      ...]
+   }
+}
+----
+
+
+== Novità dalla versione
+
+9,6
+
+
+
+== Trova ulteriori informazioni
+
+xref:reference_element_api_getasyncresult.adoc[GetAsyncResult]

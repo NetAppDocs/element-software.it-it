@@ -1,0 +1,37 @@
+---
+permalink: storage/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= Gestire lo storage con il software Element
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Utilizza il software Element per configurare lo storage SolidFire, monitorare la capacità e le performance del cluster e gestire l'attività dello storage in un'infrastruttura multi-tenant.
+
+Element è il sistema operativo per lo storage al centro di un cluster SolidFire. Il software Element viene eseguito in modo indipendente su tutti i nodi del cluster e consente ai nodi del cluster di combinare le risorse e di presentarsi come un singolo sistema storage ai client esterni. Il software Element è responsabile di tutto il coordinamento, la scalabilità e la gestione del cluster nel suo complesso.
+
+L'interfaccia software si basa sull'API Element.
+
+* link:task_post_deploy_access_the_element_software_user_interface.html["Accedere all'interfaccia utente del software Element"]
+* link:task_post_deploy_configure_system_options.html["Configurare le opzioni del sistema SolidFire dopo l'implementazione"]
+* link:../upgrade/concept_element_upgrade_overview.html["Aggiornare i componenti del sistema storage"]
+* link:task_intro_use_basic_options_in_the_element_software_ui.html["Utilizzare le opzioni di base nell'interfaccia utente del software Element"]
+* link:concept_system_manage_accounts_overview.html["Gestire gli account"]
+* link:concept_system_manage_system_management.html["Gestire il sistema"]
+* link:concept_data_manage_data_management.html["Gestire volumi e volumi virtuali"]
+* link:concept_data_protection.html["Proteggi i tuoi dati"]
+* link:concept_system_monitoring_and_troubleshooting.html["Risolvere i problemi del sistema"]
+
+
+
+
+== Trova ulteriori informazioni
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
+

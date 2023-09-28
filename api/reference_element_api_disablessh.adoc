@@ -1,0 +1,67 @@
+---
+permalink: api/reference_element_api_disablessh.html 
+sidebar: sidebar 
+keywords: SSH,disable,disabling,node,DisableSsh 
+summary: È possibile utilizzare il metodo DisableSsh per disattivare il servizio SSH per un singolo nodo di storage. Questo metodo non influisce sulla durata del timeout del servizio SSH a livello di cluster. 
+---
+= DisableSsh
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `DisableSsh` Metodo per disattivare il servizio SSH per un singolo nodo di storage. Questo metodo non influisce sulla durata del timeout del servizio SSH a livello di cluster.
+
+
+
+== Parametro
+
+Questo metodo non ha alcun parametro di input.
+
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+attivato
+ a| 
+Lo stato del servizio SSH per questo nodo.
+ a| 
+booleano
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "method": "DisableSsh",
+  "params": {
+      },
+  "id" : 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+  "id" : 1,
+  "result" : {"enabled": false}
+}
+----

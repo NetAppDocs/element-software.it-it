@@ -1,0 +1,172 @@
+---
+permalink: api/reference_element_api_signsshkeys.html 
+sidebar: sidebar 
+keywords: ssh, sign key 
+summary: Dopo aver attivato ssh su un nodo o cluster, è possibile utilizzare il metodo SignSshKeys per accedere a una shell su un nodo come sfadmin o sfreadonly. Sfreadonly è un nuovo account utente a partire da Element 12,5 che consente la risoluzione iniziale dei problemi su un nodo ma non dispone dei privilegi necessari per eseguire comandi con privilegi elevati. 
+---
+= SignSshKeys
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Dopo l'attivazione di SSH sul cluster utilizzando link:../api/reference_element_api_enablessh.html["Metodo EnableSSH"], è possibile utilizzare `SignSshKeys` metodo per ottenere l'accesso a una shell su un nodo.
+
+Iniziando dall'elemento 12,5, `sfreadonly` è un nuovo account di sistema che consente il troubleshooting di base su un nodo. Questa API abilita l'accesso SSH utilizzando `sfreadonly` account di sistema in tutti i nodi nel cluster.
+
+
+WARNING: Se non richiesto dall'assistenza NetApp, eventuali modifiche al sistema non sono supportate, annullano il contratto di assistenza e potrebbero causare instabilità o inaccessibilità dei dati.
+
+Dopo aver utilizzato il metodo, è necessario copiare il portachiavi dalla risposta, salvarlo nel sistema che avvierà la connessione SSH, quindi eseguire il seguente comando:
+
+[listing]
+----
+ssh -i <identity_file> sfreadonly@<node_ip>
+----
+ `identity_file` è un file da cui viene letta l'identità (chiave privata) per l'autenticazione a chiave pubblica `node_ip` È l'indirizzo IP del nodo. Per ulteriori informazioni su `identity_file`, Vedere la pagina man SSH.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+durata
+ a| 
+Intero da 1 a 24 che riflette il numero di ore per la chiave firmata valida. Se la durata non è specificata, viene utilizzato il valore predefinito.
+ a| 
+intero
+ a| 
+1
+ a| 
+No
+
+
+
+ a| 
+Chiave pubblica
+ a| 
+Se fornito, questo parametro restituirà solo la chiave_pubblica_firmata invece di creare un portachiavi completo all'utente.
+
+
+NOTE: Le chiavi pubbliche inviate utilizzando la barra URL in un browser con `+` sono interpretate come firma distanziata e di interruzione.
+ a| 
+stringa
+ a| 
+Nullo
+ a| 
+No
+
+
+
+ a| 
+sfadmin
+ a| 
+Consente l'accesso all'account shell sfadmin quando si effettua la chiamata API con l'accesso al cluster supportAdmin o quando il nodo non si trova in un cluster.
+ a| 
+booleano
+ a| 
+Falso
+ a| 
+No
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo ha i seguenti valori restituiti:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+keygen_status
+ a| 
+Contiene l'identità nella chiave firmata, le entità consentite e le date di inizio e di fine valide per la chiave.
+ a| 
+stringa
+
+
+
+ a| 
+private_key
+ a| 
+Un valore chiave SSH privata viene restituito solo se l'API genera un portachiavi completo per l'utente finale.
+
+
+NOTE: Il valore è codificato Base64; è necessario decodificare il valore quando viene scritto in un file per assicurarsi che venga letto come chiave privata valida.
+ a| 
+stringa
+
+
+
+ a| 
+chiave_pubblica
+ a| 
+Un valore chiave SSH pubblico viene restituito solo se l'API genera un portachiavi completo per l'utente finale.
+
+
+NOTE: Quando si passa un parametro public_key al metodo API, solo l' `signed_public_key` il valore viene restituito nella risposta.
+ a| 
+stringa
+
+
+
+ a| 
+chiave_pubblica_firmata
+ a| 
+La chiave pubblica SSH risultante dalla firma della chiave pubblica, fornita dall'utente o generata dall'API.
+ a| 
+stringa
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+    "method": "SignSshKeys",
+    "params": {
+        "duration": 2,
+        "publicKey":<string>
+    },
+    "id": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+  "id": null,
+  "result": {
+    "signedKeys": {
+      "keygen_status": <keygen_status>,
+      "signed_public_key": <signed_public_key>
+    }
+  }
+}
+----
+In questo esempio, viene firmata e restituita una chiave pubblica valida per la durata (1-24 ore).
+
+
+
+== Novità dalla versione
+
+12,5

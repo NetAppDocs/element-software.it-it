@@ -1,0 +1,14 @@
+---
+permalink: storage/concept_intro_nodes.html 
+sidebar: sidebar 
+keywords: sf-series nodes, nodes, block storage, storage nodes, fibre channel nodes, fc, FC 
+summary: 'I nodi sono i singoli componenti hardware raggruppati in un cluster a cui si accede come storage a blocchi. In un sistema storage SolidFire sono presenti due tipi di nodi: I nodi storage e i nodi Fibre Channel.' 
+---
+= Nodi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+I nodi sono i singoli componenti hardware raggruppati in un cluster a cui si accede come storage a blocchi. In un sistema storage SolidFire sono presenti due tipi di nodi: I nodi storage e i nodi Fibre Channel.

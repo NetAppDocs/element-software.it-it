@@ -1,0 +1,105 @@
+---
+permalink: api/reference_element_api_removedrives.html 
+sidebar: sidebar 
+keywords: cluster,drive,drives,remove,removing,removedrives 
+summary: È possibile utilizzare il metodo RemoveDrives per rimuovere in modo proattivo i dischi che fanno parte del cluster. È possibile utilizzare questo metodo per ridurre la capacità del cluster o prepararsi alla sostituzione dei dischi in via di esaurimento. Tutti i dati presenti sui dischi vengono rimossi e migrati su altri dischi del cluster prima che il disco venga rimosso dal cluster. 
+---
+= RemoveDrives
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `RemoveDrives` metodo per rimuovere in modo proattivo i dischi che fanno parte del cluster. È possibile utilizzare questo metodo per ridurre la capacità del cluster o prepararsi alla sostituzione dei dischi in via di esaurimento. Tutti i dati presenti sui dischi vengono rimossi e migrati su altri dischi del cluster prima che il disco venga rimosso dal cluster.
+
+`RemoveDrives` è un metodo asincrono. A seconda della capacità totale dei dischi da rimuovere, la migrazione di tutti i dati potrebbe richiedere alcuni minuti.
+
+Quando si rimuovono più dischi, utilizzare un disco singolo `RemoveDrives` chiamata al metodo piuttosto che a più singoli metodi con un singolo disco ciascuno. In questo modo si riduce la quantità di bilanciamento dei dati necessaria per stabilizzare in modo uniforme il carico di storage sul cluster.
+
+È inoltre possibile rimuovere i dischi con stato "failed" (guasto) utilizzando `RemoveDrives`. Quando si rimuove un disco con uno stato "failed" (guasto), il disco non torna allo stato "Available" (disponibile) o "`Active`" (attivo). L'unità non è disponibile per l'utilizzo nel cluster.
+
+
+
+== Parametro
+
+Questo metodo ha il seguente parametro di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+dischi
+ a| 
+Elenco di driveID da rimuovere dal cluster.
+ a| 
+array intero
+ a| 
+Nessuno
+ a| 
+Sì
+
+|===
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+AsyncHandle
+ a| 
+Valore handle utilizzato per ottenere il risultato dell'operazione.
+ a| 
+intero
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+   "method": "RemoveDrives",
+   "params": {
+      "drives"  : [3, 4, 5]
+   },
+   "id" : 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+   "id": 1,
+   "result" : {
+     "asyncHandle": 1
+   }
+}
+----
+
+
+== Novità dalla versione
+
+9,6
+
+
+
+== Trova ulteriori informazioni
+
+* xref:reference_element_api_getasyncresult.adoc[GetAsyncResult]
+* xref:reference_element_api_listdrives.adoc[ListDrive]
+

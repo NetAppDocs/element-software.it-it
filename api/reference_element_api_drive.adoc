@@ -1,0 +1,176 @@
+---
+permalink: api/reference_element_api_drive.html 
+sidebar: sidebar 
+keywords: objects,object,drive 
+summary: 'L"oggetto Drive contiene informazioni sui singoli dischi nei nodi attivi del cluster. Questo oggetto contiene informazioni dettagliate sulle unità aggiunte come metadati di volume o unità a blocchi, nonché sulle unità non ancora aggiunte e disponibili. È possibile recuperare queste informazioni con il metodo API ListDrives.' 
+---
+= disco
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto Drive contiene informazioni sui singoli dischi nei nodi attivi del cluster. Questo oggetto contiene informazioni dettagliate sulle unità aggiunte come metadati di volume o unità a blocchi, nonché sulle unità non ancora aggiunte e disponibili. È possibile recuperare queste informazioni con `ListDrives` Metodo API.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+attributi
+ a| 
+Elenco delle coppie nome-valore nel formato oggetto JSON. Questo oggetto è sempre nullo e non è modificabile.
+ a| 
+Oggetto JSON
+
+
+
+ a| 
+capacità
+ a| 
+La capacità totale del disco, in byte.
+ a| 
+intero
+
+
+
+ a| 
+ChassisSlot
+ a| 
+Per le piattaforme HCI, questo valore corrisponde alla lettera del nodo e al numero di slot nello chassis del server in cui si trova l'unità. Per le piattaforme di storage, il numero di slot è una rappresentazione stringa del numero intero "slot".
+ a| 
+stringa
+
+
+
+ a| 
+DriveFailureDetail
+ a| 
+Se lo stato di un disco è "Failed" (guasto), questo campo fornisce ulteriori dettagli sul motivo per cui il disco è stato contrassegnato come guasto.
+ a| 
+stringa
+
+
+
+ a| 
+ID del driver
+ a| 
+L'ID di questo disco.
+ a| 
+intero
+
+
+
+ a| 
+DriveSecurityFaultReason
+ a| 
+Se l'attivazione o la disattivazione della protezione del disco non è riuscita, il motivo per cui si è verificato un errore. Se il valore è "nessuno", non si è verificato alcun errore.
+ a| 
+stringa
+
+
+
+ a| 
+KeyID (ID chiave)
+ a| 
+L'ID chiave utilizzato dal provider di chiavi per acquisire la chiave di autenticazione per sbloccare il disco.
+ a| 
+UUID
+
+
+
+ a| 
+KeyProviderID
+ a| 
+Identifica il provider della chiave di autenticazione per lo sblocco del disco.
+ a| 
+intero
+
+
+
+ a| 
+ID NodeID
+ a| 
+L'ID del nodo che contiene questo disco.
+ a| 
+intero
+
+
+
+ a| 
+SegmentFileSize
+ a| 
+La dimensione del file di segmento del disco, in byte.
+ a| 
+intero
+
+
+
+ a| 
+seriale
+ a| 
+Il numero di serie del disco.
+ a| 
+stringa
+
+
+
+ a| 
+slot
+ a| 
+Il numero di slot nello chassis del server in cui si trova l'unità, o -1 se si utilizza un dispositivo SATADimm per l'unità di metadati interna.
+ a| 
+intero
+
+
+
+ a| 
+stato
+ a| 
+Lo stato del disco. Valori possibili:
+
+* Disponibile: Un disco disponibile.
+* Active (attivo): Un disco attivo.
+* Cancellazione: È in corso la cancellazione sicura di un disco. Tutti i dati presenti su quel disco vengono rimossi in modo permanente.
+* Failed (guasto): Un disco guasto. Tutti i dati precedentemente presenti sul disco sono stati migrati su altri dischi del cluster.
+* Rimozione: È in corso la rimozione di un disco. Tutti i dati precedentemente presenti sul disco vengono migrati su altri dischi del cluster.
+
+ a| 
+stringa
+
+
+
+ a| 
+tipo
+ a| 
+Il tipo di disco. Valori possibili:
+
+* Volume: Memorizza i metadati del volume.
+* Block (blocco): Memorizza i dati del blocco.
+* Sconosciuto: Il tipo di disco non è ancora attivo e deve essere ancora determinato.
+
+ a| 
+stringa
+
+
+
+ a| 
+UsableCapacity
+ a| 
+La capacità utilizzabile del disco, in byte.
+ a| 
+intero
+
+|===
+
+
+== Trova ulteriori informazioni
+
+xref:reference_element_api_listdrives.adoc[ListDrive]

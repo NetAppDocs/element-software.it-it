@@ -1,0 +1,105 @@
+---
+permalink: api/reference_element_api_storagecontainer.html 
+sidebar: sidebar 
+keywords: object,objects,storagecontainer 
+summary: 'L"oggetto storageContainer contiene gli attributi di un container di storage di un volume virtuale. È possibile recuperare queste informazioni per ciascun container di storage nel cluster utilizzando il metodo API ListStorageContainers.' 
+---
+= StorageContainer
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto storageContainer contiene gli attributi di un container di storage di un volume virtuale. È possibile recuperare queste informazioni per ciascun container di storage nel cluster utilizzando `ListStorageContainers` Metodo API.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+ID account
+ a| 
+L'ID dell'account del sistema di storage associato al container di storage.
+ a| 
+intero
+
+
+
+ a| 
+InitatorSecret
+ a| 
+Segreto di autenticazione CHAP per l'iniziatore associato al contenitore di storage.
+ a| 
+stringa
+
+
+
+ a| 
+nome
+ a| 
+Il nome del contenitore di storage.
+ a| 
+stringa
+
+
+
+ a| 
+ProtocolEndpointType
+ a| 
+Il tipo di endpoint del protocollo del container di storage. SCSI è l'unico valore valido.
+ a| 
+stringa
+
+
+
+ a| 
+stato
+ a| 
+Lo stato del contenitore di storage. Valori possibili:
+
+* Attivo: Il contenitore di storage è in uso.
+* Bloccato: Il contenitore di storage è bloccato.
+
+ a| 
+stringa
+
+
+
+ a| 
+StorageContainerID
+ a| 
+ID univoco del container di storage.
+ a| 
+UUID
+
+
+
+ a| 
+TargetSecret
+ a| 
+Il segreto di autenticazione CHAP per la destinazione associata al container di storage.
+ a| 
+stringa
+
+
+
+ a| 
+VirtualVolumes
+ a| 
+Un elenco di ID dei volumi virtuali associati al container di storage.
+ a| 
+Array UUID
+
+|===
+
+
+== Trova ulteriori informazioni
+
+xref:reference_element_api_liststoragecontainers.adoc[ListStorageContainers]

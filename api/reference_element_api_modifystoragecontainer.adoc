@@ -1,0 +1,130 @@
+---
+permalink: api/reference_element_api_modifystoragecontainer.html 
+sidebar: sidebar 
+keywords: virtual,volume,storage,container,vvol,modify,modifying,change,changing,edit,editing 
+summary: È possibile utilizzare il metodo ModifyStorageContainer per apportare modifiche a un container di storage di volumi virtuali esistente. 
+---
+= ModifyStorageContainer
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `ModifyStorageContainer` metodo per apportare modifiche a un container di storage di volumi virtuali esistente.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+
+
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+StorageContainerID
+ a| 
+ID univoco del contenitore di storage del volume virtuale da modificare.
+ a| 
+UUID
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+InitatorSecret
+ a| 
+Il nuovo segreto per l'autenticazione CHAP per l'iniziatore.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+TargetSecret
+ a| 
+Il nuovo segreto per l'autenticazione CHAP per la destinazione.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+StorageContainer
+ a| 
+Informazioni sul container di storage appena creato.
+ a| 
+xref:reference_element_api_storagecontainer.adoc[StorageContainer]
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "method": "ModifyStorageContainer",
+    "params": {
+      "storageContainerID": "6c95e24f-9f0b-4793-affb-5a4bc6c3d7e1",
+      "targetSecret": "O,IM;tOQdn9$JJ*8"
+    },
+    "id": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "storageContainer": {
+      "accountID": 8,
+      "initiatorSecret": "T$|5TO>2IY5sk4@k",
+      "name": "doctest1",
+      "protocolEndpointType": "SCSI",
+      "status": "active",
+      "storageContainerID": "6c95e24f-9f0b-4793-affb-5a4bc6c3d7e1",
+      "targetSecret": "O,IM;tOQdn9$JJ*8"
+    }
+  }
+}
+----
+
+
+== Novità dalla versione
+
+9,6

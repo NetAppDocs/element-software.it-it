@@ -1,0 +1,26 @@
+---
+permalink: storage/task_data_protection_schedule_a_snapshot_task.html 
+sidebar: sidebar 
+keywords: snapshot, schedule, volume snapshots, group snapshots 
+summary: 'È possibile proteggere i dati di un volume o di un gruppo di volumi programmando che le snapshot dei volumi vengano eseguite a intervalli specificati. È possibile pianificare l"esecuzione automatica di snapshot di singoli volumi o di gruppi.' 
+---
+= Pianifica un'istantanea
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile proteggere i dati di un volume o di un gruppo di volumi programmando che le snapshot dei volumi vengano eseguite a intervalli specificati. È possibile pianificare l'esecuzione automatica di snapshot di singoli volumi o di gruppi.
+
+Quando si configura una pianificazione snapshot, è possibile scegliere tra intervalli di tempo in base ai giorni della settimana o dei giorni del mese. È inoltre possibile specificare i giorni, le ore e i minuti prima che si verifichi l'istantanea successiva. Se il volume viene replicato, è possibile memorizzare le snapshot risultanti su un sistema di storage remoto.
+
+
+
+== Trova ulteriori informazioni
+
+* xref:task_data_protection_create_a_snapshot_schedule.adoc[Creare una pianificazione di snapshot]
+* xref:task_data_protection_edit_a_snapshot_schedule.adoc[Modificare una pianificazione di snapshot]
+* xref:task_data_protection_delete_a_snapshot_schedule.adoc[Eliminare una pianificazione di snapshot]
+* xref:task_data_protection_copy_a_snapshot_schedule.adoc[Copiare una pianificazione di snapshot]
+

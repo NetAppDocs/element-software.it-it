@@ -1,0 +1,88 @@
+---
+permalink: api/reference_element_api_updatesnapmirrorrelationship.html 
+sidebar: sidebar 
+keywords: SnapMirror,relationship,relationships,update,updating,destination,volume,updatesnapmirrorrelationship 
+summary: 'L"interfaccia utente Web del software Element utilizza il metodo UpdateSnapMirrorRelationship per rendere il volume di destinazione in una relazione SnapMirror un mirror aggiornato del volume di origine.' 
+---
+= UpdateSnapMirrorRelationship
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'interfaccia utente Web del software Element utilizza `UpdateSnapMirrorRelationship` Metodo per rendere il volume di destinazione in una relazione SnapMirror un mirror aggiornato del volume di origine.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+SnapMirrorEndpointID
+ a| 
+L'ID endpoint del sistema storage ONTAP remoto che comunica con il cluster storage Element.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+DestinationVolume
+ a| 
+Il volume di destinazione nella relazione SnapMirror.
+ a| 
+xref:reference_element_api_snapmirrorvolumeinfo.adoc[SnapMirrorVolumeinfo]
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+MaxTransferRate
+ a| 
+Specifica la velocità massima di trasferimento dei dati tra i volumi in kilobyte al secondo. Il valore predefinito, 0, è illimitato e consente alla relazione SnapMirror di utilizzare completamente la larghezza di banda di rete disponibile.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+No
+
+|===
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+SnapMirrorRelationship
+ a| 
+Oggetto contenente informazioni sulla relazione SnapMirror aggiornata.
+ a| 
+xref:reference_element_api_snapmirrorrelationship.adoc[SnapMirrorRelationship]
+
+|===
+
+
+== Novità dalla versione
+
+10,1

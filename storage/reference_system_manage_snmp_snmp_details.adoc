@@ -1,0 +1,28 @@
+---
+permalink: storage/reference_system_manage_snmp_snmp_details.html 
+sidebar: sidebar 
+keywords: snmp, overview, reference, mib, settings, trap 
+summary: Nella pagina SNMP della scheda Cluster, è possibile visualizzare le seguenti informazioni. 
+---
+= Dettagli SNMP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nella pagina SNMP della scheda Cluster, è possibile visualizzare le seguenti informazioni.
+
+* *MIB SNMP*
++
+I file MIB disponibili per la visualizzazione o il download.
+
+* *Impostazioni SNMP generali*
++
+È possibile attivare o disattivare SNMP. Dopo aver attivato SNMP, è possibile scegliere la versione da utilizzare. Se si utilizza la versione 2, è possibile aggiungere i requestori e, se si utilizza la versione 3, è possibile configurare gli utenti USM.
+
+* *SNMP Trap Settings* (Impostazioni trap SNMP)
++
+È possibile identificare le trap che si desidera acquisire. È possibile impostare l'host, la porta e la stringa di comunità per ciascun destinatario del trap.
+
+

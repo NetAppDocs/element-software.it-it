@@ -1,0 +1,25 @@
+---
+permalink: storage/concept_per_node_work_with_utilities.html 
+sidebar: sidebar 
+keywords: troubleshooting network issues, using per-node utilities, storage node UI 
+summary: 'È possibile utilizzare le utility per nodo per risolvere i problemi di rete se gli strumenti di monitoraggio standard nell"interfaccia utente del software NetApp Element non forniscono informazioni sufficienti per la risoluzione dei problemi. Le utility per nodo forniscono informazioni e strumenti specifici che consentono di risolvere i problemi di rete tra nodi o con il nodo di gestione.' 
+---
+= Utilizzo di utility per nodo per nodi di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare le utility per nodo per risolvere i problemi di rete se gli strumenti di monitoraggio standard nell'interfaccia utente del software NetApp Element non forniscono informazioni sufficienti per la risoluzione dei problemi. Le utility per nodo forniscono informazioni e strumenti specifici che consentono di risolvere i problemi di rete tra nodi o con il nodo di gestione.
+
+
+
+== Trova ulteriori informazioni
+
+* xref:task_per_node_access_settings.adoc[Accedere alle impostazioni per nodo utilizzando l'interfaccia utente per nodo]
+* xref:reference_per_node_network_settings_details.adoc[Dettagli delle impostazioni di rete dall'interfaccia utente per nodo]
+* xref:reference_per_node_cluster_settings_details.adoc[Dettagli delle impostazioni del cluster dall'interfaccia utente per nodo]
+* xref:task_per_node_run_system_tests.adoc[Eseguire test di sistema utilizzando l'interfaccia utente per nodo]
+* xref:task_per_node_run_system_utilities.adoc[Eseguire le utility di sistema utilizzando l'interfaccia utente per nodo]
+

@@ -1,0 +1,93 @@
+---
+permalink: storage/reference_per_node_network_settings_details.html 
+sidebar: sidebar 
+keywords: network settings, per-node UI, storage node, ui 
+summary: È possibile modificare le impostazioni di rete del nodo di storage per assegnare al nodo un nuovo set di attributi di rete. 
+---
+= Dettagli delle impostazioni di rete dall'interfaccia utente per nodo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile modificare le impostazioni di rete del nodo di storage per assegnare al nodo un nuovo set di attributi di rete.
+
+Le impostazioni di rete per un nodo di storage sono visualizzate nella pagina *Impostazioni di rete* quando si effettua l'accesso al nodo (https://<node[] IP>:442/hcc/Node/network-settings). È possibile selezionare le impostazioni *Bond1G* (gestione) o *Bond10G* (storage). L'elenco seguente descrive le impostazioni che è possibile modificare quando un nodo di storage si trova nello stato Available (disponibile), Pending (in sospeso) o Active (attivo):
+
+* *Metodo*
++
+Il metodo utilizzato per configurare l'interfaccia. Metodi possibili:
+
++
+** Loopback: Consente di definire l'interfaccia di loopback IPv4.
+** Manual (Manuale): Consente di definire le interfacce per le quali non viene eseguita alcuna configurazione per impostazione predefinita.
+** dhcp: Utilizzato per ottenere un indirizzo IP tramite DHCP.
+** Static (statico): Consente di definire le interfacce Ethernet con indirizzi IPv4 allocati in modo statico.
+
+
+* *Velocità di collegamento*
++
+La velocità negoziata dalla NIC virtuale.
+
+* *Indirizzo IPv4*
++
+L'indirizzo IPv4 per la rete eth0.
+
+* *IPv4 Subnet Mask*
++
+Suddivisioni di indirizzi della rete IPv4.
+
+* *Indirizzo gateway IPv4*
++
+Router network address (Indirizzo di rete del router) per l'invio dei pacchetti dalla rete locale.
+
+* *IPv6 Indirizzo*
++
+L'indirizzo IPv6 per la rete eth0.
+
+* *IPv6 Gateway Address*
++
+Router network address (Indirizzo di rete del router) per l'invio dei pacchetti dalla rete locale.
+
+* *MTU*
++
+Dimensione massima dei pacchetti che un protocollo di rete può trasmettere. Deve essere maggiore o uguale a 1500. Se si aggiunge una seconda scheda di rete per lo storage, il valore deve essere 9000.
+
+* *Server DNS*
++
+Interfaccia di rete utilizzata per la comunicazione del cluster.
+
+* *Cerca domini*
++
+Cercare ulteriori indirizzi MAC disponibili per il sistema.
+
+* *Modalità Bond*
++
+Può essere una delle seguenti modalità:
+
++
+** ActivePassive (predefinito)
+** ALB
+** LACP
+
+
+* *Stato*
++
+Valori possibili:
+
++
+** UpandRunning
+** Giù
+** Su
+
+
+* *Virtual Network Tag*
++
+Tag assegnato al momento della creazione della rete virtuale.
+
+* *Percorsi*
++
+Route statiche verso host o reti specifici attraverso l'interfaccia associata che i route sono configurati per l'utilizzo.
+
+

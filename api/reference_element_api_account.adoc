@@ -1,0 +1,119 @@
+---
+permalink: api/reference_element_api_account.html 
+sidebar: sidebar 
+keywords: account,object,accounts 
+summary: 'L"oggetto account contiene informazioni su un account. Questo oggetto include solo informazioni "configurate" sull"account e non informazioni sull"utilizzo o sul runtime.' 
+---
+= account
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il `account` oggetto contiene informazioni su un account. Questo oggetto include solo informazioni "configurate" sull'account e non informazioni sull'utilizzo o sul runtime.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+`accountID`
+ a| 
+L'ID account univoco per l'account.
+ a| 
+intero
+
+
+
+ a| 
+`attributes`
+ a| 
+Elenco delle coppie nome-valore nel formato oggetto JSON.
+ a| 
+Oggetto JSON
+
+
+
+ a| 
+`enableChap`
+ a| 
+Specifica se le credenziali dell'account CHAP possono essere utilizzate da un iniziatore per accedere ai volumi.
+ a| 
+booleano
+
+
+
+ a| 
+`initiatorSecret`
+ a| 
+Il segreto CHAP iniziatore.
+ a| 
+stringa
+
+
+
+ a| 
+`status`
+ a| 
+Lo stato corrente dell'account. Valori possibili:
+
+* Attivo: Un account attivo.
+* Locked (bloccato): Un account bloccato.
+* Rimosso: Un account che è stato eliminato e rimosso.
+
+ a| 
+stringa
+
+
+
+ a| 
+`storageContainerID`
+ a| 
+ID univoco del container di storage del volume virtuale associato a questo account.
+ a| 
+UUID
+
+
+
+ a| 
+`targetSecret`
+ a| 
+Il segreto CHAP di destinazione.
+ a| 
+stringa
+
+
+
+ a| 
+`username`
+ a| 
+Il nome utente dell'account.
+ a| 
+stringa
+
+
+
+ a| 
+`volumes`
+ a| 
+Un elenco di ID volume per i volumi di proprietà di questo account.
+ a| 
+array intero
+
+|===
+
+
+== Trova ulteriori informazioni
+
+* xref:reference_element_api_addaccount.adoc[AddAccount]
+* xref:reference_element_api_getaccountbyid.adoc[GetAccountByID]
+* xref:reference_element_api_getaccountbyname.adoc[GetAccountByName]
+* xref:reference_element_api_listaccounts.adoc[ListAccounts]
+

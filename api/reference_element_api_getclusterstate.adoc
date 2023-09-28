@@ -1,0 +1,85 @@
+---
+permalink: api/reference_element_api_getclusterstate.html 
+sidebar: sidebar 
+keywords: cluster,state,getting,get,getclusterstate 
+summary: È possibile utilizzare il metodo API GetClusterState per indicare se un nodo fa parte o meno di un cluster. 
+---
+= GetClusterState
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `GetClusterState` Metodo API per indicare se un nodo fa parte o meno di un cluster.
+
+
+
+== Parametri
+
+Questo metodo non ha parametri di input.
+
+
+
+== Valori restituiti
+
+Questo metodo ha i seguenti valori restituiti:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+cluster
+ a| 
+Nome del cluster.
+ a| 
+stringa
+
+
+
+ a| 
+stato
+ a| 
+* Disponibile: Il nodo non è stato configurato con un nome di cluster.
+* In sospeso: Il nodo è in sospeso per uno specifico cluster denominato e può essere aggiunto.
+* Attivo: Il nodo è un membro attivo di un cluster e non può essere aggiunto a un altro cluster.
+
+ a| 
+stringa
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+   "method": "GetClusterState",
+   "params": {},
+   "id" : 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+   "id" : 1,
+   "result" :
+      "cluster" :  "Cluster101"
+      "state" : "Active"
+}
+----
+
+
+== Novità dalla versione
+
+9,6

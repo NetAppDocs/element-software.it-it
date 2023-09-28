@@ -1,0 +1,126 @@
+---
+permalink: api/reference_element_api_adddrives.html 
+sidebar: sidebar 
+keywords: drives,adding,cluster,drive,add,adddrives 
+summary: È possibile utilizzare il metodo AddDrives per aggiungere una o più unità disponibili al cluster, consentendo ai dischi di ospitare una parte dei dati per il cluster. 
+---
+= AddDrive
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `AddDrives` metodo per aggiungere uno o più dischi disponibili al cluster, consentendo ai dischi di ospitare una parte dei dati per il cluster.
+
+Quando si aggiunge un nodo di storage al cluster o si installano nuove unità in un nodo esistente, le nuove unità vengono contrassegnate come disponibili e devono essere aggiunte tramite AddDrives prima di poter essere utilizzate. Utilizzare xref:reference_element_api_listdrives.adoc[ListDrive] metodo per visualizzare le unità disponibili per l'aggiunta. Quando si aggiunge un disco, il sistema determina automaticamente il tipo di disco che deve essere.
+
+Il metodo è asincrono e viene restituito non appena vengono avviati i processi di ribilanciamento dei dischi nel cluster. Tuttavia, potrebbe essere necessario più tempo per il ribilanciamento dei dati nel cluster utilizzando le nuove unità aggiunte; il ribilanciamento continua anche dopo il completamento della chiamata al metodo AddDrives. È possibile utilizzare xref:reference_element_api_getasyncresult.adoc[GetAsyncResult] Metodo per eseguire query su asyncHandle restituito dal metodo. Una volta restituito il metodo AddDrives, è possibile utilizzare xref:reference_element_api_listsyncjobs.adoc[ListSyncJobs] metodo per vedere l'avanzamento del ribilanciamento dei dati con i nuovi dischi.
+
+
+NOTE: Quando si aggiungono più dischi, è più efficiente aggiungerli in una singola chiamata al metodo AddDrives piuttosto che in più singoli metodi con un singolo disco ciascuno. In questo modo si riduce la quantità di bilanciamento dei dati necessaria per stabilizzare il carico di storage sul cluster.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+dischi
+ a| 
+Informazioni su ciascun disco da aggiungere al cluster. Valori possibili:
+
+* DriveID: L'ID del disco da aggiungere (numero intero).
+* Type (tipo): Il tipo di disco da aggiungere (stringa). I valori validi sono "slice", "block" o "volume". Se omesso, il sistema assegna il tipo corretto.
+
+ a| 
+Array di oggetti JSON
+ a| 
+Nessuno
+ a| 
+Sì (il tipo è opzionale)
+
+|===
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+AsyncHandle
+ a| 
+Valore handle utilizzato per ottenere il risultato dell'operazione.
+ a| 
+intero
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "id": 1,
+  "method": "AddDrives",
+  "params": {
+    "drives": [
+      {
+        "driveID": 1,
+        "type": "slice"
+      },
+      {
+        "driveID": 2,
+        "type": "block"
+      },
+      {
+        "driveID": 3,
+        "type": "block"
+      }
+    ]
+  }
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+  "id": 1,
+  "result" : {
+    "asyncHandle": 1
+  }
+}
+----
+
+
+== Novità dalla versione
+
+9,6
+
+
+
+== Trova ulteriori informazioni
+
+* xref:reference_element_api_getasyncresult.adoc[GetAsyncResult]
+* xref:reference_element_api_listdrives.adoc[ListDrive]
+* xref:reference_element_api_listsyncjobs.adoc[ListSyncJobs]
+

@@ -1,0 +1,100 @@
+---
+permalink: api/reference_element_api_removenodes.html 
+sidebar: sidebar 
+keywords: node,nodes,cluster,remove,removing,removenodes 
+summary: È possibile utilizzare RemoveNodes per rimuovere uno o più nodi che non devono più partecipare al cluster. 
+---
+= RemoveNode
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `RemoveNodes` per rimuovere uno o più nodi che non devono più partecipare al cluster.
+
+Prima di rimuovere un nodo, è necessario rimuovere tutti i dischi contenuti nel nodo utilizzando `RemoveDrives` metodo. Non è possibile rimuovere un nodo fino a. `RemoveDrives` il processo è stato completato e tutti i dati sono stati migrati lontano dal nodo. Dopo aver rimosso un nodo, si registra come nodo in sospeso. È possibile aggiungere di nuovo il nodo o spegnerlo (la disattivazione del nodo lo rimuove dall'elenco dei nodi in sospeso).
+
+
+
+== Rimozione del nodo master del cluster
+
+Se si utilizza `RemoveNodes` per rimuovere il nodo master del cluster, il metodo potrebbe scadere prima di restituire una risposta. Se la chiamata al metodo non riesce a rimuovere il nodo, eseguire nuovamente la chiamata al metodo. Si noti che se si rimuove il nodo master del cluster insieme ad altri nodi, è necessario utilizzare una chiamata separata per rimuovere il nodo master del cluster da solo.
+
+
+
+== Parametro
+
+Questo metodo ha il seguente parametro di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+IgnoreEnsembleToleranceChange
+ a| 
+Ignora le modifiche apportate alla tolleranza di errore del nodo dell'ensemble durante la rimozione dei nodi.
+
+Se il cluster di storage utilizza schemi di protezione dei dati che tollerano guasti a più nodi e la rimozione dei nodi ridurrebbe la tolleranza di errore del nodo dell'insieme, la rimozione del nodo normalmente non riesce con un errore. È possibile impostare questo parametro su true per disattivare la verifica della tolleranza dell'insieme in modo che la rimozione del nodo abbia esito positivo.
+ a| 
+booleano
+ a| 
+falso
+ a| 
+No
+
+
+
+ a| 
+nodi
+ a| 
+Elenco di NodeID per i nodi da rimuovere.
+ a| 
+array intero
+ a| 
+Nessuno
+ a| 
+Sì
+
+|===
+
+
+== Valore restituito
+
+Questo metodo non ha alcun valore restituito.
+
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+   "method": "RemoveNodes",
+   "params": {
+     "nodes"  : [3,4,5]
+   },
+   "id" : 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+  "id" : 1
+  "result" : {},
+}
+----
+
+
+== Novità dalla versione
+
+9,6

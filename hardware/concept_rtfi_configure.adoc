@@ -1,0 +1,40 @@
+---
+permalink: hardware/concept_rtfi_configure.html 
+sidebar: sidebar 
+keywords: rtfi, return, factory, image, nodes, solidfire, software, image 
+summary: 'I sistemi storage NetApp SolidFire utilizzano il processo RTFI per scrivere un"immagine software su un nuovo nodo o ripristinare un nodo al suo stato originale di fabbrica.' 
+---
+= Configurare il ripristino dell'immagine di fabbrica
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+I sistemi di storage NetApp SolidFire utilizzano il processo RTFI (Return to Factory Image) per scrivere un'immagine software in un nuovo nodo o ripristinare un nodo allo stato originale di fabbrica. Il processo RTFI cancella in modo sicuro tutti i dati e le configurazioni esistenti (se presenti) e installa un'immagine software NetApp Element non configurata. Il processo RTFI è disponibile per tutti i nodi SolidFire.
+
+I sistemi SolidFire utilizzano un unico processo RTFI per tutte le installazioni di software Element. Ciò include installazioni manuali interne eseguite da sviluppatori, installazioni automatiche mediante test di framework automatizzati, installazioni sul campo da parte di tecnici dell'assistenza e clienti e installazioni eseguite da vari integratori e partner. Lo stesso processo RTFI viene utilizzato su tutti i nodi SolidFire, indipendentemente dal tipo di chassis o nodo in uso, per risolvere automaticamente eventuali problemi.
+
+I destinatari di questa guida sono gli integratori che installano, configurano, utilizzano o risolvono i problemi relativi allo storage.
+
+* Linux: Hai un po' di background con i sistemi Linux.
+* Networking: Hai familiarità con la rete dei server e lo storage di rete, inclusi indirizzi IP, netmask e gateway.
+
+
+
+WARNING: Il processo RTFI è distruttivo per i dati e cancella in modo sicuro tutti i dati e i dettagli di configurazione dal nodo e installa un nuovo sistema operativo. Verificare che il nodo utilizzato per il processo RTFI non sia attivo come parte di un cluster.
+
+Implementare e installare l'immagine RTFI International Organization for Standardization (ISO) ed eseguire il processo RTFI:
+
+* xref:task_rtfi_deployment_and_install_options.adoc[Opzioni di installazione e implementazione RTFI]
+* xref:task_rtfi_process.adoc[Eseguire il processo RTFI]
+* xref:task_rtfi_options_menu.adoc[Menu delle opzioni RTFI]
+
+
+
+
+== Trova ulteriori informazioni
+
+* https://www.netapp.com/data-storage/solidfire/documentation/["Pagina delle risorse NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Documentazione per le versioni precedenti dei prodotti SolidFire ed Element di NetApp"^]
+

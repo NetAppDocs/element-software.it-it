@@ -1,0 +1,22 @@
+---
+permalink: storage/task_system_manage_fips_create_a_cluster_supporting_fips_drives.html 
+sidebar: sidebar 
+keywords: fips, security, federal information processing standards, 140-2, cluster, create 
+summary: 'La sicurezza sta diventando sempre più critica per l"implementazione di soluzioni in molti ambienti dei clienti. Gli standard FIPS (Federal Information Processing Standards) sono standard per la sicurezza e l"interoperabilità dei computer. La crittografia certificata FIPS 140-2 per i dati inattivi è un componente della soluzione di sicurezza globale.' 
+---
+= Creare un cluster che supporti i dischi FIPS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La sicurezza sta diventando sempre più critica per l'implementazione di soluzioni in molti ambienti dei clienti. Gli standard FIPS (Federal Information Processing Standards) sono standard per la sicurezza e l'interoperabilità dei computer. La crittografia certificata FIPS 140-2 per i dati inattivi è un componente della soluzione di sicurezza globale.
+
+* link:task_system_manage_fips_avoid_mixing_nodes_for_fips_drives.html["Evitare la combinazione di nodi per i dischi FIPS"]
+* link:task_system_manage_fips_enable_encryption_at_rest.html["Abilitare la crittografia a riposo"]
+* link:task_system_manage_fips_identify_nodes_ready_for_fips_drives["Identificare se i nodi sono pronti per la funzionalità dei dischi FIPS"]
+* link:task_system_manage_fips_enable_the_fips_drives_feature.html["Attivare la funzione dischi FIPS"]
+* link:task_system_manage_fips_check_the_fips_drive_status.html["Controllare lo stato del disco FIPS"]
+* link:task_system_manage_fips_troubleshoot_the_fips_drive_feature["Risolvere i problemi relativi alla funzione del disco FIPS"]
+

@@ -1,0 +1,110 @@
+---
+permalink: api/reference_element_api_authsessioninfo.html 
+sidebar: sidebar 
+keywords: objects,object,authSessionInfo 
+summary: 'L"oggetto authSessionInfo contiene informazioni su una sessione auth.' 
+---
+= AuthSessionInfo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il `authSessionInfo` oggetto contiene informazioni su una sessione auth.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+`accessGroupList`
+ a| 
+Elenco dei gruppi di accesso per l'utente.
+ a| 
+array di stringhe
+
+
+
+ a| 
+`authMethod`
+ a| 
+Il tipo di autorizzazione di cui dispone l'utente amministratore del cluster. Valori possibili:
+
+* LDAP - autenticato tramite LDAP.
+* Cluster - autenticato tramite un nome utente e una password memorizzati nel database del cluster.
+* IDP - autenticato tramite un provider di identità di terze parti.
+
+ a| 
+stringa
+
+
+
+ a| 
+`clusterAdminIDs`
+ a| 
+Elenco degli AdminID del cluster associati a questa sessione. Per le sessioni relative a LDAP o a un provider di identità di terze parti (IdP), si tratta di un elenco aggregato di Cluster AdminID corrispondenti associati a questa sessione.
+ a| 
+array intero
+
+
+
+ a| 
+`finalTimeout`
+ a| 
+Ora in cui la sessione non è valida. Questa opzione viene impostata quando la sessione viene creata e non può essere modificata.
+ a| 
+stringa
+
+
+
+ a| 
+`idpConfigVersion`
+ a| 
+Versione della configurazione IDP al momento della creazione della sessione.
+ a| 
+intero
+
+
+
+ a| 
+`lastAccessTimeout`
+ a| 
+Tempo in cui la sessione diventa non valida a causa di inattività.viene impostato su un nuovo valore quando si accede alla sessione per l'utilizzo, fino al momento in cui la sessione diventa non valida a causa del raggiungimento di finalTimeout.
+ a| 
+stringa
+
+
+
+ a| 
+`sessionCreationTime`
+ a| 
+Ora in cui viene creata la sessione.
+ a| 
+stringa
+
+
+
+ a| 
+`sessionID`
+ a| 
+UUID per questa sessione.
+ a| 
+UUID
+
+
+
+ a| 
+`username`
+ a| 
+Nome utente associato a questa sessione. Per le sessioni relative a LDAP, questo sarà il DN LDAP dell'utente. Per le sessioni correlate a un IdP di terze parti, si tratta di una coppia nome-valore arbitraria che verrà utilizzata per le operazioni di controllo all'interno della sessione. Non corrisponde necessariamente al nome dell'amministratore del cluster sul cluster. Ad esempio, un ID SAML Subject NameID, ma questo sarà dettato dalla configurazione di IdP e dal contenuto risultante dell'asserzione SAML.
+ a| 
+stringa
+
+|===

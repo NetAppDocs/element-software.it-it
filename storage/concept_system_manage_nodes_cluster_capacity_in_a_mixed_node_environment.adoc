@@ -1,0 +1,41 @@
+---
+permalink: storage/concept_system_manage_nodes_cluster_capacity_in_a_mixed_node_environment.html 
+sidebar: sidebar 
+keywords: nodes, mixed environment, capacity, cluster capacity, mixed nodes, encrypted, non-encrypted, threshold 
+summary: È possibile combinare diversi tipi di nodi in un cluster. La serie SF 2405, 3010, 4805, 6010, 9605, 9010, 19210, 38410 e H-Series possono coesistere in un cluster. 
+---
+= Capacità del cluster in un ambiente a nodi misti
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile combinare diversi tipi di nodi in un cluster. La serie SF 2405, 3010, 4805, 6010, 9605, 9010, 19210, 38410 e H-Series possono coesistere in un cluster.
+
+La serie H è composta da nodi H610S-1, H610S-2, H610S-4 e H410S. Questi nodi sono entrambi compatibili con 10 GbE e 25 GbE.
+
+Si consiglia di non mischiare nodi non crittografati e crittografati. In un cluster a nodi misti, nessun nodo può superare il 33% della capacità totale del cluster. Ad esempio, in un cluster con quattro nodi SF-Series 4805, il nodo più grande che può essere aggiunto da solo è SF-Series 9605. La soglia di capacità del cluster viene calcolata in base alla potenziale perdita del nodo più grande in questa situazione.
+
+A seconda della versione del software Element, i seguenti nodi storage SF-Series non sono supportati:
+
+[cols="40,40"]
+|===
+| A partire da... | Nodo storage non supportato... 
+
+
+| Elemento 12,7  a| 
+* SF2405
+* SF9608
+
+
+
+
+| Elemento 12,0  a| 
+* SF3010
+* SF6010
+* SF9010
+
+
+|===
+Se si tenta di aggiornare uno di questi nodi a una versione di elemento non supportata, viene visualizzato un errore che indica che questo nodo non è supportato da Element 12.x

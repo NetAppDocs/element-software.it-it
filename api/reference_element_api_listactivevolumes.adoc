@@ -1,0 +1,111 @@
+---
+permalink: api/reference_element_api_listactivevolumes.html 
+sidebar: sidebar 
+keywords: active,volume,volumes,list,listing,listactivevolumes,cluster 
+summary: 'È possibile utilizzare il metodo ListActiveVolumes per ottenere l"elenco dei volumi attivi presenti nel sistema. L"elenco dei volumi viene ordinato in ordine VolumeID e può essere restituito in più parti.' 
+---
+= ListActiveVolumes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `ListActiveVolumes` metodo per ottenere l'elenco dei volumi attivi attualmente nel sistema. L'elenco dei volumi viene ordinato in ordine VolumeID e può essere restituito in più parti (pagine).
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+Include VirtualVolumes
+ a| 
+Per impostazione predefinita, i volumi virtuali sono inclusi nella risposta. Per escludere i volumi virtuali, impostare su false.
+ a| 
+booleano
+ a| 
+vero
+ a| 
+No
+
+
+
+ a| 
+StartVolumeID
+ a| 
+Avvio di VolumeID per la restituzione. Se non esiste alcun volume con questo VolumeID, il volume successivo per ordine VolumeID viene utilizzato come inizio dell'elenco. Per scorrere l'elenco, passare il VolumeID dell'ultimo volume nella risposta precedente + 1.
+ a| 
+intero
+ a| 
+0
+ a| 
+No
+
+
+
+ a| 
+limite
+ a| 
+Numero massimo di oggetti info volume da restituire. 0 (zero) restituisce tutti i volumi (senza limiti).
+ a| 
+intero
+ a| 
+(senza limiti)
+ a| 
+No
+
+|===
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+volumi
+ a| 
+Elenco dei volumi attivi.
+ a| 
+xref:reference_element_api_volume.adoc[volume] array
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+   "method": "ListActiveVolumes",
+   "params": {
+      "startVolumeID"  : 0,
+      "limit" : 1000
+   },
+   "id" : 1
+}
+----
+
+
+== Esempio di risposta
+
+A causa della lunghezza di questo esempio di risposta, è documentata in un argomento supplementare.
+
+
+
+== Novità dalla versione
+
+9,6

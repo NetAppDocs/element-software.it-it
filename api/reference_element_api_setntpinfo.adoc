@@ -1,0 +1,98 @@
+---
+permalink: api/reference_element_api_setntpinfo.html 
+sidebar: sidebar 
+keywords: ntp,info,set,setting,setntpinfo 
+summary: 'È possibile utilizzare il metodo SetNtpInfo per configurare NTP sui nodi del cluster. I valori impostati con questa interfaccia si applicano a tutti i nodi del cluster. Se un server di trasmissione NTP trasmette periodicamente informazioni sull"ora sulla rete, è possibile configurare i nodi come client di trasmissione.' 
+---
+= SetNtpInfo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `SetNtpInfo` Metodo per configurare NTP sui nodi del cluster. I valori impostati con questa interfaccia si applicano a tutti i nodi del cluster. Se un server di trasmissione NTP trasmette periodicamente informazioni sull'ora sulla rete, è possibile configurare i nodi come client di trasmissione.
+
+
+
+== Parametri
+
+
+NOTE: Assicurarsi di utilizzare server NTP interni alla rete, anziché i valori predefiniti per l'installazione.
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+server
+ a| 
+Elenco dei server NTP da aggiungere a ciascuna configurazione NTP del nodo.
+ a| 
+array di stringhe
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+client di trasmissione
+ a| 
+Attiva ogni nodo del cluster come client di broadcast.
+ a| 
+booleano
+ a| 
+falso
+ a| 
+No
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo non ha valori restituiti.
+
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+   "method": "SetNtpInfo",
+   "params": {
+     "servers"  : [
+       "ntpserver1.example.org",
+       "ntpserver2.example.org",
+       "ntpserver3.example.org"
+     ],
+     "broadcastclient" : false
+   },
+   "id" : 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+    "id" : 1,
+    "result" : {}
+}
+----
+
+
+== Novità dalla versione
+
+9,6

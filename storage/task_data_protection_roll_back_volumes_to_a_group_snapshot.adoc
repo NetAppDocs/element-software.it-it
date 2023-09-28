@@ -1,0 +1,28 @@
+---
+permalink: storage/task_data_protection_roll_back_volumes_to_a_group_snapshot.html 
+sidebar: sidebar 
+keywords: volumes, rollback, group snapshot, purge 
+summary: È possibile eseguire il rollback di un gruppo di volumi in qualsiasi momento in uno snapshot di gruppo. 
+---
+= Eseguire il rollback dei volumi in uno snapshot di gruppo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile eseguire il rollback di un gruppo di volumi in qualsiasi momento in uno snapshot di gruppo.
+
+Quando si esegue il rollback di un gruppo di volumi, tutti i volumi del gruppo vengono ripristinati allo stato in cui si trovavano al momento della creazione dello snapshot di gruppo. Il rollback ripristina anche le dimensioni del volume alle dimensioni registrate nello snapshot originale. Se il sistema ha eliminato un volume, anche tutte le snapshot di quel volume sono state eliminate al momento della rimozione; il sistema non ripristina le snapshot del volume eliminate.
+
+. Fare clic su *Data Protection* > *Group Snapshot*.
+. Fare clic sull'icona Actions (azioni) per lo snapshot di gruppo che si desidera utilizzare per il rollback del volume.
+. Nel menu risultante, selezionare *Rollback Volumes to Group Snapshot* (Esegui il rollback dei volumi in Group Snapshot).
+. *Opzionale*: Per salvare lo stato corrente dei volumi prima di eseguire il rollback allo snapshot:
++
+.. Nella finestra di dialogo *Rollback to Snapshot*, selezionare *Save Volumes' Current state as a group snapshot* (Salva stato corrente dei volumi come snapshot di gruppo).
+.. Immettere un nome per il nuovo snapshot.
+
+
+. Fare clic su *Rollback Group Snapshot*.
+

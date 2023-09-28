@@ -1,0 +1,37 @@
+---
+permalink: setup/task_setup_add_drives_to_a_cluster.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Quando si aggiunge un nodo al cluster o si installano nuove unità in un nodo esistente, le unità vengono automaticamente registrate come disponibili. È necessario aggiungere le unità al cluster utilizzando l"interfaccia utente Element o l"API prima che possano partecipare al cluster.' 
+---
+= Aggiungere dischi a un cluster
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando si aggiunge un nodo al cluster o si installano nuove unità in un nodo esistente, le unità vengono automaticamente registrate come disponibili. È necessario aggiungere le unità al cluster utilizzando l'interfaccia utente Element o l'API prima che possano partecipare al cluster.
+
+Le unità non vengono visualizzate nell'elenco Available Drives (unità disponibili) quando sussistono le seguenti condizioni:
+
+* Le unità sono in stato attivo, Rimozione, cancellazione o guasto.
+* Il nodo di cui fa parte l'unità è in stato Pending.
+
+
+.Fasi
+. Dall'interfaccia utente di Element, selezionare *Cluster* > *Drives*.
+. Fare clic su *Available* (disponibile) per visualizzare l'elenco dei dischi disponibili.
+. Effettuare una delle seguenti operazioni:
++
+** Per aggiungere singoli dischi, fare clic sull'icona *azioni* del disco che si desidera aggiungere e fare clic su *Aggiungi*.
+** Per aggiungere più dischi, selezionare le caselle di controllo delle unità da aggiungere, fare clic su *azioni in blocco* e fare clic su *Aggiungi*.
++
+....
+== Find more information
+* https://www.netapp.com/data-storage/solidfire/documentation[SolidFire and Element Resources page^]
+* https://docs.netapp.com/us-en/vcp/index.html[NetApp Element Plug-in for vCenter Server^]
+....
+
+
+

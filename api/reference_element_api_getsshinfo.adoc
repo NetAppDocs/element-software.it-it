@@ -1,0 +1,68 @@
+---
+permalink: api/reference_element_api_getsshinfo.html 
+sidebar: sidebar 
+keywords: SSH,status,get,getting,getsshinfo 
+summary: È possibile utilizzare il metodo GetSshInfo per eseguire query sullo stato del servizio SSH su un singolo nodo. 
+---
+= GetSshInfo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `GetSshInfo` Metodo per eseguire query sullo stato del servizio SSH su un singolo nodo.
+
+
+
+== Parametri
+
+Questo metodo non ha parametri di input.
+
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+risultato
+ a| 
+Lo stato del servizio SSH per questo nodo.
+ a| 
+booleano
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+    "method" : "GetSshInfo",
+    "params" : {},
+    "id" : 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+    "id": 1,
+    "result": {
+        "enabled": false
+    }
+}
+----

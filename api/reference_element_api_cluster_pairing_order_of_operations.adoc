@@ -1,0 +1,38 @@
+---
+permalink: api/reference_element_api_cluster_pairing_order_of_operations.html 
+sidebar: sidebar 
+keywords: cluster,pairing,pair,order,operations,clusters 
+summary: È necessario stabilire una connessione tra una coppia di cluster di storage che eseguono il software Element prima di poter utilizzare la replica remota. 
+---
+= Ordine delle operazioni di abbinamento dei cluster
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È necessario stabilire una connessione tra una coppia di cluster di storage che eseguono il software Element prima di poter utilizzare la replica remota.
+
+Utilizzare il seguente set di metodi API per stabilire una connessione cluster:
+
+* xref:reference_element_api_startclusterpairing.adoc[StartClusterPairing]:
++
+Questo metodo API crea e restituisce una chiave di accoppiamento utilizzata per stabilire una coppia di cluster. La chiave è codificata e contiene informazioni utilizzate per stabilire le comunicazioni tra i cluster. Un singolo cluster può essere associato a un massimo di quattro altri cluster. Tuttavia, è necessario generare una nuova chiave per ogni accoppiamento del cluster. Il xref:reference_element_api_startclusterpairing.adoc[StartClusterPairing] method genera una nuova chiave ogni volta che viene chiamato il metodo. Utilizzare ciascuna chiave univoca con xref:reference_element_api_completeclusterpairing.adoc[CompleteClusterPairing] metodo per associare ciascun cluster aggiuntivo.
+
++
+
+NOTE: Per motivi di sicurezza, la chiave di accoppiamento non deve essere inviata ad altri utenti via email. La chiave contiene un nome utente e una password.
+
+* xref:reference_element_api_completeclusterpairing.adoc[CompleteClusterPairing]:
++
+Questo metodo utilizza la chiave di accoppiamento creata con xref:reference_element_api_startclusterpairing.adoc[StartClusterPairing] Metodo API per creare una coppia di cluster. Eseguire il xref:reference_element_api_completeclusterpairing.adoc[CompleteClusterPairing] Metodo API con il parametro clusterPairingKey per la destinazione. Il cluster di origine è il cluster che ha creato la chiave.
+
+
+
+
+
+== Trova ulteriori informazioni
+
+* xref:reference_element_api_startclusterpairing.adoc[StartClusterPairing]
+* xref:reference_element_api_completeclusterpairing.adoc[CompleteClusterPairing]
+

@@ -1,0 +1,44 @@
+---
+permalink: storage/concept_troubleshoot_drives.html 
+sidebar: sidebar 
+keywords: troubleshoot, drives, ssd, swappable, solid-state drives 
+summary: 'È possibile sostituire un disco a stato solido guasto (SSD) con un disco sostitutivo. Gli SSD per i nodi di storage SolidFire sono sostituibili a caldo. Se si sospetta un guasto a un SSD, contattare il supporto NetApp per verificare il guasto e seguire la procedura di risoluzione corretta. NetApp Support collabora inoltre con te per ottenere un disco sostitutivo in base al tuo contratto di servizio.' 
+---
+= Risolvere i problemi relativi ai dischi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile sostituire un disco a stato solido (SSD) guasto con un disco sostitutivo. Gli SSD per i nodi di storage SolidFire sono sostituibili a caldo. Se si sospetta un guasto a un SSD, contattare il supporto NetApp per verificare il guasto e seguire la procedura di risoluzione corretta. NetApp Support collabora inoltre con te per ottenere un disco sostitutivo in base al tuo contratto di servizio.
+
+Come sostituire in questo caso significa che è possibile rimuovere un disco guasto da un nodo attivo e sostituirlo con un nuovo disco SSD di NetApp. Si sconsiglia di rimuovere i dischi non guasti su un cluster attivo.
+
+È necessario mantenere le parti di ricambio on-site suggerite dal supporto NetApp per consentire la sostituzione immediata del disco in caso di guasto.
+
+
+NOTE: A scopo di test, se si simula un guasto del disco estraendo un disco da un nodo, è necessario attendere 30 secondi prima di inserirlo nuovamente nello slot del disco.
+
+Se un disco si guasta, Double Helix ridistribuisce i dati sul disco tra i nodi rimanenti nel cluster. I guasti di più dischi sullo stesso nodo non sono un problema, poiché il software Element protegge da due copie di dati che risiedono sullo stesso nodo. Un disco guasto provoca i seguenti eventi:
+
+* I dati vengono migrati dal disco.
+* La capacità complessiva del cluster è ridotta dalla capacità del disco.
+* La protezione dei dati Double Helix garantisce la presenza di due copie valide dei dati.
+
+
+
+IMPORTANT: I sistemi storage SolidFire non supportano la rimozione di un disco se la quantità di storage necessaria per la migrazione dei dati risulta insufficiente.
+
+
+
+== Per ulteriori informazioni
+
+* xref:task_troubleshoot_remove_failed_drives.adoc[Rimuovere i dischi guasti dal cluster]
+* xref:concept_troubleshoot_basic_mdss_drive_troubleshooting.adoc[Risoluzione dei problemi di base dei dischi MDSS]
+* xref:task_troubleshoot_remove_mdss_drives.adoc[Rimuovere i dischi MDSS]
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP2844771["Sostituzione delle unità per i nodi di storage SolidFire"]
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP2846859["Sostituzione delle unità per i nodi storage della serie H600S"]
+* link:../hardware/concept_h410s_h610s_info.html["Informazioni sull'hardware H410S e H610S"]
+* link:../hardware/concept_sfseries_info.html["Informazioni sull'hardware della serie SF"]
+

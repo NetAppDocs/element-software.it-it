@@ -1,0 +1,36 @@
+---
+permalink: storage/task_replication_pair_cluster_using_mvip.html 
+sidebar: sidebar 
+keywords: pair clusters, mvip, connection 
+summary: 'È possibile associare due cluster per la replica in tempo reale utilizzando l"MVIP di un cluster per stabilire una connessione con l"altro cluster. Per utilizzare questo metodo, è necessario disporre dell"accesso dell"amministratore del cluster su entrambi i cluster. Il nome utente e la password dell"amministratore del cluster vengono utilizzati per autenticare l"accesso al cluster prima di poter associare i cluster.' 
+---
+= Associare i cluster utilizzando MVIP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile associare due cluster per la replica in tempo reale utilizzando l'MVIP di un cluster per stabilire una connessione con l'altro cluster. Per utilizzare questo metodo, è necessario disporre dell'accesso dell'amministratore del cluster su entrambi i cluster. Il nome utente e la password dell'amministratore del cluster vengono utilizzati per autenticare l'accesso al cluster prima di poter associare i cluster.
+
+. Nel cluster locale, selezionare *Data Protection* > *Cluster Pairs*.
+. Fare clic su *Pair Cluster*.
+. Fare clic su *Start Pairing* (Avvia associazione) e fare clic su *Yes* (Sì) per indicare che si dispone dell'accesso al cluster remoto.
+. Inserire l'indirizzo MVIP del cluster remoto.
+. Fare clic su *complete pairing on remote cluster*.
++
+Nella finestra *Authentication Required* (autenticazione richiesta), immettere il nome utente e la password dell'amministratore del cluster remoto.
+
+. Sul cluster remoto, selezionare *Data Protection* > *Cluster Pairs*.
+. Fare clic su *Pair Cluster*.
+. Fare clic su *completa associazione*.
+. Fare clic sul pulsante *complete Pairing* (completa associazione).
+
+
+
+
+== Trova ulteriori informazioni
+
+* xref:task_replication_pair_cluster_using_pairing_key.adoc[Associare i cluster utilizzando una chiave di accoppiamento]
+* https://www.youtube.com/watch?v=HbKxPZnNvn4&feature=youtu.be["Associazione di cluster mediante MVIP (video)"]
+

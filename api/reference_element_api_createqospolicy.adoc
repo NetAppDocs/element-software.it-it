@@ -1,0 +1,132 @@
+---
+permalink: api/reference_element_api_createqospolicy.html 
+sidebar: sidebar 
+keywords: QoS,policy,policies,create,creating 
+summary: È possibile utilizzare il metodo CreateQoSPolicy per creare un oggetto QoSPolicy da applicare successivamente a un volume al momento della creazione o della modifica. Un criterio QoS ha un ID univoco, un nome e impostazioni QoS. 
+---
+= CreateQoSPolicy
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `CreateQoSPolicy` Metodo per creare un oggetto QoSPolicy che sarà possibile applicare in seguito a un volume al momento della creazione o della modifica. Un criterio QoS ha un ID univoco, un nome e impostazioni QoS.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+nome
+ a| 
+Il nome del criterio QoS, ad esempio oro, platino o argento.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+qos
+ a| 
+Le impostazioni QoS rappresentate da questo criterio.
+ a| 
+xref:reference_element_api_qos.adoc[QoS]
+ a| 
+Nessuno
+ a| 
+Sì
+
+|===
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+QosPolicy
+ a| 
+Oggetto QoSPolicy appena creato.
+ a| 
+xref:reference_element_api_qospolicy.adoc[QoSPolicy]
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "id": 68,
+  "method": "CreateQoSPolicy",
+  "params": {
+    "name": "bronze",
+    "qos": {
+      "minIOPS": 50,
+      "maxIOPS": 15000,
+      "burstIOPS": 15000
+    }
+  }
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+  "id": 68,
+  "result": {
+    "qosPolicy": {
+      "name": "bronze",
+      "qos": {
+        "burstIOPS": 15000,
+        "burstTime": 60,
+        "curve": {
+          "4096": 100,
+          "8192": 160,
+          "16384": 270,
+          "32768": 500,
+          "65536": 1000,
+          "131072": 1950,
+          "262144": 3900,
+          "524288": 7600,
+          "1048576": 15000
+        },
+        "maxIOPS": 15000,
+        "minIOPS": 50
+      },
+      "qosPolicyID": 2,
+      "volumeIDs": []
+    }
+  }
+}
+----
+
+
+== Novità dalla versione
+
+10,0

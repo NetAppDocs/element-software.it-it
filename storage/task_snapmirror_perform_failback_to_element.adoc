@@ -1,0 +1,23 @@
+---
+permalink: storage/task_snapmirror_perform_failback_to_element.html 
+sidebar: sidebar 
+keywords: failback, perform a failbacl, Element, snapmirror 
+summary: Una volta mitigato il problema sul lato primario, è necessario risincronizzare il volume di origine originale e ripristinare il software NetApp Element. I passaggi da eseguire variano a seconda che il volume di origine sia ancora esistente o che sia necessario eseguire il failback a un volume appena creato. 
+---
+= Eseguire un failback a Element
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Una volta mitigato il problema sul lato primario, è necessario risincronizzare il volume di origine originale e ripristinare il software NetApp Element. I passaggi da eseguire variano a seconda che il volume di origine sia ancora esistente o che sia necessario eseguire il failback a un volume appena creato.
+
+
+
+== Trova ulteriori informazioni
+
+* xref:task_snapmirror_perform_failback_when_source_volume_exists.adoc[Eseguire un failback quando il volume di origine esiste ancora]
+* xref:task_snapmirror_performing_failback_when_source_volume_no_longer_exists.adoc[Eseguire un failback quando il volume di origine non esiste più]
+* xref:concept_snapmirror_failback_scenarios.adoc[Scenari di failback di SnapMirror]
+

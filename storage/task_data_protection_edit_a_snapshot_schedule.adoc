@@ -1,0 +1,42 @@
+---
+permalink: storage/task_data_protection_edit_a_snapshot_schedule.html 
+sidebar: sidebar 
+keywords: snapshot schedule, edit, modify 
+summary: È possibile modificare le pianificazioni di snapshot esistenti. Dopo la modifica, la prossima volta che la pianificazione viene eseguita, utilizza gli attributi aggiornati. Tutte le snapshot create dalla pianificazione originale rimangono nel sistema di storage. 
+---
+= Modificare una pianificazione di snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile modificare le pianificazioni di snapshot esistenti. Dopo la modifica, la prossima volta che la pianificazione viene eseguita, utilizza gli attributi aggiornati. Tutte le snapshot create dalla pianificazione originale rimangono nel sistema di storage.
+
+.Fasi
+. Fare clic su *Data Protection* > *Schedules*.
+. Fare clic sull'icona *azioni* relativa alla pianificazione che si desidera modificare.
+. Nel menu visualizzato, fare clic su *Edit* (Modifica).
+. Nel campo *Volume IDS CSV*, modificare l'ID di un singolo volume o l'elenco separato da virgole degli ID di volume attualmente inclusi nell'operazione di snapshot.
+. Per sospendere o riprendere la pianificazione, selezionare una delle seguenti opzioni:
++
+** Per mettere in pausa un programma attivo, selezionare *Sì* dall'elenco *Pausa manualmente programma*.
+** Per riprendere un programma in pausa, selezionare *No* dall'elenco *Manually Pause Schedule* (programma di pausa manuale).
+
+
+. Immettere un nome diverso per la pianificazione nel campo *New Schedule Name* (Nome nuova pianificazione), se si desidera.
+. Per modificare la pianificazione in modo che venga eseguita in giorni diversi della settimana o del mese, selezionare *tipo di pianificazione* e modificare la pianificazione dalle opzioni fornite.
+. *Opzionale:* selezionare *Pianificazione ricorrente* per ripetere la pianificazione dello snapshot a tempo indeterminato.
+. *Opzionale:* inserire o modificare il nome del nuovo snapshot nel campo *New Snapshot Name* (Nome nuovo snapshot).
++
+Se si lascia il campo vuoto, il sistema utilizza come nome l'ora e la data di creazione dello snapshot.
+
+. *Opzionale:* selezionare la casella di controllo *Includi snapshot nella replica quando accoppiate* per assicurarsi che le snapshot vengano acquisite nella replica quando il volume padre viene associato.
+. Per modificare l'impostazione di conservazione, selezionare una delle seguenti opzioni:
++
+** Fare clic su *Keep Forever* per conservare l'istantanea sul sistema a tempo indeterminato.
+** Fare clic su *Set retention period* (Imposta periodo di conservazione) e utilizzare le caselle di selezione della data per selezionare il periodo di tempo in cui il sistema conserva lo snapshot.
+
+
+. Fare clic su *Save Changes* (Salva modifiche).
+

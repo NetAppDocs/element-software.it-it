@@ -1,0 +1,30 @@
+---
+permalink: storage/task_data_manage_volumes_apply_a_qos_policy.html 
+sidebar: sidebar 
+keywords: qos policy, apply to volumes 
+summary: È possibile applicare in blocco una policy QoS esistente a uno o più volumi. 
+---
+= Applicare una policy di QoS ai volumi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile applicare in blocco una policy QoS esistente a uno o più volumi.
+
+Il criterio QoS che si desidera applicare in blocco deve esistere.
+
+. Selezionare *Management* > *Volumes*.
+. Nell'elenco dei volumi, selezionare la casella accanto ai volumi a cui si desidera applicare il criterio QoS.
+. Fare clic su *azioni in blocco*.
+. Nel menu visualizzato, fare clic su *Apply QoS Policy* (Applica policy QoS).
+. Selezionare il criterio QoS dall'elenco a discesa.
+. Fare clic su *Apply* (Applica).
+
+
+
+
+== Trova ulteriori informazioni
+
+xref:concept_data_manage_volumes_quality_of_service_policies.adoc[Policy sulla qualità del servizio]

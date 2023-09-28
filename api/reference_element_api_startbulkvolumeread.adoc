@@ -1,0 +1,191 @@
+---
+permalink: api/reference_element_api_startbulkvolumeread.html 
+sidebar: sidebar 
+keywords: volume,read,session,start,starting,bulk,startbulkvolumeread 
+summary: È possibile utilizzare il metodo StartBulkVolumeRead per avviare una sessione di lettura di volumi in blocco su un volume specificato. 
+---
+= StartBulkVolumeRead
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `StartBulkVolumeRead` metodo per avviare una sessione di lettura di un volume in blocco su un volume specificato.
+
+Solo due processi di volume in blocco possono essere eseguiti contemporaneamente su un volume. Quando si inizializza la sessione, i dati vengono letti da un volume di storage SolidFire per essere memorizzati in un'origine di backup esterna. L'accesso ai dati esterni viene effettuato da un server Web in esecuzione su un nodo di storage Element. Le informazioni sull'interazione con il server per l'accesso ai dati esterni vengono trasmesse da uno script in esecuzione sul sistema di storage.
+
+All'inizio di un'operazione di lettura di volume in blocco, viene creata una snapshot del volume e la snapshot viene eliminata al termine della lettura. È inoltre possibile leggere uno snapshot del volume immettendo l'ID dello snapshot come parametro. Quando si legge uno snapshot precedente, il sistema non crea un nuovo snapshot del volume, né elimina lo snapshot precedente al termine della lettura.
+
+
+NOTE: Questo processo crea un nuovo snapshot se non viene fornito l'ID di uno snapshot esistente. È possibile creare snapshot se la completezza del cluster è nella fase 2 o 3. Gli snapshot non vengono creati quando la completezza del cluster è nella fase 4 o 5.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+formato
+ a| 
+Il formato dei dati del volume. Può essere:
+
+* `uncompressed`: Ogni byte del volume viene restituito senza compressione.
+* `native`: Vengono restituiti dati opachi più piccoli e memorizzati e scritti in modo più efficiente su una successiva scrittura di volume in blocco.
+
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+ID volume
+ a| 
+L'ID del volume da leggere.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+SnapshotID
+ a| 
+L'ID di uno snapshot creato in precedenza utilizzato per le letture di volumi in blocco. Se non viene inserito alcun ID, viene creata un'istantanea dell'immagine del volume attivo corrente.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+script
+ a| 
+Il nome di uno script eseguibile. Se non viene fornito alcun nome di script, la chiave e l'URL sono necessari per accedere ai nodi di storage degli elementi. Lo script viene eseguito sul nodo primario e la chiave e l'URL vengono restituiti allo script in modo da poter contattare il server Web locale.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+Parametri di scriptParameters
+ a| 
+Parametri JSON da passare allo script.
+ a| 
+Oggetto JSON
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+attributi
+ a| 
+Attributi JSON per il processo di volume in blocco.
+ a| 
+Oggetto JSON
+ a| 
+Nessuno
+ a| 
+No
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo ha i seguenti valori restituiti:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+AsyncHandle
+ a| 
+L'ID del processo asincrono da controllare per il completamento.
+ a| 
+intero
+
+
+
+ a| 
+chiave
+ a| 
+Chiave opaca che identifica in modo univoco la sessione.
+ a| 
+stringa
+
+
+
+ a| 
+url
+ a| 
+URL per accedere al server Web del nodo.
+ a| 
+stringa
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+   "method": "StartBulkVolumeRead",
+   "params": {
+      "volumeID" : 5,
+      "format"  : "native",
+      "snapshotID" : 2
+   },
+   "id": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+      "id" : 1,
+   "result" : {
+      "asyncHandle" : 1,
+      "key" : "11eed8f086539205beeaadd981aad130",
+      "url" : "https://127.0.0.1:44000/"
+   }
+}
+----
+
+
+== Novità dalla versione
+
+9,6

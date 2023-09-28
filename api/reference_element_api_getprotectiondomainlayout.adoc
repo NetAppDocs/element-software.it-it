@@ -1,0 +1,127 @@
+---
+permalink: api/reference_element_api_getprotectiondomainlayout.html 
+sidebar: sidebar 
+keywords: layout,custom,protection domain,protection domains,retrieve protection domains 
+summary: È possibile utilizzare il metodo GetProtectionDomainLayout per restituire tutte le informazioni del dominio di protezione per un cluster, inclusi lo chassis e il dominio di protezione personalizzato in cui si trova ciascun nodo. 
+---
+= GetProtectionDomainLayout
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `GetProtectionDomainLayout` metodo per restituire tutte le informazioni sul dominio di protezione per un cluster, inclusi lo chassis e il dominio di protezione personalizzato in cui si trova ciascun nodo.
+
+
+
+== Parametro
+
+Questo metodo non ha parametri di input.
+
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+ProtectionDomainLayout
+ a| 
+Elenco di nodi, ciascuno con i relativi domini di protezione associati.
+ a| 
+Elenco JSON di link:reference_element_api_nodeprotectiondomains.html["NodeProtectionDomini"] oggetti.
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "method": "GetProtectionDomainLayout",
+  "params": {},
+  "id" : 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+
+{
+  "id": 1,
+  "result": {
+    "protectionDomainLayout": [
+      {
+        "nodeID": 1,
+        "protectionDomains": [
+          {
+            "protectionDomainName": "QTFCR2914008D",
+            "protectionDomainType": "chassis"
+          },
+          {
+            "protectionDomainName": "Rack-1",
+            "protectionDomainType": "custom"
+          }
+        ]
+      },
+      {
+        "nodeID": 2,
+        "protectionDomains": [
+          {
+            "protectionDomainName": "QTFCR291500EA",
+            "protectionDomainType": "chassis"
+          },
+          {
+            "protectionDomainName": "Rack-1",
+            "protectionDomainType": "custom"
+          }
+        ]
+      },
+      {
+        "nodeID": 3,
+        "protectionDomains": [
+          {
+            "protectionDomainName": "QTFCR291500C3",
+            "protectionDomainType": "chassis"
+          },
+          {
+            "protectionDomainName": "Rack-2",
+            "protectionDomainType": "custom"
+          }
+        ]
+      },
+      {
+        "nodeID": 4,
+        "protectionDomains": [
+          {
+            "protectionDomainName": "QTFCR291400E6",
+            "protectionDomainType": "chassis"
+          },
+          {
+            "protectionDomainName": "Rack-2",
+            "protectionDomainType": "custom"
+          }
+        ]
+      }
+    ]
+  }
+}
+----
+
+
+== Novità dalla versione
+
+12,0

@@ -1,0 +1,37 @@
+---
+permalink: storage/task_data_protection_edit_group_snapshots.html 
+sidebar: sidebar 
+keywords: group snapshots, edit, replication, retention 
+summary: È possibile modificare le impostazioni di replica e conservazione per gli snapshot di gruppo esistenti. 
+---
+= Modifica delle snapshot di gruppo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile modificare le impostazioni di replica e conservazione per gli snapshot di gruppo esistenti.
+
+. Fare clic su *Data Protection* > *Group Snapshot*.
+. Fare clic sull'icona Actions (azioni) per lo snapshot di gruppo che si desidera modificare.
+. Nel menu visualizzato, selezionare *Edit* (Modifica).
+. *Opzionale:* per modificare l'impostazione di replica per lo snapshot di gruppo:
++
+.. Fare clic su *Edit* (Modifica) accanto a *Current Replication* (replica corrente).
+.. Selezionare la casella di controllo *include each Group Snapshot Member in Replication when paired* (Includi ogni membro Snapshot di gruppo nella replica quando viene associato) per assicurarsi che ogni snapshot venga acquisito in replica quando viene associato il volume padre.
+
+
+. *Opzionale:* per modificare l'impostazione di conservazione per lo snapshot di gruppo, selezionare una delle seguenti opzioni:
++
+.. Fare clic su *Edit* (Modifica) accanto a *Current retention* (conservazione corrente).
+.. Selezionare un'opzione di conservazione per lo snapshot di gruppo:
++
+*** Fare clic su *Keep Forever* per conservare l'istantanea sul sistema a tempo indeterminato.
+*** Fare clic su *Set retention period* (Imposta periodo di conservazione) e utilizzare le caselle di selezione della data per scegliere il periodo di tempo in cui il sistema conserva lo snapshot.
+
+
+
+
+. Fare clic su *Save Changes* (Salva modifiche).
+

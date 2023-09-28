@@ -1,0 +1,36 @@
+---
+permalink: storage/task_data_protection_restore_volume_from_backup_on_openstack_swift.html 
+sidebar: sidebar 
+keywords: volume restore, openstack swift object store 
+summary: È possibile ripristinare un volume da un backup su un archivio di oggetti OpenStack Swift. 
+---
+= Ripristinare un volume dal backup in un archivio di oggetti OpenStack Swift
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile ripristinare un volume da un backup su un archivio di oggetti OpenStack Swift.
+
+. Fare clic su *Reporting* > *Event Log*.
+. Individuare l'evento di backup che ha creato il backup da ripristinare.
+. Nella colonna *Dettagli* dell'evento, fare clic su *Mostra dettagli*.
+. Copiare le informazioni del manifesto negli Appunti.
+. Fare clic su *Management* > *Volumes*.
+. Fare clic sull'icona Actions (azioni) per il volume che si desidera ripristinare.
+. Nel menu visualizzato, fare clic su *Restore from* (Ripristina da).
+. Nella finestra di dialogo *Integrated Restore* sotto *Restore from*, selezionare *Swift*.
+. Selezionare l'opzione corrispondente al backup in *formato dati*:
++
+** *Nativo*: Formato compresso leggibile solo dai sistemi storage SolidFire.
+** *Non compresso*: Un formato non compresso compatibile con altri sistemi.
+
+
+. Inserire un URL da utilizzare per accedere all'archivio di oggetti nel campo *URL*.
+. Immettere un nome utente per l'account nel campo *Nome utente*.
+. Inserire la chiave di autenticazione per l'account nel campo *Authentication Key* (chiave di autenticazione).
+. Inserire il nome del contenitore in cui è memorizzato il backup nel campo *container*.
+. Incollare le informazioni del manifesto nel campo *manifesto*.
+. Fare clic su *Avvia scrittura*.
+

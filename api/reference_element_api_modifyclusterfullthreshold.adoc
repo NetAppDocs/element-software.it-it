@@ -1,0 +1,343 @@
+---
+permalink: api/reference_element_api_modifyclusterfullthreshold.html 
+sidebar: sidebar 
+keywords: modify,modifying,edit,editing,change,changing,cluster,full,fullness,threshold,modifyclusterfullthreshold 
+summary: 'È possibile utilizzare il metodo ModifyClusterFullThreshold per modificare il livello in cui il sistema genera un evento quando il cluster di storage si avvicina a un determinato utilizzo della capacità. È possibile utilizzare l"impostazione della soglia per indicare la quantità accettabile di storage a blocchi utilizzato prima che il sistema generi un avviso.' 
+---
+= ModifyClusterFullThreshold
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `ModifyClusterFullThreshold` metodo per modificare il livello a cui il sistema genera un evento quando il cluster di storage si avvicina a un determinato utilizzo della capacità. È possibile utilizzare l'impostazione della soglia per indicare la quantità accettabile di storage a blocchi utilizzato prima che il sistema generi un avviso.
+
+Ad esempio, se si desidera essere avvisati quando il sistema raggiunge il 3% al di sotto del livello di "errore" nell'utilizzo dello storage a blocchi, immettere il valore "3" per il parametro stage3BlockHoldPercent. Se viene raggiunto questo livello, il sistema invia un avviso al registro eventi nella Console di gestione cluster.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+
+NOTE: Selezionare almeno un parametro.
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+MaxMetadataOverProvisionFactor
+ a| 
+Un valore rappresentativo del numero di volte in cui lo spazio di metadati può essere sottoposto a un provisioning eccessivo in relazione alla quantità di spazio disponibile. Ad esempio, se c'era spazio di metadati sufficiente per memorizzare 100 TIB di volumi e questo numero era impostato su 5, è possibile creare 500 TIB di volumi.
+ a| 
+intero
+ a| 
+5
+ a| 
+No
+
+
+
+ a| 
+Stage2AwareThreshold
+ a| 
+Il numero di nodi di capacità rimanenti nel cluster prima che il sistema attivi una notifica di capacità.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+Stage3BlockThresholdPercent
+ a| 
+La percentuale di utilizzo dello storage a blocchi al di sotto della soglia di "errore" che provoca l'attivazione di un avviso di "avviso" del cluster.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+Stage3MetadataThresholdPercent
+ a| 
+La percentuale di utilizzo dello storage dei metadati al di sotto della soglia "`Error`" che fa sì che il sistema innesca un avviso "`Warning`" del cluster.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+No
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo ha i seguenti valori restituiti:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+BlockFullness
+ a| 
+Il livello corrente calcolato di riempimento del blocco del cluster.
+
+* Stage1Happy: Nessun avviso o condizione di errore. Corrisponde allo stato *integro* nell'interfaccia utente Web.
+* Stage2Aware: Nessun avviso o condizione di errore. Corrisponde allo stato *integro* nell'interfaccia utente Web.
+* Stage3Low: Il sistema non è in grado di fornire una protezione dei dati ridondante da due guasti non simultanei dei nodi. Corrisponde allo stato *Warning* nell'interfaccia utente Web. È possibile configurare questo livello nell'interfaccia utente Web (per impostazione predefinita, il sistema attiva questo avviso a una capacità del 3% inferiore allo stato di errore).
+* Stage4criticità: Il sistema non è in grado di fornire una protezione dei dati ridondante in caso di guasto di un singolo nodo. Non è possibile creare nuovi volumi o cloni. Corrisponde allo stato *Error* nell'interfaccia utente dell'elemento.
+* Stage5CompletelyConsumed: Completamente consumato. Il cluster è di sola lettura e le connessioni iSCSI vengono mantenute, ma tutte le scritture vengono sospese. Corrisponde allo stato *critico* nell'interfaccia utente dell'elemento.
+
+ a| 
+stringa
+
+
+
+ a| 
+pienezza
+ a| 
+Riflette il massimo livello di pienezza tra "blockFullness" e "metadataFullness".
+ a| 
+stringa
+
+
+
+ a| 
+MaxMetadataOverProvisionFactor
+ a| 
+Un valore rappresentativo del numero di volte in cui lo spazio di metadati può essere sottoposto a un provisioning eccessivo in relazione alla quantità di spazio disponibile. Ad esempio, se c'era spazio di metadati sufficiente per memorizzare 100 TIB di volumi e questo numero era impostato su 5, è possibile creare 500 TIB di volumi.
+ a| 
+intero
+
+
+
+ a| 
+MetadataFullness
+ a| 
+Il livello corrente calcolato di riempimento dei metadati del cluster.
+
+* Stage1Happy: Nessun avviso o condizione di errore. Corrisponde allo stato *integro* nell'interfaccia utente Web.
+* Stage2Aware: Nessun avviso o condizione di errore. Corrisponde allo stato *integro* nell'interfaccia utente Web.
+* Stage3Low: Il sistema non è in grado di fornire una protezione dei dati ridondante da due guasti non simultanei dei nodi. Corrisponde allo stato *Warning* nell'interfaccia utente Web. È possibile configurare questo livello nell'interfaccia utente Web (per impostazione predefinita, il sistema attiva questo avviso a una capacità del 3% inferiore allo stato di errore).
+* Stage4criticità: Il sistema non è in grado di fornire una protezione dei dati ridondante in caso di guasto di un singolo nodo. Non è possibile creare nuovi volumi o cloni. Corrisponde allo stato *Error* nell'interfaccia utente dell'elemento.
+* Stage5CompletelyConsumed: Completamente consumato. Il cluster è di sola lettura e le connessioni iSCSI vengono mantenute, ma tutte le scritture vengono sospese. Corrisponde allo stato *critico* nell'interfaccia utente dell'elemento.
+
+ a| 
+stringa
+
+
+
+ a| 
+SliceReserveUsedThresholdPct
+ a| 
+Condizione di errore. Viene generato un avviso di sistema se l'utilizzo riservato dello strato è superiore al valore sliceReserveUsedThresholdPct restituito.
+ a| 
+intero
+
+
+
+ a| 
+Stage2AwareThreshold
+ a| 
+Condizione di consapevolezza. Il valore impostato per il livello di soglia del cluster "fase 2".
+ a| 
+intero
+
+
+
+ a| 
+Stage2BlockThresholdByte
+ a| 
+Il numero di byte utilizzati dal cluster in cui si verifica una condizione di fullness fase 2.
+ a| 
+intero
+
+
+
+ a| 
+Stage2MetadataThresholdBytes
+ a| 
+Il numero di byte di metadati utilizzati dal cluster in cui si verifica una condizione di fullness fase 2.
+ a| 
+
+
+
+ a| 
+Stage3BlockThresholdBytes
+ a| 
+Il numero di byte di storage utilizzati dal cluster in cui si verifica una condizione di fullness fase 3.
+ a| 
+intero
+
+
+
+ a| 
+Stage3BlockThresholdPercent
+ a| 
+Il valore percentuale impostato per la fase 3. Con questa percentuale piena, viene visualizzato un avviso nel registro degli avvisi.
+ a| 
+intero
+
+
+
+ a| 
+Stage3LowThreshold
+ a| 
+Condizione di errore. La soglia alla quale viene creato un avviso di sistema a causa della bassa capacità di un cluster.
+ a| 
+intero
+
+
+
+ a| 
+Stage3MetadataThresholdBytes
+ a| 
+Il numero di byte di metadati utilizzati dal cluster in cui si verifica una condizione di fullness della fase 3.
+ a| 
+
+
+
+ a| 
+Stage4BlockThresholdByte
+ a| 
+Il numero di byte di archiviazione utilizzati dal cluster in cui esiste una condizione di pienezza di fase 4.
+ a| 
+intero
+
+
+
+ a| 
+Stage4CriticalThreshold
+ a| 
+Condizione di errore. La soglia alla quale viene creato un avviso di sistema per avvisare in caso di capacità estremamente bassa su un cluster.
+ a| 
+intero
+
+
+
+ a| 
+Stage4MetadataThresholdBytes
+ a| 
+Il numero di byte di metadati utilizzati dal cluster in cui esiste una condizione di pienezza di fase 4.
+ a| 
+
+
+
+ a| 
+Stage5BlockThresholdByte
+ a| 
+Il numero di byte di storage utilizzati dal cluster in cui si verifica una condizione di fullness della fase 5.
+ a| 
+intero
+
+
+
+ a| 
+Stage5MetadataThresholdBytes
+ a| 
+Il numero di byte di metadati utilizzati dal cluster in cui esiste una condizione di pienezza di fase 5.
+ a| 
+
+
+
+ a| 
+SumTotalClusterBytes
+ a| 
+La capacità fisica del cluster, misurata in byte.
+ a| 
+intero
+
+
+
+ a| 
+SumTotalMetadataClusterBytes
+ a| 
+La quantità totale di spazio che è possibile utilizzare per memorizzare i metadati.
+ a| 
+intero
+
+
+
+ a| 
+SumUsedClusterBytes
+ a| 
+Il numero di byte di storage utilizzati nel cluster.
+ a| 
+intero
+
+
+
+ a| 
+SumUsedMetadataClusterBytes
+ a| 
+La quantità di spazio utilizzata sui dischi dei volumi per memorizzare i metadati.
+ a| 
+intero
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+   "method" : "ModifyClusterFullThreshold",
+   "params" : {
+              "stage3BlockThresholdPercent" : 3
+              },
+   "id" : 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "blockFullness": "stage1Happy",
+    "fullness": "stage3Low",
+    "maxMetadataOverProvisionFactor": 5,
+    "metadataFullness": "stage3Low",
+    "sliceReserveUsedThresholdPct": 5,
+    "stage2AwareThreshold": 3,
+    "stage2BlockThresholdBytes": 2640607661261,
+    "stage3BlockThresholdBytes": 8281905846682,
+    "stage3BlockThresholdPercent": 3,
+    "stage3LowThreshold": 2,
+    "stage4BlockThresholdBytes": 8641988709581,
+    "stage4CriticalThreshold": 1,
+    "stage5BlockThresholdBytes": 12002762096640,
+    "sumTotalClusterBytes": 12002762096640,
+    "sumTotalMetadataClusterBytes": 404849531289,
+    "sumUsedClusterBytes": 45553617581,
+    "sumUsedMetadataClusterBytes": 31703113728
+  }
+}
+----
+
+
+== Novità dalla versione
+
+9,6

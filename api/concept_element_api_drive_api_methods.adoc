@@ -1,0 +1,31 @@
+---
+permalink: api/concept_element_api_drive_api_methods.html 
+sidebar: sidebar 
+keywords: drive,API,methods,method 
+summary: È possibile utilizzare i metodi API del disco per aggiungere e gestire dischi disponibili per un cluster di storage. Quando si aggiunge un nodo di storage al cluster di storage o si installano nuove unità in un nodo di storage esistente, le unità sono disponibili per essere aggiunte al cluster di storage. 
+---
+= Metodi API del disco
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare i metodi API del disco per aggiungere e gestire dischi disponibili per un cluster di storage. Quando si aggiunge un nodo di storage al cluster di storage o si installano nuove unità in un nodo di storage esistente, le unità sono disponibili per essere aggiunte al cluster di storage.
+
+* xref:reference_element_api_adddrives.adoc[AddDrive]
+* xref:reference_element_api_getdrivehardwareinfo.adoc[GetDriveHardwareInfo]
+* xref:reference_element_api_getdrivestats.adoc[GetDriveStats]
+* xref:reference_element_api_listdrives.adoc[ListDrive]
+* xref:reference_element_api_listdrivestats.adoc[ListDriveStats]
+* xref:reference_element_api_removedrives.adoc[RemoveDrives]
+* xref:reference_element_api_secureerasedrives.adoc[SecureEraseDrive]
+
+
+
+
+== Trova ulteriori informazioni
+
+* https://www.netapp.com/data-storage/solidfire/documentation/["Pagina delle risorse NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Documentazione per le versioni precedenti dei prodotti SolidFire ed Element di NetApp"^]
+

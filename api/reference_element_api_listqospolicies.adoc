@@ -1,0 +1,122 @@
+---
+permalink: api/reference_element_api_listqospolicies.html 
+sidebar: sidebar 
+keywords: qos,policy,policies,list,listing,listqospolicies 
+summary: È possibile utilizzare il metodo ListQoSPolicies per elencare le impostazioni di tutti i criteri QoS sul sistema. 
+---
+= ListQoSPolicies
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `ListQoSPolicies` Metodo per elencare le impostazioni di tutti i criteri QoS sul sistema.
+
+
+
+== Parametri
+
+Questo metodo non ha parametri di input.
+
+
+
+== Valori restituiti
+
+Questo metodo ha i seguenti valori restituiti:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+QosPolicies
+ a| 
+Un elenco di dettagli su ogni policy QoS.
+ a| 
+xref:reference_element_api_qospolicy.adoc[QoSPolicy] array
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "id": 231,
+  "method": "ListQoSPolicies",
+  "params": {}
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+  "id": 231,
+  "result": {
+    "qosPolicies": [
+      {
+        "name": "silver",
+        "qos": {
+          "burstIOPS": 15000,
+          "burstTime": 60,
+          "curve": {
+            "4096": 100,
+            "8192": 160,
+            "16384": 270,
+            "32768": 500,
+            "65536": 1000,
+            "131072": 1950,
+            "262144": 3900,
+            "524288": 7600,
+            "1048576": 15000
+          },
+          "maxIOPS": 14000,
+          "minIOPS": 50
+        },
+        "qosPolicyID": 1,
+        "volumeIDs": [
+          1
+        ]
+      },
+      {
+        "name": "bronze",
+        "qos": {
+          "burstIOPS": 15000,
+          "burstTime": 60,
+          "curve": {
+            "4096": 100,
+            "8192": 160,
+            "16384": 270,
+            "32768": 500,
+            "65536": 1000,
+            "131072": 1950,
+            "262144": 3900,
+            "524288": 7600,
+            "1048576": 15000
+          },
+          "maxIOPS": 15000,
+          "minIOPS": 50
+        },
+        "qosPolicyID": 2,
+        "volumeIDs": [
+          2
+        ]
+      }
+    ]
+  }
+}
+----
+
+
+== Novità dalla versione
+
+10,0

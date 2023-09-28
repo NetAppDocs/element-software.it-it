@@ -1,0 +1,21 @@
+---
+permalink: storage/task_replication_delete_cluster_pair.html 
+sidebar: sidebar 
+keywords: cluster pairs, delete 
+summary: 'È possibile eliminare una coppia di cluster dall"interfaccia utente degli elementi di uno dei cluster della coppia.' 
+---
+= Eliminare una coppia di cluster
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile eliminare una coppia di cluster dall'interfaccia utente degli elementi di uno dei cluster della coppia.
+
+. Fare clic su *Data Protection* > *Cluster Pairs*.
+. Fare clic sull'icona Actions (azioni) per una coppia di cluster.
+. Nel menu visualizzato, fare clic su *Delete* (Elimina).
+. Confermare l'azione.
+. Eseguire nuovamente i passaggi dal secondo cluster nell'associazione del cluster.
+

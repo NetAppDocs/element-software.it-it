@@ -1,0 +1,32 @@
+---
+permalink: setup/concept_setup_whats_next.html 
+sidebar: sidebar 
+keywords: element, solidfire, workflow 
+summary: Prima di iniziare, potrebbe essere utile conoscere la sequenza di installazione e configurazione del software NetApp Element. 
+---
+= Cosa succederà
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Dopo aver configurato il software Element, è possibile gestire lo storage completando alcune delle seguenti opzioni:
+
+* link:task_post_deploy_access_the_element_software_user_interface.html["Accedere all'interfaccia utente del software Element"]
+* link:../storage/task_post_deploy_configure_system_options.html["Configurare le opzioni del sistema SolidFire dopo l'implementazione"]
+* link:../storage/concept_system_manage_accounts_overview.html["Gestire gli account"]
+* link:../storage/concept_system_manage_system_management.html["Gestire il sistema"]
+* link:../storage/concept_data_manage_data_management.html["Gestire volumi e volumi virtuali"]
+* link:../storage/concept_data_protection.html["Proteggi i tuoi dati"]
+* link:../storage/concept_system_monitoring_and_troubleshooting.html["Risolvere i problemi del sistema"]
+
+
+
+
+== Trova ulteriori informazioni
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Documentazione per le versioni precedenti dei prodotti SolidFire ed Element di NetApp"^]
+* https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
+

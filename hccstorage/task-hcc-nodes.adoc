@@ -1,0 +1,63 @@
+---
+sidebar: sidebar 
+permalink: hccstorage/task-hcc-nodes.html 
+summary: Puoi visualizzare le risorse di storage nel tuo sistema utilizzando la pagina nodi di controllo del cloud ibrido. 
+keywords: netapp, element, cluster, inventory, nodes, storage 
+---
+= Visualizzare l'inventario nella pagina nodi
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile visualizzare le risorse di storage nel sistema e determinare gli indirizzi IP, i nomi e le versioni software.
+
+È possibile visualizzare le informazioni di storage per i sistemi a più nodi. Se link:../concepts/concept_solidfire_concepts_data_protection.html#custom_pd["domini di protezione personalizzati"] è possibile visualizzare i domini di protezione assegnati a nodi specifici.
+
+.Fasi
+. Aprire l'indirizzo IP del nodo di gestione in un browser Web. Ad esempio:
++
+[listing]
+----
+https://[management node IP address]
+----
+. Accedi al controllo del cloud ibrido NetApp fornendo le credenziali di amministratore del cluster di storage all-flash SolidFire.
+. Nella barra di navigazione a sinistra, selezionare *Nodes* (nodi).
++
+image::hcc_nodes_storage_2nodes.png[Immagine della pagina nodi di controllo del cloud ibrido]
+
++
+
+NOTE: Quando avvii una nuova sessione di NetApp Hybrid Cloud Control per la prima volta, potrebbe verificarsi un ritardo nel caricamento della pagina dei nodi di NetApp Hybrid Cloud Control quando il nodo di gestione gestisce molti cluster. Il tempo di caricamento varia in base al numero di cluster gestiti attivamente dal nodo di gestione. Per i lanci successivi, si verificheranno tempi di caricamento più rapidi.
+
+. Nella scheda *Storage* della pagina Nodes (nodi), esaminare le seguenti informazioni:
++
+.. Cluster a due nodi: Nella scheda Storage viene visualizzata un'etichetta a due nodi e vengono elencati i nodi di controllo associati.
+.. Cluster a tre nodi: Vengono elencati i nodi di storage e i nodi di controllo associati. I cluster a tre nodi dispongono di un nodo di controllo implementato in standby per mantenere un'elevata disponibilità in caso di guasto del nodo.
+.. Cluster con quattro o più nodi: Vengono visualizzate le informazioni relative ai cluster con quattro o più nodi. I nodi di controllo non sono applicabili. Se si è iniziato con due o tre nodi di storage e sono stati aggiunti altri nodi, i nodi di controllo continuano a essere visualizzati. In caso contrario, la tabella dei nodi di controllo non viene visualizzata.
+.. Versione del bundle firmware: A partire dalla versione 2.14 dei servizi di gestione, se si utilizzano cluster con Element 12.0 o versione successiva, è possibile visualizzare la versione del bundle firmware per questi cluster. Se i nodi di un cluster hanno versioni firmware diverse, nella colonna *firmware Bundle Version* viene visualizzato *multiple*.
+.. Domini di protezione personalizzati: Se nel cluster sono in uso domini di protezione personalizzati, è possibile visualizzare le assegnazioni dei domini di protezione personalizzati per ciascun nodo del cluster. Se i domini di protezione personalizzati non sono abilitati, questa colonna non viene visualizzata.
+
+
+. È possibile modificare le informazioni presenti in queste pagine in diversi modi:
++
+.. Per filtrare l'elenco degli elementi nei risultati, selezionare l'icona *Filter* (filtro) e selezionare i filtri. È anche possibile inserire il testo per il filtro.
+.. Per visualizzare o nascondere le colonne, selezionare l'icona *Mostra/Nascondi colonne*.
+.. Per scaricare la tabella, selezionare l'icona *Download*.
+
+
+
+
+
+TIP: Per visualizzare il numero di storage, consulta la dashboard di NetApp Hybrid Cloud Control (HCC). Vedere link:task-hcc-dashboard.html["Monitorare le risorse di storage con la dashboard HCC"].
+
+[discrete]
+== Trova ulteriori informazioni
+
+* https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
+* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+

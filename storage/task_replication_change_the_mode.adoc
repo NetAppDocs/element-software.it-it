@@ -1,0 +1,28 @@
+---
+permalink: storage/task_replication_change_the_mode.html 
+sidebar: sidebar 
+keywords: volume pairings, replication mode, change, volume pair properties 
+summary: È possibile modificare le proprietà della coppia di volumi per modificare la modalità di replica della relazione della coppia di volumi. 
+---
+= Modificare la modalità di replica
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile modificare le proprietà della coppia di volumi per modificare la modalità di replica della relazione della coppia di volumi.
+
+. Selezionare *Data Protection* > *Volume Pairs*.
+. Fare clic sull'icona Actions (azioni) per la coppia di volumi.
+. Fare clic su *Edit* (Modifica).
+. Nel riquadro *Edit Volume Pair* (Modifica coppia di volumi), selezionare una nuova modalità di replica:
++
+** *Real-time (asincrono)*: Le scritture vengono riconosciute al client dopo il commit sul cluster di origine.
+** *Real-time (Synchronous)*: Le scritture vengono riconosciute al client dopo il commit sia sul cluster di origine che su quello di destinazione.
+** *Solo istantanee*: Vengono replicate solo le istantanee create nel cluster di origine. Le scritture attive dal volume di origine non vengono replicate.
+*Attenzione:* la modifica della modalità di replica modifica immediatamente la modalità. Assicurarsi di aver coordinato queste modifiche in entrambi i siti.
+
+
+. Fare clic su *Save Changes* (Salva modifiche).
+

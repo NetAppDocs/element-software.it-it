@@ -1,0 +1,37 @@
+---
+permalink: storage/task_data_manage_vol_access_group_view_individual_access_group_details.html 
+sidebar: sidebar 
+keywords: access group details, view, view details, initiators 
+summary: È possibile visualizzare i dettagli di un singolo gruppo di accesso, ad esempio i volumi collegati e gli iniziatori, in un formato grafico. 
+---
+= Visualizzare i dettagli dei singoli gruppi di accesso
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile visualizzare i dettagli di un singolo gruppo di accesso, ad esempio i volumi collegati e gli iniziatori, in un formato grafico.
+
+. Fare clic su *Gestione* > *gruppi di accesso*.
+. Fare clic sull'icona Actions (azioni) per un gruppo di accesso.
+. Fare clic su *View Details* (Visualizza dettagli).
+
+
+
+
+== Dettagli del gruppo di accesso al volume
+
+La pagina gruppi di accesso nella scheda Gestione fornisce informazioni sui gruppi di accesso ai volumi.
+
+Vengono visualizzate le seguenti informazioni:
+
+* *ID*: L'ID generato dal sistema per il gruppo di accesso.
+* *Name* (Nome): Il nome assegnato al gruppo di accesso al momento della creazione.
+* *Active Volumes* (volumi attivi): Il numero di volumi attivi nel gruppo di accesso.
+* *Compressione*: Il punteggio di efficienza della compressione per il gruppo di accesso.
+* *Deduplica*: Il punteggio di efficienza della deduplica per il gruppo di accesso.
+* *Thin Provisioning*: Il punteggio di efficienza del thin provisioning per il gruppo di accesso.
+* *Efficienza complessiva*: Il punteggio di efficienza globale per il gruppo di accesso.
+* *Initiator*: Numero di iniziatori connessi al gruppo di accesso.
+

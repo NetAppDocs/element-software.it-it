@@ -1,0 +1,19 @@
+---
+permalink: storage/concept_system_manage_snmp_manage_snmp.html 
+sidebar: sidebar 
+keywords: snmp, manage, config, cluster, requestor, usm, traps, monitor 
+summary: 'È possibile configurare il protocollo SNMP (Simple Network Management Protocol) nel cluster.' 
+---
+= Manage SNMP (Gestisci SNMP)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile configurare il protocollo SNMP (Simple Network Management Protocol) nel cluster.
+
+È possibile selezionare un richiedente SNMP, selezionare la versione di SNMP da utilizzare, identificare l'utente del modello di protezione basato sull'utente SNMP e configurare i trap per monitorare il cluster SolidFire. È inoltre possibile visualizzare e accedere ai file della base di informazioni di gestione.
+
+
+NOTE: È possibile utilizzare indirizzi IPv4 e IPv6.

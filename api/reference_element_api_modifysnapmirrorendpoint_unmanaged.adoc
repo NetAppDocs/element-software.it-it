@@ -1,0 +1,90 @@
+---
+permalink: api/reference_element_api_modifysnapmirrorendpoint_unmanaged.html 
+sidebar: sidebar 
+keywords: modify,modifying,edit,editing,change,changing,snapmirror,endpoint,modifysnapmirrorendpoint 
+summary: 'Il software Element utilizza questa versione del metodo ModifySnapMirrorEndpoint per modificare il nome del cluster di storage o gli attributi dell"indirizzo IP per un endpoint SnapMirror non gestito. Gli endpoint non gestiti non possono essere amministrati utilizzando le API di Element SnapMirror. Devono essere gestiti con il software di gestione ONTAP o le API.' 
+---
+= ModifySnapMirrorEndpoint (non gestito)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il software Element utilizza questa versione di `ModifySnapMirrorEndpoint` Metodo per modificare gli attributi del nome del cluster di storage o dell'indirizzo IP per un endpoint SnapMirror non gestito. Gli endpoint non gestiti non possono essere amministrati utilizzando le API di Element SnapMirror. Devono essere gestiti con il software di gestione ONTAP o le API.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+
+
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+SnapMirrorEndpointID
+ a| 
+Endpoint SnapMirror da modificare.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+Nome cluster
+ a| 
+Il nuovo nome dell'endpoint.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+Indirizzi ipAddresses
+ a| 
+Nuovo elenco di indirizzi IP per un cluster di sistemi storage ONTAP che devono comunicare con questo cluster storage Element.
+ a| 
+array di stringhe
+ a| 
+Nessuno
+ a| 
+No
+
+|===
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+SnapMirrorEndpoint
+ a| 
+Informazioni sull'endpoint SnapMirror modificato.
+ a| 
+xref:reference_element_api_snapmirrorendpoint.adoc[SnapMirrorEndpoint]
+
+|===
+
+
+== Novità dalla versione
+
+10,3

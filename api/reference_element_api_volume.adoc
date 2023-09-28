@@ -1,0 +1,303 @@
+---
+permalink: api/reference_element_api_volume.html 
+sidebar: sidebar 
+keywords: object,objects,volume 
+summary: 'L"oggetto volume contiene informazioni di configurazione sui volumi non accoppiati o accoppiati. Non include informazioni sul runtime o sull"utilizzo e non contiene informazioni sui volumi virtuali.' 
+---
+= volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto volume contiene informazioni di configurazione sui volumi non accoppiati o accoppiati. Non include informazioni sul runtime o sull'utilizzo e non contiene informazioni sui volumi virtuali.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+accesso
+ a| 
+Il tipo di accesso consentito per il volume. Valori possibili:
+
+* `readOnly`: Sono consentite solo operazioni di lettura.
+* `readWrite`: Sono consentite le letture e le scritture.
+* `locked`: Non sono consentite letture o scritture.
+* `replicationTarget`: Designato come volume di destinazione in una coppia di volumi replicati.
+
+ a| 
+stringa
+
+
+
+ a| 
+ID account
+ a| 
+L'ID account dell'account contenente il volume.
+ a| 
+intero
+
+
+
+ a| 
+attributi
+ a| 
+Elenco delle coppie nome-valore nel formato oggetto JSON.
+ a| 
+Oggetto JSON
+
+
+
+ a| 
+Dimensione blocco
+ a| 
+La dimensione dei blocchi sul volume.
+ a| 
+intero
+
+
+
+ a| 
+CreateTime
+ a| 
+L'ora in cui è stato formattato UTC+0 il volume è stato creato.
+ a| 
+Stringa ISO 8601
+
+
+
+ a| 
+CurrentProtectionScheme
+ a| 
+Lo schema di protezione utilizzato per questo volume. Se un volume si sta convertendo da uno schema di protezione a un altro, questo membro riflette lo schema di protezione in cui il volume si sta convertendo.
+ a| 
+stringa
+
+
+
+ a| 
+Ora di deleteTime
+ a| 
+Tempo di formattazione UTC+0 per l'eliminazione del volume.
+ a| 
+Stringa ISO 8601
+
+
+
+ a| 
+enable512e
+ a| 
+Se impostato su true, il volume fornisce l'emulazione di settore a 512 byte.
+ a| 
+booleano
+
+
+
+ a| 
+EnableSnapMirrorReplication
+ a| 
+Se il volume può essere utilizzato o meno per la replica con gli endpoint SnapMirror.
+ a| 
+booleano
+
+
+
+| FifoSize | Specifica il numero massimo di snapshot del volume da gestire contemporaneamente se si utilizza la modalità di conservazione degli snapshot first-in-first-out (FIFO). | intero 
+
+
+ a| 
+iqn
+ a| 
+Nome qualificato iSCSI del volume.
+ a| 
+stringa
+
+
+
+ a| 
+LastAccessTime
+ a| 
+L'ultima volta in cui si è verificato un qualsiasi accesso (incluso l'i/o) al volume (formattato come UTC+0). Se l'ultimo tempo di accesso non è noto, questo valore è nullo.
+ a| 
+Stringa ISO 8601
+
+
+
+ a| 
+LastAccessTimeIO
+ a| 
+L'ultima volta in cui si è verificato un i/o nel volume (formattato come UTC+0). Se l'ultimo tempo di accesso non è noto, questo valore è nullo.
+ a| 
+Stringa ISO 8601
+
+
+
+| MinFifoSize | Specifica il numero minimo di slot di snapshot first-in-first-out (FIFO) riservati simultaneamente dal volume se si utilizza la modalità di conservazione dello snapshot first-in-first-out (FIFO). | intero 
+
+
+ a| 
+nome
+ a| 
+Il nome del volume fornito al momento della creazione.
+ a| 
+stringa
+
+
+
+ a| 
+PreviousProtectionScheme
+ a| 
+Se un volume si sta convertendo da uno schema di protezione a un altro, questo membro riflette lo schema di protezione da cui il volume si sta convertendo. Questo membro non cambia fino a quando non viene avviata una conversione. Se un volume non è mai stato convertito, questo membro è nullo.
+ a| 
+stringa
+
+
+
+ a| 
+Tempo di destinazione
+ a| 
+Il tempo di formattazione UTC+0 in cui il volume è stato spurgato dal sistema.
+ a| 
+Stringa ISO 8601
+
+
+
+ a| 
+qos
+ a| 
+Le impostazioni relative alla qualità del servizio per questo volume.
+ a| 
+xref:reference_element_api_qos.adoc[QoS]
+
+
+
+ a| 
+QosPolicyID
+ a| 
+L'ID del criterio QoS associato al volume. Il valore è nullo se il volume non è associato a un criterio.
+ a| 
+intero
+
+
+
+ a| 
+ScsiEUIDeviceID
+ a| 
+Identificatore univoco globale del dispositivo SCSI per il volume nel formato a 16 byte basato su EUI-64.
+ a| 
+stringa
+
+
+
+ a| 
+ID scsiNAADeviceID
+ a| 
+Identificatore univoco globale del dispositivo SCSI per il volume in formato NAA IEEE Registered Extended.
+ a| 
+stringa
+
+
+
+ a| 
+SliceCount
+ a| 
+Il numero di sezioni sul volume. Questo valore è sempre "1".
+ a| 
+intero
+
+
+
+ a| 
+stato
+ a| 
+Lo stato corrente del volume. Valori possibili:
+
+* Init (Inizializza): Volume in fase di inizializzazione e non pronto per le connessioni.
+* Attivo: Un volume attivo pronto per le connessioni.
+* Eliminato: Volume contrassegnato per l'eliminazione, ma non ancora eliminato.
+
+ a| 
+stringa
+
+
+
+ a| 
+TotalSize (dimensioni totale)
+ a| 
+Byte totali di capacità fornita.
+ a| 
+intero
+
+
+
+ a| 
+VirtualVolumeID
+ a| 
+L'ID univoco del volume virtuale associato al volume, se presente.
+ a| 
+UUID
+
+
+
+ a| 
+VolumeAccessGroups
+ a| 
+Elenco degli ID dei gruppi di accesso al volume pf a cui appartiene un volume. Questo valore è un elenco vuoto se un volume non appartiene ad alcun gruppo di accesso al volume.
+ a| 
+array intero
+
+
+
+ a| 
+VolumeConsistencyGroupUUID
+ a| 
+ID universalmente univoco del gruppo di coerenza del volume di cui il volume è membro.
+ a| 
+UUID
+
+
+
+ a| 
+ID volume
+ a| 
+L'ID volume univoco per il volume.
+ a| 
+intero
+
+
+
+ a| 
+VolumePair
+ a| 
+Informazioni su un volume associato. Visibile solo se un volume è associato. Questo valore è un elenco vuoto se il volume non è associato.
+ a| 
+xref:reference_element_api_volumepair.adoc[VolumePair] array
+
+
+
+ a| 
+VolumeUID
+ a| 
+ID universalmente univoco del volume.
+ a| 
+UUID
+
+|===
+
+
+== Trova ulteriori informazioni
+
+* xref:reference_element_api_listactivevolumes.adoc[ListActiveVolumes]
+* xref:reference_element_api_listdeletedvolumes.adoc[ListDeletedVolumes]
+* xref:reference_element_api_listvolumes.adoc[ListVolumes]
+* xref:reference_element_api_listvolumesforaccount.adoc[ListVolumesForAccount]
+* xref:reference_element_api_qos.adoc[QoS]
+

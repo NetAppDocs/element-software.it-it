@@ -1,0 +1,119 @@
+---
+permalink: api/reference_element_api_initiator.html 
+sidebar: sidebar 
+keywords: object,objects,initiator 
+summary: 'L"oggetto Initiator contiene informazioni su iSCSI o Fibre Channel Initiator. Un oggetto Initiator può contenere identificatori IQN o WWPN. È possibile utilizzare il metodo ListInitialators per ottenere un elenco di tutti gli iniziatori noti nel sistema. Gli oggetti Initiator vengono utilizzati per configurare l"accesso SCSI Initiator a un set di volumi attraverso gruppi di accesso al volume. Un iniziatore può essere solo un membro di un gruppo di accesso a un volume alla volta. È possibile limitare l"accesso dell"iniziatore a una o più VLAN specificando uno o più virtualNetworkID utilizzando i metodi CreateInitialators e ModifyInitators. Se non si specificano reti virtuali, l"iniziatore può accedere a tutte le reti.' 
+---
+= iniziatore
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto Initiator contiene informazioni su iSCSI o Fibre Channel Initiator. Un oggetto Initiator può contenere identificatori IQN o WWPN. È possibile utilizzare `ListInitiators` metodo per ottenere un elenco di tutti gli iniziatori noti nel sistema. Gli oggetti Initiator vengono utilizzati per configurare l'accesso SCSI Initiator a un set di volumi attraverso gruppi di accesso al volume. Un iniziatore può essere solo un membro di un gruppo di accesso a un volume alla volta. È possibile limitare l'accesso dell'iniziatore a una o più VLAN specificando uno o più virtualNetworkID utilizzando `CreateInitiators` e. `ModifyInitiators` metodi. Se non si specificano reti virtuali, l'iniziatore può accedere a tutte le reti.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+alias
+ a| 
+Il nome descrittivo assegnato all'iniziatore, se presente.
+ a| 
+stringa
+
+
+
+ a| 
+attributi
+ a| 
+Insieme di attributi JSON assegnati a questo iniziatore. Vuoto se non sono assegnati attributi.
+ a| 
+Oggetto JSON
+
+
+
+ a| 
+ChapNomeUtente
+ a| 
+Il nome utente CHAP univoco per questo iniziatore.
+ a| 
+stringa
+
+
+
+ a| 
+InitatorID
+ a| 
+Identificativo numerico dell'iniziatore.
+ a| 
+intero
+
+
+
+ a| 
+InitiatorName (Nome iniziatore
+ a| 
+Nome dell'iniziatore, in formato IQN o WWPN.
+ a| 
+stringa
+
+
+
+ a| 
+InitatorSecret
+ a| 
+Il segreto CHAP utilizzato per autenticare l'iniziatore.
+ a| 
+stringa
+
+
+
+ a| 
+RequireChap
+ a| 
+True se è richiesto CHAP per questo iniziatore.
+ a| 
+booleano
+
+
+
+ a| 
+TargetSecret
+ a| 
+Il segreto CHAP utilizzato per autenticare la destinazione (quando si utilizza l'autenticazione CHAP reciproca).
+ a| 
+stringa
+
+
+
+ a| 
+VirtualNetworkID
+ a| 
+L'elenco degli identificatori di rete virtuale associati a questo iniziatore. Se vengono definite una o più reti, l'iniziatore potrà accedere solo alle reti virtuali specificate. Se non sono definite reti virtuali, l'iniziatore può accedere a tutte le reti.
+ a| 
+intero
+
+
+
+ a| 
+VolumeAccessGroups
+ a| 
+Un elenco degli ID del gruppo di accesso al volume a cui appartiene l'iniziatore.
+ a| 
+array intero
+
+|===
+
+
+== Trova ulteriori informazioni
+
+xref:reference_element_api_listinitiators.adoc[ListInitiator]

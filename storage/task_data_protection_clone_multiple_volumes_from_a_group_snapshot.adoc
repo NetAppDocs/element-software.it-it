@@ -1,0 +1,34 @@
+---
+permalink: storage/task_data_protection_clone_multiple_volumes_from_a_group_snapshot.html 
+sidebar: sidebar 
+keywords: multiple volumes, group snapshot, clone, create, data protection 
+summary: È possibile clonare un gruppo di volumi da uno snapshot di gruppo point-in-time. Questa operazione richiede che esista già uno snapshot di gruppo dei volumi, poiché lo snapshot di gruppo viene utilizzato come base per creare i volumi. Dopo aver creato i volumi, è possibile utilizzarli come qualsiasi altro volume del sistema. 
+---
+= Clonazione di più volumi da uno snapshot di gruppo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile clonare un gruppo di volumi da uno snapshot di gruppo point-in-time. Questa operazione richiede che esista già uno snapshot di gruppo dei volumi, poiché lo snapshot di gruppo viene utilizzato come base per creare i volumi. Dopo aver creato i volumi, è possibile utilizzarli come qualsiasi altro volume del sistema.
+
+Le dimensioni del volume e il carico corrente del cluster influiscono sul tempo necessario per completare un'operazione di cloning.
+
+. Fare clic su *Data Protection* > *Group Snapshot*.
+. Fare clic sull'icona Actions (azioni) per lo snapshot di gruppo che si desidera utilizzare per i cloni del volume.
+. Nel menu risultante, selezionare *Clone Volumes from Group Snapshot* (Clona volumi da snapshot di gruppo).
+. Inserire un *nuovo prefisso nome volume* nella finestra di dialogo *Clone Volumes from Group Snapshot* (Copia volumi da snapshot gruppo).
++
+Il prefisso viene applicato a tutti i volumi creati dallo snapshot di gruppo.
+
+. *Opzionale:* selezionare un account diverso a cui appartiene il clone.
++
+Se non si seleziona un account, il sistema assegna i nuovi volumi all'account del volume corrente.
+
+. *Opzionale:* selezionare un metodo di accesso diverso per i volumi nel clone.
++
+Se non si seleziona un metodo di accesso, il sistema utilizza l'accesso al volume corrente.
+
+. Fare clic su *Avvia clonazione*.
+

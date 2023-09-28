@@ -1,0 +1,26 @@
+---
+permalink: storage/task_data_manage_vvol_delete_a_virtual_volume.html 
+sidebar: sidebar 
+keywords: virtual volume, delete, vvols, use Element UI to delete a vvol 
+summary: 'Sebbene i volumi virtuali debbano essere sempre cancellati dal VMware Management Layer, la funzionalità di eliminazione dei volumi virtuali è attivata dall"interfaccia utente di Element. Eliminare un volume virtuale dall"interfaccia utente di Element solo quando è assolutamente necessario, ad esempio quando vSphere non riesce a pulire i volumi virtuali sullo storage SolidFire.' 
+---
+= Eliminare un volume virtuale
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sebbene i volumi virtuali debbano essere sempre cancellati dal VMware Management Layer, la funzionalità di eliminazione dei volumi virtuali è attivata dall'interfaccia utente di Element. Eliminare un volume virtuale dall'interfaccia utente di Element solo quando è assolutamente necessario, ad esempio quando vSphere non riesce a pulire i volumi virtuali sullo storage SolidFire.
+
+. Selezionare *VVol* > *volumi virtuali*.
+. Fare clic sull'icona Actions (azioni) per il volume virtuale che si desidera eliminare.
+. Nel menu visualizzato, selezionare *Delete* (Elimina).
++
+
+IMPORTANT: È necessario eliminare un volume virtuale dal livello di gestione VMware per assicurarsi che il volume virtuale sia correttamente slegato prima dell'eliminazione. Eliminare un volume virtuale dall'interfaccia utente di Element solo quando è assolutamente necessario, ad esempio quando vSphere non riesce a pulire i volumi virtuali sullo storage SolidFire. Se si elimina un volume virtuale dall'interfaccia utente di Element, il volume viene eliminato immediatamente.
+
+. Confermare l'azione.
+. Aggiornare l'elenco dei volumi virtuali per confermare che il volume virtuale è stato rimosso.
+. *Opzionale*: Selezionare *Reporting* > *Event Log* per confermare che l'eliminazione è stata eseguita correttamente.
+

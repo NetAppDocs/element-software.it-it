@@ -1,0 +1,145 @@
+---
+permalink: api/reference_element_api_listinitiators.html 
+sidebar: sidebar 
+keywords: initiators,initiator,list,listing,listinitiators,iqn,wwpn,iqns,wwpns 
+summary: 'È possibile utilizzare il metodo ListInitialators per ottenere l"elenco degli IQN iniziatori o dei nomi delle World Wide Port (WWPN).' 
+---
+= ListInitiator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `ListInitiators` Metodo per ottenere l'elenco degli IQN iniziatori o dei nomi delle World Wide Port (WWPN).
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+iniziatori
+ a| 
+Un elenco di ID iniziatore da recuperare. È possibile fornire questo parametro o il parametro startInitialorID, ma non entrambi.
+ a| 
+array intero
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+ID startInitialatorID
+ a| 
+L'ID iniziatore in cui iniziare l'elenco. È possibile fornire questo parametro o il parametro Initiator, ma non entrambi.
+ a| 
+intero
+ a| 
+0
+ a| 
+No
+
+
+
+ a| 
+limite
+ a| 
+Il numero massimo di oggetti iniziatore da restituire.
+ a| 
+intero
+ a| 
+(senza limiti)
+ a| 
+No
+
+|===
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+iniziatori
+ a| 
+Elenco delle informazioni sull'iniziatore.
+ a| 
+xref:reference_element_api_initiator.adoc[iniziatore] array
+
+|===
+
+
+== Eccezioni
+
+Questo metodo può avere la seguente eccezione:
+
+|===
+
+
+| Nome | Descrizione 
+
+
+ a| 
+XInvalidParameter
+ a| 
+Viene generato se si includono sia l'ID startInitialatorID che i parametri degli iniziatori nella stessa chiamata al metodo.
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+   "method": "ListInitiators",
+   "params": {},
+   "id" : 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "initiators": [
+      {
+        "alias": "",
+        "attributes": {},
+        "initiatorID": 2,
+        "initiatorName": "iqn.1993-08.org.debian:01:c84ffd71216",
+        "volumeAccessGroups": [
+          1
+        ]
+      }
+    ]
+  }
+}
+----
+
+
+== Novità dalla versione
+
+9,6

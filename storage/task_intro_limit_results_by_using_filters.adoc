@@ -1,0 +1,27 @@
+---
+permalink: storage/task_intro_limit_results_by_using_filters.html 
+sidebar: sidebar 
+keywords: filter, filtering, sorting information, viewing lists, unfiltered list 
+summary: 'È possibile filtrare le informazioni dell"elenco sulle pagine dell"interfaccia utente di Element. Quando si visualizzano elenchi (ad esempio volumi e snapshot), è possibile aggiungere uno o più filtri per mettere a fuoco le informazioni e adattarle più facilmente alla pagina.' 
+---
+= Limitare i risultati utilizzando i filtri
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile filtrare le informazioni dell'elenco sulle pagine dell'interfaccia utente di Element. Quando si visualizzano gli elenchi (ad esempio volumi e snapshot), è possibile aggiungere uno o più filtri per mettere a fuoco le informazioni e adattarle più facilmente alla pagina.
+
+. Quando si visualizzano le informazioni dell'elenco, fare clic su *Filter* (filtro).
+. Espandere il campo *Filtra per*.
+. Scegliere una colonna per cui filtrare dall'elemento più a sinistra del campo.
+. Scegliere un vincolo per la colonna.
+. Inserire il testo per cui filtrare.
+. Fare clic su *Aggiungi*.
++
+Il sistema esegue il nuovo filtro in base alle informazioni presenti nell'elenco e memorizza temporaneamente il nuovo filtro nel campo Filtra per.
+
+. Per aggiungere un altro filtro, fare clic su *Aggiungi* e scegliere nuovamente il filtro.
+. Fare clic su *Clear All* (Cancella tutto) per rimuovere l'elenco dei filtri e visualizzare le informazioni dell'elenco non filtrate.
+

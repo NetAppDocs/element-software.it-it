@@ -1,0 +1,103 @@
+---
+permalink: storage/task_per_node_run_system_utilities.html 
+sidebar: sidebar 
+keywords: storage nodes, running system utilities, system utilities, network settings, testing changes, reboot the node, power cycle, shuts down the node 
+summary: 'È possibile utilizzare l"interfaccia utente per nodo per il nodo di storage per creare o eliminare pacchetti di supporto, reimpostare le impostazioni di configurazione per i dischi e riavviare i servizi di rete o cluster.' 
+---
+= Eseguire le utility di sistema utilizzando l'interfaccia utente per nodo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare l'interfaccia utente per nodo per il nodo di storage per creare o eliminare pacchetti di supporto, reimpostare le impostazioni di configurazione per i dischi e riavviare i servizi di rete o cluster.
+
+Si è effettuato l'accesso all'interfaccia utente per nodo per il nodo di storage.
+
+. Fare clic su *Utilità di sistema*.
+. Fare clic sul pulsante dell'utilità di sistema che si desidera eseguire.
++
+** *Alimentazione di controllo*
++
+Riavvia, spegne e riaccende il nodo.
+
++
+
+IMPORTANT: Questa operazione causa la perdita temporanea della connettività di rete.
+
++
+Specificare i seguenti parametri:
+
++
+*** Azione: Le opzioni includono Restart (Riavvia) e Halt (arresta) (Spegni).
+*** Wakeup Delay (ritardo di attivazione): Qualsiasi tempo aggiuntivo prima che il nodo ripresenti online.
+
+
+** *Collect Node Logs*
++
+Crea un bundle di supporto nella directory /tmp/bundle del nodo.
+
++
+Specificare i seguenti parametri:
+
++
+*** Bundle Name (Nome bundle): Nome univoco per ciascun bundle di supporto creato. Se non viene fornito alcun nome, come nome del file vengono utilizzati "supportbundle" e il nome del nodo.
+*** Args extra: Questo parametro viene inviato allo script sf_make_support_bundle. Questo parametro deve essere utilizzato solo su richiesta del supporto NetApp.
+*** Timeout sec (sec timeout): Specificare il numero di secondi di attesa per ogni singola risposta ping.
+
+
+** *Elimina registri nodi*
++
+Elimina tutti i bundle di supporto correnti sul nodo creati utilizzando *Create Cluster Support Bundle* o il metodo API CreateSupportBundle.
+
+** *Ripristina unità*
++
+Inizializza i dischi e rimuove tutti i dati attualmente presenti sul disco. È possibile riutilizzare l'unità in un nodo esistente o in un nodo aggiornato.
+
++
+Specificare il seguente parametro:
+
++
+*** Unità: Elenco dei nomi dei dispositivi (non degli ID unità) da ripristinare.
+
+
+** *Reset Network Config* (Ripristina configurazione di rete)
++
+Aiuta a risolvere i problemi di configurazione di rete per un singolo nodo e ripristina la configurazione di rete di un singolo nodo alle impostazioni predefinite di fabbrica.
+
+** *Ripristina nodo*
++
+Consente di ripristinare le impostazioni predefinite di un nodo. Tutti i dati vengono rimossi, ma le impostazioni di rete del nodo vengono conservate durante questa operazione. I nodi possono essere ripristinati solo se non assegnati a un cluster e in stato disponibile.
+
++
+
+IMPORTANT: Quando si utilizza questa opzione, tutti i dati, i pacchetti (aggiornamenti software), le configurazioni e i file di log vengono cancellati dal nodo.
+
+** *Riavvia rete*
++
+Riavvia tutti i servizi di rete su un nodo.
+
++
+
+IMPORTANT: Questa operazione può causare la perdita temporanea della connettività di rete.
+
+** *Riavviare i servizi*
++
+Riavvia i servizi software Element su un nodo.
+
++
+
+IMPORTANT: Questa operazione può causare un'interruzione temporanea del servizio del nodo. Questa operazione deve essere eseguita solo sotto la direzione del supporto NetApp.
+
++
+Specificare i seguenti parametri:
+
++
+*** Servizio: Nome del servizio da riavviare.
+*** Azione: Azione da eseguire sul servizio. Le opzioni includono avvio, arresto e riavvio.
+
+
+
+
+

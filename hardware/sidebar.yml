@@ -1,0 +1,37 @@
+---
+section: hardware
+title: Installazione e manutenzione dell'hardware
+url: "/hardware/index.html"
+entries:
+- title: Informazioni sull'hardware H410S e H610S
+  url: "/hardware/concept_h410s_h610s_info.html"
+  entries:
+  - title: Installare i nodi H410S e H610S
+    url: "/hardware/task_h410s_h610s_install.html"
+  - title: Sostituire un nodo H410S
+    url: "/hardware/task_h410s_repl.html"
+  - title: Sostituire un nodo H610S
+    url: "/hardware/task_h610s_repl.html"
+  - title: Sostituire i dischi
+    url: "/hardware/task_hseries_driverepl.html"
+  - title: Sostituire un alimentatore
+    url: "/hardware/task_psu_repl.html"
+- title: Informazioni sull'hardware della serie SF
+  url: "/hardware/concept_sfseries_info.html"
+  entries:
+  - title: Sostituire uno chassis
+    url: "/hardware/task_sfseries_chassisrepl.html"
+  - title: Sostituire i dischi
+    url: "/hardware/task_sfseries_driverepl.html"
+  - title: Sostituire un alimentatore
+    url: "/hardware/task_sfseries_psurepl.html"
+- title: Tornare alle informazioni immagine di fabbrica
+  entries:
+  - title: Configurare il ripristino dell'immagine di fabbrica
+    url: "/hardware/concept_rtfi_configure.html"
+  - title: Opzioni di installazione e implementazione RTFI
+    url: "/hardware/task_rtfi_deployment_and_install_options.html"
+  - title: Il processo RTFI
+    url: "/hardware/task_rtfi_process.html"
+  - title: Menu delle opzioni RTFI
+    url: "/hardware/task_rtfi_options_menu.html"

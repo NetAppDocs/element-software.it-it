@@ -1,0 +1,99 @@
+---
+permalink: api/reference_element_api_secureerasedrives.html 
+sidebar: sidebar 
+keywords: drive,drives,secure,erase,reset,resetting,encryption,key,secureerasedrives 
+summary: 'È possibile utilizzare il metodo SecureEraseDrives per rimuovere eventuali dati residui dalle unità con stato "disponibile". È possibile utilizzare questo metodo per sostituire un"unità prossima alla fine della sua vita utile che conteneva dati sensibili. Questo metodo utilizza un comando Security Erase Unit per scrivere un modello predeterminato sul disco e reimpostare la chiave di crittografia sul disco. Il completamento di questo metodo asincrono potrebbe richiedere alcuni minuti.' 
+---
+= SecureEraseDrive
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `SecureEraseDrives` metodo per rimuovere eventuali dati residui dalle unità con stato "disponibile". È possibile utilizzare questo metodo per sostituire un'unità prossima alla fine della sua vita utile che conteneva dati sensibili. Questo metodo utilizza un comando Security Erase Unit per scrivere un modello predeterminato sul disco e reimpostare la chiave di crittografia sul disco. Il completamento di questo metodo asincrono potrebbe richiedere alcuni minuti.
+
+
+
+== Parametro
+
+Questo metodo ha il seguente parametro di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+dischi
+ a| 
+Elenco degli ID del disco da cancellare in modo sicuro.
+ a| 
+array intero
+ a| 
+Nessuno
+ a| 
+Sì
+
+|===
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+AsyncHandle
+ a| 
+Valore handle utilizzato per ottenere il risultato dell'operazione.
+ a| 
+intero
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+   "method": "SecureEraseDrives",
+   "params": {
+     "drives"  : [3, 4, 5]
+   },
+   "id" : 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+   "id" : 1
+   "result" : {
+     "asyncHandle" : 1
+   }
+}
+----
+
+
+== Novità dalla versione
+
+9,6
+
+
+
+== Trova ulteriori informazioni
+
+* xref:reference_element_api_getasyncresult.adoc[GetAsyncResult]
+* xref:reference_element_api_listdrives.adoc[ListDrive]
+

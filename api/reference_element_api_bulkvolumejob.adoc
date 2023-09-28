@@ -1,0 +1,155 @@
+---
+permalink: api/reference_element_api_bulkvolumejob.html 
+sidebar: sidebar 
+keywords: bulkVolumeJob,object,objects,read,write,clones,snapshots,clone,snapshot 
+summary: 'L"oggetto bulkVolumeJob contiene informazioni sulle operazioni di lettura o scrittura di volumi in blocco, come la clonazione o la creazione di snapshot.' 
+---
+= BulkVolumeJob
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il `bulkVolumeJob` object contiene informazioni su operazioni di lettura o scrittura di volumi in blocco, come cloning o creazione di snapshot.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+`attributes`
+ a| 
+Attributo JSON del processo di volume in blocco.
+ a| 
+Oggetto JSON
+
+
+
+ a| 
+`bulkVolumeID`
+ a| 
+L'ID del processo del volume in blocco interno.
+ a| 
+intero
+
+
+
+ a| 
+`createTime`
+ a| 
+Data e ora creata per il job di volume in blocco in formato UTC+0.
+ a| 
+Stringa di dati ISO 8601
+
+
+
+ a| 
+`elapsedTime`
+ a| 
+Il numero di secondi dall'inizio del lavoro.
+ a| 
+stringa
+
+
+
+ a| 
+`format`
+ a| 
+Il formato dell'operazione del volume in blocco. Valori possibili:
+
+* compresso
+* nativo
+
+ a| 
+stringa
+
+
+
+ a| 
+`key`
+ a| 
+Chiave univoca creata dalla sessione del volume in blocco.
+ a| 
+stringa
+
+
+
+ a| 
+`percentComplete`
+ a| 
+La percentuale di completamento riportata dall'operazione.
+ a| 
+intero
+
+
+
+ a| 
+`remainingTime`
+ a| 
+Il tempo rimanente stimato in secondi.
+ a| 
+intero
+
+
+
+ a| 
+`srcVolumeID`
+ a| 
+L'ID del volume di origine.
+ a| 
+intero
+
+
+
+ a| 
+`status`
+ a| 
+Lo stato dell'operazione. Valori possibili:
+
+* preparazione in corso
+* attivo
+* fatto
+* non riuscito
+
+ a| 
+stringa
+
+
+
+ a| 
+`script`
+ a| 
+Il nome dello script, se fornito.
+ a| 
+stringa
+
+
+
+ a| 
+`snapshotID`
+ a| 
+L'ID dello snapshot se uno snapshot si trova nell'origine del processo di volume in blocco.
+ a| 
+intero
+
+
+
+ a| 
+`type`
+ a| 
+Il tipo di operazione in blocco. Valori possibili:
+
+* leggi
+* di scrittura
+
+ a| 
+stringa
+
+|===

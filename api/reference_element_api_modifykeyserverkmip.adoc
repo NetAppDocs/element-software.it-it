@@ -1,0 +1,177 @@
+---
+permalink: api/reference_element_api_modifykeyserverkmip.html 
+sidebar: sidebar 
+keywords: KMIP,key server,modifying,modify,change,edit 
+summary: 'È possibile utilizzare il metodo ModifyKeyServerKmip per modificare un server chiavi esistente KMIP (Key Management Interoperability Protocol) con gli attributi specificati. Sebbene l"unico parametro richiesto sia keyServerID, una richiesta contenente solo keyServerID non eseguirà alcuna azione e non restituirà alcun errore. Qualsiasi altro parametro specificato sostituirà i valori esistenti per il server chiavi con il keyServerID specificato. Il server delle chiavi viene contattato durante l"operazione per assicurarne il funzionamento. È possibile fornire più nomi host o indirizzi IP con il parametro kmipKeyServerHostnames, ma solo se i server delle chiavi sono in una configurazione in cluster.' 
+---
+= ModifyKeyServerKmip
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `ModifyKeyServerKmip` Metodo per modificare un server chiavi KMIP (Key Management Interoperability Protocol) esistente con gli attributi specificati. Sebbene l'unico parametro richiesto sia keyServerID, una richiesta contenente solo keyServerID non eseguirà alcuna azione e non restituirà alcun errore. Qualsiasi altro parametro specificato sostituirà i valori esistenti per il server chiavi con il keyServerID specificato. Il server delle chiavi viene contattato durante l'operazione per assicurarne il funzionamento. È possibile fornire più nomi host o indirizzi IP con il parametro kmipKeyServerHostnames, ma solo se i server delle chiavi sono in una configurazione in cluster.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+
+
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+KeyServerID
+ a| 
+L'ID del KMIP Key Server da modificare.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+KmipCaCertificate
+ a| 
+Il certificato a chiave pubblica della CA principale del server di chiavi esterno. Questa opzione viene utilizzata per verificare il certificato presentato dal server delle chiavi esterno nella comunicazione TLS. Per i cluster di server di chiavi in cui i singoli server utilizzano CA diverse, fornire una stringa concatenata contenente i certificati root di tutte le CA.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+KmipClientCertificate
+ a| 
+Un certificato PKCS 10 X.509 con codifica Base64 in formato PEM utilizzato dal client KMIP di SolidFire.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+KmipKeyServerHostnames
+ a| 
+Array dei nomi host o degli indirizzi IP associati al server delle chiavi KMIP. È necessario fornire più nomi host o indirizzi IP solo se i server delle chiavi sono in una configurazione in cluster.
+ a| 
+array di stringhe
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+KmipKeyServerName
+ a| 
+Il nome del server delle chiavi KMIP. Questo nome viene utilizzato solo per scopi di visualizzazione e non deve essere univoco.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+KmipKeyServerPort
+ a| 
+Il numero di porta associato al server delle chiavi KMIP (generalmente 5696).
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+No
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo ha i seguenti valori restituiti:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+KmipKeyServer
+ a| 
+Oggetto contenente dettagli sul server delle chiavi appena modificato.
+ a| 
+link:reference_element_api_keyserverkmip.html["KeyServerKmip"]
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "method": "ModifyKeyServerKmip",
+  "params": {
+    "keyServerID": 15
+    "kmipCaCertificate": "CPDCCAaUCEDyRMcsf9tAbDpq40ES/E...",
+    "kmipClientCertificate": "kirWmnWXbj9T/UWZYB2oK0z5...",
+    "kmipKeyServerHostnames" : ["server1.hostname.com", "server2.hostname.com"],
+    "kmipKeyServerName" : "keyserverName",
+    "kmipKeyServerPort" : 5696
+  },
+"id": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+   "id": 1,
+   "result":
+      {
+        "kmipKeyServer": {
+            "kmipCaCertificate":"CPDCCAaUCEDyRMcsf9tAbDpq40ES/E...",
+            "kmipKeyServerHostnames":[
+                "server1.hostname.com", "server2.hostname.com"
+            ],
+            "keyProviderID":1,
+            "kmipKeyServerName":"keyserverName",
+            "keyServerID":1
+            "kmipKeyServerPort":1,
+            "kmipClientCertificate":"kirWmnWXbj9T/UWZYB2oK0z5...",
+            "kmipAssignedProviderIsActive":true
+        }
+    }
+}
+----
+
+
+== Novità dalla versione
+
+11,7

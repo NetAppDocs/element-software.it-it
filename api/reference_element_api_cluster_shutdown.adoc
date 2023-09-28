@@ -1,0 +1,104 @@
+---
+permalink: api/reference_element_api_cluster_shutdown.html 
+sidebar: sidebar 
+keywords: cluster,shutdown,node,shutting,down,shut,restart 
+summary: È possibile utilizzare il metodo Shutdown per riavviare o arrestare i nodi in un cluster. Questo metodo consente di arrestare un singolo nodo, più nodi o tutti i nodi del cluster. 
+---
+= Spegnere
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `Shutdown` metodo per riavviare o arrestare i nodi in un cluster. Questo metodo consente di arrestare un singolo nodo, più nodi o tutti i nodi del cluster.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+nodi
+ a| 
+Elenco di NodeID per i nodi da riavviare o arrestare.
+ a| 
+array intero
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+opzione
+ a| 
+Azione da intraprendere per il cluster. Valori possibili:
+
+* Riavvio: Consente di riavviare il cluster.
+* Arresta: Esegue uno spegnimento completo.
+
+ a| 
+stringa
+ a| 
+riavviare
+ a| 
+No
+
+|===
+
+
+== Valore restituito
+
+Questo metodo non ha alcun valore restituito.
+
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+   "method": "Shutdown",
+   "params": {
+     "nodes": [
+       2,
+       3,
+       4
+     ],
+     "option": "halt"
+   },
+   "id": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+  "id" : 1,
+  "result" : {
+     "failed": [],
+     "successful": [
+          6
+      [
+   }
+}
+----
+
+
+== Novità dalla versione
+
+9,6

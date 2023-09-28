@@ -1,0 +1,49 @@
+---
+permalink: storage/task_troubleshoot_remove_failed_drives.html 
+sidebar: sidebar 
+keywords: troubleshoot, failed drives, remove 
+summary: 'Il sistema SolidFire mette un disco in uno stato di errore se l"autodiagnosi del disco indica al nodo che si è verificato un errore o se la comunicazione con il disco si interrompe per cinque minuti e mezzo o più. Il sistema visualizza un elenco dei dischi guasti. È necessario rimuovere un disco guasto dall"elenco dei dischi guasti nel software NetApp Element.' 
+---
+= Rimuovere i dischi guasti dal cluster
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il sistema SolidFire mette un disco in uno stato di errore se l'autodiagnosi del disco indica al nodo che si è verificato un errore o se la comunicazione con il disco si interrompe per cinque minuti e mezzo o più. Il sistema visualizza un elenco dei dischi guasti. È necessario rimuovere un disco guasto dall'elenco dei dischi guasti nel software NetApp Element.
+
+I dischi nell'elenco *Alerts* vengono visualizzati come *blockServiceUnhealthy* quando un nodo è offline. Al riavvio del nodo, se il nodo e i relativi dischi tornano online entro cinque minuti e mezzo, i dischi si aggiornano automaticamente e continuano come dischi attivi nel cluster.
+
+. Nell'interfaccia utente di Element, selezionare *Cluster* > *Drives*.
+. Fare clic su *Failed* (guasto) per visualizzare l'elenco dei dischi guasti.
+. Annotare il numero di slot del disco guasto.
++
+Queste informazioni sono necessarie per individuare il disco guasto nello chassis.
+
+. Rimuovere i dischi guasti utilizzando uno dei seguenti metodi:
++
+|===
+
+
+| Opzione | Fasi 
+
+
+ a| 
+Per rimuovere singoli dischi
+ a| 
+.. Fare clic su *azioni* per l'unità che si desidera rimuovere.
+.. Fare clic su *Rimuovi*.
+
+
+
+
+ a| 
+Per rimuovere più dischi
+ a| 
+.. Selezionare tutte le unità che si desidera rimuovere e fare clic su *azioni in blocco*.
+.. Fare clic su *Rimuovi*.
+
+
+|===
+

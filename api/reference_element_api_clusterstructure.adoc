@@ -1,0 +1,48 @@
+---
+permalink: api/reference_element_api_clusterstructure.html 
+sidebar: sidebar 
+keywords: objects,cluster,structure,clusterStructure,object 
+summary: 'L"oggetto ClusterStructure contiene le informazioni di backup della configurazione del cluster create dal metodo GetClusterStructure. È possibile utilizzare il metodo SetClusterStructure per ripristinare queste informazioni in un cluster di storage che si sta ricostruendo.' 
+---
+= Struttura del clusterStructure
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto ClusterStructure contiene le informazioni di backup della configurazione del cluster create dal metodo GetClusterStructure. È possibile utilizzare il metodo SetClusterStructure per ripristinare queste informazioni in un cluster di storage che si sta ricostruendo.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene le informazioni di ritorno combinate dei seguenti metodi:
+
+* xref:reference_element_api_getclusterinfo.adoc[GetClusterInfo]
+* xref:reference_element_api_listaccounts.adoc[ListAccounts]
+* xref:reference_element_api_listinitiators.adoc[ListInitiator]
+* xref:reference_element_api_listvolumes.adoc[ListVolumes] (Con inclusiVirtualVolumes=false)
+* xref:reference_element_api_listvolumeaccessgroups.adoc[ListVolumeAccessGroups]
+* xref:reference_element_api_liststoragecontainers.adoc[ListStorageContainers]
+* xref:reference_element_api_listqospolicies.adoc[ListQoSPolicies]
+* xref:reference_element_api_getsnmpinfo.adoc[GetSnmpInfo]
+* xref:reference_element_api_getntpinfo.adoc[GetNtpInfo]
+* xref:reference_element_api_listvirtualnetworks.adoc[ListVirtualNetworks]
+* xref:reference_element_api_listclusteradmins.adoc[ListClusterAdmins]
+* xref:reference_element_api_listschedules.adoc[Elenchi]
+* xref:reference_element_api_listsnapmirrorendpoints.adoc[ListSnapMirrorEndpoint]
+* xref:reference_element_api_getfeaturestatus.adoc[GetFeatureStatus]
+* xref:reference_element_api_getldapconfiguration.adoc[GetLdapConfiguration]
+* xref:reference_element_api_getremotelogginghosts.adoc[GetRemoteLoggingHost]
+* xref:reference_element_api_getdefaultqos.adoc[GetDefaultQoS]
+* xref:reference_element_api_getvolumeaccessgrouplunassignments.adoc[GetVolumeAccessGroupLunAssignments]
+
+
+
+
+== Trova ulteriori informazioni
+
+* xref:reference_element_api_getclusterstructure.adoc[GetClusterStructure]
+* xref:reference_element_api_setclusterstructure.adoc[SetClusterStructure]
+

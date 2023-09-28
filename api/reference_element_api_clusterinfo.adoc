@@ -1,0 +1,208 @@
+---
+permalink: api/reference_element_api_clusterinfo.html 
+sidebar: sidebar 
+keywords: element, api, object, objects, clusterInfo 
+summary: 'L"oggetto clusterInfo contiene informazioni che il nodo utilizza per comunicare con il cluster. È possibile ottenere queste informazioni con il metodo API GetClusterInfo.' 
+---
+= ClusterInfo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto clusterInfo contiene informazioni che il nodo utilizza per comunicare con il cluster. È possibile ottenere queste informazioni con il metodo API GetClusterInfo.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+attributi
+ a| 
+Elenco delle coppie nome-valore nel formato oggetto JSON.
+ a| 
+Oggetto JSON
+
+
+
+ a| 
+DefaultProtectionScheme
+ a| 
+Lo schema di protezione utilizzato per impostazione predefinita per i nuovi volumi, a meno che non venga fornito uno schema di protezione con xref:reference_element_api_createvolume.adoc[CreateVolume] chiamata al metodo. Questo schema di protezione deve sempre essere nell'insieme di schemi di protezione abilitati.
+ a| 
+stringa
+
+
+
+ a| 
+EnabledProtectionSchemes
+ a| 
+Un elenco di tutti gli schemi di protezione attivati su questo cluster di storage.
+ a| 
+array di stringhe
+
+
+
+ a| 
+EncryptionAtRestState
+ a| 
+Lo stato della funzione crittografia a riposo. Valori possibili:
+
+* Abilitazione: La crittografia a riposo è attivata.
+* Enabled (attivato): La crittografia a riposo è attivata.
+* Disattivazione: La crittografia a riposo viene disattivata.
+* Disabled (disattivata): La crittografia a riposo è disattivata.
+
+ a| 
+stringa
+
+
+
+ a| 
+ensemble
+ a| 
+I nodi che partecipano al cluster.
+ a| 
+array di stringhe
+
+
+
+ a| 
+mvip
+ a| 
+L'indirizzo IP mobile (virtuale) per il cluster sulla rete di gestione.
+ a| 
+stringa
+
+
+
+ a| 
+MvipInterface
+ a| 
+L'interfaccia fisica associata all'indirizzo MVIP.
+ a| 
+stringa
+
+
+
+ a| 
+MvipNodeID
+ a| 
+Nodo che contiene l'indirizzo MVIP master.
+ a| 
+intero
+
+
+
+ a| 
+MvipVlanTag
+ a| 
+L'identificatore VLAN per l'indirizzo MVIP.
+ a| 
+stringa
+
+
+
+ a| 
+nome
+ a| 
+Il nome univoco del cluster.
+ a| 
+stringa
+
+
+
+ a| 
+RepCount
+ a| 
+Il numero di repliche di ciascun dato da memorizzare nel cluster. Il valore valido è "2".
+ a| 
+intero
+
+
+
+ a| 
+SoftwareEncryptionAtRestState
+ a| 
+Crittografia basata su software in stato di riposo.
+ a| 
+stringa
+
+
+
+ a| 
+SupportedProtectionSchemes
+ a| 
+Elenco di tutti gli schemi di protezione supportati da questo cluster di storage.
+ a| 
+array di stringhe
+
+
+
+ a| 
+svip
+ a| 
+L'indirizzo IP mobile (virtuale) per il cluster sulla rete di storage (iSCSI).
+ a| 
+stringa
+
+
+
+ a| 
+SvipInterface
+ a| 
+L'interfaccia fisica associata all'indirizzo SVIP master.
+ a| 
+stringa
+
+
+
+ a| 
+SvipNodeID
+ a| 
+Il nodo che contiene l'indirizzo SVIP master.
+ a| 
+intero
+
+
+
+ a| 
+SvipVlanTag
+ a| 
+L'identificatore VLAN per l'indirizzo SVIP master.
+ a| 
+stringa
+
+
+
+ a| 
+ID univoco
+ a| 
+L'ID univoco del cluster.
+ a| 
+stringa
+
+
+
+ a| 
+uuid
+ a| 
+Identificatore univoco del cluster.
+ a| 
+UUID
+
+|===
+[discrete]
+== Trova ulteriori informazioni
+
+* link:../api/reference_element_api_getclusterinfo.html["GetClusterInfo"]
+* https://www.netapp.com/data-storage/solidfire/documentation/["Pagina delle risorse NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Documentazione per le versioni precedenti dei prodotti SolidFire ed Element di NetApp"^]
+

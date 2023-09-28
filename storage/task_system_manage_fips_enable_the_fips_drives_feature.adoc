@@ -1,0 +1,32 @@
+---
+permalink: storage/task_system_manage_fips_enable_the_fips_drives_feature.html 
+sidebar: sidebar 
+keywords: fips, security, federal information processing standards, 140-2, enable, ear 
+summary: È possibile attivare la funzione dischi FIPS utilizzando il metodo API EnableFeature del software NetApp Element. 
+---
+= Attivare la funzione dischi FIPS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile attivare la funzione dischi FIPS utilizzando il software NetApp Element `EnableFeature` Metodo API.
+
+La crittografia a riposo deve essere attivata sul cluster e tutti i nodi e le unità devono essere compatibili con FIPS, come indicato quando GetFipsReport visualizza uno stato Ready per tutti i nodi.
+
+.Fase
+. Utilizzando l'API Element, abilitare FIPS su tutti i dischi immettendo:
++
+`EnableFeature params: FipsDrives`
+
+
+
+
+
+== Trova ulteriori informazioni
+
+* link:../api/index.html["Gestire lo storage con l'API Element"]
+* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
+

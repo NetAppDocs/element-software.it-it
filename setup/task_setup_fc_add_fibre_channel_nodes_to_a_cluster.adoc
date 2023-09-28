@@ -1,0 +1,43 @@
+---
+permalink: setup/task_setup_fc_add_fibre_channel_nodes_to_a_cluster.html 
+sidebar: sidebar 
+keywords:  
+summary: 'È possibile aggiungere nodi Fibre Channel a un cluster quando è necessario più storage o durante la creazione del cluster. I nodi Fibre Channel richiedono la configurazione iniziale quando vengono accesi per la prima volta. Una volta configurato, il nodo viene visualizzato nell"elenco dei nodi in sospeso ed è possibile aggiungerlo a un cluster.' 
+---
+= Aggiunta di nodi Fibre Channel a un cluster
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile aggiungere nodi Fibre Channel a un cluster quando è necessario più storage o durante la creazione del cluster. I nodi Fibre Channel richiedono la configurazione iniziale quando vengono accesi per la prima volta. Una volta configurato, il nodo viene visualizzato nell'elenco dei nodi in sospeso ed è possibile aggiungerlo a un cluster.
+
+La versione software di ciascun nodo Fibre Channel di un cluster deve essere compatibile. Quando si aggiunge un nodo Fibre Channel a un cluster, il cluster installa la versione cluster di Element sul nuovo nodo in base alle necessità.
+
+.Fasi
+. Selezionare *Cluster* > *Nodes*.
+. Fare clic su *Pending* (in sospeso) per visualizzare l'elenco dei nodi in sospeso.
+. Effettuare una delle seguenti operazioni:
++
+** Per aggiungere singoli nodi, fare clic sull'icona *azioni* del nodo che si desidera aggiungere.
+** Per aggiungere più nodi, selezionare la casella di controllo dei nodi da aggiungere, quindi *azioni in blocco*.
++
+
+NOTE: Se il nodo che si sta aggiungendo ha una versione di Element diversa dalla versione in esecuzione sul cluster, il cluster aggiorna il nodo in modo asincrono alla versione di Element in esecuzione sul cluster master. Una volta aggiornato, il nodo si aggiunge automaticamente al cluster. Durante questo processo asincrono, il nodo si trova in uno stato Active pendingActive.
+
+
+
+. Fare clic su *Aggiungi*.
++
+Il nodo viene visualizzato nell'elenco dei nodi attivi.
+
+
+
+
+
+== Trova ulteriori informazioni
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
+

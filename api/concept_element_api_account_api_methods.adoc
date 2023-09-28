@@ -1,0 +1,31 @@
+---
+permalink: api/concept_element_api_account_api_methods.html 
+sidebar: sidebar 
+keywords: account,method,methods,API,managing,manage 
+summary: 'I metodi account consentono di aggiungere, rimuovere, visualizzare e modificare le informazioni relative all"account e alla sicurezza.' 
+---
+= Metodi API dell'account
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+I metodi account consentono di aggiungere, rimuovere, visualizzare e modificare le informazioni relative all'account e alla sicurezza.
+
+* xref:reference_element_api_addaccount.adoc[AddAccount]
+* xref:reference_element_api_getaccountbyid.adoc[GetAccountByID]
+* xref:reference_element_api_getaccountbyname.adoc[GetAccountByName]
+* xref:reference_element_api_getaccountefficiency.adoc[GetAccountEfficiency]
+* xref:reference_element_api_listaccounts.adoc[ListAccounts]
+* xref:reference_element_api_modifyaccount.adoc[ModifyAccount]
+* xref:reference_element_api_removeaccount.adoc[RemoveAccount]
+
+
+
+
+== Trova ulteriori informazioni
+
+* https://www.netapp.com/data-storage/solidfire/documentation/["Pagina delle risorse NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Documentazione per le versioni precedenti dei prodotti SolidFire ed Element di NetApp"^]
+

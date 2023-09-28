@@ -1,0 +1,89 @@
+---
+permalink: api/reference_element_api_getloginbanner.html 
+sidebar: sidebar 
+keywords: terms,use,banner,get,getting,getloginbanner,login 
+summary: 'È possibile utilizzare il metodo GetLoginBanner per ottenere il banner Terms of Use attualmente attivo che gli utenti visualizzano quando accedono all"interfaccia Web Element.' 
+---
+= GetLoginBanner
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `GetLoginBanner` Metodo per ottenere il banner delle Condizioni d'uso attualmente attivo che gli utenti visualizzano quando accedono all'interfaccia web di Element.
+
+
+
+== Parametri
+
+Questo metodo non ha parametri di input.
+
+
+
+== Valori restituiti
+
+Questo metodo ha i seguenti valori restituiti:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+banner
+ a| 
+Il testo corrente del banner Termini di utilizzo. Questo valore può contenere testo anche quando il banner è disattivato.
+ a| 
+stringa
+
+
+
+ a| 
+attivato
+ a| 
+Lo stato del banner Termini di utilizzo. Valori possibili:
+
+* Vero: Il banner Termini di utilizzo viene visualizzato al momento dell'accesso all'interfaccia Web.
+* Falso: Il banner delle Condizioni d'uso non viene visualizzato al momento dell'accesso all'interfaccia Web.
+
+ a| 
+booleano
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "id": 3411,
+  "method": "GetLoginBanner",
+  "params": {}
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+  "id": 3411,
+  "result": {
+    "loginBanner": {
+      "banner": "Welcome to NetApp!",
+      "enabled": false
+    }
+  }
+}
+----
+
+
+== Novità dalla versione
+
+10,0

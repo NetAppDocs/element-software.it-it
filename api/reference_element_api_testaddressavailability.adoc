@@ -1,0 +1,143 @@
+---
+permalink: api/reference_element_api_testaddressavailability.html 
+sidebar: sidebar 
+keywords: ip,address,availability,test,testing,ensemble,cluster,testaddressavailability 
+summary: 'È possibile utilizzare il metodo TestAddressAvailability per verificare se un determinato indirizzo IP è in uso su un"interfaccia all"interno del cluster di storage.' 
+---
+= TestAddressAvailability
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `TestAddressAvailability` Metodo per verificare se un determinato indirizzo IP è in uso su un'interfaccia all'interno del cluster di storage.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+interfaccia
+ a| 
+L'interfaccia di rete di destinazione (ad esempio eth0, Bond10G, ecc.).
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+indirizzo
+ a| 
+L'indirizzo IP da ricercare nell'interfaccia di destinazione.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+VirtualNetworkTag
+ a| 
+L'ID VLAN di destinazione.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+timeout
+ a| 
+Timeout in secondi per il test dell'indirizzo di destinazione.
+ a| 
+intero
+ a| 
+5
+ a| 
+No
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo ha i seguenti valori restituiti:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+indirizzo
+ a| 
+Indirizzo IP verificato.
+ a| 
+stringa
+
+
+
+ a| 
+disponibile
+ a| 
+True se l'indirizzo IP richiesto è in uso e false in caso contrario.
+ a| 
+booleano
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+	"method": "TestAddressAvailability",
+	"params": {
+		"interface": "Bond10G",
+		"address": "10.0.0.1",
+		"virtualNetworkTag": 1234
+	}
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+	"id": 1,
+	"result": {
+		"address":"10.0.0.1",
+		"available": true
+	}
+}
+----
+
+
+== Novità dalla versione
+
+11,0

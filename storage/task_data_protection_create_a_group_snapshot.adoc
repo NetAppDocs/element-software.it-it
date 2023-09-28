@@ -1,0 +1,44 @@
+---
+permalink: storage/task_data_protection_create_a_group_snapshot.html 
+sidebar: sidebar 
+keywords: group snapshot, create, volumes, schedule, automate group snapshots 
+summary: 'È possibile creare un"istantanea di un gruppo di volumi e una pianificazione snapshot di gruppo per automatizzare le snapshot di gruppo. Un singolo snapshot di gruppo può creare costantemente snapshot di fino a 32 volumi alla volta.' 
+---
+= Creazione di uno snapshot di gruppo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile creare un'istantanea di un gruppo di volumi e una pianificazione snapshot di gruppo per automatizzare le snapshot di gruppo. Un singolo snapshot di gruppo può creare costantemente snapshot di fino a 32 volumi alla volta.
+
+.Fasi
+. Fare clic su *Management* > *Volumes*.
+. Utilizzare le caselle di controllo per selezionare più volumi per un gruppo di volumi.
+. Fare clic su *azioni in blocco*.
+. Fare clic su *Group Snapshot* (istantanea gruppo).
+. Inserire un nuovo nome di snapshot di gruppo nella finestra di dialogo Crea snapshot di gruppo dei volumi.
+. *Opzionale:* selezionare la casella di controllo *Includi ogni membro Snapshot di gruppo nella replica quando accoppiato* per assicurarsi che ogni snapshot venga acquisito nella replica quando il volume padre viene associato.
+. Selezionare un'opzione di conservazione per lo snapshot di gruppo:
++
+** Fare clic su *Keep Forever* per conservare l'istantanea sul sistema a tempo indeterminato.
+** Fare clic su *Set retention period* (Imposta periodo di conservazione) e utilizzare le caselle di selezione della data per scegliere il periodo di tempo in cui il sistema conserva lo snapshot.
+
+
+. Per eseguire una singola istantanea, attenersi alla seguente procedura:
++
+.. Fare clic su *scatta snapshot di gruppo ora*.
+.. Fare clic su *Create Group Snapshot* (Crea istantanea gruppo).
+
+
+. Per pianificare l'esecuzione dello snapshot in un momento successivo, attenersi alla seguente procedura:
++
+.. Fare clic su *Crea pianificazione snapshot di gruppo*.
+.. Immettere un *nuovo nome pianificazione*.
+.. Selezionare un *tipo di pianificazione* dall'elenco.
+.. *Opzionale:* selezionare la casella di controllo *Pianificazione ricorrente* per ripetere periodicamente lo snapshot pianificato.
+.. Fare clic su *Crea pianificazione*.
+
+
+

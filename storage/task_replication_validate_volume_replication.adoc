@@ -1,0 +1,24 @@
+---
+permalink: storage/task_replication_validate_volume_replication.html 
+sidebar: sidebar 
+keywords: volume pairings, replication, validate volume replication 
+summary: 'Una volta replicato un volume, assicurarsi che i volumi di origine e di destinazione siano attivi. Quando si trova in uno stato attivo, i volumi vengono associati, i dati vengono inviati dall"origine al volume di destinazione e i dati sono sincronizzati.' 
+---
+= Convalidare la replica del volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Una volta replicato un volume, assicurarsi che i volumi di origine e di destinazione siano attivi. Quando si trova in uno stato attivo, i volumi vengono associati, i dati vengono inviati dall'origine al volume di destinazione e i dati sono sincronizzati.
+
+. Da entrambi i cluster, selezionare *Data Protection* > *Volume Pairs*.
+. Verificare che lo stato del volume sia attivo.
+
+
+
+
+== Trova ulteriori informazioni
+
+xref:reference_replication_volume_pairing_warnings.adoc[Avvisi di associazione del volume]

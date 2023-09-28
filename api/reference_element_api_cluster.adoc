@@ -1,0 +1,295 @@
+---
+permalink: api/reference_element_api_cluster.html 
+sidebar: sidebar 
+keywords: objects,object,cluster 
+summary: 'L"oggetto cluster contiene informazioni che il nodo utilizza per comunicare con il cluster. È possibile recuperare queste informazioni con il metodo API GetClusterConfig.' 
+---
+= cluster
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto cluster contiene informazioni che il nodo utilizza per comunicare con il cluster. È possibile recuperare queste informazioni con il metodo API GetClusterConfig.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+cipi
+ a| 
+Interfaccia di rete utilizzata per la comunicazione del cluster.
+ a| 
+stringa
+
+
+
+ a| 
+cluster
+ a| 
+Nome cluster univoco.
+ a| 
+stringa
+
+
+
+ a| 
+EncryptionCapable
+ a| 
+Indica se il nodo supporta la crittografia del disco.
+ a| 
+booleano
+
+
+
+ a| 
+ensemble
+ a| 
+I nodi che partecipano al cluster.
+ a| 
+array di stringhe
+
+
+
+ a| 
+FipsDriveConfiguration
+ a| 
+Indica se il nodo supporta dischi certificati FIPS 140-2.
+ a| 
+booleano
+
+
+
+ a| 
+mipi
+ a| 
+Interfaccia di rete utilizzata per la gestione dei nodi.
+ a| 
+stringa
+
+
+
+ a| 
+nome
+ a| 
+Il nome del cluster.
+ a| 
+stringa
+
+
+
+ a| 
+ID NodeID
+ a| 
+L'ID del nodo nel cluster.
+ a| 
+stringa
+
+
+
+ a| 
+PendingNodeID
+ a| 
+L'ID del nodo in sospeso nel cluster.
+ a| 
+intero
+
+
+
+ a| 
+ruolo
+ a| 
+Identifica il ruolo del nodo.
+ a| 
+intero
+
+
+
+ a| 
+sipi
+ a| 
+Interfaccia di rete utilizzata per il traffico di storage.
+ a| 
+stringa
+
+
+
+ a| 
+stato
+ a| 
+Lo stato corrente del nodo. Valori possibili:
+
+* Disponibile: Il nodo non è stato configurato con un nome di cluster.
+* In sospeso: Il nodo è in sospeso per uno specifico cluster denominato e può essere aggiunto.
+* Attivo: Il nodo è un membro attivo di un cluster e non può essere aggiunto a un altro cluster.
+* PendingActive (PendingActive): Il nodo viene attualmente restituito all'immagine software di fabbrica e non è ancora un membro attivo di un cluster. Al termine, passa allo stato attivo.
+
+ a| 
+stringa
+
+
+
+ a| 
+versione
+ a| 
+La versione del software in esecuzione sul nodo.
+ a| 
+stringa
+
+|===
+
+
+== Modificabilità dei membri e stati dei nodi
+
+Questa tabella indica se i parametri dell'oggetto possono essere modificati o meno in ogni stato di nodo possibile.
+
+|===
+
+
+| Nome del parametro | Stato disponibile | Stato in sospeso | Stato attivo 
+
+
+ a| 
+cipi
+ a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+cluster
+ a| 
+Sì
+ a| 
+Sì
+ a| 
+No
+
+
+
+ a| 
+EncryptionCapable
+ a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+ensemble
+ a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+mipi
+ a| 
+Sì
+ a| 
+Sì
+ a| 
+No
+
+
+
+ a| 
+nome
+ a| 
+Sì
+ a| 
+Sì
+ a| 
+Sì
+
+
+
+ a| 
+ID NodeID
+ a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+PendingNodeID
+ a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+ruolo
+ a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+sipi
+ a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+stato
+ a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+versione
+ a| 
+No
+ a| 
+No
+ a| 
+No
+
+|===
+
+
+== Trova ulteriori informazioni
+
+xref:reference_element_api_getclusterconfig.adoc[GetClusterConfig]

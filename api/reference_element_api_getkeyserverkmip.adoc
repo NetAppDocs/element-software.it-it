@@ -1,0 +1,103 @@
+---
+permalink: api/reference_element_api_getkeyserverkmip.html 
+sidebar: sidebar 
+keywords: KMIP,key server,getting information,retrieving 
+summary: 'È possibile utilizzare il metodo GetKeyServerKmip per restituire informazioni sul server di chiavi KMIP (Key Management Interoperability Protocol) specificato.' 
+---
+= GetKeyServerKmip
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `GetKeyServerKmip` Metodo per restituire informazioni sul server di chiavi KMIP (Key Management Interoperability Protocol) specificato.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+KeyServerID
+ a| 
+L'ID del server chiavi KMIP su cui restituire le informazioni.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+Sì
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo ha i seguenti valori restituiti:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+KmipKeyServer
+ a| 
+Oggetto contenente dettagli sul server delle chiavi richiesto.
+ a| 
+link:reference_element_api_keyserverkmip.html["KeyServerKmip"]
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "method": "GetKeyServerKmip",
+  "params": {
+     "keyServerID": 15
+  },
+"id": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+   "id": 1,
+   "result":
+      {
+        "kmipKeyServer": {
+            "kmipCaCertificate":"MIICPDCCAaUCEDyRMcsf9tAbDpq40ES/E...",
+            "kmipKeyServerHostnames":[
+                "server1.hostname.com", "server2.hostname.com"
+            ],
+            "keyProviderID":1,
+            "kmipKeyServerName":"keyserverName",
+            "keyServerID":15
+            "kmipKeyServerPort":1,
+            "kmipClientCertificate":"dKkkirWmnWXbj9T/UWZYB2oK0z5...",
+            "kmipAssignedProviderIsActive":true
+        }
+    }
+}
+----
+
+
+== Novità dalla versione
+
+11,7

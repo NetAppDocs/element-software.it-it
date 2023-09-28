@@ -1,0 +1,35 @@
+---
+permalink: storage/task_system_manage_cluster_ntp_configure_to_listen_for_ntp_broadcasts.html 
+sidebar: sidebar 
+keywords: ntp, broadcasts, server, config, server list, broadcast client 
+summary: 'Utilizzando la modalità broadcast, è possibile impostare ciascun nodo di un cluster in modo che ascolti sulla rete i messaggi broadcast NTP (Network Time Protocol) provenienti da un determinato server.' 
+---
+= Configurare il cluster in modo che sia in attesa di trasmissioni NTP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Utilizzando la modalità di trasmissione, è possibile impostare ciascun nodo di un cluster in modo che ascolti sulla rete i messaggi di trasmissione NTP (Network Time Protocol) provenienti da un determinato server.
+
+.Di cosa hai bisogno
+* Per configurare questa impostazione, è necessario disporre dei privilegi di amministratore del cluster.
+* È necessario configurare un server NTP sulla rete come server di trasmissione.
+
+
+.Fasi
+. Fare clic su *Cluster* > *Settings*.
+. Inserire il server NTP o i server che utilizzano la modalità di trasmissione nell'elenco dei server.
+. In Network Time Protocol Settings (Impostazioni protocollo ora di rete), selezionare *Yes* (Sì) per utilizzare un client di trasmissione.
+. Per impostare il client di trasmissione, nel campo *Server*, immettere il server NTP configurato in modalità broadcast.
+. Fare clic su *Save Changes* (Salva modifiche).
+
+
+
+
+== Trova ulteriori informazioni
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
+

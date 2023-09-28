@@ -1,0 +1,43 @@
+---
+permalink: setup/task_setup_create_a_volume_access_group_for_fibre_channel_clients.html 
+sidebar: sidebar 
+keywords:  
+summary: 'I gruppi di accesso ai volumi consentono la comunicazione tra i client Fibre Channel e i volumi su un sistema storage SolidFire. La mappatura degli iniziatori client Fibre Channel nei volumi di un gruppo di accesso volume consente l"i/o sicuro dei dati tra una rete Fibre Channel e un volume SolidFire.' 
+---
+= Creare un gruppo di accesso al volume per i client Fibre Channel
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+I gruppi di accesso ai volumi consentono la comunicazione tra i client Fibre Channel e i volumi su un sistema storage SolidFire. Il mapping degli iniziatori client Fibre Channel (WWPN) ai volumi di un gruppo di accesso volume consente l'i/o sicuro dei dati tra una rete Fibre Channel e un volume SolidFire.
+
+È inoltre possibile aggiungere gli iniziatori iSCSI a un gruppo di accesso al volume, in modo che gli iniziatori possano accedere agli stessi volumi nel gruppo di accesso al volume.
+
+.Fasi
+. Fare clic su *Gestione* > *gruppi di accesso*.
+. Fare clic su *Create Access Group* (Crea gruppo di accesso).
+. Inserire un nome per il gruppo di accesso al volume nel campo *Nome*.
+. Selezionare e aggiungere gli iniziatori Fibre Channel dall'elenco *Initiator Fibre Channel non associati*.
++
+
+NOTE: È possibile aggiungere o eliminare gli iniziatori in un secondo momento.
+
+. *Opzionale:* selezionare e aggiungere un iSCSI Initiator dall'elenco *Initiator*.
+. Per collegare i volumi al gruppo di accesso, attenersi alla seguente procedura:
++
+.. Selezionare un volume dall'elenco *volumi*.
+.. Fare clic su *Allega volume*.
+
+
+. Fare clic su *Create Access Group* (Crea gruppo di accesso).
+
+
+
+
+== Trova ulteriori informazioni
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
+

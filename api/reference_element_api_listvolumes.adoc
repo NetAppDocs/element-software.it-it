@@ -1,0 +1,235 @@
+---
+permalink: api/reference_element_api_listvolumes.html 
+sidebar: sidebar 
+keywords: volume,volumes,list,listing,listvolumes 
+summary: 'È possibile utilizzare il metodo ListVolumes per ottenere un elenco dei volumi presenti in un cluster. È possibile specificare i volumi che si desidera restituire nell"elenco utilizzando i parametri disponibili.' 
+---
+= ListVolumes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `ListVolumes` metodo per ottenere un elenco di volumi che si trovano in un cluster. È possibile specificare i volumi che si desidera restituire nell'elenco utilizzando i parametri disponibili.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+account
+ a| 
+Vengono restituiti solo i volumi di proprietà degli account specificati qui. Si escludono a vicenda con il parametro volumeIDS.
+ a| 
+array intero
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+Include VirtualVolumes
+ a| 
+I volumi virtuali sono inclusi nella risposta per impostazione predefinita. Per escludere i volumi virtuali, impostare su false.
+ a| 
+booleano
+ a| 
+vero
+ a| 
+No
+
+
+
+ a| 
+IsPaired
+ a| 
+Restituisce volumi che sono associati o non associati. Valori possibili:
+
+* True: Restituisce tutti i volumi accoppiati.
+* Falso: Restituisce tutti i volumi non associati.
+
+ a| 
+booleano
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+limite
+ a| 
+Consente di impostare il numero massimo di risultati del volume restituiti. Si escludono a vicenda con il parametro volumeIDS.
+ a| 
+intero
+ a| 
+10000
+ a| 
+No
+
+
+
+ a| 
+StartVolumeID
+ a| 
+Vengono restituiti solo i volumi con un ID maggiore o uguale a questo valore. Si escludono a vicenda con il parametro volumeIDS.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+ID volume
+ a| 
+Un elenco di ID volume. Se si specifica questo parametro, gli altri parametri funzionano solo su questo set di volumi. Si escludono a vicenda con i parametri account, startVolumeID e Limit.
+ a| 
+array intero
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+VolumeName
+ a| 
+Vengono restituite solo le informazioni dell'oggetto volume corrispondenti al nome del volume.
+ a| 
+stringa
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+VolumeStatus (Stato volume)
+ a| 
+Vengono restituiti solo i volumi con uno stato uguale al valore di stato. Valori possibili:
+
+* creazione in corso
+* scatto
+* attivo
+* cancellato
+
+ a| 
+stringa
+ a| 
+No
+ a| 
+No
+
+|===
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+volumi
+ a| 
+Elenco dei volumi.
+ a| 
+xref:reference_element_api_volume.adoc[volume] array
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "method": "ListVolumes",
+    "params": {
+        "volumeIDs": [1],
+        "volumeStatus": "active",
+        "isPaired": "false"
+    },
+    "id": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+    "id": 1,
+    "result": {
+        "volumes": [
+            {
+                "access": "readWrite",
+                "accountID": 1,
+                "attributes": {},
+                "blockSize": 4096,
+                "createTime": "2016-03-28T14:39:05Z",
+                "deleteTime": "",
+                "enable512e": true,
+                "iqn": "iqn.2010-01.com.solidfire:testvolume1.1",
+                "name": "testVolume1",
+                "purgeTime": "",
+                "qos": {
+                    "burstIOPS": 15000,
+                    "burstTime": 60,
+                    "curve": {
+                        "4096": 100,
+                        "8192": 160,
+                        "16384": 270,
+                        "32768": 500,
+                        "65536": 1000,
+                        "131072": 1950,
+                        "262144": 3900,
+                        "524288": 7600,
+                        "1048576": 15000
+                    },
+                    "maxIOPS": 15000,
+                    "minIOPS": 50
+                },
+                "scsiEUIDeviceID": "6a79617900000001f47acc0100000000",
+                "scsiNAADeviceID": "6f47acc1000000006a79617900000001",
+                "sliceCount": 1,
+                "status": "active",
+                "totalSize": 5000658944,
+                "virtualVolumeID": null,
+                "volumeAccessGroups": [],
+                "volumeID": 1,
+                "volumePairs": []
+            }
+        ]
+    }
+}
+----
+
+
+== Novità dalla versione
+
+9,6

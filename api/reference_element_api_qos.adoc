@@ -1,0 +1,74 @@
+---
+permalink: api/reference_element_api_qos.html 
+sidebar: sidebar 
+keywords: object,objects,QoS 
+summary: 'L"oggetto QoS contiene informazioni sulle impostazioni QoS (Quality of Service) per i volumi. I volumi creati senza valori QoS specificati vengono creati utilizzando i valori predefiniti. È possibile trovare i valori predefiniti utilizzando il metodo GetDefaultQoS.' 
+---
+= QoS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto QoS contiene informazioni sulle impostazioni QoS (Quality of Service) per i volumi. I volumi creati senza valori QoS specificati vengono creati utilizzando i valori predefiniti. È possibile trovare i valori predefiniti utilizzando `GetDefaultQoS` metodo.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+BurstIOPS
+ a| 
+Massimo IOPS di 4 KB "picco" consentito per brevi periodi di tempo. Consente di eseguire burst di attività i/o sul normale valore maxIOPS.
+ a| 
+intero
+
+
+
+ a| 
+BurstTime
+ a| 
+La durata del burstIOPS è consentita. Il valore restituito viene rappresentato in secondi. Questo valore viene calcolato dal sistema in base agli IOPS impostati per QoS.
+ a| 
+intero
+
+
+
+ a| 
+curva
+ a| 
+La curva è un insieme di coppie chiave-valore. Le chiavi sono di dimensioni i/o in byte. I valori rappresentano il costo dell'esecuzione di un IOP a una dimensione i/o specifica. La curva viene calcolata in relazione a un'operazione di 4096 byte impostata su 100 IOPS.
+ a| 
+Oggetto JSON
+
+
+
+ a| 
+MaxIOPS
+ a| 
+Il massimo di 4 KB di IOPS desiderato consentito in un periodo di tempo esteso.
+ a| 
+intero
+
+
+
+ a| 
+MinIOPS
+ a| 
+Gli IOPS minimi da 4 KB da garantire. Gli IOPS consentiti scenderanno al di sotto di questo livello solo se tutti i volumi sono stati ridotti al loro valore minIOPS e la capacità delle performance è ancora insufficiente.
+ a| 
+intero
+
+|===
+
+
+== Trova ulteriori informazioni
+
+xref:reference_element_api_getdefaultqos.adoc[GetDefaultQoS]

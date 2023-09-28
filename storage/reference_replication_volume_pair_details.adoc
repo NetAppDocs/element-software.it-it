@@ -1,0 +1,71 @@
+---
+permalink: storage/reference_replication_volume_pair_details.html 
+sidebar: sidebar 
+keywords: volume pairs, replication, data protection 
+summary: 'La pagina Volume Pairs (coppie di volumi) nella scheda Data Protection (protezione dati) fornisce informazioni sui volumi che sono stati associati o che sono in fase di associazione. Il sistema visualizza i messaggi di associazione e di avanzamento nella colonna Volume Status (Stato volume).' 
+---
+= Dettagli della coppia di volumi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La pagina Volume Pairs (coppie di volumi) nella scheda Data Protection (protezione dati) fornisce informazioni sui volumi che sono stati associati o che sono in fase di associazione. Il sistema visualizza i messaggi di associazione e di avanzamento nella colonna Volume Status (Stato volume).
+
+* *ID*
++
+ID generato dal sistema per il volume.
+
+* *Nome*
++
+Il nome assegnato al volume al momento della creazione. I nomi dei volumi possono contenere fino a 223 caratteri e contengono a-z, 0-9 e trattino (-).
+
+* *Account*
++
+Nome dell'account assegnato al volume.
+
+* *Volume Status* (Stato volume)
++
+Stato di replica del volume
+
+* *Stato snapshot*
++
+Stato del volume di snapshot.
+
+* *Modalità*
++
+Il metodo di replica in scrittura del client. I valori possibili sono i seguenti:
+
++
+** Asincrono
+** Solo Snapshot
+** Sincronizza
+
+
+* *Direzione*
++
+La direzione dei dati del volume:
+
++
+** Icona del volume di origine (image:../media/source_icon_for_volume_pairs.png["Indica che i dati vengono scritti in un cluster esterno di destinazione"]) indica che i dati vengono scritti in una destinazione esterna al cluster.
+** Icona del volume di destinazione (image:../media/target_icon_for_volume_pairs.png["Icona che indica che i dati vengono scritti nel volume locale da un'origine esterna"]) indica che i dati vengono scritti nel volume locale da un'origine esterna.
+
+
+* *Ritardo asincrono*
++
+Periodo di tempo trascorso dall'ultima sincronizzazione del volume con il cluster remoto. Se il volume non è associato, il valore è nullo.
+
+* *Cluster remoto*
++
+Nome del cluster remoto su cui risiede il volume.
+
+* *ID volume remoto*
++
+ID volume del volume sul cluster remoto.
+
+* *Nome volume remoto*
++
+Nome assegnato al volume remoto al momento della creazione.
+
+

@@ -1,0 +1,23 @@
+---
+permalink: storage/task_system_manage_cluster_terms_disable_the_terms_of_use_banner.html 
+sidebar: sidebar 
+keywords: terms of use banner, disable 
+summary: 'È possibile disattivare il banner Termini di utilizzo. Con il banner disattivato, non viene più richiesto all"utente di accettare i termini di utilizzo quando si utilizza l"interfaccia utente di Element.' 
+---
+= Disattiva il banner Termini di utilizzo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile disattivare il banner Termini di utilizzo. Con il banner disattivato, non viene più richiesto all'utente di accettare i termini di utilizzo quando si utilizza l'interfaccia utente di Element.
+
+* Per configurare le Condizioni d'uso, è necessario disporre dei privilegi di amministratore del cluster.
+* Assicurarsi che le condizioni d'uso siano attivate.
++
+.. Fare clic su *utenti* > *Termini di utilizzo*.
+.. Fare clic su *Disable* (Disattiva).
+
+
+

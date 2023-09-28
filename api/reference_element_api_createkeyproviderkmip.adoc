@@ -1,0 +1,102 @@
+---
+permalink: api/reference_element_api_createkeyproviderkmip.html 
+sidebar: sidebar 
+keywords: KMIP,key provider,creating,create 
+summary: 'È possibile utilizzare il metodo CreateKeyProviderKmip per creare un provider di chiavi KMIP (Key Management Interoperability Protocol) con il nome specificato. Un provider di chiavi definisce un meccanismo e una posizione per recuperare le chiavi di autenticazione. Quando si crea un nuovo provider di chiavi KMIP, non sono assegnati server di chiavi KMIP. Per creare un server chiavi KMIP, utilizzare il metodo CreateKeyServerKmip. Per assegnarlo a un provider, vedere AddKeyServerToProviderKmip.' 
+---
+= CreateKeyProviderKmip
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `CreateKeyProviderKmip` Metodo per creare un provider di chiavi KMIP (Key Management Interoperability Protocol) con il nome specificato. Un provider di chiavi definisce un meccanismo e una posizione per recuperare le chiavi di autenticazione. Quando si crea un nuovo provider di chiavi KMIP, non sono assegnati server di chiavi KMIP. Per creare un server chiavi KMIP, utilizzare `CreateKeyServerKmip` metodo. Per assegnarlo a un provider, vedere `AddKeyServerToProviderKmip`.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+KeyProviderName
+ a| 
+Il nome da associare al provider di chiavi KMIP creato. Questo nome viene utilizzato solo per scopi di visualizzazione e non deve essere univoco.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+Sì
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo ha i seguenti valori restituiti:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+KmipKeyProvider
+ a| 
+Oggetto contenente dettagli sul provider di chiavi appena creato.
+ a| 
+link:reference_element_api_keyproviderkmip.html["KeyProviderKmip"]
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "method": "CreateKeyProviderKmip",
+  "params": {
+    "keyProviderName": "ProviderName",
+    },
+"id": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+   "id": 1,
+   "result":
+      {
+    "kmipKeyProvider": {
+        "keyProviderName": "ProviderName",
+        "keyProviderIsActive": true,
+        "kmipCapabilities": "SSL",
+        "keyServerIDs": [
+            15
+        ],
+        "keyProviderID": 1
+    }
+}
+}
+----
+
+
+== Novità dalla versione
+
+11,7

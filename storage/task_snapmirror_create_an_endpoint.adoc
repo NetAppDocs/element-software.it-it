@@ -1,0 +1,42 @@
+---
+permalink: storage/task_snapmirror_create_an_endpoint.html 
+sidebar: sidebar 
+keywords: endpoints, create, snapmirror, ui 
+summary: 'Prima di creare una relazione, è necessario creare un endpoint SnapMirror nell"interfaccia utente di NetApp Element.' 
+---
+= Creare un endpoint SnapMirror
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Prima di creare una relazione, è necessario creare un endpoint SnapMirror nell'interfaccia utente di NetApp Element.
+
+Un endpoint SnapMirror è un cluster ONTAP che funge da destinazione di replica per un cluster che esegue software Element. Prima di creare una relazione SnapMirror, creare un endpoint SnapMirror.
+
+È possibile creare e gestire fino a quattro endpoint SnapMirror in un cluster di storage che esegue il software Element.
+
+
+NOTE: Se un endpoint esistente è stato originariamente creato utilizzando l'API e le credenziali non sono state salvate, è possibile visualizzare l'endpoint nell'interfaccia utente dell'elemento e verificarne l'esistenza, ma non può essere gestito utilizzando l'interfaccia utente dell'elemento. Questo endpoint può quindi essere gestito solo utilizzando l'API Element.
+
+Per ulteriori informazioni sui metodi API, vedere link:../api/index.html["Gestire lo storage con l'API Element"].
+
+.Di cosa hai bisogno
+* È necessario aver attivato SnapMirror nell'interfaccia utente Element per il cluster di storage.
+* Conosci le credenziali ONTAP per l'endpoint.
+
+
+.Fasi
+. Fare clic su *Data Protection* > *SnapMirror Endpoints*.
+. Fare clic su *Create Endpoint* (Crea endpoint).
+. Nella finestra di dialogo *Crea nuovo endpoint*, immettere l'indirizzo IP di gestione del cluster del sistema ONTAP.
+. Immettere le credenziali di amministratore di ONTAP associate all'endpoint.
+. Leggi ulteriori dettagli:
++
+** LIF: Elenca le interfacce logiche dell'intercluster ONTAP utilizzate per comunicare con Element.
+** Status (Stato): Mostra lo stato corrente dell'endpoint SnapMirror. I valori possibili sono: Connesso, disconnesso e non gestito.
+
+
+. Fare clic su *Create Endpoint* (Crea endpoint).
+

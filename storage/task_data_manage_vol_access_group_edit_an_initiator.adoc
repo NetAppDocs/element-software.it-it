@@ -1,0 +1,26 @@
+---
+permalink: storage/task_data_manage_vol_access_group_edit_an_initiator.html 
+sidebar: sidebar 
+keywords: initiator, edit, change alias, chap, credentials 
+summary: 'È possibile modificare l"alias di un iniziatore esistente o aggiungere un alias se non ne esiste già uno.' 
+---
+= Modificare un iniziatore
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile modificare l'alias di un iniziatore esistente o aggiungere un alias se non ne esiste già uno.
+
+Per aggiungere un nome account CHAP e le credenziali per ogni iniziatore, è necessario utilizzare `ModifyInitiator` Chiamata API per rimuovere e aggiungere l'accesso e gli attributi CHAP.
+
+Vedere link:../api/index.html["Gestire lo storage con l'API Element"].
+
+.Fasi
+. Fare clic su *Gestione* > *iniziatori*.
+. Fare clic sull'icona Actions (azioni) per l'iniziatore che si desidera modificare.
+. Fare clic su *Edit* (Modifica).
+. Inserire un nuovo alias per l'iniziatore nel campo *Alias*.
+. Fare clic su *Save Changes* (Salva modifiche).
+

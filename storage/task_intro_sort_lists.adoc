@@ -1,0 +1,35 @@
+---
+permalink: storage/task_intro_sort_lists.html 
+sidebar: sidebar 
+keywords: sort lists, sorting on a single column, sorting on multiple columns, sort button, column selections, using sort criteria 
+summary: 'È possibile ordinare le informazioni dell"elenco in base a uno o più criteri in determinate pagine dell"interfaccia utente Element. In questo modo è possibile disporre le informazioni necessarie sullo schermo.' 
+---
+= Elenchi di ordinamento
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile ordinare le informazioni dell'elenco in base a uno o più criteri in determinate pagine dell'interfaccia utente Element. In questo modo è possibile disporre le informazioni necessarie sullo schermo.
+
+. Per ordinare le informazioni in una singola colonna, fare clic sull'intestazione della colonna fino a quando le informazioni non vengono ordinate nell'ordine desiderato.
+. Per ordinare più colonne, fare clic sull'intestazione di ciascuna colonna in base alla quale si desidera ordinare le informazioni in ciascuna colonna fino a visualizzare l'ordine desiderato.
++
+Il pulsante Ordina viene visualizzato quando si ordina utilizzando più colonne.
+
+. Per riordinare i criteri di ordinamento, attenersi alla seguente procedura:
++
+.. Fare clic su *Ordina*.
++
+Il sistema compila il campo Ordina per con le colonne selezionate.
+
+.. Disporre le colonne nel campo Ordina per nell'ordine in cui si desidera ordinare l'elenco.
++
+Il sistema ordina le informazioni dell'elenco.
+
+
+
+. Per rimuovere un singolo criterio di ordinamento, fare clic sull'icona *Rimuovi* accanto al nome di un criterio di ordinamento.
+. Per rimuovere tutti i criteri di ordinamento, fare clic su *Cancella tutto*.
+

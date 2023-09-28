@@ -1,0 +1,52 @@
+---
+permalink: storage/concept_data_protection.html 
+sidebar: sidebar 
+keywords: data protection, protect your data, snapshots, replication, back up 
+summary: Il software NetApp Element consente di proteggere i dati in diversi modi grazie a funzionalità come snapshot per singoli volumi o gruppi di volumi, replica tra cluster e volumi eseguiti su Element e replica sui sistemi ONTAP. 
+---
+= Proteggi i tuoi dati
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il software NetApp Element consente di proteggere i dati in diversi modi grazie a funzionalità come snapshot per singoli volumi o gruppi di volumi, replica tra cluster e volumi eseguiti su Element e replica sui sistemi ONTAP.
+
+* *Istantanee*
++
+La protezione dei dati solo Snapshot replica i dati modificati in specifici punti di tempo in un cluster remoto. Vengono replicati solo gli snapshot creati nel cluster di origine. Le scritture attive dal volume di origine non lo sono.
+
++
+xref:task_data_protection_using_volume_snapshots.adoc[Utilizzare le snapshot dei volumi per la protezione dei dati]
+
+* *Replica remota tra cluster e volumi eseguiti su Element*
++
+È possibile replicare i dati del volume in modo sincrono o asincrono da uno dei cluster di una coppia di cluster, entrambi in esecuzione su Element per scenari di failover e failback.
+
++
+xref:task_replication_perform_remote_replication_between_element_clusters.adoc[Eseguire la replica remota tra cluster che eseguono il software NetApp Element]
+
+* *Replica tra cluster Element e ONTAP con tecnologia SnapMirror*
++
+Con la tecnologia NetApp SnapMirror, è possibile replicare le snapshot acquisite utilizzando Element to ONTAP per scopi di disaster recovery. In una relazione SnapMirror, Element è un endpoint e ONTAP è l'altro.
+
++
+xref:task_snapmirror_use_replication_between_element_and_ontap_clusters.adoc[Utilizzare la replica SnapMirror tra cluster Element e ONTAP]
+
+* *Eseguire il backup e il ripristino dei volumi dagli archivi di oggetti SolidFire, S3 o Swift*
++
+È possibile eseguire il backup e il ripristino dei volumi su altri storage SolidFire, nonché su archivi di oggetti secondari compatibili con Amazon S3 o OpenStack Swift.
+
++
+xref:task_data_protection_back_up_and_restore_volumes.adoc[Eseguire il backup e il ripristino dei volumi in archivi a oggetti SolidFire, S3 o Swift]
+
+
+
+
+
+== Per ulteriori informazioni
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
+

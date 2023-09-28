@@ -1,0 +1,24 @@
+---
+permalink: storage/task_troubleshoot_remove_mdss_drives.html 
+sidebar: sidebar 
+keywords: mdss, remove, multi-drive slice service 
+summary: 'È possibile rimuovere i dischi multi-drive slice service (MDSS). Questa procedura si applica solo se il nodo ha più dischi slice.' 
+---
+= Rimuovere i dischi MDSS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile rimuovere i dischi multi-drive slice service (MDSS). Questa procedura si applica solo se il nodo ha più dischi slice.
+
+
+NOTE: Se il disco slice del sistema e il disco slot 2 si guastano, il sistema arresta i servizi slice e rimuove i dischi. Se non si verifica alcun guasto e si rimuovono i dischi, entrambi devono essere rimossi contemporaneamente.
+
+. Fare clic su *Cluster* > *Drives*.
+. Dalla scheda *Available* drives (dischi disponibili), fare clic sulla casella di controllo relativa ai dischi slice da rimuovere.
+. Fare clic su *azioni in blocco*.
+. Fare clic su *Rimuovi*.
+. Confermare l'azione.
+

@@ -1,0 +1,150 @@
+---
+permalink: api/reference_element_api_clusterconfig.html 
+sidebar: sidebar 
+keywords: objects,object,clusterConfig 
+summary: 'L"oggetto clusterconfig restituisce le informazioni utilizzate dal nodo per comunicare con il cluster.' 
+---
+= Clusterconfig
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il `clusterConfig` oggetto restituisce informazioni utilizzate dal nodo per comunicare con il cluster.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+`cipi`
+ a| 
+Interfaccia di rete utilizzata per la comunicazione del cluster.
+ a| 
+stringa
+
+
+
+ a| 
+`cluster`
+ a| 
+Nome univoco del cluster.
+ a| 
+stringa
+
+
+
+ a| 
+`encryptionCapable`
+ a| 
+Specifica se il nodo supporta la crittografia.
+ a| 
+booleano
+
+
+
+ a| 
+`ensemble`
+ a| 
+Nodi che partecipano al cluster.
+ a| 
+array di stringhe
+
+
+
+ a| 
+`fipsDriveConfiguration`
+ a| 
+Specifica se il nodo supporta dischi certificati FIPS 140-2.
+ a| 
+booleano
+
+
+
+ a| 
+`hasLocalAdmin`
+ a| 
+Specifica se il cluster dispone di un amministratore locale.
+ a| 
+booleano
+
+
+
+ a| 
+`mipi`
+ a| 
+Interfaccia di rete utilizzata per la gestione dei nodi.
+ a| 
+stringa
+
+
+
+ a| 
+`name`
+ a| 
+Identificatore univoco del cluster.
+ a| 
+stringa
+
+
+
+ a| 
+`nodeID`
+ a| 
+Identificatore univoco del nodo.
+ a| 
+intero
+
+
+
+ a| 
+`pendingNodeID`
+ a| 
+Identificatore univoco del nodo in sospeso.
+ a| 
+intero
+
+
+
+ a| 
+`role`
+ a| 
+Identifica il ruolo del nodo.
+ a| 
+stringa
+
+
+
+ a| 
+`sipi`
+ a| 
+Interfaccia di rete utilizzata per lo storage.
+ a| 
+stringa
+
+
+
+ a| 
+`state`
+ a| 
+Indica lo stato del nodo.
+ a| 
+stringa
+
+
+
+ a| 
+`version`
+ a| 
+Indica la versione del nodo.
+ a| 
+stringa
+
+|===

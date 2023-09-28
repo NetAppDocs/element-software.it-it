@@ -1,0 +1,129 @@
+---
+permalink: api/reference_element_api_enableencryptionatrest.html 
+sidebar: sidebar 
+keywords: encryption,enable,enabling,EnableEncryptionAtRest 
+summary: 'È possibile utilizzare il metodo EnableEncryptionAtRest per attivare la crittografia a 256 bit Advanced Encryption Standard (AES) sul cluster, in modo che il cluster possa gestire la chiave di crittografia utilizzata per i dischi su ciascun nodo. Questa funzione non è attivata per impostazione predefinita.' 
+---
+= EnableEncryptionAtRest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `EnableEncryptionAtRest` Metodo per attivare la crittografia AES (Advanced Encryption Standard) a 256 bit sul cluster in modo che il cluster possa gestire la chiave di crittografia utilizzata per i dischi su ciascun nodo. Questa funzione non è attivata per impostazione predefinita.
+
+
+TIP: Per visualizzare lo stato corrente della crittografia a riposo e/o della crittografia software a riposo nel cluster, utilizzare link:../api/reference_element_api_getclusterinfo["ottieni il metodo delle informazioni sul cluster"^]. È possibile utilizzare `GetSoftwareEncryptionAtRestInfo` link:../api/reference_element_api_getsoftwareencryptionatrestinfo["metodo per ottenere informazioni utilizzate dal cluster per crittografare i dati inattivi"^].
+
+
+NOTE: Questo metodo non attiva la crittografia software a riposo. Questa operazione può essere eseguita solo utilizzando link:../api/reference_element_api_createcluster.html["creare il metodo del cluster"^] con `enableSoftwareEncryptionAtRest` impostare su `true`.
+
+Quando si attiva la crittografia a riposo, il cluster gestisce automaticamente le chiavi di crittografia interne per i dischi su ciascun nodo del cluster.
+
+Se viene specificato keyProviderID, la password viene generata e recuperata in base al tipo di provider di chiavi. In genere, questa operazione viene eseguita utilizzando un server di chiavi KMIP (Key Management Interoperability Protocol) nel caso di un provider di chiavi KMIP. Dopo questa operazione, il provider specificato viene considerato attivo e non può essere eliminato fino a quando la crittografia a riposo non viene disattivata tramite `DisableEncryptionAtRest` metodo.
+
+
+NOTE: Se si dispone di un tipo di nodo con un numero di modello che termina con "-NE", la `EnableEncryptionAtRest` La chiamata al metodo non riesce e viene visualizzato il messaggio "crittografia non consentita. Il cluster ha rilevato un nodo non crittografabile".
+
+
+NOTE: Attivare o disattivare la crittografia solo quando il cluster è in esecuzione e in stato di integrità. È possibile attivare o disattivare la crittografia a propria discrezione e con la frequenza richiesta.
+
+
+NOTE: Questo processo è asincrono e restituisce una risposta prima dell'attivazione della crittografia. È possibile utilizzare `GetClusterInfo` metodo per eseguire il polling del sistema per verificare il completamento del processo.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+KeyProviderID
+ a| 
+L'ID di un provider di chiavi KMIP da utilizzare.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+No
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo non ha valori restituiti.
+
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+   "method": "EnableEncryptionAtRest",
+   "params": {},
+   "id": 1
+}
+----
+
+
+== Esempi di risposte
+
+Questo metodo restituisce una risposta simile all'esempio seguente dal metodo EnableEncryptionAtRest. Nessun risultato da segnalare.
+
+[listing]
+----
+{
+   "id": 1,
+   "result": {}
+}
+----
+Durante l'attivazione della crittografia a riposo su un cluster, GetClusterInfo restituisce un risultato che descrive lo stato di crittografia a riposo ("EncryptionAtRestState") come "abilitazione". Una volta attivata la crittografia a riposo, lo stato restituito diventa "Enabled" (attivato).
+
+[listing]
+----
+{
+   "id": 1,
+      "result": {
+         "clusterInfo": {
+            "attributes": { },
+               "encryptionAtRestState": "enabling",
+            "ensemble": [
+               "10.10.5.94",
+               "10.10.5.107",
+               "10.10.5.108"
+            ],
+            "mvip": "192.168.138.209",
+            "mvipNodeID": 1,
+            "name": "Marshall",
+            "repCount": 2,
+            "svip": "10.10.7.209",
+            "svipNodeID": 1,
+            "uniqueID": "91dt"
+      }
+   }
+}
+----
+
+
+== Novità dalla versione
+
+9,6
+
+[discrete]
+== Trova ulteriori informazioni
+
+* link:reference_element_api_secureerasedrives.html["SecureEraseDrive"]
+* link:reference_element_api_getclusterinfo.html["GetClusterInfo"]
+* https://www.netapp.com/data-storage/solidfire/documentation/["Pagina delle risorse NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Documentazione per le versioni precedenti dei prodotti SolidFire ed Element di NetApp"^]
+

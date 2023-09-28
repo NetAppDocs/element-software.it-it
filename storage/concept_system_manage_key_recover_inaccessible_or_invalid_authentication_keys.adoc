@@ -1,0 +1,35 @@
+---
+permalink: storage/concept_system_manage_key_recover_inaccessible_or_invalid_authentication_keys.html 
+sidebar: sidebar 
+keywords: slice drive error, cluster fault, authentication keys 
+summary: 'Occasionalmente, può verificarsi un errore che richiede l"intervento dell"utente. In caso di errore, viene generato un errore del cluster. I due casi più probabili sono descritti qui.' 
+---
+= Ripristino di chiavi di autenticazione inaccessibili o non valide
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Occasionalmente, può verificarsi un errore che richiede l'intervento dell'utente. In caso di errore, viene generato un guasto del cluster (indicato come codice di guasto del cluster). I due casi più probabili sono descritti qui.
+
+
+
+== Il cluster non è in grado di sbloccare i dischi a causa di un errore del cluster KmipServerFault.
+
+Questo può verificarsi quando il cluster si avvia per la prima volta e il server delle chiavi non è accessibile o la chiave richiesta non è disponibile.
+
+. Seguire le fasi di ripristino riportate nei codici di guasto del cluster (se presenti).
+
+
+
+
+== Un errore sliceServiceUnhealthy potrebbe essere impostato perché i dischi metadati sono stati contrassegnati come guasti e posizionati nello stato "Available" (disponibile).
+
+Procedura per la cancellazione:
+
+. Aggiungere di nuovo i dischi.
+. Dopo 3-4 minuti, controllare che il `sliceServiceUnhealthy` il guasto è stato cancellato.
+
+
+Vedere link:reference_monitor_cluster_fault_codes.html["codici di guasto del cluster"] per ulteriori informazioni.

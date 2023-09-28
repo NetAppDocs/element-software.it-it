@@ -1,0 +1,62 @@
+---
+permalink: api/reference_element_api_listsnapmirrorendpoints.html 
+sidebar: sidebar 
+keywords: snapmirror,endpoint,endpoints,list,listing,listsnapmirrorendpoints 
+summary: 'L"interfaccia utente Web del software Element utilizza il metodo ListSnapMirrorEndpoints per elencare tutti gli endpoint SnapMirror con cui il cluster di storage Element sta comunicando.' 
+---
+= ListSnapMirrorEndpoint
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'interfaccia utente Web del software Element utilizza `ListSnapMirrorEndpoints` Metodo per elencare tutti gli endpoint SnapMirror con cui il cluster di storage Element sta comunicando.
+
+
+
+== Parametro
+
+Questo metodo ha il seguente parametro di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+SnapMirrorEndpointID
+ a| 
+Restituisce solo gli oggetti associati a questi ID. Se non vengono forniti ID o se l'array è vuoto, il metodo restituisce tutti gli ID endpoint SnapMirror.
+ a| 
+array intero
+ a| 
+Nessuno
+ a| 
+No
+
+|===
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+SnapMirrorEndpoint
+ a| 
+Un elenco di endpoint SnapMirror esistenti.
+ a| 
+xref:reference_element_api_snapmirrorendpoint.adoc[SnapMirrorEndpoint] array
+
+|===
+
+
+== Novità dalla versione
+
+10,0

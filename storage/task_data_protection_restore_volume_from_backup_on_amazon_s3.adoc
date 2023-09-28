@@ -1,0 +1,36 @@
+---
+permalink: storage/task_data_protection_restore_volume_from_backup_on_amazon_s3.html 
+sidebar: sidebar 
+keywords: volume restore, amazon s3 object store 
+summary: Puoi ripristinare un volume da un backup su un archivio di oggetti Amazon S3. 
+---
+= Ripristinare un volume dal backup in un archivio di oggetti Amazon S3
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puoi ripristinare un volume da un backup su un archivio di oggetti Amazon S3.
+
+. Fare clic su *Reporting* > *Event Log*.
+. Individuare l'evento di backup che ha creato il backup da ripristinare.
+. Nella colonna *Dettagli* dell'evento, fare clic su *Mostra dettagli*.
+. Copiare le informazioni del manifesto negli Appunti.
+. Fare clic su *Management* > *Volumes*.
+. Fare clic sull'icona Actions (azioni) per il volume che si desidera ripristinare.
+. Nel menu visualizzato, fare clic su *Restore from* (Ripristina da).
+. Nella finestra di dialogo *Integrated Restore* sotto *Restore from* (Ripristina da), selezionare *S3*.
+. Selezionare l'opzione corrispondente al backup in *formato dati*:
++
+** *Nativo*: Formato compresso leggibile solo dai sistemi storage SolidFire.
+** *Non compresso*: Un formato non compresso compatibile con altri sistemi.
+
+
+. Inserire un nome host da utilizzare per accedere all'archivio di oggetti nel campo *Nome host*.
+. Inserire un ID della chiave di accesso per l'account nel campo *Access Key ID* (ID chiave di accesso).
+. Inserire la chiave di accesso segreta per l'account nel campo *Secret Access Key* (chiave di accesso segreta).
+. Inserire il bucket S3 in cui memorizzare il backup nel campo *S3 bucket*.
+. Incollare le informazioni del manifesto nel campo *manifesto*.
+. Fare clic su *Avvia scrittura*.
+

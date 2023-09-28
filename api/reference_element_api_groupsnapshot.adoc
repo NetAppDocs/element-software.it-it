@@ -1,0 +1,118 @@
+---
+permalink: api/reference_element_api_groupsnapshot.html 
+sidebar: sidebar 
+keywords: object,objects,groupSnapshot 
+summary: 'L"oggetto groupSnapshot contiene informazioni su uno snapshot per un gruppo di volumi. È possibile utilizzare il metodo API ListGroupSnapshots per recuperare le informazioni di snapshot di gruppo.' 
+---
+= GroupSnapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto groupSnapshot contiene informazioni su uno snapshot per un gruppo di volumi. È possibile utilizzare `ListGroupSnapshots` Metodo API per recuperare le informazioni di snapshot di gruppo.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+attributi
+ a| 
+Elenco delle coppie nome-valore nel formato oggetto JSON.
+ a| 
+Oggetto JSON
+
+
+
+ a| 
+CreateTime
+ a| 
+Il giorno e l'ora formattati con UTC+0 in cui è stata creata la snapshot di gruppo.
+ a| 
+Stringa di dati ISO 8601
+
+
+
+ a| 
+EnableRemoteReplication
+ a| 
+Identifica se lo snapshot è abilitato per la replica remota.
+ a| 
+booleano
+
+
+
+ a| 
+GroupSnapshotID
+ a| 
+L'ID univoco dello snapshot di gruppo.
+ a| 
+intero
+
+
+
+ a| 
+GroupSnapshotUID
+ a| 
+UUID dello snapshot di gruppo.
+ a| 
+stringa
+
+
+
+ a| 
+membri
+ a| 
+Matrice di oggetti contenente informazioni su ciascun membro dello snapshot di gruppo.
+ a| 
+xref:reference_element_api_snapshot.adoc[snapshot] array
+
+
+
+ a| 
+nome
+ a| 
+Il nome dello snapshot di gruppo o, se non ne è stata fornita alcuna, il giorno e l'ora formattati con UTC in cui lo snapshot è stato creato.
+ a| 
+Stringa o stringa di dati ISO 8601
+
+
+
+ a| 
+RemoteStatuses
+ a| 
+Array contenente l'identificatore universale e lo stato di replica di ogni snapshot remoto sul cluster di destinazione, come visualizzato dal cluster di origine.
+ a| 
+xref:reference_element_api_remoteclustersnapshotstatus.adoc[RemoteClusterSnapshotStatus] array
+
+
+
+ a| 
+stato
+ a| 
+Stato corrente dello snapshot. Valori possibili:
+
+* Sconosciuto: Si è verificato un errore durante l'ottenimento dello stato dello snapshot.
+* Preparazione: Questo snapshot è in fase di preparazione e non è ancora scrivibile.
+* RemoteSyncing: Questo snapshot viene replicato da un cluster remoto.
+* Fatto: Questo snapshot ha terminato la preparazione o la replica ed è ora utilizzabile.
+* Attivo: Questo snapshot è il ramo attivo.
+* Cloning (clonazione): Questo snapshot è coinvolto in un'operazione CopyVolume.
+
+ a| 
+stringa
+
+|===
+
+
+== Trova ulteriori informazioni
+
+xref:reference_element_api_listgroupsnapshots.adoc[ListGroupSnapshot]

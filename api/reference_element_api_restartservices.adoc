@@ -1,0 +1,141 @@
+---
+permalink: api/reference_element_api_restartservices.html 
+sidebar: sidebar 
+keywords: restart,service,services,restartservices,restarting,node 
+summary: È possibile utilizzare il metodo RestartServices per riavviare i servizi su un nodo. 
+---
+= RestartServices
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `RestartServices` metodo per riavviare i servizi su un nodo.
+
+
+
+== Parametri
+
+ATTENZIONE:
+
+Questo metodo causa l'interruzione temporanea dei servizi del nodo.
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+forza
+ a| 
+Impostare su true per riavviare i servizi su un nodo.
+ a| 
+booleano
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+servizio
+ a| 
+Nome del servizio da riavviare.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+azione
+ a| 
+Azione da eseguire sul servizio (avvio, arresto, riavvio).
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo ha i seguenti valori restituiti:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+dettagli
+ a| 
+L'output della procedura di riavvio del servizio, inclusi gli errori (se presenti).
+ a| 
+Oggetto JSON
+
+
+
+ a| 
+durata
+ a| 
+Il tempo, in secondi, impiegato per riavviare i servizi al nodo.
+ a| 
+stringa
+
+
+
+ a| 
+risultato
+ a| 
+Risultati del riavvio.
+ a| 
+stringa
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+   "method": "RestartServices",
+   "params": {
+              "force" : true
+              "action" : restart,
+             }
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "details": "solidfire stop/waiting\nsolidfire start/running, process 7284\n",
+    "duration": "00:00:02.541594",
+    "result": "Passed"
+  }
+}
+----
+
+
+== Novità dalla versione
+
+9,6

@@ -1,0 +1,93 @@
+---
+permalink: api/reference_element_api_protocolendpoint.html 
+sidebar: sidebar 
+keywords: object,objects,protocolEndpoint 
+summary: 'L"oggetto ProtocolEndpoint contiene gli attributi di un endpoint del protocollo. È possibile recuperare queste informazioni per tutti gli endpoint del protocollo nel cluster utilizzando il metodo dell"API ListProtocolEndpoints.' 
+---
+= ProtocolEndpoint
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto ProtocolEndpoint contiene gli attributi di un endpoint del protocollo. È possibile recuperare queste informazioni per tutti gli endpoint del protocollo nel cluster utilizzando `ListProtocolEndpoints` Metodo API.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+PrimariaProviderID
+ a| 
+L'ID dell'oggetto provider dell'endpoint del protocollo primario per l'endpoint del protocollo.
+ a| 
+intero
+
+
+
+ a| 
+ProtocolEndpointID
+ a| 
+ID univoco dell'endpoint del protocollo.
+ a| 
+UUID
+
+
+
+ a| 
+ProtocolEndpointState
+ a| 
+Lo stato dell'endpoint del protocollo. Valori possibili:
+
+* Attivo: L'endpoint del protocollo è in uso.
+* Start: L'endpoint del protocollo è in fase di avvio.
+* Failover: Si è verificato un failover dell'endpoint del protocollo.
+* Riservato: L'endpoint del protocollo è riservato.
+
+ a| 
+stringa
+
+
+
+ a| 
+ProviderType
+ a| 
+Il tipo di provider dell'endpoint del protocollo. Valori possibili:
+
+* Primario
+* Secondario
+
+ a| 
+stringa
+
+
+
+ a| 
+ID scsiNAADeviceID
+ a| 
+Identificatore univoco globale del dispositivo SCSI per l'endpoint del protocollo in NAA IEEE Registered Extended Format.
+ a| 
+stringa
+
+
+
+ a| 
+SecondaryProviderID
+ a| 
+L'ID dell'oggetto provider dell'endpoint del protocollo secondario per l'endpoint del protocollo.
+ a| 
+intero
+
+|===
+
+
+== Trova ulteriori informazioni
+
+xref:reference_element_api_listprotocolendpoints.adoc[ListProtocolEndpoint]

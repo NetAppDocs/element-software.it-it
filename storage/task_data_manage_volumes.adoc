@@ -1,0 +1,343 @@
+---
+permalink: storage/task_data_manage_volumes.html 
+sidebar: sidebar 
+keywords: element, solidfire, volume, create, edit, delete, purge, restore, clone, iscsi, fc clients 
+summary: Il sistema SolidFire esegue il provisioning dello storage utilizzando i volumi. I volumi sono dispositivi a blocchi a cui si accede in rete dai client iSCSI o Fibre Channel. 
+---
+= Gestire i volumi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il sistema SolidFire esegue il provisioning dello storage utilizzando i volumi. I volumi sono dispositivi a blocchi a cui si accede in rete dai client iSCSI o Fibre Channel.
+
+Dalla pagina Volumes (volumi) della scheda Management (Gestione), è possibile creare, modificare, clonare ed eliminare volumi su un nodo.
+
+
+
+== Creare un volume
+
+È possibile creare un volume e associarlo a un determinato account. Ogni volume deve essere associato a un account. Questa associazione consente all'account di accedere al volume tramite gli iniziatori iSCSI utilizzando le credenziali CHAP.
+
+È possibile specificare le impostazioni QoS per un volume durante la creazione.
+
+. Selezionare *Management* > *Volumes*.
+. Fare clic su *Create Volume* (Crea volume).
+. Nella finestra di dialogo *Create a New Volume* (Crea un nuovo volume), immettere il nome del volume.
+. Inserire le dimensioni totali del volume.
++
+
+NOTE: La dimensione predefinita del volume è in GB. È possibile creare volumi utilizzando dimensioni misurate in GB o GiB:
+
++
+** 1 GB = 000 000 000 byte
+** 1GiB = 1 073 741 824 byte
+
+
+. Selezionare *Block Size* (dimensione blocco) per il volume.
+. Fare clic sull'elenco a discesa *account* e selezionare l'account che deve avere accesso al volume.
++
+Se non esiste un account, fare clic sul collegamento *Create account* (Crea account), immettere un nuovo nome account e fare clic su *Create* (Crea). L'account viene creato e associato al nuovo volume.
+
++
+
+NOTE: Se sono presenti più di 50 account, l'elenco non viene visualizzato. Inizia a digitare e la funzione di completamento automatico visualizza i valori possibili da scegliere.
+
+. Per impostare la *qualità del servizio*, effettuare una delle seguenti operazioni:
++
+.. In *Policy*, è possibile selezionare un criterio QoS esistente, se disponibile.
+.. In *Custom Settings* (Impostazioni personalizzate), impostare i valori minimi, massimi e burst personalizzati per IOPS o utilizzare i valori QoS predefiniti.
++
+I volumi con un valore massimo o burst IOPS superiore a 20,000 IOPS potrebbero richiedere una profondità di coda elevata o più sessioni per ottenere questo livello di IOPS su un singolo volume.
+
+
+
+. Fare clic su *Create Volume* (Crea volume).
+
+
+
+
+== Visualizzare i dettagli del volume
+
+. Selezionare *Management* > *Volumes*.
+. Esaminare i dettagli.
++
+** *ID*: L'ID generato dal sistema per il volume.
+** *Name* (Nome): Il nome assegnato al volume al momento della creazione.
+** *Account*: Il nome dell'account assegnato al volume.
+** *Gruppi di accesso*: Il nome del gruppo o dei gruppi di accesso al volume a cui appartiene il volume.
+** *Access*: Il tipo di accesso assegnato al volume al momento della creazione. Valori possibili:
++
+*** Lettura/scrittura: Tutte le letture e le scritture sono accettate.
+*** Sola lettura: Tutte le attività di lettura sono consentite; non sono consentite scritture.
+*** Bloccato: È consentito solo l'accesso come amministratore.
+*** ReplicationTarget: Designato come volume di destinazione in una coppia di volumi replicati.
+
+
+** *Utilizzato*: La percentuale di spazio utilizzato nel volume.
+** *Size*: Dimensione totale (in GB) del volume.
+** *ID nodo primario*: Il nodo primario per questo volume.
+** *ID nodo secondario*: L'elenco dei nodi secondari per questo volume. Può essere costituito da più valori durante gli stati transitori, come il cambiamento dei nodi secondari, ma di solito avrà un singolo valore.
+** *QoS Throttle*: Identifica se il volume viene rallentato a causa di un carico elevato sul nodo di storage primario.
+** *QoS Policy*: Il nome e il collegamento alla policy QoS definita dall'utente.
+** *IOPS min*: Il numero minimo di IOPS garantito per il volume.
+** *IOPS max*: Il numero massimo di IOPS consentito per il volume.
+** *Burst IOPS*: Il numero massimo di IOPS consentito per un breve periodo di tempo per il volume. Impostazione predefinita = 15,000.
+** *Snapshot*: Il numero di snapshot creati per il volume.
+** *Attributes*: Attributi assegnati al volume come coppia chiave/valore tramite un metodo API.
+** *512e*: Indicazione dell'attivazione di 512e su un volume. Valori possibili:
++
+*** Sì
+*** No
+
+
+** *Creato il*: La data e l'ora in cui è stato creato il volume.
+
+
+
+
+
+
+== Visualizzare i dettagli dei singoli volumi
+
+È possibile visualizzare le statistiche delle performance per i singoli volumi.
+
+. Selezionare *Reporting* > *Volume Performance*.
+. Nell'elenco dei volumi, fare clic sull'icona Actions (azioni) per un volume.
+. Fare clic su *View Details* (Visualizza dettagli).
++
+Nella parte inferiore della pagina viene visualizzato un vassoio contenente informazioni generali sul volume.
+
+. Per visualizzare informazioni più dettagliate sul volume, fare clic su *Vedi ulteriori dettagli*.
++
+Il sistema visualizza informazioni dettagliate e grafici delle prestazioni per il volume.
+
+
+
+
+
+== Modificare i volumi attivi
+
+È possibile modificare gli attributi del volume, ad esempio i valori di QoS, le dimensioni del volume e l'unità di misura in cui vengono calcolati i valori di byte. È inoltre possibile modificare l'accesso all'account per l'utilizzo della replica o per limitare l'accesso al volume.
+
+È possibile ridimensionare un volume quando lo spazio disponibile sul cluster è sufficiente nelle seguenti condizioni:
+
+* Condizioni di funzionamento normali.
+* Vengono segnalati errori o errori del volume.
+* Il volume è in fase di clonaggio.
+* Il volume è in fase di risyncing.
+
+
+.Fasi
+. Selezionare *Management* > *Volumes*.
+. Nella finestra *Active*, fare clic sull'icona Actions (azioni) del volume che si desidera modificare.
+. Fare clic su *Edit* (Modifica).
+. *Opzionale:* consente di modificare le dimensioni totali del volume.
++
+** È possibile aumentare, ma non diminuire, le dimensioni del volume. È possibile ridimensionare un solo volume in una singola operazione di ridimensionamento. Le operazioni di garbage collection e gli aggiornamenti software non interrompono l'operazione di ridimensionamento.
+** Se si stanno regolando le dimensioni del volume per la replica, è necessario innanzitutto aumentare le dimensioni del volume assegnato come destinazione della replica. Quindi, è possibile ridimensionare il volume di origine. Il volume di destinazione può avere dimensioni maggiori o uguali a quelle del volume di origine, ma non può essere più piccolo.
+
+
++
+La dimensione predefinita del volume è in GB. È possibile creare volumi utilizzando dimensioni misurate in GB o GiB:
+
++
+** 1 GB = 000 000 000 byte
+** 1GiB = 1 073 741 824 byte
+
+
+. *Opzionale:* selezionare un livello di accesso diverso per uno dei seguenti account:
++
+** Di sola lettura
+** Lettura/scrittura
+** Bloccato
+** Destinazione della replica
+
+
+. *Opzionale:* selezionare l'account che deve avere accesso al volume.
++
+Se l'account non esiste, fare clic sul collegamento *Create account* (Crea account), immettere un nuovo nome account e fare clic su *Create* (Crea). L'account viene creato e associato al volume.
+
++
+
+NOTE: Se sono presenti più di 50 account, l'elenco non viene visualizzato. Inizia a digitare e la funzione di completamento automatico visualizza i valori possibili da scegliere.
+
+. *Opzionale:* per modificare la selezione in *qualità del servizio*, effettuare una delle seguenti operazioni:
++
+.. In *Policy*, è possibile selezionare un criterio QoS esistente, se disponibile.
+.. In *Custom Settings* (Impostazioni personalizzate), impostare i valori minimi, massimi e burst personalizzati per IOPS o utilizzare i valori QoS predefiniti.
++
+
+NOTE: Se si utilizzano policy QoS su un volume, è possibile impostare una QoS personalizzata per rimuovere l'affiliazione della policy QoS con il volume. La QoS personalizzata sovrascrive e regola i valori dei criteri QoS per le impostazioni QoS del volume.
+
++
+
+TIP: Quando si modificano i valori IOPS, è necessario aumentare in decine o centinaia. I valori di input richiedono numeri interi validi.
+
++
+
+TIP: Configurare volumi con un valore burst estremamente elevato. Ciò consente al sistema di elaborare più rapidamente carichi di lavoro sequenziali occasionali a blocchi di grandi dimensioni, limitando al contempo gli IOPS sostenuti per un volume.
+
+
+
+. Fare clic su *Save Changes* (Salva modifiche).
+
+
+
+
+== Eliminare un volume
+
+È possibile eliminare uno o più volumi da un cluster di storage Element.
+
+Il sistema non elimina immediatamente un volume cancellato; il volume rimane disponibile per circa otto ore. Se si ripristina un volume prima che venga spurgato dal sistema, il volume torna online e le connessioni iSCSI vengono ripristinate.
+
+Se un volume utilizzato per creare uno snapshot viene cancellato, le relative snapshot associate diventano inattive. Quando i volumi di origine cancellati vengono rimossi, anche le snapshot inattive associate vengono rimosse dal sistema.
+
+
+IMPORTANT: I volumi persistenti associati ai servizi di gestione vengono creati e assegnati a un nuovo account durante l'installazione o l'aggiornamento. Se si utilizzano volumi persistenti, non modificare o eliminare i volumi o l'account associato.
+
+.Fasi
+. Selezionare *Management* > *Volumes*.
+. Per eliminare un singolo volume, attenersi alla seguente procedura:
++
+.. Fare clic sull'icona Actions (azioni) per il volume che si desidera eliminare.
+.. Nel menu visualizzato, fare clic su *Delete* (Elimina).
+.. Confermare l'azione.
+
+
++
+Il sistema sposta il volume nell'area *Deleted* della pagina *Volumes*.
+
+. Per eliminare più volumi, attenersi alla seguente procedura:
++
+.. Nell'elenco dei volumi, selezionare la casella accanto ai volumi che si desidera eliminare.
+.. Fare clic su *azioni in blocco*.
+.. Nel menu visualizzato, fare clic su *Delete* (Elimina).
+.. Confermare l'azione.
++
+Il sistema sposta i volumi nell'area *Deleted* della pagina *Volumes*.
+
+
+
+
+
+
+
+== Ripristinare un volume cancellato
+
+È possibile ripristinare un volume nel sistema se è stato eliminato ma non ancora eliminato. Il sistema elimina automaticamente un volume circa otto ore dopo l'eliminazione. Se il sistema ha disinstallato il volume, non è possibile ripristinarlo.
+
+. Selezionare *Management* > *Volumes*.
+. Fare clic sulla scheda *Deleted* per visualizzare l'elenco dei volumi eliminati.
+. Fare clic sull'icona Actions (azioni) per il volume che si desidera ripristinare.
+. Nel menu visualizzato, fare clic su *Restore* (Ripristina).
+. Confermare l'azione.
++
+Il volume viene inserito nell'elenco dei volumi *attivi* e le connessioni iSCSI al volume vengono ripristinate.
+
+
+
+
+
+== Eliminare un volume
+
+Quando un volume viene eliminato, viene rimosso in modo permanente dal sistema. Tutti i dati nel volume vengono persi.
+
+Il sistema elimina automaticamente i volumi cancellati otto ore dopo l'eliminazione. Tuttavia, se si desidera eliminare un volume prima dell'ora pianificata, è possibile farlo.
+
+. Selezionare *Management* > *Volumes*.
+. Fare clic sul pulsante *Deleted*.
+. Eseguire la procedura per eliminare uno o più volumi.
++
+[cols="25,75"]
+|===
+| Opzione | Fasi 
+
+
+ a| 
+Eliminare un singolo volume
+ a| 
+.. Fare clic sull'icona Actions (azioni) per il volume che si desidera eliminare.
+.. Fare clic su *Rimuovi*.
+.. Confermare l'azione.
+
+
+
+
+ a| 
+Eliminare più volumi
+ a| 
+.. Selezionare i volumi che si desidera eliminare.
+.. Fare clic su *azioni in blocco*.
+.. Nel menu visualizzato, selezionare *Rimuovi*.
+.. Confermare l'azione.
+
+
+|===
+
+
+
+
+== Clonare un volume
+
+È possibile creare un clone di uno o più volumi per creare una copia point-in-time dei dati. Quando si clonano un volume, il sistema crea uno snapshot del volume e quindi una copia dei dati a cui fa riferimento lo snapshot. Si tratta di un processo asincrono e la quantità di tempo richiesta dal processo dipende dalla dimensione del volume che si sta clonando e dal carico corrente del cluster.
+
+Il cluster supporta fino a due richieste di cloni in esecuzione per volume alla volta e fino a otto operazioni di cloni dei volumi attivi alla volta. Le richieste che superano questi limiti vengono messe in coda per l'elaborazione successiva.
+
+
+NOTE: I sistemi operativi differiscono per il trattamento dei volumi clonati. VMware ESXi tratterà un volume clonato come una copia di volume o un volume di snapshot. Il volume sarà un dispositivo disponibile da utilizzare per creare un nuovo datastore. Per ulteriori informazioni sul montaggio di volumi cloni e sulla gestione delle LUN snapshot, consultare la documentazione VMware all'indirizzo https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.storage.doc/GUID-EEFEB765-A41F-4B6D-917C-BB9ABB80FC80.html["Montaggio di una copia del datastore VMFS"] e. https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.storage.doc/GUID-EBAB0D5A-3C77-4A9B-9884-3D4AD69E28DC.html["Gestione di datastore VMFS duplicati"].
+
+
+IMPORTANT: Prima di troncare un volume clonato clonando su una dimensione inferiore, assicurarsi di preparare le partizioni in modo che si adattino al volume più piccolo.
+
+.Fasi
+. Selezionare *Management* > *Volumes*.
+. Per clonare un singolo volume, attenersi alla seguente procedura:
++
+.. Nell'elenco dei volumi nella pagina *Active*, fare clic sull'icona Actions (azioni) del volume che si desidera clonare.
+.. Nel menu visualizzato, fare clic su *Clone*.
+.. Nella finestra *Clone Volume*, immettere un nome di volume per il volume appena clonato.
+.. Selezionare una dimensione e una misurazione per il volume utilizzando la casella di selezione *Volume Size* (dimensione volume) e l'elenco.
++
+
+NOTE: La dimensione predefinita del volume è in GB. È possibile creare volumi utilizzando dimensioni misurate in GB o GiB:
+
++
+*** 1 GB = 000 000 000 byte
+*** 1GiB = 1 073 741 824 byte
+
+
+.. Selezionare il tipo di accesso per il volume appena clonato.
+.. Selezionare un account da associare al volume appena clonato dall'elenco *account*.
++
+
+NOTE: Durante questa fase, è possibile creare un account facendo clic sul collegamento *Create account* (Crea account), immettendo un nome account e facendo clic su *Create* (Crea account). Il sistema aggiunge automaticamente l'account all'elenco *account* dopo averlo creato.
+
+
+
+. Per clonare più volumi, attenersi alla seguente procedura:
++
+.. Nell'elenco dei volumi nella pagina *Active*, selezionare la casella accanto ai volumi che si desidera clonare.
+.. Fare clic su *azioni in blocco*.
+.. Nel menu visualizzato, selezionare *Clone*.
+.. Nella finestra di dialogo *Clone Multiple Volumes* (Copia volumi multipli), inserire un prefisso per i volumi clonati nel campo *New Volume Name Prefix* (nuovo prefisso nome volume).
+.. Selezionare un account da associare ai volumi clonati dall'elenco *account*.
+.. Selezionare il tipo di accesso per i volumi clonati.
+
+
+. Fare clic su *Avvia clonazione*.
++
+
+NOTE: L'aumento delle dimensioni del volume di un clone comporta la creazione di un nuovo volume con ulteriore spazio libero alla fine del volume. A seconda dell'utilizzo del volume, potrebbe essere necessario estendere le partizioni o creare nuove partizioni nello spazio libero per utilizzarlo.
+
+
+
+
+
+== Per ulteriori informazioni
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
+

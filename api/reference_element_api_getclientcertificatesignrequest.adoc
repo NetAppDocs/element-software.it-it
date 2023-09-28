@@ -1,0 +1,75 @@
+---
+permalink: api/reference_element_api_getclientcertificatesignrequest.html 
+sidebar: sidebar 
+keywords: client certificate,certificate signing request,creating certificate signing request,CSR,CA 
+summary: 'È possibile utilizzare il metodo GetClientCertificateSignRequest per generare una richiesta di firma del certificato che può essere firmata da un"autorità di certificazione per generare un certificato client per il cluster. I certificati firmati sono necessari per stabilire una relazione di trust per l"interazione con i servizi esterni.' 
+---
+= GetClientCertificateSignRequest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `GetClientCertificateSignRequest` metodo per generare una richiesta di firma del certificato che può essere firmata da un'autorità di certificazione per generare un certificato client per il cluster. I certificati firmati sono necessari per stabilire una relazione di trust per l'interazione con i servizi esterni.
+
+
+
+== Parametri
+
+Questo metodo non ha parametri di input.
+
+
+
+== Valori restituiti
+
+Questo metodo ha i seguenti valori restituiti:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+ClientCertificateSignRequest
+ a| 
+Una richiesta di firma del certificato client X.509 con codifica PKCS n. 10 in formato PEM Base64.
+ a| 
+stringa
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "method": "GetClientCertificateSignRequest",
+  "params": {
+  },
+"id": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+   "id": 1,
+   "result":
+      {
+        "clientCertificateSignRequest": "MIIByjCCATMCAQAwgYkxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybm..."
+   }
+}
+----
+
+
+== Novità dalla versione
+
+11,7

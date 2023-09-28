@@ -1,0 +1,106 @@
+---
+permalink: storage/task_monitor_system_alerts.html 
+sidebar: sidebar 
+keywords: system alerts, view, cluster faults, system errors 
+summary: È possibile visualizzare gli avvisi per informazioni sugli errori o sugli errori del cluster nel sistema. Gli avvisi possono essere informazioni, avvisi o errori e rappresentano un buon indicatore della corretta esecuzione del cluster. La maggior parte degli errori si risolve automaticamente. 
+---
+= Visualizzare gli avvisi di sistema
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile visualizzare gli avvisi per informazioni sugli errori o sugli errori del cluster nel sistema. Gli avvisi possono essere informazioni, avvisi o errori e rappresentano un buon indicatore della corretta esecuzione del cluster. La maggior parte degli errori si risolve automaticamente.
+
+È possibile utilizzare il metodo API ListClusterFaults per automatizzare il monitoraggio degli avvisi. Ciò consente di ricevere una notifica di tutti gli avvisi che si verificano.
+
+. Nell'interfaccia utente di Element, selezionare *Reporting* > *Alerts*.
++
+Il sistema aggiorna gli avvisi sulla pagina ogni 30 secondi.
+
++
+Per ogni evento, vengono visualizzate le seguenti informazioni:
+
++
+|===
+
+
+| Elemento | Descrizione 
+
+
+ a| 
+ID
+ a| 
+ID univoco associato a un avviso del cluster.
+
+
+
+ a| 
+Severità
+ a| 
+Il grado di importanza dell'avviso. Valori possibili:
+
+** Attenzione: Un problema di lieve entità che potrebbe richiedere presto l'intervento dell'utente. Gli aggiornamenti del sistema sono ancora consentiti.
+** Errore: Un errore che potrebbe causare il peggioramento delle performance o la perdita di alta disponibilità (ha). Gli errori in genere non devono influire altrimenti sul servizio.
+** Critico: Un guasto grave che influisce sul servizio. Il sistema non è in grado di fornire richieste di i/o API o client. Il funzionamento in questo stato potrebbe causare la potenziale perdita di dati.
+** BestPractice: Non viene utilizzata una procedura consigliata per la configurazione del sistema.
+
+
+
+
+ a| 
+Tipo
+ a| 
+L'elemento interessato dal guasto. Può essere un nodo, un disco, un cluster, un servizio o un volume.
+
+
+
+ a| 
+Nodo
+ a| 
+ID nodo per il nodo a cui si riferisce questo guasto. Incluso per i guasti al nodo e al disco, altrimenti impostato su - (DASH).
+
+
+
+ a| 
+ID disco
+ a| 
+ID del disco a cui si riferisce questo guasto. Incluso per i guasti del disco, altrimenti impostato su - (DASH).
+
+
+
+ a| 
+Codice di errore
+ a| 
+Un codice descrittivo che indica la causa del guasto.
+
+
+
+ a| 
+Dettagli
+ a| 
+Una descrizione del guasto con ulteriori dettagli.
+
+
+
+ a| 
+Data
+ a| 
+La data e l'ora in cui è stato registrato il guasto.
+
+|===
+. Fare clic su *Show Details* (Mostra dettagli) per visualizzare le informazioni relative all'avviso.
+. Per visualizzare i dettagli di tutti gli avvisi nella pagina, fare clic sulla colonna Dettagli.
++
+Dopo che il sistema ha risolto un avviso, tutte le informazioni relative all'avviso, inclusa la data in cui è stato risolto, vengono spostate nell'area Resolved (risolto).
+
+
+
+
+
+== Trova ulteriori informazioni
+
+* xref:reference_monitor_cluster_fault_codes.adoc[Codici di guasto del cluster]
+* link:../api/index.html["Gestire lo storage con l'API Element"]
+

@@ -1,0 +1,118 @@
+---
+permalink: api/reference_element_api_setconfig.html 
+sidebar: sidebar 
+keywords: config,configuration,set,setting,node,setconfig,network,cluster 
+summary: È possibile utilizzare il metodo SetConfig per impostare le informazioni di rete e del cluster per il nodo. Questo metodo include le stesse impostazioni in un singolo metodo API disponibili utilizzando i metodi SetClusterConfig e SetNetworkConfig. Solo i campi che si desidera modificare devono essere inclusi con questo metodo. 
+---
+= SetConfig
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `SetConfig` metodo per impostare le informazioni di rete e del cluster per il nodo. Questo metodo include le stesse impostazioni in un singolo metodo API che sono disponibili utilizzando entrambi `SetClusterConfig` e. `SetNetworkConfig` metodi. Solo i campi che si desidera modificare devono essere inclusi con questo metodo.
+
+
+
+== Parametro
+
+ATTENZIONE:
+
+La modifica della modalità bond su un nodo può causare una perdita temporanea della connettività di rete.
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+cluster
+ a| 
+Informazioni sul cluster che identificano il modo in cui il nodo di storage comunica con il cluster di storage a cui è associato.
+ a| 
+xref:reference_element_api_cluster.adoc[cluster]
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+rete
+ a| 
+Tipi di connessione di rete e impostazioni correnti per ciascuna interfaccia di rete del nodo.
+ a| 
+xref:reference_element_api_network_all_interfaces.adoc[rete (tutte le interfacce)]
+ a| 
+Nessuno
+ a| 
+No
+
+|===
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+config
+ a| 
+La configurazione nuova e corrente del nodo. Questo oggetto contiene:
+
+* xref:reference_element_api_cluster.adoc[cluster]: Informazioni sul cluster che identificano il modo in cui il nodo di storage comunica con il cluster di storage a cui è associato.
+* xref:reference_element_api_network_all_interfaces.adoc[rete (tutte le interfacce)]: Tipi di connessione di rete e impostazioni correnti per ciascuna interfaccia di rete del nodo.
+
+ a| 
+Oggetto JSON
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+	"method": "SetConfig",
+	"params": {
+		"cluster": {
+			"name": "MyHostname"
+		},
+		"network": {
+			"Bond10G": {
+				"bond-mode": "ALB"
+			}
+		}
+	}
+}
+----
+
+
+== Esempio di risposta
+
+La risposta di questo metodo è la stessa del ritorno per il metodo GetConfig. Tutti i campi per la visualizzazione dell'oggetto e i valori aggiornati vengono visualizzati quando si utilizza SetConfig.
+
+
+
+== Novità dalla versione
+
+9,6
+
+
+
+== Trova ulteriori informazioni
+
+* xref:reference_element_api_setclusterconfig.adoc[SetClusterConfig]
+* xref:reference_element_api_setnetworkconfig.adoc[SetNetworkConfig]
+* xref:reference_element_api_response_example_getconfig.adoc[GetConfig]
+

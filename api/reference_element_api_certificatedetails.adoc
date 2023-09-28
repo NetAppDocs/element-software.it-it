@@ -1,0 +1,87 @@
+---
+permalink: api/reference_element_api_certificatedetails.html 
+sidebar: sidebar 
+keywords: security,certificate,SSL,get,getting,certificateDetails,object,objects 
+summary: 'L"oggetto certificateDetails contiene le informazioni decodificate su un certificato di sicurezza.' 
+---
+= CertificateDettagli
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il `certificateDetails` l'oggetto contiene le informazioni decodificate relative a un certificato di protezione.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+`issuer`
+ a| 
+Il nome dell'emittente.
+ a| 
+stringa
+
+
+
+ a| 
+`modulus`
+ a| 
+Modulo della chiave pubblica.
+ a| 
+stringa
+
+
+
+ a| 
+`notAfter`
+ a| 
+La data di scadenza del certificato.
+ a| 
+Stringa ISO 8601
+
+
+
+ a| 
+`notBefore`
+ a| 
+La data di inizio del certificato.
+ a| 
+Stringa ISO 8601
+
+
+
+ a| 
+`serial`
+ a| 
+Il numero di serie del certificato.
+ a| 
+stringa
+
+
+
+ a| 
+`sha1Fingerprint`
+ a| 
+Il digest della versione CODIFICATA DAL DER del certificato.
+ a| 
+stringa
+
+
+
+ a| 
+`subject`
+ a| 
+Il nome del soggetto.
+ a| 
+stringa
+
+|===

@@ -1,0 +1,107 @@
+---
+permalink: api/reference_element_api_deleteauthsession.html 
+sidebar: sidebar 
+keywords: authentication sessions,delete 
+summary: 'È possibile utilizzare il metodo DeleteAuthSession per eliminare una singola sessione auth. Se l"utente chiamante non si trova in ClusterAdmins / Administrator AccessGroup, è possibile eliminare solo la sessione auth appartenente all"utente chiamante.' 
+---
+= DeleteAuthSession
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `DeleteAuthSession` metodo per eliminare una singola sessione di autenticazione dell'utente. Se l'utente chiamante non si trova in ClusterAdmins / Administrator AccessGroup, è possibile eliminare solo la sessione di autenticazione dell'utente chiamante.
+
+
+
+== Parametri
+
+Questo metodo ha il seguente parametro di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+ID SessionID
+ a| 
+Identificatore univoco della sessione auth da eliminare.
+ a| 
+UUID
+ a| 
+Nessuno
+ a| 
+Sì
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+sessione
+ a| 
+Informazioni sulla sessione per la sessione Delete auth.
+ a| 
+link:reference_element_api_authsessioninfo.html["AuthSessionInfo"]
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+    "method": "DeleteAuthSession",
+    "params": {
+        "sessionID": "a862a8bb-2c5b-4774-a592-2148e2304713"
+    },
+    "id": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+    "id": 1,
+    "result": {
+        "session": {
+            "accessGroupList": [
+                "administrator"
+            ],
+            "authMethod": "Cluster",
+            "clusterAdminIDs": [
+                1
+            ],
+            "finalTimeout": "2020-04-09T17:51:30Z",
+            "idpConfigVersion": 0,
+            "lastAccessTimeout": "2020-04-06T18:21:33Z",
+            "sessionCreationTime": "2020-04-06T17:51:30Z",
+            "sessionID": "a862a8bb-2c5b-4774-a592-2148e2304713",
+            "username": "admin"
+        }
+    }
+}
+----
+
+
+== Novità dalla versione
+
+12,0

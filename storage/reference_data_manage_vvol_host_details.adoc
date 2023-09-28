@@ -1,0 +1,42 @@
+---
+permalink: storage/reference_data_manage_vvol_host_details.html 
+sidebar: sidebar 
+keywords: host details, vvols, ESXi host details, virtual volumes, bindings, endpoints 
+summary: La pagina host della scheda VVols fornisce informazioni sugli host VMware ESXi che ospitano volumi virtuali. 
+---
+= Dettagli host
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La pagina host della scheda VVols fornisce informazioni sugli host VMware ESXi che ospitano volumi virtuali.
+
+Vengono visualizzate le seguenti informazioni:
+
+* *ID host*
++
+UUID dell'host ESXi che ospita volumi virtuali ed è noto al cluster.
+
+* *Indirizzo host*
++
+L'indirizzo IP o il nome DNS dell'host ESXi.
+
+* * Binding*
++
+ID di binding per tutti i volumi virtuali associati all'host ESXi.
+
+* *ID cluster ESX*
++
+L'ID del cluster host vSphere o il GUID vCenter.
+
+* *IQN iniziatore*
++
+IQN iniziatore per l'host del volume virtuale.
+
+* *ID endpoint del protocollo SolidFire*
++
+Endpoint del protocollo attualmente visibili all'host ESXi.
+
+

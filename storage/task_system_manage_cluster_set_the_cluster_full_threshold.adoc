@@ -1,0 +1,29 @@
+---
+permalink: storage/task_system_manage_cluster_set_the_cluster_full_threshold.html 
+sidebar: sidebar 
+keywords: cluster fullness, setting threshold, metadata, warning 
+summary: 'È possibile modificare il livello con cui il sistema genera un avviso di riempimento del cluster a blocchi seguendo la procedura riportata di seguito. Inoltre, è possibile utilizzare il metodo dell"API ModifyClusterFullThreshold per modificare il livello con cui il sistema genera un avviso di blocco o metadati.' 
+---
+= Impostare la soglia completa del cluster
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile modificare il livello con cui il sistema genera un avviso di riempimento del cluster a blocchi seguendo la procedura riportata di seguito. Inoltre, è possibile utilizzare il metodo dell'API ModifyClusterFullThreshold per modificare il livello con cui il sistema genera un avviso di blocco o metadati.
+
+.Di cosa hai bisogno
+È necessario disporre dei privilegi di amministratore del cluster.
+
+.Fasi
+. Fare clic su *Cluster* > *Settings*.
+. Nella sezione Cluster Full Settings (Impostazioni cluster complete), inserire una percentuale in *Raise a warning alert when _% Capacity remains before Helix not recovery from a node failure* (Invia un avviso quando la capacità del _% rimane prima che Helix non possa
+. Fare clic su *Save Changes* (Salva modifiche).
+
+
+
+
+== Trova ulteriori informazioni
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Flash_Storage/SF_Series/How_are_the_blockSpace_thresholds_calculated_for_Element["Come vengono calcolate le soglie blockSpace per l'elemento"^]

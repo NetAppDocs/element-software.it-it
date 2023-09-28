@@ -1,0 +1,138 @@
+---
+permalink: api/reference_element_api_listvolumeaccessgroups.html 
+sidebar: sidebar 
+keywords: volume,access,group,groups,list,listing,listvolumeaccessgroups 
+summary: È possibile utilizzare il metodo ListVolumeAccessGroups per ottenere informazioni sui gruppi di accesso ai volumi attualmente presenti nel sistema. 
+---
+= ListVolumeAccessGroups
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `ListVolumeAccessGroups` metodo per ottenere informazioni sui gruppi di accesso al volume attualmente presenti nel sistema.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+limite
+ a| 
+Numero massimo di oggetti volumeAccessGroup da restituire. Si escludono a vicenda con il parametro volumeAccessGroups.
+ a| 
+intero
+ a| 
+Senza limiti
+ a| 
+No
+
+
+
+ a| 
+StartVolumeAccessGroupID
+ a| 
+L'ID del gruppo di accesso al volume in cui iniziare l'elenco. Si escludono a vicenda con il parametro volumeAccessGroups.
+ a| 
+intero
+ a| 
+0
+ a| 
+No
+
+
+
+ a| 
+VolumeAccessGroups
+ a| 
+Elenco dei valori volumeAccessGroupID da recuperare. Si escludono a vicenda con i parametri startVolumeAccessGroupID e Limit.
+ a| 
+array intero
+ a| 
+ a| 
+No
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo ha i seguenti valori restituiti:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+VolumeAccessGroups
+ a| 
+Un elenco di oggetti che descrivono ciascun gruppo di accesso al volume.
+ a| 
+xref:reference_element_api_volumeaccessgroup.adoc[VolumeAccessGroup] array
+
+
+
+ a| 
+VolumeAccessGroupsNotFound
+ a| 
+Un elenco di gruppi di accesso al volume non trovati dal sistema. Presente se è stato utilizzato il parametro volumeAccessGroups e il sistema non è stato in grado di trovare uno o più gruppi di accesso al volume specificati.
+ a| 
+array intero
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+   "method": "ListVolumeAccessGroups",
+   "params": {
+      "startVolumeAccessGroupID": 3,
+      "limit"   : 1
+   },
+   "id" : 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "volumeAccessGroups": [
+      {
+        "attributes": {},
+        "deletedVolumes": [],
+        "initiatorIDs": [],
+        "initiators": [],
+        "name": "example1",
+        "volumeAccessGroupID": 3,
+        "volumes": []
+      }
+    ]
+  }
+}
+----
+
+
+== Novità dalla versione
+
+9,6

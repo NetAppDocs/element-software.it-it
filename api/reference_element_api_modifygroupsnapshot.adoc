@@ -1,0 +1,180 @@
+---
+permalink: api/reference_element_api_modifygroupsnapshot.html 
+sidebar: sidebar 
+keywords: modify,modifying,edit,editing,change,changing,group,snapshot,modifygroupsnapshot 
+summary: 'È possibile utilizzare ModifyGroupSnapshot per modificare gli attributi di un gruppo di snapshot. È inoltre possibile utilizzare questo metodo per consentire la replica remota degli snapshot creati sul volume di lettura/scrittura (di origine) in un sistema di storage di destinazione.' 
+---
+= ModifyGroupSnapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `ModifyGroupSnapshot` per modificare gli attributi di un gruppo di snapshot. È inoltre possibile utilizzare questo metodo per consentire la replica remota degli snapshot creati sul volume di lettura/scrittura (di origine) in un sistema di storage di destinazione.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+
+
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+EnableRemoteReplication
+ a| 
+Consente di attivare la replica dello snapshot creato in un cluster remoto. Valori possibili:
+
+* `true`: Lo snapshot verrà replicato nello storage remoto.
+* `false`: Lo snapshot non verrà replicato nello storage remoto.
+
+ a| 
+booleano
+ a| 
+falso
+ a| 
+No
+
+
+
+ a| 
+ExpirationTime (tempo di scadenza)
+ a| 
+Specificare il tempo dopo il quale è possibile rimuovere lo snapshot. Non può essere utilizzato con la conservazione.
+Se non vengono specificati né expirationTime, né la conservazione sullo snapshot originale, lo snapshot non scadrà. Il formato dell'ora è una stringa di date ISO 8601 per la scadenza basata sull'ora, altrimenti non scadrà. Un valore di `null` fa sì che lo snapshot venga conservato in modo permanente. Un valore di fifo fa sì che lo snapshot venga conservato in base al principio FIFO (first-in-first-out), rispetto ad altri snapshot FIFO sul volume. L'API non riesce se non è disponibile spazio FIFO.
+ a| 
+Stringa di dati ISO 8601
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+nome
+ a| 
+Il nome dello snapshot di gruppo. Se non viene immesso alcun nome, vengono utilizzate la data e l'ora in cui è stata eseguita l'istantanea del gruppo. La lunghezza massima consentita per il nome è di 255 caratteri.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+GroupSnapshotID
+ a| 
+L'ID del gruppo di snapshot.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+SnapMirrorLabel
+ a| 
+Etichetta utilizzata dal software SnapMirror per specificare il criterio di conservazione delle snapshot su un endpoint SnapMirror.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+|===
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+GroupSnapshot
+ a| 
+Oggetto contenente informazioni sullo snapshot di gruppo appena modificato.
+ a| 
+xref:reference_element_api_groupsnapshot.adoc[GroupSnapshot]
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "id": 695,
+  "method": "ModifyGroupSnapshot",
+  "params": {
+    "groupSnapshotID": 3,
+    "enableRemoteReplication": true,
+    "expirationTime": "2016-04-08T22:46:25Z"
+  }
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+  "id": 695,
+  "result": {
+    "groupSnapshot": {
+      "attributes": {},
+      "createTime": "2016-04-06T17:31:41Z",
+      "groupSnapshotID": 3,
+      "groupSnapshotUUID": "8b2e101d-c5ab-4a72-9671-6f239de49171",
+      "members": [
+        {
+          "attributes": {},
+          "checksum": "0x0",
+          "createTime": "2016-04-06T17:31:41Z",
+          "enableRemoteReplication": true,
+          "expirationReason": "None",
+          "expirationTime": "2016-04-08T22:46:25Z",
+          "groupID": 3,
+          "groupSnapshotUUID": "8b2e101d-c5ab-4a72-9671-6f239de49171",
+          "name": "grpsnap1-2",
+          "snapshotID": 2,
+          "snapshotUUID": "719b162c-e170-4d80-b4c7-1282ed88f4e1",
+          "status": "done",
+          "totalSize": 1000341504,
+          "virtualVolumeID": null,
+          "volumeID": 2
+        }
+      ],
+      "name": "grpsnap1",
+      "status": "done"
+    }
+  }
+}
+----
+
+
+== Novità dalla versione
+
+9,6

@@ -1,0 +1,46 @@
+---
+permalink: storage/reference_data_manage_vvol_bindings_details.html 
+sidebar: sidebar 
+keywords: bindings details, vvols, for each virtual volume, endpoints, 
+summary: La pagina binding della scheda VVol fornisce informazioni di binding su ciascun volume virtuale. 
+---
+= Dettagli sui binding
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La pagina binding della scheda VVol fornisce informazioni di binding su ciascun volume virtuale.
+
+Vengono visualizzate le seguenti informazioni:
+
+* *ID host*
++
+UUID dell'host ESXi che ospita volumi virtuali ed è noto al cluster.
+
+* *ID endpoint del protocollo*
++
+ID endpoint del protocollo corrispondenti a ciascun nodo del cluster SolidFire.
+
+* *Protocol Endpoint in Band ID*
++
+L'ID del dispositivo NAA SCSI dell'endpoint del protocollo.
+
+* *Protocol Endpoint Type* (tipo di endpoint del protocollo)
++
+Il tipo di endpoint del protocollo.
+
+* *VVol Binding ID*
++
+UUID di binding del volume virtuale.
+
+* *ID volume*
++
+UUID (Universally Unique Identifier) del volume virtuale.
+
+* *VVol ID secondario*
++
+L'ID secondario del volume virtuale che è un ID LUN di secondo livello SCSI.
+
+

@@ -1,0 +1,109 @@
+---
+permalink: api/reference_element_api_enableclusterssh.html 
+sidebar: sidebar 
+keywords: SSH,enabling,enable,cluster,EnableClusterSsh 
+summary: È possibile utilizzare il metodo EnableClusterSsh per attivare il servizio SSH su tutti i nodi del cluster di storage. 
+---
+= EnableClusterSsh
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `EnableClusterSsh` Metodo per attivare il servizio SSH su tutti i nodi del cluster di storage.
+
+
+
+== Parametro
+
+Questo metodo ha il seguente parametro di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+durata
+ a| 
+Il periodo di tempo in cui il servizio SSH rimane attivato.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+Sì
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo ha i seguenti valori restituiti:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+risultato
+ a| 
+Oggetto JSON contenente lo stato del servizio SSH per il cluster di storage, il tempo rimanente prima della disattivazione di SSH e lo stato del servizio SSH per ciascun nodo.
+ a| 
+Oggetto JSON
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "method": "EnableClusterSsh",
+  "params": {
+      "duration"  : "02:00:00.00"
+  },
+  "id" : 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+	"id": 1,
+	"result" : {
+    "enabled": true,
+    "timeRemaining": "00:43:21",
+    "nodes": [
+    {
+        "nodeID": 1,
+        "enabled": true
+    },
+    {
+        "nodeID": 2,
+        "enabled": true
+    },
+    {
+        "nodeID": 3,
+        "enabled": false
+    },
+    {
+        "nodeID": 4,
+        "enabled": false
+    } ]
+			}
+	}
+----
+
+
+== Novità dalla versione
+
+10,3

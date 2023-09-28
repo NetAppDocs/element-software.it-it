@@ -1,0 +1,114 @@
+---
+permalink: api/reference_element_api_listsnapmirrorrelationships.html 
+sidebar: sidebar 
+keywords: snapmirror,endpoints,endpoint,list,listing,listsnapmirrorrelationships 
+summary: 'L"interfaccia utente Web del software Element utilizza il metodo ListSnapMirrorRelationships per elencare una o tutte le relazioni SnapMirror su un cluster di storage Element.' 
+---
+= ListSnapMirrorRelationships
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'interfaccia utente Web del software Element utilizza `ListSnapMirrorRelationships` Metodo per elencare una o tutte le relazioni SnapMirror su un cluster di storage a elementi.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+SnapMirrorEndpointID
+ a| 
+Elencare solo le relazioni associate all'ID endpoint specificato. Se non viene fornito alcun ID endpoint, il sistema elenca le relazioni di tutti gli endpoint SnapMirror noti.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+DestinationVolume
+ a| 
+Elenca le relazioni associate al volume di destinazione specificato.
+ a| 
+xref:reference_element_api_snapmirrorvolumeinfo.adoc[SnapMirrorVolumeInfo]
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+SourceVolume
+ a| 
+Elenca le relazioni associate al volume di origine specificato.
+ a| 
+xref:reference_element_api_snapmirrorvolumeinfo.adoc[SnapMirrorVolumeInfo]
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+server virtuale
+ a| 
+Elenca le relazioni sul Vserver specificato.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+ID relazione
+ a| 
+Elenca le relazioni associate all'ID relazione specificato.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+|===
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+SnapMirrorRelationships
+ a| 
+Un elenco di oggetti contenente informazioni sulle relazioni di SnapMirror.
+ a| 
+xref:reference_element_api_snapmirrorrelationship.adoc[SnapMirrorRelationship] array
+
+|===
+
+
+== Novità dalla versione
+
+10,1

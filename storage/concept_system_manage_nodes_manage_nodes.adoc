@@ -1,0 +1,22 @@
+---
+permalink: storage/concept_system_manage_nodes_manage_nodes.html 
+sidebar: sidebar 
+keywords: nodes, manage, cluster, capacity rule, pairs, stranded nodes 
+summary: È possibile gestire lo storage SolidFire e i nodi Fibre Channel dalla pagina nodi della scheda cluster. 
+---
+= Gestire i nodi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile gestire lo storage SolidFire e i nodi Fibre Channel dalla pagina nodi della scheda cluster.
+
+Se un nodo aggiunto di recente rappresenta oltre il 50% della capacità totale del cluster, una parte della capacità di questo nodo viene resa inutilizzabile ("bloccato"), in modo che sia conforme alla regola di capacità. Questo rimane il caso fino a quando non viene aggiunto ulteriore storage. Se viene aggiunto un nodo molto grande che disobbedisce anche alla regola di capacità, il nodo precedentemente bloccato non verrà più bloccato, mentre il nodo appena aggiunto viene bloccato. La capacità deve essere sempre aggiunta in coppie per evitare che ciò accada. Quando un nodo viene bloccato, viene generato un guasto appropriato del cluster.
+
+
+
+== Trova ulteriori informazioni
+
+xref:task_system_manage_nodes_adding_a_node_to_a_cluster.adoc[Aggiungere un nodo a un cluster]

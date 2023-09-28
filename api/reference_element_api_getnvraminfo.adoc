@@ -1,0 +1,88 @@
+---
+permalink: api/reference_element_api_getnvraminfo.html 
+sidebar: sidebar 
+keywords: nvram,info,get,getting,getnvraminfo 
+summary: È possibile utilizzare il metodo GetNvramInfo per ottenere informazioni da ciascun nodo sulla scheda NVRAM. 
+---
+= GetNvramInfo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `GetNvramInfo` Metodo per ottenere informazioni da ciascun nodo sulla scheda NVRAM.
+
+
+
+== Parametro
+
+Questo metodo ha il seguente parametro di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+forza
+ a| 
+Il parametro force deve essere incluso in questo metodo per poter essere eseguito correttamente su tutti i nodi del cluster.
+ a| 
+booleano
+ a| 
+Nessuno
+ a| 
+Sì
+
+|===
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+NvramInfo
+ a| 
+Array di eventi ed errori rilevati sulla scheda NVRAM.
+ a| 
+Oggetto JSON
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "method": "GetNvramInfo",
+  "params": {
+      "force": true
+	  },
+  "id" : 1
+}
+----
+
+
+== Esempio di risposta
+
+A causa della lunghezza di questo esempio di risposta, è documentata in un argomento supplementare.
+
+
+
+== Novità dalla versione
+
+9,6
+
+
+
+== Trova ulteriori informazioni
+
+xref:reference_element_api_response_example_getnvraminfo.adoc[GetNvramInfo]

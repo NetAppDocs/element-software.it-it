@@ -1,0 +1,94 @@
+---
+permalink: api/reference_element_api_binding_vvols.html 
+sidebar: sidebar 
+keywords: binding,object,objects,volume,volumes,virtual 
+summary: 'L"oggetto binding contiene informazioni sull"associazione per un volume virtuale. È possibile recuperare un elenco di queste informazioni per tutti i volumi virtuali utilizzando il metodo API ListVirtualVolumeBindings.' 
+---
+= binding (volumi virtuali)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto binding contiene informazioni sull'associazione per un volume virtuale. È possibile recuperare un elenco di queste informazioni per tutti i volumi virtuali utilizzando `ListVirtualVolumeBindings` Metodo API.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+`protocolEndpointID`
+ a| 
+ID univoco dell'endpoint del protocollo.
+ a| 
+UUID
+
+
+
+ a| 
+`protocolEndpointInBandID`
+ a| 
+L'ID scsiNAADeviceID dell'endpoint del protocollo.
+ a| 
+stringa
+
+
+
+ a| 
+`protocolEndpointType`
+ a| 
+Il tipo di endpoint del protocollo. SCSI è l'unico valore restituito per il tipo di endpoint del protocollo.
+ a| 
+stringa
+
+
+
+ a| 
+`virtualVolumeBindingID`
+ a| 
+ID univoco dell'oggetto di binding del volume virtuale.
+ a| 
+intero
+
+
+
+ a| 
+`virtualVolumeHostID`
+ a| 
+L'ID univoco dell'host del volume virtuale.
+ a| 
+UUID
+
+
+
+ a| 
+`virtualVolumeID`
+ a| 
+L'ID univoco del volume virtuale.
+ a| 
+UUID
+
+
+
+ a| 
+`virtualVolumeSecondaryID`
+ a| 
+L'ID secondario del volume virtuale.
+ a| 
+stringa
+
+|===
+
+
+== Trova ulteriori informazioni
+
+* xref:reference_element_api_listvirtualvolumebindings.adoc[ListVirtualVolumeBindings]
+* xref:reference_element_api_protocolendpoint.adoc[ProtocolEndpoint]
+

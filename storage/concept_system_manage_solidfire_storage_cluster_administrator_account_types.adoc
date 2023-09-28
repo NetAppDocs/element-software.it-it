@@ -1,0 +1,27 @@
+---
+permalink: storage/concept_system_manage_solidfire_storage_cluster_administrator_account_types.html 
+sidebar: sidebar 
+keywords: user types, account, cluster, access active nodes, per-node UI 
+summary: 'Esistono due tipi di account amministratore in un cluster di storage che esegue il software NetApp Element: L"account primario dell"amministratore del cluster e un account dell"amministratore del cluster.' 
+---
+= Tipi di account amministratore del cluster di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Esistono due tipi di account amministratore in un cluster di storage che esegue il software NetApp Element: L'account primario dell'amministratore del cluster e un account dell'amministratore del cluster.
+
+* *Account primario amministratore del cluster*
++
+Questo account amministratore viene creato al momento della creazione del cluster. Questo account è l'account amministrativo principale con il livello di accesso più elevato al cluster. Questo account è analogo a un utente root in un sistema Linux. È possibile modificare la password per questo account amministratore.
+
+* *Account amministratore del cluster*
++
+È possibile assegnare a un account amministratore del cluster un intervallo limitato di accesso amministrativo per eseguire attività specifiche all'interno di un cluster. Le credenziali assegnate a ciascun account amministratore del cluster vengono utilizzate per autenticare le richieste API ed Element UI all'interno del sistema di storage.
+
+
+
+
+NOTE: Per accedere ai nodi attivi di un cluster tramite l'interfaccia utente per nodo, è necessario un account amministratore locale (non LDAP). Le credenziali dell'account non sono richieste per accedere a un nodo che non fa ancora parte di un cluster.

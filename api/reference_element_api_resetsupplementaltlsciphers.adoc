@@ -1,0 +1,59 @@
+---
+permalink: api/reference_element_api_resetsupplementaltlsciphers.html 
+sidebar: sidebar 
+keywords: tls,cipher,reset,supplemental,resetsupplementaltlsciphers,restore,restoring,supplemental 
+summary: 'È possibile utilizzare il metodo ResetSupplementalTlsCiphers per ripristinare l"elenco di crittografia TLS supplementari ai valori predefiniti. È possibile utilizzare questo metodo sull"intero cluster.' 
+---
+= ResetSupplementalTlsCipher
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `ResetSupplementalTlsCiphers` Metodo per ripristinare l'elenco di crittografia TLS supplementari ai valori predefiniti. È possibile utilizzare questo metodo sull'intero cluster.
+
+
+
+== Parametro
+
+Questo metodo non ha parametri di input.
+
+
+
+== Valori restituiti
+
+Questo metodo non ha valori restituiti.
+
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "method": "ResetSupplementalTlsCiphers",
+  "params": {},
+  "id" : 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+  "id" : 1,
+  "result" : {}
+}
+----
+
+
+== Novità dalla versione
+
+11,3

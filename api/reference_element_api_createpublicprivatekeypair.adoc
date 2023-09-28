@@ -1,0 +1,158 @@
+---
+permalink: api/reference_element_api_createpublicprivatekeypair.html 
+sidebar: sidebar 
+keywords: SSL keys,public and private keys,certificate signing request,creating key pair 
+summary: È possibile utilizzare il metodo CreatePublicPrivateKeyPair per creare chiavi SSL pubbliche e private. È possibile utilizzare queste chiavi per generare richieste di firma del certificato. Per ogni cluster di storage può essere utilizzata una sola coppia di chiavi. Prima di utilizzare questo metodo per sostituire le chiavi esistenti, assicurarsi che le chiavi non siano più utilizzate da alcun provider. 
+---
+= CreatePublicPrivateKeyPair
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `CreatePublicPrivateKeyPair` Metodo per creare chiavi SSL pubbliche e private. È possibile utilizzare queste chiavi per generare richieste di firma del certificato. Per ogni cluster di storage può essere utilizzata una sola coppia di chiavi. Prima di utilizzare questo metodo per sostituire le chiavi esistenti, assicurarsi che le chiavi non siano più utilizzate da alcun provider.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+Nome comune
+ a| 
+Il campo Nome distinto X.509 *Nome comune* (CN).
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+paese
+ a| 
+Il campo Nome distinto X.509 *Paese* (C).
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+EmailAddress
+ a| 
+Il campo Nome distinto X.509 *Indirizzo e-mail* (E-MAIL).
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+località
+ a| 
+Il campo Nome distinto X.509 *Nome località* (L).
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+organizzazione
+ a| 
+Il campo Nome distinto X.509 *Nome organizzazione* (o).
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+OrganisationalUnit
+ a| 
+Il campo Nome distinto X.509 *Nome unità organizzativa* (OU).
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+stato
+ a| 
+Il campo Nome distinto X.509 *Stato* o *Nome provincia* (ST o SP o S).
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo non ha valori restituiti. Se non si verificano errori, la creazione della chiave viene considerata corretta.
+
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "method": "CreatePublicPrivateKeyPair",
+  "params": {
+    "commonName": "Name",
+    "country": "US",
+    "emailAddress" : "email@domain.com"
+   },
+"id": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+   "id": 1,
+   "result":
+      {}
+}
+----
+
+
+== Novità dalla versione
+
+11,7

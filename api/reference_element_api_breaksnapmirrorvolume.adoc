@@ -1,0 +1,104 @@
+---
+permalink: api/reference_element_api_breaksnapmirrorvolume.html 
+sidebar: sidebar 
+keywords: SnapMirror,volume,volumes,break,breaking,relationship,ONTAP,source,snapshot 
+summary: 'L"interfaccia utente Web Element utilizza il metodo BreakSnapMirrorVolume per interrompere la relazione SnapMirror tra un container di origine ONTAP e un volume di destinazione dell"elemento. L"interruzione di un volume SnapMirror Element è utile se un sistema ONTAP non è più disponibile durante la replica dei dati in un volume Element. Questa funzione consente a un amministratore dello storage di assumere il controllo di un volume SnapMirror Element, interrompere la relazione con il sistema ONTAP remoto e ripristinare il volume a uno snapshot precedente.' 
+---
+= BreakSnapMirrorVolume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'interfaccia utente Web Element utilizza `BreakSnapMirrorVolume` Metodo per interrompere la relazione di SnapMirror tra un container di origine ONTAP e un volume di destinazione dell'elemento. L'interruzione di un volume SnapMirror Element è utile se un sistema ONTAP non è più disponibile durante la replica dei dati in un volume Element. Questa funzione consente a un amministratore dello storage di assumere il controllo di un volume SnapMirror Element, interrompere la relazione con il sistema ONTAP remoto e ripristinare il volume a uno snapshot precedente.
+
+
+
+== Parametro
+
+Questo metodo ha il seguente parametro di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+ID volume
+ a| 
+Il volume su cui eseguire l'operazione di interruzione. La modalità di accesso al volume deve essere SnapMirrorTarget.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+SnapshotID
+ a| 
+Eseguire il rollback del volume allo snapshot identificato da questo ID. Per impostazione predefinita, eseguire il rollback allo snapshot più recente.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+preservare
+ a| 
+Conservare le snapshot più recenti rispetto a quelle identificate da snapshotID. Valori possibili:
+
+* Vero: Conserva le snapshot più recenti di snapshotID.
+* Falso: Non conservare snapshot più recenti di snapshotID.
+
+
+Se false, tutte le snapshot più recenti di snapshotID vengono eliminate.
+ a| 
+booleano
+ a| 
+falso
+ a| 
+No
+
+
+
+ a| 
+accesso
+ a| 
+Modalità di accesso al volume risultante. Valori possibili:
+
+* Riscrivere
+* ReadOnly
+* bloccato
+
+ a| 
+stringa
+ a| 
+Riscrivere
+ a| 
+No
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo non ha valori restituiti.
+
+
+
+== Novità dalla versione
+
+10,0
+
+
+
+== Trova ulteriori informazioni
+
+xref:reference_element_api_breaksnapmirrorrelationship.adoc[BreakSnapMirrorRelationship]

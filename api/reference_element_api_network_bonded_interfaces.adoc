@@ -1,0 +1,609 @@
+---
+permalink: api/reference_element_api_network_bonded_interfaces.html 
+sidebar: sidebar 
+keywords: object,objects,network 
+summary: 'L"oggetto Network contiene informazioni di configurazione per le interfacce di rete collegate su un nodo di storage. È possibile utilizzare i metodi GetConfig e GetNetworkConfig per ottenere queste informazioni per un nodo di storage.' 
+---
+= rete (interfacce collegate)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto Network (Bonded Interfaces) contiene informazioni di configurazione per le interfacce di rete collegate su un nodo di storage. È possibile utilizzare `GetConfig` e. `GetNetworkConfig` metodi per ottenere queste informazioni per un nodo di storage.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+indirizzo
+ a| 
+L'indirizzo IPv4 assegnato a questa interfaccia sul nodo.
+ a| 
+stringa
+
+
+
+ a| 
+IndirizzoV6
+ a| 
+L'indirizzo di gestione IPv6 assegnato all'interfaccia Bond1G sul nodo.
+ a| 
+stringa
+
+
+
+ a| 
+bond-downdelay
+ a| 
+Tempo di attesa, in millisecondi, prima di disattivare uno slave dopo il rilevamento di un errore di collegamento.
+ a| 
+stringa
+
+
+
+ a| 
+bond-fail_over_mac
+ a| 
+La configurazione dell'indirizzo MAC dell'interfaccia di rete.
+ a| 
+stringa
+
+
+
+ a| 
+bond-miimon
+ a| 
+La frequenza, espressa in millisecondi, alla quale lo stato del collegamento MII viene ispezionato per rilevare eventuali guasti del collegamento.
+ a| 
+stringa
+
+
+
+ a| 
+modalità bond
+ a| 
+La modalità di bonding. Valori possibili:
+
+* ActivePassive (attivo passivo) (impostazione predefinita)
+* ALB
+* LACP (consigliato)
+
+ a| 
+stringa
+
+
+
+ a| 
+bond-primary_reselect
+ a| 
+Specifica quando lo slave di bond primario viene scelto come slave attivo. Valori possibili:
+
+* Sempre
+* Meglio
+* Guasto
+
+ a| 
+stringa
+
+
+
+ a| 
+bond-slave
+ a| 
+L'elenco delle interfacce slave per il collegamento.
+ a| 
+stringa
+
+
+
+ a| 
+bond-lacp_rate
+ a| 
+Quando modalità Bond è LACP, il tasso può cambiare in una delle seguenti opzioni:
+
+* LACP veloce (impostazione predefinita)
+* LACP lento
+
+ a| 
+stringa
+
+
+
+ a| 
+bond-updelay
+ a| 
+Il tempo di attesa, espresso in millisecondi, prima di abilitare uno slave dopo il rilevamento di un collegamento.
+ a| 
+stringa
+
+
+
+ a| 
+dns-nameserver
+ a| 
+Un elenco di indirizzi utilizzati per i servizi dei nomi di dominio, separati da virgola o spazio.
+ a| 
+stringa
+
+
+
+ a| 
+ricerca-dns
+ a| 
+Un elenco di domini di ricerca DNS separati da spazi o virgole.
+ a| 
+stringa
+
+
+
+ a| 
+famiglia
+ a| 
+Famiglia di indirizzi configurata per l'utilizzo da parte dell'interfaccia. Attualmente è supportato "inet" per IPv4.
+ a| 
+stringa
+
+
+
+ a| 
+gateway
+ a| 
+Indirizzo di rete del router IPv4 utilizzato per inviare traffico dalla rete locale.
+ a| 
+stringa
+
+
+
+ a| 
+GatewayV6
+ a| 
+L'indirizzo di rete del router IPv6 utilizzato per inviare traffico dalla rete Bond1G locale.
+ a| 
+stringa
+
+
+
+ a| 
+IpV6PrefixLength
+ a| 
+La lunghezza del prefisso di subnet per i percorsi statici di tipo "net" per il traffico IPv6 sulla rete Bond1G.
+ a| 
+stringa
+
+
+
+ a| 
+MACAddress (Indirizzo MAC)
+ a| 
+L'indirizzo MAC effettivo assegnato all'interfaccia e osservato dalla rete.
+ a| 
+stringa
+
+
+
+ a| 
+MacAddressPermanent
+ a| 
+L'indirizzo MAC immutabile assegnato dal produttore all'interfaccia.
+ a| 
+stringa
+
+
+
+ a| 
+metodo
+ a| 
+Il metodo utilizzato per configurare l'interfaccia. Valori possibili:
+
+* Loopback: Consente di definire l'interfaccia di loopback IPv4.
+* Manual (Manuale): Consente di definire le interfacce non configurate automaticamente.
+* dhcp: Può essere utilizzato per ottenere un indirizzo IP tramite DHCP.
+* Static (statico): Consente di definire le interfacce Ethernet con indirizzi IPv4 allocati in modo statico.
+
+ a| 
+stringa
+
+
+
+ a| 
+mtu
+ a| 
+La dimensione massima dei pacchetti (in byte) che l'interfaccia può trasmettere. Deve essere maggiore o uguale a 1500; è supportato fino a 9000.
+ a| 
+stringa
+
+
+
+ a| 
+netmask
+ a| 
+La maschera di bit che specifica la subnet per l'interfaccia.
+ a| 
+stringa
+
+
+
+ a| 
+rete
+ a| 
+Indica dove inizia l'intervallo di indirizzi IP in base alla netmask.
+ a| 
+stringa
+
+
+
+ a| 
+percorsi
+ a| 
+Matrice separata da virgole di stringhe di routing da applicare alla tabella di routing.
+ a| 
+array di stringhe
+
+
+
+ a| 
+stato
+ a| 
+Lo stato dell'interfaccia. Valori possibili:
+
+* Inattivo: L'interfaccia non è attiva.
+* Up: L'interfaccia è pronta, ma non ha alcun collegamento.
+* UpAndRunning: L'interfaccia è pronta e viene stabilito un collegamento.
+
+ a| 
+stringa
+
+
+
+ a| 
+SimmetricRouteRules
+ a| 
+Le regole di routing simmetriche configurate sul nodo.
+ a| 
+array di stringhe
+
+
+
+ a| 
+UpAndRunning
+ a| 
+Indica se l'interfaccia è pronta e dispone di un collegamento.
+ a| 
+booleano
+
+
+
+ a| 
+VirtualNetworkTag
+ a| 
+Identificativo della rete virtuale dell'interfaccia (tag VLAN).
+ a| 
+stringa
+
+|===
+
+
+== Modificabilità dei membri e stati dei nodi
+
+Questa tabella indica se i parametri dell'oggetto possono essere modificati o meno in ogni stato di nodo possibile.
+
+|===
+
+
+| Nome del membro | Stato disponibile | Stato in sospeso | Stato attivo 
+
+
+ a| 
+indirizzo
+ a| 
+Sì
+ a| 
+Sì
+ a| 
+No
+
+
+
+ a| 
+IndirizzoV6
+ a| 
+Sì
+ a| 
+Sì
+ a| 
+No
+
+
+
+ a| 
+bond-downdelay
+ a| 
+Configurato dal sistema
+ a| 
+N/A.
+ a| 
+N/A.
+
+
+
+ a| 
+bond-fail_over_mac
+ a| 
+Configurato dal sistema
+ a| 
+N/A.
+ a| 
+N/A.
+
+
+
+ a| 
+bond-miimon
+ a| 
+Configurato dal sistema
+ a| 
+N/A.
+ a| 
+N/A.
+
+
+
+ a| 
+modalità bond
+ a| 
+Sì
+ a| 
+Sì
+ a| 
+Sì
+
+
+
+ a| 
+bond-primary_reselect
+ a| 
+Configurato dal sistema
+ a| 
+N/A.
+ a| 
+N/A.
+
+
+
+ a| 
+bond-slave
+ a| 
+Configurato dal sistema
+ a| 
+N/A.
+ a| 
+N/A.
+
+
+
+ a| 
+bond-lacp_rate
+ a| 
+Sì
+ a| 
+Sì
+ a| 
+Sì
+
+
+
+ a| 
+bond-updelay
+ a| 
+Configurato dal sistema
+ a| 
+N/A.
+ a| 
+N/A.
+
+
+
+ a| 
+dns-nameserver
+ a| 
+Sì
+ a| 
+Sì
+ a| 
+Sì
+
+
+
+ a| 
+ricerca-dns
+ a| 
+Sì
+ a| 
+Sì
+ a| 
+Sì
+
+
+
+ a| 
+famiglia
+ a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+gateway
+ a| 
+Sì
+ a| 
+Sì
+ a| 
+Sì
+
+
+
+ a| 
+GatewayV6
+ a| 
+Sì
+ a| 
+Sì
+ a| 
+Sì
+
+
+
+ a| 
+IpV6PrefixLength
+ a| 
+Sì
+ a| 
+Sì
+ a| 
+Sì
+
+
+
+ a| 
+MACAddress (Indirizzo MAC)
+ a| 
+Configurato dal sistema
+ a| 
+N/A.
+ a| 
+N/A.
+
+
+
+ a| 
+MacAddressPermanent
+ a| 
+Configurato dal sistema
+ a| 
+N/A.
+ a| 
+N/A.
+
+
+
+ a| 
+metodo
+ a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+mtu
+ a| 
+Sì
+ a| 
+Sì
+ a| 
+Sì
+
+
+
+ a| 
+netmask
+ a| 
+Sì
+ a| 
+Sì
+ a| 
+Sì
+
+
+
+ a| 
+rete
+ a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+percorsi
+ a| 
+Sì
+ a| 
+Sì
+ a| 
+Sì
+
+
+
+ a| 
+stato
+ a| 
+Sì
+ a| 
+Sì
+ a| 
+Sì
+
+
+
+ a| 
+SimmetricRouteRules
+ a| 
+Configurato dal sistema
+ a| 
+N/A.
+ a| 
+N/A.
+
+
+
+ a| 
+UpAndRunning
+ a| 
+Configurato dal sistema
+ a| 
+N/A.
+ a| 
+N/A.
+
+
+
+ a| 
+VirtualNetworkTag
+ a| 
+Sì
+ a| 
+Sì
+ a| 
+Sì
+
+|===
+
+
+== Trova ulteriori informazioni
+
+* xref:reference_element_api_getconfig.adoc[GetConfig]
+* xref:reference_element_api_getnetworkconfig.adoc[GetNetworkConfig]
+

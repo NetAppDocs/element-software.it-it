@@ -1,0 +1,27 @@
+---
+permalink: api/concept_element_api_create_cluster_api_methods.html 
+sidebar: sidebar 
+keywords: API,methods,cluster,create,creation 
+summary: 'È possibile utilizzare questi metodi API per creare un cluster di storage. Tutti questi metodi devono essere utilizzati rispetto all"endpoint API su un singolo nodo.' 
+---
+= Metodi API per la creazione di cluster
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare questi metodi API per creare un cluster di storage. Tutti questi metodi devono essere utilizzati rispetto all'endpoint API su un singolo nodo.
+
+* xref:reference_element_api_checkproposedcluster.adoc[CheckProposedCluster]
+* xref:reference_element_api_createcluster.adoc[CreateCluster]
+* xref:reference_element_api_getbootstrapconfig.adoc[GetBootstrapConfig]
+
+
+
+
+== Trova ulteriori informazioni
+
+* https://www.netapp.com/data-storage/solidfire/documentation/["Pagina delle risorse NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Documentazione per le versioni precedenti dei prodotti SolidFire ed Element di NetApp"^]
+

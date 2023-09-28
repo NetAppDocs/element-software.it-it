@@ -1,0 +1,74 @@
+---
+permalink: storage/reference_per_node_cluster_settings_details.html 
+sidebar: sidebar 
+keywords: nodes, changing cluster settings, per-node UI 
+summary: È possibile verificare le impostazioni del cluster per un nodo di storage dopo la configurazione del cluster e modificare il nome host del nodo. 
+---
+= Dettagli delle impostazioni del cluster dall'interfaccia utente per nodo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile verificare le impostazioni del cluster per un nodo di storage dopo la configurazione del cluster e modificare il nome host del nodo.
+
+Il seguente elenco descrive le impostazioni del cluster per un nodo di storage indicate nella pagina *Cluster Settings* dell'interfaccia utente per nodo (https://<node[] IP>:442/hcc/Node/cluster-settings).
+
+* *Ruolo*
++
+Ruolo del nodo nel cluster. Valori possibili:
+
++
+** Storage: Nodo storage o Fibre Channel.
+** Gestione: Il nodo è un nodo di gestione.
+
+
+* *Nome host*
++
+Nome del nodo.
+
+* *Cluster*
++
+Nome del cluster.
+
+* *Appartenenza al cluster*
++
+Stato del nodo. Valori possibili:
+
++
+** Disponibile: Il nodo non ha un nome di cluster associato e non fa ancora parte di un cluster.
+** In sospeso: Il nodo è configurato e può essere aggiunto a un cluster designato. Per accedere al nodo non è richiesta l'autenticazione.
+** PendingActive: Il sistema sta installando software compatibile sul nodo. Al termine, il nodo passa allo stato attivo.
+** Attivo: Il nodo partecipa a un cluster. L'autenticazione è necessaria per modificare il nodo.
+
+
+* *Versione*
++
+Versione del software Element in esecuzione sul nodo.
+
+* *Ensemble*
++
+Nodi che fanno parte dell'insieme di database.
+
+* *ID nodo*
++
+ID assegnato quando un nodo viene aggiunto al cluster.
+
+* *Interfaccia cluster*
++
+Interfaccia di rete utilizzata per la comunicazione del cluster.
+
+* *Interfaccia di gestione*
++
+Interfaccia di rete di gestione. Questo valore predefinito è Bond1G, ma può anche utilizzare Bond10G.
+
+* *Interfaccia storage*
++
+Interfaccia di rete dello storage con Bond10G.
+
+* *Crittografia abilitata*
++
+Indica se il nodo supporta o meno la crittografia del disco.
+
+

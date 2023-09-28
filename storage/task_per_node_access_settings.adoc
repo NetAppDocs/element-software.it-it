@@ -1,0 +1,31 @@
+---
+permalink: storage/task_per_node_access_settings.html 
+sidebar: sidebar 
+keywords: nodes, accessing node settings, accessing node settings with per-node UI 
+summary: 'È possibile accedere alle impostazioni di rete, alle impostazioni del cluster, ai test e alle utility di sistema nell"interfaccia utente per nodo dopo aver inserito l"IP del nodo di gestione e autenticato.' 
+---
+= Accedere alle impostazioni per nodo utilizzando l'interfaccia utente per nodo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile accedere alle impostazioni di rete, alle impostazioni del cluster, ai test e alle utility di sistema nell'interfaccia utente per nodo dopo aver inserito l'IP del nodo di gestione e autenticato.
+
+Se si desidera modificare le impostazioni di un nodo in uno stato attivo che fa parte di un cluster, è necessario accedere come utente amministratore del cluster.
+
+
+TIP: Configurare o modificare un nodo alla volta. Prima di apportare modifiche a un altro nodo, assicurarsi che le impostazioni di rete specificate abbiano l'effetto previsto e che la rete sia stabile e in grado di garantire prestazioni ottimali.
+
+. Aprire l'interfaccia utente per nodo utilizzando uno dei seguenti metodi:
++
+** Inserire l'indirizzo IP di gestione seguito da :442 in una finestra del browser e accedere utilizzando un nome utente e una password admin.
+** Nell'interfaccia utente di Element, selezionare *Cluster* > *Nodes*, quindi fare clic sul collegamento dell'indirizzo IP di gestione per il nodo che si desidera configurare o modificare.
+Nella finestra del browser visualizzata, è possibile modificare le impostazioni del nodo.
+
+
++
+image::../media/per_node_ui_hcc_skin.png[Pagina delle impostazioni di rete dell'interfaccia utente per nodo]
+
+

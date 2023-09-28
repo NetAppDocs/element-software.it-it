@@ -1,0 +1,113 @@
+---
+permalink: api/reference_element_api_snapmirrorpolicy.html 
+sidebar: sidebar 
+keywords: object,objects,snapMirrorPolicy 
+summary: 'L"oggetto SnapMirrorPolicy contiene informazioni su un criterio SnapMirror memorizzato in un sistema ONTAP.' 
+---
+= SnapMirrorPolicy
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto SnapMirrorPolicy contiene informazioni su un criterio SnapMirror memorizzato in un sistema ONTAP.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+SnapMirrorEndpointID
+ a| 
+L'ID del sistema ONTAP di destinazione.
+ a| 
+intero
+
+
+
+ a| 
+Nome criterio
+ a| 
+Il nome univoco assegnato al criterio.
+ a| 
+stringa
+
+
+
+ a| 
+Tipo di criterio
+ a| 
+Il tipo di policy. Valori possibili:
+
+* mirror_asincrono
+* vault_mirror
+
+ a| 
+stringa
+
+
+
+ a| 
+commento
+ a| 
+Descrizione leggibile associata al criterio SnapMirror.
+ a| 
+stringa
+
+
+
+ a| 
+TransferPriority
+ a| 
+La priorità di esecuzione di un trasferimento SnapMirror. Valori possibili:
+
+* Normal (normale): La priorità predefinita. Questi trasferimenti vengono pianificati prima della maggior parte dei trasferimenti a bassa priorità.
+* Basso: Questi trasferimenti hanno la priorità più bassa e vengono pianificati dopo la maggior parte dei trasferimenti con priorità normale.
+
+ a| 
+stringa
+
+
+
+ a| 
+Regole delle politiche
+ a| 
+Un elenco di oggetti che descrivono le regole dei criteri.
+ a| 
+xref:reference_element_api_snapmirrorpolicyrule.adoc[SnapMirrorPolicyRule] array
+
+
+
+ a| 
+TotalKeepCount
+ a| 
+Il numero totale di conservazione per tutte le regole del criterio.
+ a| 
+intero
+
+
+
+ a| 
+TotalRules
+ a| 
+Il numero totale di regole nel criterio.
+ a| 
+intero
+
+
+
+ a| 
+VserverName
+ a| 
+Il nome del Vserver per il criterio SnapMirror.
+ a| 
+stringa
+
+|===

@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: element-plug-in-index.html 
+keywords: element, plug-in, plugin, vcenter, server 
+summary: 'Utilizza il plug-in NetApp Element per vCenter Server, un plug-in per l"interfaccia di VMware vSphere, per gestire e monitorare i cluster di storage che eseguono il software NetApp Element.' 
+---
+= Plug-in NetApp Element per server vCenter
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il plug-in NetApp Element per vCenter Server offre un plug-in per l'interfaccia VMware vSphere, che consente di gestire e monitorare i cluster di storage che eseguono il software NetApp Element.
+
+Per ulteriori informazioni su Element Plug-in per vCenter Server, consultare la https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per la documentazione del server vCenter"^].
+
+
+
+== Per ulteriori informazioni
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+

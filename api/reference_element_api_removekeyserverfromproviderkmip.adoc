@@ -1,0 +1,79 @@
+---
+permalink: api/reference_element_api_removekeyserverfromproviderkmip.html 
+sidebar: sidebar 
+keywords: KMIP,key server,unassigning,removing,remove,unassign,removekeyserverfromproviderkmip 
+summary: 'È possibile utilizzare il metodo RemoveKeyServerFromProviderKmip per annullare l"assegnazione del Key Management Interoperability Protocol (KMIP) dal provider a cui è stato assegnato. È possibile annullare l"assegnazione di un server chiavi dal proprio provider, a meno che non sia l"ultimo e il relativo provider sia attivo (fornendo le chiavi attualmente in uso). Se il server chiavi specificato non è assegnato a un provider, non viene eseguita alcuna azione e non viene restituito alcun errore.' 
+---
+= RemoveKeyServerFromProviderKmip
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `RemoveKeyServerFromProviderKmip` Metodo per annullare l'assegnazione del server delle chiavi KMIP (Key Management Interoperability Protocol) specificato dal provider a cui è stato assegnato. È possibile annullare l'assegnazione di un server chiavi dal proprio provider, a meno che non sia l'ultimo e il relativo provider sia attivo (fornendo le chiavi attualmente in uso). Se il server chiavi specificato non è assegnato a un provider, non viene eseguita alcuna azione e non viene restituito alcun errore.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+KeyServerID
+ a| 
+L'ID del server chiavi KMIP da annullare l'assegnazione.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+Sì
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo non ha valori restituiti. La rimozione viene considerata riuscita a condizione che non venga restituito alcun errore.
+
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "method": "RemoveKeyServerFromProviderKmip",
+  "params": {
+    "keyServerID": 1
+   },
+"id": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+   "id": 1,
+   "result":
+      {}
+    }
+}
+----
+
+
+== Novità dalla versione
+
+11,7

@@ -1,0 +1,71 @@
+---
+permalink: api/reference_element_api_getorigin.html 
+sidebar: sidebar 
+keywords: origin,get,getting,getorigin,certificate 
+summary: È possibile utilizzare il metodo GetOrigin per ottenere il certificato di origine per il punto in cui è stato creato il nodo. 
+---
+= GetOrigin
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `GetOrigin` metodo per ottenere il certificato di origine per il punto in cui è stato creato il nodo.
+
+
+
+== Parametri
+
+
+NOTE: Questo metodo restituisce "null" se non esiste una certificazione di origine.
+
+Questo metodo non ha parametri di input.
+
+
+
+== Valore restituito
+
+Questo metodo restituisce le informazioni sulla certificazione di origine del vendor.
+
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+ "method": "GetOrigin",
+ "id" : 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+  "integrator": "SolidFire",
+  "<signature>": {
+    "pubkey": [public key info],
+    "version": 1,
+    "data": [signature info]
+  },
+   "contract-id": "none",
+   "location": "Boulder, CO",
+   "organization": "Engineering",
+   "type": "element-x"
+  }
+ ]
+}
+----
+
+
+== Novità dalla versione
+
+9,6

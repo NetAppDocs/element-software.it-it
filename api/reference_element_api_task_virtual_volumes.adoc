@@ -1,0 +1,138 @@
+---
+permalink: api/reference_element_api_task_virtual_volumes.html 
+sidebar: sidebar 
+keywords: object,objects,task 
+summary: 'L"oggetto task contiene informazioni su un"attività di volume virtuale attualmente in esecuzione o completata nel sistema. È possibile utilizzare il metodo ListVirtualVolumeTasks per recuperare queste informazioni per tutte le attività dei volumi virtuali.' 
+---
+= task (volumi virtuali)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto task contiene informazioni su un'attività di volume virtuale attualmente in esecuzione o completata nel sistema. È possibile utilizzare `ListVirtualVolumeTasks` metodo per recuperare queste informazioni per tutte le attività dei volumi virtuali.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+annullato
+ a| 
+Indica se l'attività è stata annullata o meno. Valori possibili:
+
+* vero
+* falso
+
+ a| 
+booleano
+
+
+
+ a| 
+CloneVirtualVolumeID
+ a| 
+L'ID univoco del volume virtuale del volume virtuale clonato (per le attività di clonazione).
+ a| 
+UUID
+
+
+
+ a| 
+ParentMetadata
+ a| 
+Oggetto contenente metadati dell'oggetto padre per attività che clonano o creano snapshot di un volume virtuale.
+ a| 
+Oggetto JSON
+
+
+
+ a| 
+ParentTotalSize
+ a| 
+Lo spazio totale disponibile (in byte) sull'origine per le attività di clone o snapshot.
+ a| 
+intero
+
+
+
+ a| 
+ParentUsedSize
+ a| 
+Lo spazio utilizzato dall'origine (in byte) per le attività di clonazione o snapshot.
+ a| 
+intero
+
+
+
+ a| 
+operazione
+ a| 
+Il tipo di operazione che l'attività sta eseguendo. Valori possibili:
+
+* Sconosciuto: Operazione non nota.
+* Preparazione: L'attività sta preparando un volume virtuale.
+* Snapshot: L'attività sta creando uno snapshot di un volume virtuale.
+* Rollback: L'attività sta eseguendo il rollback di un volume virtuale in uno snapshot.
+* Clone: L'attività sta creando un clone del volume virtuale.
+* FastClone: L'attività consiste nella creazione di un clone rapido di un volume virtuale.
+* CopyDiff: L'attività consiste nella copia di blocchi diversi in un volume virtuale.
+
+ a| 
+stringa
+
+
+
+ a| 
+stato
+ a| 
+Lo stato corrente dell'attività del volume virtuale. Valori possibili:
+
+* Errore: L'attività non è riuscita e ha restituito un errore.
+* Accodato: L'attività è in attesa di essere eseguita.
+* In esecuzione: L'attività è attualmente in esecuzione.
+* Operazione riuscita: L'operazione è stata completata correttamente.
+
+ a| 
+stringa
+
+
+
+ a| 
+VirtualVolumeHostID
+ a| 
+L'ID univoco dell'host che ha avviato l'attività.
+ a| 
+UUID
+
+
+
+ a| 
+VirtualVolumeID
+ a| 
+Il nuovo ID univoco del volume virtuale (per le attività che creano un nuovo volume virtuale).
+ a| 
+UUID
+
+
+
+ a| 
+VirtualVolumeTaskID
+ a| 
+L'ID univoco dell'attività.
+ a| 
+UUID
+
+|===
+
+
+== Trova ulteriori informazioni
+
+xref:reference_element_api_listvirtualvolumetasks.adoc[ListVirtualVolumeTasks]

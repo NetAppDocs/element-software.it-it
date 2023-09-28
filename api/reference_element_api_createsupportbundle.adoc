@@ -1,0 +1,158 @@
+---
+permalink: api/reference_element_api_createsupportbundle.html 
+sidebar: sidebar 
+keywords: create,creating,support,bundle,CreateSupportBundle 
+summary: È possibile utilizzare CreateSupportBundle per creare un file bundle di supporto nella directory del nodo. Dopo la creazione, il bundle viene memorizzato nel nodo come file tar.gz. 
+---
+= CreateSupportBundle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `CreateSupportBundle` per creare un file bundle di supporto nella directory del nodo. Dopo la creazione, il bundle viene memorizzato nel nodo come file tar (l'opzione di compressione gz è disponibile tramite il parametro extraArgs).
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+Nome bundle
+ a| 
+Nome univoco del bundle di supporto. Se non viene fornito alcun nome, come nome del file vengono utilizzati "supportbundle" e il nome del nodo.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+ExtraArgs
+ a| 
+Utilizzare '--compress gz' per creare il bundle di supporto come file tar.gz.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+Timeout Sec
+ a| 
+Il numero di secondi in cui viene eseguito lo script del bundle di supporto.
+ a| 
+intero
+ a| 
+1500
+ a| 
+No
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo ha i seguenti valori restituiti:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+dettagli
+ a| 
+I dettagli del bundle di supporto. Valori possibili:
+
+* BundleName: Il nome specificato nel metodo CreateSupportBundleAPI. Se non è stato specificato alcun nome, viene utilizzato "supportbundle".
+* ExtraArgs: Gli argomenti passati con questo metodo.
+* File: Un elenco dei file bundle di supporto creati dal sistema.
+* Output: Output della riga di comando dallo script che ha creato il bundle di supporto.
+* TimeoutSec: Il numero di secondi in cui lo script del bundle di supporto viene eseguito prima dell'arresto.
+* url: URL del bundle di supporto creato.
+
+ a| 
+Oggetto JSON
+
+
+
+ a| 
+durata
+ a| 
+Il tempo utilizzato per creare il bundle di supporto nel formato: HH:MM:SS.sssss.
+ a| 
+stringa
+
+
+
+ a| 
+risultato
+ a| 
+Il successo o il fallimento dell'operazione del bundle di supporto.
+ a| 
+stringa
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+ "method": "CreateSupportBundle",
+"params": {
+  "extraArgs": "--compress gz"
+ },
+"id": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+"id": 1,
+"result": {
+  "details": {
+    "bundleName": "supportbundle",
+    "extraArgs": "--compress gz",
+    "files": [
+         "supportbundle.nodehostname.tar.gz"
+     ],
+     "output": "timeout -s KILL 1500s /sf/scripts/sfsupportbundle --quiet --compress gz /tmp/solidfire-dtemp.1L6bdX/supportbundle<br><br>Moved '/tmp/solidfire-dtemp.1L6bdX/supportbundle.nodehostname.tar.gz' to /tmp/supportbundles",
+      "timeoutSec": 1500,
+      "url": [
+          "https://nodeIP:442/config/supportbundles/supportbundle.nodehostname.tar.gz"
+      ]
+    },
+    "duration": "00:00:43.101627",
+    "result": "Passed"
+  }
+}
+----
+
+
+== Novità dalla versione
+
+9,6

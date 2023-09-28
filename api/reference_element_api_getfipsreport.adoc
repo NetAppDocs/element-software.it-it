@@ -1,0 +1,93 @@
+---
+permalink: api/reference_element_api_getfipsreport.html 
+sidebar: sidebar 
+keywords: fips,report,get,getting,getfipsreport,feature,support 
+summary: È possibile utilizzare il metodo GetFipsReport per controllare lo stato di supporto della funzionalità di crittografia FIPS 140-2 di tutti i nodi nel cluster di storage. 
+---
+= GetFipsReport
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `GetFipsReport` Metodo per verificare lo stato di supporto della funzione di crittografia FIPS 140-2 di tutti i nodi nel cluster di storage.
+
+
+
+== Parametro
+
+Questo metodo non ha alcun parametro di input.
+
+
+
+== Valori restituiti
+
+Questo metodo ha i seguenti valori restituiti:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+risultato
+ a| 
+Oggetto JSON contenente lo stato del supporto delle funzionalità FIPS 140-2 per ogni nodo e le informazioni sugli errori per ogni nodo che non ha risposto alla query.
+ a| 
+xref:reference_element_api_fipsreport.adoc[FipsReport]
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "method": "GetFipsReport",
+  "params": {},
+  "id" : 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+    "id": 1,
+    "result": {
+    "nodes": [
+        {
+           "nodeID": 1,
+		   "fipsDrives": "None",
+           "httpsEnabled": true
+        },
+        {
+           "nodeID": 3,
+		   "fipsDrives": "None",
+           "httpsEnabled": true
+        }
+    ],
+    "errorNodes": [
+        {
+           "nodeID": 2,
+           "error": {
+               "message": "The RPC timed out.",
+               "name": "xRpcTimeout"
+               }
+        }
+    ]
+    }
+}
+----
+
+
+== Novità dalla versione
+
+10,3

@@ -1,0 +1,43 @@
+---
+permalink: storage/task_intro_view_api_activity_in_real_time.html 
+sidebar: sidebar 
+keywords: solidfire api, element api, element os, element, viewing the API log, viewing API calls 
+summary: 'Il sistema Element utilizza l"API NetApp Element come base per le sue funzionalità e funzionalità. L"interfaccia utente di Element consente di visualizzare vari tipi di attività API in tempo reale sul sistema durante l"utilizzo dell"interfaccia. Con il log API, è possibile visualizzare l"attività API di sistema avviata dall"utente e in background, nonché le chiamate API effettuate nella pagina visualizzata.' 
+---
+= Visualizzare l'attività API
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il sistema Element utilizza l'API NetApp Element come base per le sue funzionalità e funzionalità. L'interfaccia utente di Element consente di visualizzare vari tipi di attività API in tempo reale sul sistema durante l'utilizzo dell'interfaccia. Con il log API, è possibile visualizzare l'attività API di sistema avviata dall'utente e in background, nonché le chiamate API effettuate nella pagina visualizzata.
+
+È possibile utilizzare il log API per identificare i metodi API utilizzati per determinate attività e vedere come utilizzare i metodi e gli oggetti API per creare applicazioni personalizzate.
+
+Per informazioni su ciascun metodo, vedere link:../api/index.html["Riferimento API di Element Software"].
+
+. Dalla barra di navigazione dell'interfaccia utente di Element, fare clic su *API Log*.
+. Per modificare il tipo di attività API visualizzata nella finestra API Log (Registro API), attenersi alla seguente procedura:
++
+.. Selezionare *Requests* per visualizzare il traffico delle richieste API.
+.. Selezionare *Responses* per visualizzare il traffico di risposta API.
+.. Filtrare i tipi di traffico API selezionando una delle seguenti opzioni:
++
+*** *Avviato dall'utente*: Traffico API dalle attività durante questa sessione dell'interfaccia utente Web.
+*** *Background polling*: Traffico API generato dall'attività di sistema in background.
+*** *Pagina corrente*: Traffico API generato dalle attività sulla pagina che si sta visualizzando.
+
+
+
+
+
+
+
+
+== Trova ulteriori informazioni
+
+* link:../api/index.html["Gestione dello storage con l'API Element"]
+* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
+

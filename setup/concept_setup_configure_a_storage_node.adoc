@@ -1,0 +1,106 @@
+---
+permalink: setup/concept_setup_configure_a_storage_node.html 
+sidebar: sidebar 
+keywords: configuring node,configure storage node,configuring using TUI,configuring using node UI 
+summary: 'È necessario configurare singoli nodi prima di aggiungerli a un cluster. Dopo aver installato e collegato un nodo in un"unità rack e averlo acceso, è possibile configurare le impostazioni di rete del nodo utilizzando l"interfaccia utente per nodo o l"interfaccia utente del terminale del nodo.' 
+---
+= Configurare un nodo di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È necessario configurare singoli nodi prima di aggiungerli a un cluster. Dopo aver installato e collegato un nodo in un'unità rack e averlo acceso, è possibile configurare le impostazioni di rete del nodo utilizzando l'interfaccia utente per nodo o l'interfaccia utente del terminale del nodo (TUI). Prima di procedere, assicurarsi di disporre delle informazioni di configurazione di rete necessarie per il nodo.
+
+Sono disponibili due opzioni per la configurazione dei nodi di storage:
+
+* <<Configurare un nodo di storage utilizzando l'interfaccia utente per nodo,UI per nodo>>: Utilizzare l'interfaccia utente per nodo (https://<node_management_IP>:442[]) per configurare le impostazioni di rete del nodo.
+* <<Configurare un nodo di storage utilizzando l'interfaccia telefonica utente (TUI),TUI>>: Utilizzare l'interfaccia utente del terminale del nodo (TUI) per configurare il nodo.
+
+
+Non è possibile aggiungere un nodo con indirizzi IP assegnati da DHCP a un cluster. È possibile utilizzare l'indirizzo IP DHCP per configurare inizialmente il nodo nell'interfaccia utente, nell'interfaccia telefonica utente o nell'API per nodo. Durante questa configurazione iniziale, è possibile aggiungere informazioni sull'indirizzo IP statico in modo da poter aggiungere il nodo a un cluster.
+
+Dopo la configurazione iniziale, è possibile accedere al nodo utilizzando l'indirizzo IP di gestione del nodo. È quindi possibile modificare le impostazioni del nodo, aggiungerle a un cluster o utilizzare il nodo per creare un cluster. È inoltre possibile configurare un nuovo nodo utilizzando i metodi API del software Element.
+
+
+NOTE: A partire dalla versione 11.0 di Element, i nodi possono essere configurati con indirizzi IPv4, IPv6 o entrambi per la propria rete di gestione. Questo vale sia per i nodi di storage che per i nodi di gestione, ad eccezione del nodo di gestione 11.3 e successivo che non supporta IPv6. Quando si crea un cluster, è possibile utilizzare un solo indirizzo IPv4 o IPv6 per MVIP e il tipo di indirizzo corrispondente deve essere configurato su tutti i nodi.
+
+
+
+== Configurare un nodo di storage utilizzando l'interfaccia utente per nodo
+
+È possibile configurare i nodi utilizzando l'interfaccia utente per nodo.
+
+.A proposito di questa attività
+* È possibile configurare il nodo in modo che disponga di un indirizzo IPv4 o IPv6.
+* Per accedere a un nodo, è necessario l'indirizzo DHCP visualizzato nell'interfaccia telefonica utente. Non è possibile utilizzare gli indirizzi DHCP per aggiungere un nodo a un cluster.
++
+
+IMPORTANT: È necessario configurare le interfacce di gestione (Bond1G) e storage (Bond10G) per sottoreti separate. Le interfacce Bond1G e Bond10G configurate per la stessa subnet causano problemi di routing quando il traffico di storage viene inviato tramite l'interfaccia Bond1G. Se è necessario utilizzare la stessa subnet per il traffico di gestione e storage, configurare manualmente il traffico di gestione per utilizzare l'interfaccia Bond10G. È possibile eseguire questa operazione per ciascun nodo utilizzando la pagina *Cluster Settings* dell'interfaccia utente per nodo.
+
+
+
+.Fasi
+. In una finestra del browser, inserire l'indirizzo IP DHCP di un nodo.
++
+È necessario aggiungere l'interno `:442` per accedere al nodo, ad esempio https://172.25.103.6:442[].
+
++
+Viene visualizzata la scheda *Network Settings* (Impostazioni di rete) con la sezione *Bond1G*.
+
+. Inserire le impostazioni di rete di gestione 1G.
+. Fare clic su *Applica modifiche*.
+. Fare clic su *Bond10G* per visualizzare le impostazioni della rete di storage 10G.
+. Inserire le impostazioni della rete di storage 10G.
+. Fare clic su *Applica modifiche*.
+. Fare clic su *Cluster Settings* (Impostazioni cluster).
+. Immettere il nome host per la rete 10G.
+. Inserire il nome del cluster.
++
+
+IMPORTANT: Questo nome deve essere aggiunto alla configurazione per tutti i nodi prima di poter creare un cluster. Tutti i nodi di un cluster devono avere nomi di cluster identici. I nomi dei cluster sono sensibili al maiuscolo/minuscolo.
+
+. Fare clic su *Applica modifiche*.
+
+
+
+
+== Configurare un nodo di storage utilizzando l'interfaccia telefonica utente (TUI)
+
+È possibile utilizzare l'interfaccia utente del terminale (TUI) per eseguire la configurazione iniziale per i nuovi nodi.
+
+Configurare le interfacce Bond1G (Management) e Bond10G (Storage) per sottoreti separate. Le interfacce Bond1G e Bond10G configurate per la stessa sottorete causano problemi di routing quando il traffico di storage viene inviato tramite l'interfaccia Bond1G. Se è necessario utilizzare la stessa subnet per il traffico di gestione e storage, configurare manualmente il traffico di gestione per utilizzare l'interfaccia Bond10G. È possibile eseguire questa operazione per ciascun nodo utilizzando la pagina *Cluster* > *Nodes* dell'interfaccia utente Element.
+
+.Fasi
+. Collegare una tastiera e un monitor al nodo, quindi accendere il nodo.
++
+Il menu principale dello storage NetApp dell'interfaccia telefonica utente viene visualizzato sul terminale tty1.
+
++
+
+NOTE: Se il nodo non riesce a raggiungere il server di configurazione, l'interfaccia telefonica utente visualizza un messaggio di errore. Verificare la connessione al server di configurazione o alla rete per risolvere l'errore.
+
+. Selezionare *Network* > *Network Config*.
++
+
+TIP: Per spostarsi all'interno del menu, premere i tasti freccia su o giù. Per passare a un altro pulsante o ai campi dei pulsanti, premere *Tab*. Per spostarsi tra i campi, utilizzare i tasti freccia su o giù.
+
+. Selezionare *Bond1G (Management)* o *Bond10G (Storage)* per configurare le impostazioni di rete 1G e 10G per il nodo.
+. Per i campi modalità Bond e Stato, premere *Tab* per selezionare il pulsante Help (Guida) e identificare le opzioni disponibili.
++
+Tutti i nodi di un cluster devono avere nomi di cluster identici. I nomi dei cluster sono sensibili al maiuscolo/minuscolo. Se sulla rete è in esecuzione un server DHCP con indirizzi IP disponibili, l'indirizzo 1GbE viene visualizzato nel campo Address (Indirizzo).
+
+. Premere *Tab* per selezionare il pulsante *OK* e salvare le modifiche.
++
+Il nodo viene messo in uno stato in sospeso e può essere aggiunto a un cluster esistente o a un nuovo cluster.
+
+
+
+
+
+== Trova ulteriori informazioni
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
+

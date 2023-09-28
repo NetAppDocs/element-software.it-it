@@ -1,0 +1,112 @@
+---
+permalink: api/reference_element_api_snapmirrornetworkinterface.html 
+sidebar: sidebar 
+keywords: object,objects,snapMirrorNetworkInterface 
+summary: 'L"oggetto snapMirrorNetworkInterface contiene informazioni sulle interfacce logiche dell"intercluster.' 
+---
+= SnapMirrorNetworkInterface
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto snapMirrorNetworkInterface contiene informazioni sulle interfacce logiche (LIF) dell'intercluster.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+AmministrativeStatus
+ a| 
+Se l'interfaccia logica (LIF) è attivata o disattivata a livello amministrativo. Valori possibili:
+
+* su
+* giù
+
+ a| 
+stringa
+
+
+
+ a| 
+SnapMirrorEndpointID
+ a| 
+L'ID del sistema ONTAP di destinazione.
+ a| 
+intero
+
+
+
+ a| 
+InterfaceName
+ a| 
+Il nome LIF.
+ a| 
+stringa
+
+
+
+ a| 
+NetworkAddress (Indirizzo di rete)
+ a| 
+L'indirizzo IP del LIF.
+ a| 
+stringa
+
+
+
+ a| 
+NetworkMask
+ a| 
+La maschera di rete del LIF.
+ a| 
+stringa
+
+
+
+ a| 
+InterfaceRole
+ a| 
+Il ruolo della LIF. Valori possibili:
+
+* non def
+* cluster
+* dati
+* node_mgmt
+* intercluster
+* cluster_mgmt
+
+ a| 
+stringa
+
+
+
+ a| 
+OperationalStatus (Stato operativo)
+ a| 
+Lo stato operativo del LIF (indipendentemente dal fatto che abbia stabilito o meno una connessione riuscita). Questo stato può differire dallo stato amministrativo se si verifica un problema di rete che impedisce il funzionamento dell'interfaccia. Valori possibili:
+
+* su
+* giù
+
+ a| 
+stringa
+
+
+
+ a| 
+VserverName
+ a| 
+Il nome del Vserver.
+ a| 
+stringa
+
+|===

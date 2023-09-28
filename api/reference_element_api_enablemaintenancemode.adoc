@@ -1,0 +1,176 @@
+---
+permalink: api/reference_element_api_enablemaintenancemode.html 
+sidebar: sidebar 
+keywords: maintenance,enable,mode 
+summary: È possibile utilizzare il metodo EnableMaintenanceMode per preparare un nodo di storage per la manutenzione. Gli scenari di manutenzione includono qualsiasi attività che richiede lo spegnimento o il riavvio del nodo. 
+---
+= EnableMaintenanceMode
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `EnableMaintenanceMode` metodo per preparare un nodo di storage per la manutenzione. Gli scenari di manutenzione includono qualsiasi attività che richiede lo spegnimento o il riavvio del nodo.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+ForceWithUnresolvedFaults
+ a| 
+Forzare l'attivazione della modalità di manutenzione per questo nodo anche in presenza di guasti del cluster di blocco.
+ a| 
+booleano
+ a| 
+Falso
+ a| 
+No
+
+
+
+ a| 
+nodi
+ a| 
+L'elenco degli ID del nodo da mettere in modalità di manutenzione. È supportato un solo nodo alla volta.
+ a| 
+array intero
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+PerMinutePrimarySwapLimit
+ a| 
+Il numero di strati primari da scambiare al minuto. Se non specificato, tutti gli strati primari verranno scambiati contemporaneamente.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+timeout
+ a| 
+Specifica per quanto tempo la modalità di manutenzione deve rimanere attivata prima che venga disattivata automaticamente. Formattato come stringa di tempo (ad esempio, HH:mm:ss). Se non specificato, la modalità di manutenzione rimane attivata fino a quando non viene disattivata esplicitamente.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo ha i seguenti valori restituiti:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+AsyncHandle
+ a| 
+È possibile utilizzare il metodo GetAsyncResult per recuperare questo asyncHandle e determinare quando la transizione della modalità di manutenzione è completa.
+ a| 
+intero
+
+
+
+ a| 
+CurrentMode
+ a| 
+Lo stato corrente della modalità di manutenzione del nodo. Valori possibili:
+
+* Disabled (Disattivato): Non è stata richiesta alcuna manutenzione.
+* FailedToRecover: Impossibile ripristinare il nodo dalla modalità di manutenzione.
+* RecoveringFromMaintenance: Il nodo è in fase di ripristino dalla modalità di manutenzione.
+* PreparingForMaintenance: Sono in corso azioni per preparare un nodo a eseguire la manutenzione.
+* ReadyForMaintenance: Il nodo è pronto per la manutenzione.
+
+ a| 
+MaintenanceMode (stringa)
+
+
+
+ a| 
+RequestedMode
+ a| 
+Lo stato della modalità di manutenzione richiesta del nodo. Valori possibili:
+
+* Disabled (Disattivato): Non è stata richiesta alcuna manutenzione.
+* FailedToRecover: Impossibile ripristinare il nodo dalla modalità di manutenzione.
+* RecoveringFromMaintenance: Il nodo è in fase di ripristino dalla modalità di manutenzione.
+* PreparingForMaintenance: Sono in corso azioni per preparare un nodo a eseguire la manutenzione.
+* ReadyForMaintenance: Il nodo è pronto per la manutenzione.
+
+ a| 
+MaintenanceMode (stringa)
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "method": "EnableMaintenanceMode",
+  "params": {
+    "forceWithUnresolvedFaults": False,
+    "nodes": [6],
+    "perMinutePrimarySwapLimit" : 40,
+    "timeout" : "01:00:05"
+  },
+"id": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+   "id": 1,
+   "result":
+      {
+        "requestedMode": "ReadyForMaintenance",
+        "asyncHandle": 1,
+        "currentMode": "Disabled"
+    }
+}
+----
+
+
+== Novità dalla versione
+
+12,2
+
+
+
+== Trova ulteriori informazioni
+
+http://docs.netapp.com/us-en/hci/docs/concept_hci_storage_maintenance_mode.html["Concetti relativi alla modalità di manutenzione dello storage NetApp HCI"^]

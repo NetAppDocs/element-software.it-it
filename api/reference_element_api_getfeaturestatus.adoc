@@ -1,0 +1,117 @@
+---
+permalink: api/reference_element_api_getfeaturestatus.html 
+sidebar: sidebar 
+keywords: feature,status,cluster,get,getting,getfeaturestatus 
+summary: È possibile utilizzare il metodo GetFeatureStatus per recuperare lo stato di una funzionalità del cluster. 
+---
+= GetFeatureStatus
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `GetFeatureStatus` metodo per recuperare lo stato di una funzione del cluster.
+
+
+
+== Parametro
+
+Questo metodo ha il seguente parametro di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+funzione
+ a| 
+Lo stato di una funzione del cluster. Se non viene fornito alcun valore, il sistema restituisce lo stato di tutte le funzioni. Valori possibili:
+
+* Vvols: Recuperare lo stato della funzione cluster VVols.
+* SnapMirror: Recuperare lo stato della funzione del cluster di replica di SnapMirror.
+* FIPS: Recuperare lo stato della crittografia FIPS 140-2 per la funzione di comunicazione HTTPS.
+* FipsDrives: Recupera lo stato della funzione di crittografia del disco FIPS 140-2.
+
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+|===
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+caratteristiche
+ a| 
+Matrice di oggetti feature che indica il nome della feature e il relativo stato. Membri dell'oggetto:
+
+* Feature (funzione): (Stringa) il nome della funzione.
+* Enabled (attivato): (booleano) se la funzione è attivata o meno.
+
+ a| 
+Array di oggetti JSON
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "method": "GetFeatureStatus",
+    "params": {
+    },
+    "id": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+    "id": 1,
+    "result": {
+        "features": [
+            {
+                "enabled": true,
+                "feature": "Vvols"
+            },
+            {
+                "enabled": true,
+                "feature": "SnapMirror"
+            },
+            {
+                "enabled": true,
+                "feature": "Fips"
+            },
+            {
+                "enabled": true,
+                "feature": "FipsDrives"
+            }
+        ]
+    }
+}
+----
+
+
+== Novità dalla versione
+
+9,6

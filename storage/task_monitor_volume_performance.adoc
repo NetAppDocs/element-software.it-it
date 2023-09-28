@@ -1,0 +1,36 @@
+---
+permalink: storage/task_monitor_volume_performance.html 
+sidebar: sidebar 
+keywords: volume performance, view, view alerts 
+summary: 'È possibile visualizzare informazioni dettagliate sulle performance per tutti i volumi nel cluster. È possibile ordinare le informazioni in base all"ID del volume o a una delle colonne delle prestazioni. È inoltre possibile utilizzare il filtro per le informazioni in base a determinati criteri.' 
+---
+= Visualizza le performance dei volumi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile visualizzare informazioni dettagliate sulle performance per tutti i volumi nel cluster. È possibile ordinare le informazioni in base all'ID del volume o a una delle colonne delle prestazioni. È inoltre possibile utilizzare il filtro per le informazioni in base a determinati criteri.
+
+È possibile modificare la frequenza con cui il sistema aggiorna le informazioni sulle prestazioni nella pagina facendo clic sull'elenco *Refresh Every* (Aggiorna ogni) e scegliendo un valore diverso. L'intervallo di refresh predefinito è 10 secondi se il cluster ha meno di 1000 volumi; in caso contrario, l'intervallo predefinito è 60 secondi. Se si sceglie il valore mai, l'aggiornamento automatico della pagina viene disattivato.
+
+È possibile riattivare l'aggiornamento automatico facendo clic su *attiva l'aggiornamento automatico*.
+
+. Nell'interfaccia utente di Element, selezionare *Reporting* > *Volume Performance*.
+. Nell'elenco dei volumi, fare clic sull'icona Actions (azioni) per un volume.
+. Fare clic su *View Details* (Visualizza dettagli).
++
+Nella parte inferiore della pagina viene visualizzato un vassoio contenente informazioni generali sul volume.
+
+. Per visualizzare informazioni più dettagliate sul volume, fare clic su *Vedi ulteriori dettagli*.
++
+Il sistema visualizza informazioni dettagliate e grafici delle prestazioni per il volume.
+
+
+
+
+
+== Trova ulteriori informazioni
+
+xref:reference_monitor_volume_performance_details.adoc[Dettagli sulle performance dei volumi]

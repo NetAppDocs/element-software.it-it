@@ -1,0 +1,127 @@
+---
+permalink: hardware/task_sfseries_chassisrepl.html 
+sidebar: sidebar 
+keywords: solidfire chassis, chassis replacement, sf-series nodes 
+summary: 'Potrebbe essere necessario sostituire lo chassis se la ventola, l"unità di elaborazione centrale (CPU) o il modulo DIMM (Dual Inline Memory Module) si guasta o se si verificano problemi di surriscaldamento o problemi durante il processo di avvio. I guasti del cluster nell"interfaccia utente del software NetApp Element e la spia ambra lampeggiante nella parte anteriore dello chassis indicano una possibile necessità di sostituzione dello chassis. Prima di procedere, contatta il supporto NetApp.' 
+---
+= Sostituire uno chassis
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Potrebbe essere necessario sostituire lo chassis se la ventola, l'unità di elaborazione centrale (CPU) o il modulo DIMM (Dual Inline Memory Module) si guasta o se si verificano problemi di surriscaldamento o problemi durante il processo di avvio. I guasti del cluster nell'interfaccia utente del software NetApp Element e la spia ambra lampeggiante nella parte anteriore dello chassis indicano una possibile necessità di sostituzione dello chassis. Prima di procedere, contatta il supporto NetApp.
+
+.Di cosa hai bisogno
+* Hai contattato il supporto NetApp.
++
+Se si sta ordinando un prodotto sostitutivo, è necessario aprire un caso con il supporto NetApp.
+
+* Hai ottenuto lo chassis sostitutivo.
+* Si dispone di un braccialetto per le scariche elettrostatiche (ESD) o di un'altra protezione antistatica.
+* Se è necessario eseguire la procedura di ripristino dell'immagine di fabbrica (RTFI), è stata ottenuta la chiave USB.
++
+Il supporto NetApp ti aiuterà a decidere se RTFI è necessario. Vedere https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/NetApp_HCI/How_to_create_an_RTFI_key_to_re-image_a_SolidFire_storage_node["Questo articolo della Knowledge base (accesso richiesto)"].
+
+* Si dispone di una tastiera e di un monitor.
+
+
+.A proposito di questa attività
+Le istruzioni contenute in questo documento si applicano se si dispone di uno chassis con un'unità rack (1U) con uno dei seguenti nodi:
+
+* SF2405
+* SF4805
+* SF9605
+* SF9608
+* SF19210
+* SF38410
+* SF-FCN-01
+* FC0025
+
+
+[NOTE]
+====
+A seconda della versione del software Element in uso, i seguenti nodi non sono supportati:
+
+* A partire dai nodi storage Element 12,7, SF2405 e SF9608 e dai nodi FC FC0025 e SF-FCN-01.
+* A partire dai nodi storage di 12,0, SF3010, SF6010 e SF9010 elementi.
+
+
+====
+.Fasi
+. Individuare il codice di matricola dello chassis guasto e verificare che il numero di serie corrisponda al numero riportato sul caso aperto presso il supporto NetApp al momento dell'ordine del prodotto sostitutivo.
++
+È possibile individuare il codice di matricola dalla parte anteriore dello chassis.
+
++
+La figura seguente è un esempio del codice di matricola:
+
++
+image::../media/sf_series_chassis_service_tag.gif[Questa figura mostra il codice di matricola in uno chassis SolidFire.]
+
++
+
+NOTE: La figura precedente è un esempio. La posizione esatta del codice di matricola può variare a seconda del modello di hardware in uso.
+
+. Collegare la tastiera e il monitor al retro dello chassis guasto.
+. Verificare le informazioni sullo chassis con il supporto NetApp.
+. Spegnere lo chassis.
+. Etichettare le unità nella parte anteriore dello chassis e i cavi nella parte posteriore.
++
+
+NOTE: I nodi Fibre Channel non dispongono di unità nella parte anteriore.
+
+. Rimuovere i cavi e le unità di alimentazione.
+. Rimuovere le unità con cautela e posizionarle su una superficie piana e antistatica.
++
+
+NOTE: Se si dispone di un nodo Fibre Channel, è possibile saltare questo passaggio.
+
+. Rimuovere lo chassis premendo il fermo o svitando la vite a testa zigrinata, a seconda del modello di hardware in uso.
++
+È necessario imballare e restituire lo chassis guasto a NetApp.
+
+. *Opzionale*: Rimuovere le guide e installare le nuove guide fornite con il telaio sostitutivo.
++
+È possibile scegliere di riutilizzare le guide esistenti. Se si stanno riutilizzando le guide esistenti, è possibile saltare questo passaggio.
+
+. Far scorrere il telaio sostitutivo sulle guide.
+. Per i nodi di storage, inserire le unità dallo chassis guasto allo chassis sostitutivo.
++
+
+NOTE: Inserire le unità negli stessi slot dello chassis guasto.
+
+. Installare le unità di alimentazione.
+. Inserire i cavi dell'alimentatore e i cavi da 1 GbE e 10 GbE nelle porte originali.
++
+I ricetrasmettitori SFP (Small Form-factor Pluggable) potrebbero essere inseriti nelle porte 10 GbE dello chassis sostitutivo. Rimuoverli prima di collegare via cavo le porte 10GbE.
+
+. Se si è stabilito che non è necessario eseguire il processo RTFI sul nodo, avviare il nodo e attendere la visualizzazione dell'interfaccia utente del terminale (TUI). Passare al punto 16 e consentire al cluster di ricreare l'immagine del nodo automaticamente quando viene aggiunto utilizzando l'interfaccia utente.
+. *Opzionale*: Se il supporto NetApp consiglia di ricreare l'imaging del nodo con una chiave USB, eseguire i seguenti passaggi secondari:
++
+.. Accendere lo chassis. Viene avviato con l'immagine chiave RTFI.
+.. Al primo prompt, digitare *Y* per visualizzare l'immagine del nodo di storage.
+.. Al secondo prompt, digitare *N* per i controlli dello stato dell'hardware.
++
+Se lo script RTFI rileva un problema con un componente hardware, viene visualizzato un errore nella console. Se viene visualizzato un errore, contattare il supporto NetApp. Al termine del processo RTFI, il nodo si spegne.
+
+.. Rimuovere la chiave USB dallo slot USB.
+.. Avviare il nodo appena sottoposto a imaging e attendere la visualizzazione dell'interfaccia telefonica utente (TUI).
+
+
+. Configurare le informazioni di rete e del cluster dall'interfaccia telefonica utente (TUI).
++
+Puoi contattare il supporto NetApp per assistenza.
+
+. Aggiungere il nuovo nodo al cluster utilizzando la TUI del cluster.
+. Imballare e restituire lo chassis guasto.
+
+
+
+
+== Trova ulteriori informazioni
+
+* https://www.netapp.com/data-storage/solidfire/documentation/["Pagina delle risorse NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Documentazione per le versioni precedenti dei prodotti SolidFire ed Element di NetApp"^]
+

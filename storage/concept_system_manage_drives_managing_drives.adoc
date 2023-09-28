@@ -1,0 +1,22 @@
+---
+permalink: storage/concept_system_manage_drives_managing_drives.html 
+sidebar: sidebar 
+keywords: drives, manage, cluster, element ui, remove drives 
+summary: 'Ogni nodo contiene uno o più dischi fisici utilizzati per memorizzare una parte dei dati per il cluster. Il cluster utilizza la capacità e le prestazioni del disco dopo che il disco è stato aggiunto correttamente a un cluster. È possibile utilizzare l"interfaccia utente Element per gestire i dischi.' 
+---
+= Gestire i dischi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ogni nodo contiene uno o più dischi fisici utilizzati per memorizzare una parte dei dati per il cluster. Il cluster utilizza la capacità e le prestazioni del disco dopo che il disco è stato aggiunto correttamente a un cluster. È possibile utilizzare l'interfaccia utente Element per gestire i dischi.
+
+
+
+== Per ulteriori informazioni
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
+

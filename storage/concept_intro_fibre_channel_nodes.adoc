@@ -1,0 +1,22 @@
+---
+permalink: storage/concept_intro_fibre_channel_nodes.html 
+sidebar: sidebar 
+keywords: fibre channel nodes, fibre channel switch, clients, protcols, iSCSi protocols, clusters, interconnections, fc, FC, connectivity, fibre channel connectivity, fibre channel nodes, fibre channel protocol 
+summary: I nodi Fibre Channel SolidFire forniscono connettività a uno switch Fibre Channel, che è possibile collegare ai client Fibre Channel. I nodi Fibre Channel fungono da convertitore di protocollo tra i protocolli Fibre Channel e iSCSI, consentendo di aggiungere connettività Fibre Channel a qualsiasi cluster SolidFire nuovo o esistente. 
+---
+= Nodi Fibre Channel
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+I nodi Fibre Channel SolidFire forniscono connettività a uno switch Fibre Channel, che è possibile collegare ai client Fibre Channel. I nodi Fibre Channel fungono da convertitore di protocollo tra i protocolli Fibre Channel e iSCSI, consentendo di aggiungere connettività Fibre Channel a qualsiasi cluster SolidFire nuovo o esistente.
+
+I nodi Fibre Channel hanno le seguenti caratteristiche:
+
+* Gli switch Fibre Channel gestiscono lo stato del fabric, fornendo interconnessioni ottimizzate.
+* Il traffico tra due porte passa solo attraverso gli switch e non viene trasmesso ad altre porte.
+* Il guasto di una porta è isolato e non influisce sul funzionamento di altre porte.
+* Più coppie di porte possono comunicare contemporaneamente in un fabric.
+

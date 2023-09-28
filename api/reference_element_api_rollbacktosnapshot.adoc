@@ -1,0 +1,202 @@
+---
+permalink: api/reference_element_api_rollbacktosnapshot.html 
+sidebar: sidebar 
+keywords: rollbacktosnapshot,snapshot,creating,create,roll,back,rollback,roll back,existing 
+summary: 'È possibile utilizzare il metodo RollbackToSnapshot per creare uno snapshot esistente dell"immagine del volume attivo. Questo metodo crea un nuovo snapshot da uno snapshot esistente.' 
+---
+= RollbackToSnapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `RollbackToSnapshot` metodo per creare un'istantanea esistente dell'immagine del volume attivo. Questo metodo crea un nuovo snapshot da uno snapshot esistente.
+
+Il nuovo snapshot diventa attivo e lo snapshot esistente viene conservato fino a quando non viene eliminato manualmente. Lo snapshot precedentemente attivo viene cancellato a meno che non si imposta il parametro saveCurrentState su true.
+
+*CLUSTER_FULLNESS*
+
+[NOTE]
+====
+* È possibile creare snapshot se la completezza del cluster è nella fase 1, 2 o 3. Non è possibile creare snapshot quando la pienezza del cluster raggiunge la fase 4 o 5.
+* Il rollback di un volume a uno snapshot potrebbe non riuscire quando è in corso la sincronizzazione delle sezioni. Riprovare `RollbackToSnapshot` al termine della sincronizzazione.
+
+
+====
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+ID volume
+ a| 
+VolumeID per il volume.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+attributi
+ a| 
+Elenco delle coppie nome-valore nel formato oggetto JSON.
+ a| 
+Attributi JSON
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+nome
+ a| 
+Nome dello snapshot. Se non viene fornito alcun nome, il nome dello snapshot di cui viene eseguito il rollback viene utilizzato con "- copy" aggiunto alla fine del nome.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+SnapshotID
+ a| 
+ID di uno snapshot creato in precedenza sul volume specificato.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+SaveCurrentState
+ a| 
+Consente di specificare se salvare o meno l'immagine del volume attivo precedente. Valori validi:
+
+* True (vero): Viene mantenuta l'immagine del volume attivo precedente.
+* Falso: L'immagine del volume attivo precedente viene eliminata.
+
+ a| 
+booleano
+ a| 
+falso
+ a| 
+No
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo ha i seguenti valori restituiti:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+checksum
+ a| 
+Una piccola rappresentazione a stringa dei dati nello snapshot memorizzato.
+ a| 
+stringa
+
+
+
+ a| 
+SnapshotID
+ a| 
+Se saveCurrentState è stato impostato su false, questo valore è nullo.
+
+Se saveCurrentState è stato impostato su true, l'ID univoco dello snapshot appena creato.
+ a| 
+intero
+
+
+
+ a| 
+snapshot
+ a| 
+Se saveCurrentState è stato impostato su false, questo valore è nullo.
+
+Se saveCurrentState è stato impostato su true, un oggetto contenente informazioni sullo snapshot appena creato.
+ a| 
+xref:reference_element_api_snapshot.adoc[snapshot]
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+ "method": "RollbackToSnapshot",
+ "params": {
+    "volumeID": 1,
+    "snapshotID": 3114,
+    "saveCurrentState": true
+  },
+  "id": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "checksum": "0x0",
+    "snapshot": {
+      "attributes": {},
+      "checksum": "0x0",
+      "createTime": "2016-04-04T17:27:32Z",
+      "enableRemoteReplication": false,
+      "expirationReason": "None",
+      "expirationTime": null,
+      "groupID": 0,
+      "groupSnapshotUUID": "00000000-0000-0000-0000-000000000000",
+      "name": "test1-copy",
+      "snapshotID": 1,
+      "snapshotUUID": "30d7e3fe-0570-4d94-a8d5-3cc8097a6bfb",
+      "status": "done",
+      "totalSize": 5000658944,
+      "virtualVolumeID": null,
+      "volumeID": 1
+    },
+    "snapshotID": 1
+  }
+}
+----
+
+
+== Novità dalla versione
+
+9,6

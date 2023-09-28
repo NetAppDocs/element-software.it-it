@@ -1,0 +1,28 @@
+---
+permalink: storage/task_data_protection_delete_a_group_snapshot.html 
+sidebar: sidebar 
+keywords: group snapshot, delete 
+summary: 'È possibile eliminare un"istantanea di gruppo dal sistema. Quando si elimina lo snapshot di gruppo, è possibile scegliere se tutte le snapshot associate al gruppo vengono eliminate o conservate come singole istantanee.' 
+---
+= Eliminazione di uno snapshot di gruppo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile eliminare un'istantanea di gruppo dal sistema. Quando si elimina lo snapshot di gruppo, è possibile scegliere se tutte le snapshot associate al gruppo vengono eliminate o conservate come singole istantanee.
+
+Se si elimina un volume o uno snapshot membro di uno snapshot di gruppo, non è più possibile eseguire il rollback allo snapshot di gruppo. Tuttavia, è possibile eseguire il rollback di ciascun volume singolarmente.
+
+. Fare clic su *Data Protection* > *Group Snapshot*.
+. Fare clic sull'icona Actions (azioni) per lo snapshot che si desidera eliminare.
+. Nel menu visualizzato, fare clic su *Delete* (Elimina).
+. Selezionare una delle seguenti opzioni nella finestra di dialogo di conferma:
++
+** Fare clic su *Delete group snapshot AND all group snapshot members* (Elimina snapshot di gruppo E tutti i membri dello snapshot di gruppo) per eliminare lo snapshot di gruppo e tutti gli snapshot dei membri.
+** Fare clic su *Mantieni membri snapshot di gruppo come singole snapshot* per eliminare lo snapshot di gruppo ma conservare tutti gli snapshot dei membri.
+
+
+. Confermare l'azione.
+

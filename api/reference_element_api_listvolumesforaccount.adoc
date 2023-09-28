@@ -1,0 +1,145 @@
+---
+permalink: api/reference_element_api_listvolumesforaccount.html 
+sidebar: sidebar 
+keywords: volume,volumes,list,listing,account,active,pending,deleted,listvolumesforaccount 
+summary: È possibile utilizzare il metodo ListVolumesForAccount per elencare i volumi attivi e cancellati per un account. 
+---
+= ListVolumesForAccount
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `ListVolumesForAccount` metodo per elencare i volumi attivi e (in sospeso) cancellati per un account.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+Include VirtualVolumes
+ a| 
+I volumi virtuali sono inclusi nella risposta per impostazione predefinita. Per escludere i volumi virtuali, impostare su false.
+ a| 
+booleano
+ a| 
+vero
+ a| 
+No
+
+
+
+ a| 
+ID account
+ a| 
+Vengono restituiti tutti i volumi di proprietà di questo ID account.
+ a| 
+intero
+ a| 
+No
+ a| 
+Sì
+
+|===
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+volumi
+ a| 
+Elenco delle informazioni sul volume.
+ a| 
+xref:reference_element_api_volume.adoc[volume] array
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+   "method": "ListVolumesForAccount",
+   "params": {
+      "accountID"  : 1
+   },
+   "id" : 1
+}
+----
+
+
+== Esempio di risposta
+
+Le risposte per questo metodo sono simili al seguente esempio:
+
+[listing]
+----
+{
+    "id": 1,
+    "result": {
+        "volumes": [
+            {
+                "access": "readWrite",
+                "accountID": 1,
+                "attributes": {},
+                "blockSize": 4096,
+                "createTime": "2018-07-22T16:15:25Z",
+                "deleteTime": "",
+                "enable512e": false,
+                "iqn": "iqn.2010-01.com.solidfire:0oto.test1.25",
+                "name": "test1",
+                "purgeTime": "",
+                "qos": {
+                    "burstIOPS": 15000,
+                    "burstTime": 60,
+                    "curve": {
+                        "4096": 100,
+                        "8192": 160,
+                        "16384": 270,
+                        "32768": 500,
+                        "65536": 1000,
+                        "131072": 1950,
+                        "262144": 3900,
+                        "524288": 7600,
+                        "1048576": 15000
+                    },
+                    "maxIOPS": 15000,
+                    "minIOPS": 50
+                },
+                "scsiEUIDeviceID": "306f746f00000019f47acc0100000000",
+                "scsiNAADeviceID": "6f47acc100000000306f746f00000019",
+                "sliceCount": 1,
+                "status": "active",
+                "totalSize": 1000341504,
+                "virtualVolumeID": null,
+                "volumeAccessGroups": [],
+                "volumeID": 25,
+                "volumePairs": []
+            }
+        ]
+    }
+}
+----
+
+
+== Novità dalla versione
+
+9,6

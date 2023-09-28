@@ -1,0 +1,78 @@
+---
+permalink: api/reference_element_api_snapmirrorendpoint.html 
+sidebar: sidebar 
+keywords: object,objects,snapMirrorEndpoint 
+summary: 'L"oggetto SnapMirrorEndpoint contiene informazioni sui sistemi storage SnapMirror remoti che comunicano con il cluster storage Element. È possibile recuperare queste informazioni con il metodo API ListSnapMirrorEndpoints.' 
+---
+= SnapMirrorEndpoint
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto SnapMirrorEndpoint contiene informazioni sui sistemi storage SnapMirror remoti che comunicano con il cluster storage Element. È possibile recuperare queste informazioni con il metodo API ListSnapMirrorEndpoints.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+SnapMirrorEndpointID
+ a| 
+Identificatore univoco dell'oggetto nel cluster locale.
+ a| 
+intero
+
+
+
+ a| 
+IP gestioneIP
+ a| 
+L'indirizzo IP di gestione del cluster dell'endpoint.
+ a| 
+stringa
+
+
+
+ a| 
+Nome cluster
+ a| 
+Il nome del cluster ONTAP. Questo valore viene compilato automaticamente con il valore "`clusterName`" dall'oggetto snapMirrorClusterIdentity.
+ a| 
+stringa
+
+
+
+ a| 
+nome utente
+ a| 
+Il nome utente di gestione per il sistema ONTAP.
+ a| 
+stringa
+
+
+
+ a| 
+Indirizzi ipAddresses
+ a| 
+Elenco degli indirizzi IP dello storage tra cluster per tutti i nodi nel cluster. È possibile ottenere questi indirizzi IP con il metodo ListSnapMirrorNetworkInterfaces.
+ a| 
+array di stringhe
+
+
+
+ a| 
+Isconnected (connesso)
+ a| 
+Lo stato di connettività del collegamento di controllo al cluster ONTAP.
+ a| 
+booleano
+
+|===

@@ -1,0 +1,33 @@
+---
+permalink: storage/task_system_manage_virtual_enable_virtual_routing_and_forwarding.html 
+sidebar: sidebar 
+keywords: virtual routing, forwarding, enable, vrf, storage networks, create a vlan 
+summary: 'È possibile attivare il routing e l"inoltro virtuale (VRF), che consente a più istanze di una tabella di routing di esistere in un router e funzionare contemporaneamente. Questa funzionalità è disponibile solo per le reti di storage.' 
+---
+= Abilitare il routing e l'inoltro virtuale
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile attivare il routing e l'inoltro virtuale (VRF), che consente a più istanze di una tabella di routing di esistere in un router e di lavorare contemporaneamente. Questa funzionalità è disponibile solo per le reti di storage.
+
+È possibile attivare VRF solo al momento della creazione di una VLAN. Se si desidera tornare a non VRF, è necessario eliminare e ricreare la VLAN.
+
+. Fare clic su *Cluster* > *Network*.
+. Per attivare VRF su una nuova VLAN, selezionare *Create VLAN* (Crea VLAN).
++
+.. Inserire le informazioni pertinenti per la nuova VRF/VLAN. Vedere aggiunta di una rete virtuale.
+.. Selezionare la casella di controllo *Enable VRF* (attiva VRF*).
+.. *Opzionale*: Inserire un gateway.
+
+
+. Fare clic su *Create VLAN* (Crea VLAN).
+
+
+
+
+== Trova ulteriori informazioni
+
+xref:task_system_manage_virtual_add_a_virtual_network.adoc[Aggiungere una rete virtuale]

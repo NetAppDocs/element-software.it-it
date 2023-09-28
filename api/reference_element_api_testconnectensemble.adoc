@@ -1,0 +1,90 @@
+---
+permalink: api/reference_element_api_testconnectensemble.html 
+sidebar: sidebar 
+keywords: test,testing,connectivity,ensemble,testconnectensemble 
+summary: 'È possibile utilizzare il metodo TestConnectEnsemble per verificare la connettività con un insieme di database specificato. Per impostazione predefinita, utilizza l"insieme per il cluster a cui è associato il nodo. In alternativa, è possibile fornire un gruppo diverso per testare la connettività.' 
+---
+= TestConnectEnsemble
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `TestConnectEnsemble` metodo per verificare la connettività con un insieme di database specificato. Per impostazione predefinita, utilizza l'insieme per il cluster a cui è associato il nodo. In alternativa, è possibile fornire un gruppo diverso per testare la connettività.
+
+
+
+== Parametri
+
+Questo metodo ha il seguente parametro di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+| ensemble | Un elenco separato da virgole di indirizzi IP del cluster di nodi ensemble per il test di connettività. | stringa | Nessuno | No 
+|===
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+| dettagli  a| 
+Oggetti restituiti:
+
+* `nodes`: (Oggetto) un elenco di ciascun nodo dell'ensemble nel test e dei risultati dei test.
+* `duration`: (String) il tempo necessario per eseguire il test.
+* `result`: (String) i risultati dell'intero test.
+
+| Oggetto JSON 
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "method": "TestConnectEnsemble",
+  "params": {},
+  "id": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+   "id": 1,
+   "result": {
+      "details": {
+         "nodes":  {
+            "1:10.10.20.70": "Passed",
+            "2:10.10.20.71": "Passed",
+            "3:10.10.20.72": "Passed",
+            "4:10.10.20.73": "Passed",
+            "5:10.10.20.74": "Passed"
+        }
+      },
+        "duration": "00:00:00:756072",
+        "result": "Passed"
+   }
+}
+----
+
+
+== Novità dalla versione
+
+9,6

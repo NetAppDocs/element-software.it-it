@@ -1,0 +1,34 @@
+---
+permalink: storage/task_system_manage_fips_troubleshoot_the_fips_drive_feature.html 
+sidebar: sidebar 
+keywords: fips, security, federal information processing standards, 140-2 
+summary: 'Utilizzando l"interfaccia utente del software NetApp Element, è possibile visualizzare avvisi per informazioni su errori o guasti del cluster nel sistema correlati alla funzione dischi FIPS.' 
+---
+= Risolvere i problemi relativi alla funzione del disco FIPS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Utilizzando l'interfaccia utente del software NetApp Element, è possibile visualizzare avvisi per informazioni su errori o guasti del cluster nel sistema correlati alla funzione dischi FIPS.
+
+. Utilizzando l'interfaccia utente di Element, selezionare *Reporting* > *Alerts*.
+. Individuare eventuali guasti del cluster, tra cui:
++
+** Dischi FIPS non corrispondenti
+** FIPS non rispetta la conformità
+
+
+. Per suggerimenti sulla risoluzione, vedere informazioni sul codice di errore del cluster.
+
+
+
+
+== Trova ulteriori informazioni
+
+* xref:reference_monitor_cluster_fault_codes.adoc[Codici di guasto del cluster]
+* link:../api/index.html["Gestire lo storage con l'API Element"]
+* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
+

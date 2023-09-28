@@ -1,0 +1,69 @@
+---
+permalink: api/reference_element_api_keyproviderkmip.html 
+sidebar: sidebar 
+keywords: key provider,KMIP,keys 
+summary: 'L"oggetto keyProviderKmip descrive un provider di chiavi KMIP (Key Management Interoperability Protocol). Un provider di chiavi è sia un meccanismo che un percorso per recuperare le chiavi di autenticazione da utilizzare con le funzionalità del cluster, come la crittografia a riposo.' 
+---
+= KeyProviderKmip
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto keyProviderKmip descrive un provider di chiavi KMIP (Key Management Interoperability Protocol). Un provider di chiavi è sia un meccanismo che un percorso per recuperare le chiavi di autenticazione da utilizzare con le funzionalità del cluster, come la crittografia a riposo.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+KeyProviderID
+ a| 
+L'ID del provider della chiave KMIP. Si tratta di un valore univoco assegnato dal cluster durante la creazione del provider di chiavi che non può essere modificato.
+ a| 
+intero
+
+
+
+ a| 
+KeyProviderIsActive
+ a| 
+True se il provider della chiave KMIP è attivo. Un provider viene considerato attivo se sono presenti chiavi in sospeso che sono state create ma non ancora eliminate e quindi si presume che siano ancora in uso.
+ a| 
+booleano
+
+
+
+ a| 
+KeyProviderName
+ a| 
+Il nome del provider della chiave KMIP.
+ a| 
+stringa
+
+
+
+ a| 
+KeyServerID
+ a| 
+ID del server delle chiavi associato a questo provider. Il server deve essere aggiunto prima che questo provider possa attivarsi. Impossibile rimuovere il server mentre questo provider è attivo. Per ciascun provider è supportato un solo ID server.
+ a| 
+array intero
+
+
+
+ a| 
+KmipCapabilities
+ a| 
+Le funzionalità di questo provider di chiavi KMIP, tra cui dettagli sulla libreria sottostante, conformità FIPS, provider SSL, ecc.
+ a| 
+stringa
+
+|===

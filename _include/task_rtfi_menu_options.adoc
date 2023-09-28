@@ -1,0 +1,98 @@
+= Caricare i registri
+:allow-uri-read: 
+
+
+Il seguente menu di opzioni viene visualizzato se il processo RTFI non riesce o se si sceglie di non procedere al prompt iniziale del processo RTFI.
+
+image::../media/rtfi_menu_options.PNG[Opzioni del menu RTFI SolidFire]
+
+
+NOTE: Contattare il supporto NetApp prima di utilizzare una delle seguenti opzioni di comando.
+
+[cols="25,75"]
+|===
+| Opzione | Descrizione 
+
+
+| Riavviare | Chiude il processo RTFI e riavvia il nodo nello stato corrente. Non viene eseguita alcuna pulizia. 
+
+
+| Spegnimento | Spegne correttamente il nodo nello stato corrente. Non viene eseguita alcuna pulizia. 
+
+
+| Esci | Chiude il processo RTFI e apre un prompt dei comandi. 
+
+
+| UploadLogs | Raccoglie tutti i log del sistema e carica un singolo archivio di log consolidato in un URL specificato. 
+|===
+
+
+== Caricare i registri
+
+Raccogliere tutti i registri sul sistema e caricarli su un URL specificato in base alla procedura seguente.
+
+.Fasi
+. Al prompt del menu delle opzioni RTFI, immettere *UploadLogs*.
+. Inserire le informazioni della directory remota:
++
+.. Digitare un URL che includa il protocollo. Ad esempio: `\ftp://,scp://,http://,orhttps://`.
+.. (Facoltativo) aggiungere un nome utente e una password incorporati. Ad esempio: `scp://user:password@URLaddress.com`.
++
+
+NOTE: Per una gamma completa di opzioni di sintassi, vedere https://curl.se/docs/manpage.html["Arricciatura"^] manuale dell'utente.
+
++
+Il file di log viene caricato e salvato nella directory specificata come `.tbz2` archiviare.
+
+
+
+
+
+
+
+== Utilizzare il tunnel di supporto
+
+Se hai bisogno di supporto tecnico per il tuo sistema NetApp HCI o per il sistema storage all-flash SolidFire, il supporto NetApp può connetterti in remoto con il tuo sistema. Per avviare una sessione e ottenere l'accesso remoto, il supporto NetApp può aprire una connessione Secure Shell (SSH) inversa al proprio ambiente.
+
+Con il supporto NetApp è possibile aprire una porta TCP per una connessione a tunnel inverso SSH. Questa connessione consente al supporto NetApp di accedere al nodo di gestione.
+
+.Prima di iniziare
+* Per i servizi di gestione 2.18 e versioni successive, la funzionalità di accesso remoto è disattivata per impostazione predefinita nel nodo di gestione. Per attivare la funzionalità di accesso remoto, vedere https://docs.netapp.com/us-en/element-software/mnode/task_mnode_ssh_management.html["Gestire la funzionalità SSH sul nodo di gestione"].
+* Se il nodo di gestione si trova dietro un server proxy, nel file sshd.config sono necessarie le seguenti porte TCP:
++
+[cols="15,25,60"]
+|===
+| Porta TCP | Descrizione | Direzione di connessione 
+
+
+| 443 | Chiamate API/HTTPS per l'inoltro inverso delle porte all'interfaccia utente Web tramite tunnel di supporto aperto | Nodo di gestione ai nodi di storage 
+
+
+| 22 | Accesso SSH | Nodo di gestione per nodi di storage o da nodi di storage a nodi di gestione 
+|===
+
+
+.Fasi
+* Accedere al nodo di gestione e aprire una sessione terminale.
+* Quando richiesto, immettere quanto segue:
++
+`rst -r  sfsupport.solidfire.com -u element -p <port_number>`
+
+* Per chiudere il tunnel di supporto remoto, immettere quanto segue:
++
+`rst --killall`
+
+* (Facoltativo) Disattiva https://docs.netapp.com/us-en/element-software/mnode/task_mnode_ssh_management.html["funzionalità di accesso remoto"] di nuovo.
++
+
+NOTE: SSH rimane attivato sul nodo di gestione se non viene disattivato. La configurazione abilitata SSH persiste sul nodo di gestione tramite aggiornamenti e aggiornamenti fino a quando non viene disattivata manualmente.
+
+
+
+
+
+== Trova ulteriori informazioni
+
+* https://www.netapp.com/data-storage/solidfire/documentation/["Pagina delle risorse NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Documentazione per le versioni precedenti dei prodotti SolidFire ed Element di NetApp"^]
+

@@ -1,0 +1,51 @@
+---
+permalink: storage/task_data_manage_volumes_purge_a_volume.html 
+sidebar: sidebar 
+keywords: volumes, purge a volume 
+summary: Quando un volume viene eliminato, viene rimosso in modo permanente dal sistema. Tutti i dati nel volume vengono persi. 
+---
+= Eliminare un volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando un volume viene eliminato, viene rimosso in modo permanente dal sistema. Tutti i dati nel volume vengono persi.
+
+Il sistema elimina automaticamente i volumi cancellati otto ore dopo l'eliminazione. Tuttavia, se si desidera eliminare un volume prima dell'ora pianificata, è possibile farlo.
+
+
+NOTE: Se si elimina un numero elevato di volumi contemporaneamente o se ciascuno di essi dispone di molte snapshot associate, il processo di eliminazione potrebbe non riuscire e restituire l'errore "xDBConnectionLoss", che compare nel log API nell'interfaccia utente Web dell'elemento. In questo caso, riprovare a eseguire la pulizia con un numero inferiore di volumi.
+
+. Selezionare *Management* > *Volumes*.
+. Fare clic sul pulsante *Deleted*.
+. Eseguire la procedura per eliminare uno o più volumi.
++
+|===
+
+
+| Opzione | Fasi 
+
+
+ a| 
+Eliminare un singolo volume
+ a| 
+.. Fare clic sull'icona Actions (azioni) per il volume che si desidera eliminare.
+.. Fare clic su *Rimuovi*.
+.. Confermare l'azione.
+
+
+
+
+ a| 
+Eliminare più volumi
+ a| 
+.. Selezionare i volumi che si desidera eliminare.
+.. Fare clic su *azioni in blocco*.
+.. Nel menu visualizzato, selezionare *Rimuovi*.
+.. Confermare l'azione.
+
+
+|===
+

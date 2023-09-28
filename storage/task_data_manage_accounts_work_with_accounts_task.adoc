@@ -1,0 +1,134 @@
+---
+permalink: storage/task_data_manage_accounts_work_with_accounts_task.html 
+sidebar: sidebar 
+keywords: element, solidfire, accounts, create, delete, change, chap, view, edit 
+summary: 'Nei sistemi storage SolidFire, i tenant possono utilizzare gli account per consentire ai client di connettersi ai volumi su un nodo. Un account contiene l"autenticazione CHAP necessaria per accedere ai volumi assegnati. Quando si crea un volume, questo viene assegnato a un account specifico.' 
+---
+= Utilizzare gli account con CHAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nei sistemi storage SolidFire, i tenant possono utilizzare gli account per consentire ai client di connettersi ai volumi di un cluster. Un account contiene l'autenticazione CHAP (Challenge-Handshake Authentication Protocol) richiesta per accedere ai volumi assegnati. Quando si crea un volume, questo viene assegnato a un account specifico.
+
+A un account possono essere assegnati fino a duemila volumi, ma un volume può appartenere a un solo account.
+
+
+
+== Algoritmi CHAP
+
+A partire dall'elemento 12,7, sono supportati gli algoritmi CHAP SHA1, SHA-256 e SHA3-256 sicuri e conformi FIPS. Con l'elemento 12,7, quando un iniziatore iSCSI host crea una sessione iSCSI con una destinazione iSCSI Element, richiede un elenco di algoritmi CHAP da utilizzare. La destinazione iSCSI Element sceglie il primo algoritmo supportato dall'elenco richiesto dall'iniziatore iSCSI host. Per confermare che la destinazione iSCSI Element sceglie l'algoritmo più sicuro, è necessario configurare l'iniziatore iSCSI host in modo che invii un elenco di algoritmi ordinati da più sicuri, ad esempio, SHA3-256, a meno sicuri, ad esempio, SHA1 o MD5. Quando gli algoritmi SHA non sono richiesti dall'iniziatore iSCSI host, l'elemento iSCSI target sceglie MD5, supponendo che l'elenco di algoritmi proposto dall'host contenga MD5. Potrebbe essere necessario aggiornare la configurazione dell'iniziatore iSCSI host per abilitare il supporto per gli algoritmi protetti.
+
+Durante un aggiornamento di Element 12,7, se la configurazione dell'iniziatore iSCSI dell'host è già stata aggiornata per inviare una richiesta di sessione con un elenco che include gli algoritmi SHA, al riavvio dei nodi storage, vengono attivati i nuovi algoritmi sicuri e vengono stabilite sessioni iSCSI nuove o riconnesse utilizzando il protocollo più sicuro. Durante l'upgrade, tutte le sessioni iSCSI esistenti passeranno da MD5 alla SHA. Se non si aggiorna la configurazione dell'iniziatore iSCSI dell'host per richiedere SHA, le sessioni iSCSI esistenti continueranno a utilizzare MD5. In un secondo momento, dopo l'aggiornamento degli algoritmi CHAP dell'iniziatore iSCSI dell'host, le sessioni iSCSI dovrebbero passare gradualmente da MD5 a SHA nel tempo, in base ad attività di manutenzione che determinano riconnesse delle sessioni iSCSI.
+
+Ad esempio, l'iniziatore iSCSI dell'host predefinito in Red Hat Enterprise Linux (RHEL) 8,3 dispone di `node.session.auth.chap_algs = SHA3-256,SHA256,SHA1,MD5` Impostazione con commento, che determina l'utilizzo di iSCSI Initiator solo con MD5. Se si annulla questa impostazione sull'host e si riavvia l'iniziatore iSCSI, le sessioni iSCSI da tale host verranno avviate utilizzando SHA3-256.
+
+Se necessario, è possibile utilizzare https://docs.netapp.com/us-en/element-software/api/reference_element_api_listiscsisessions.html["ListISCSISessions"] Metodo API per visualizzare gli algoritmi CHAP utilizzati per ogni sessione.
+
+
+
+== Creare un account
+
+È possibile creare un account per consentire l'accesso ai volumi.
+
+Ogni nome account nel sistema deve essere univoco.
+
+. Selezionare *Gestione* > *account*.
+. Fare clic su *Create account* (Crea account).
+. Immettere un *Nome utente*.
+. Nella sezione *Impostazioni CHAP*, immettere le seguenti informazioni:
++
+
+NOTE: Lasciare vuoti i campi delle credenziali per generare automaticamente una delle due password.
+
++
+** *Initiator Secret* per l'autenticazione della sessione del nodo CHAP.
+** *Target Secret* per l'autenticazione della sessione del nodo CHAP.
+
+
+. Fare clic su *Create account* (Crea account).
+
+
+
+
+== Visualizza i dettagli dell'account
+
+È possibile visualizzare l'attività delle performance per i singoli account in un formato grafico.
+
+Le informazioni del grafico forniscono informazioni di i/o e throughput per l'account. I livelli di attività medi e di picco sono indicati in incrementi di periodi di reporting di 10 secondi. Queste statistiche includono l'attività per tutti i volumi assegnati all'account.
+
+. Selezionare *Gestione* > *account*.
+. Fare clic sull'icona azioni di un account.
+. Fare clic su *View Details* (Visualizza dettagli).
+
+
+Di seguito sono riportati alcuni dettagli:
+
+* *Status*: Lo stato dell'account. Valori possibili:
++
+** Attivo: Un account attivo.
+** Locked (bloccato): Un account bloccato.
+** Rimosso: Un account che è stato eliminato e rimosso.
+
+
+* *Active Volumes* (volumi attivi): Il numero di volumi attivi assegnati all'account.
+* *Compressione*: Il punteggio di efficienza della compressione per i volumi assegnati all'account.
+* *Deduplica*: Il punteggio di efficienza della deduplica per i volumi assegnati all'account.
+* *Thin Provisioning*: Il punteggio di efficienza del thin provisioning per i volumi assegnati all'account.
+* *Efficienza complessiva*: Il punteggio di efficienza globale per i volumi assegnati all'account.
+
+
+
+
+== Modificare un account
+
+È possibile modificare un account per modificare lo stato, i segreti CHAP o il nome dell'account.
+
+La modifica delle impostazioni CHAP in un account o la rimozione di iniziatori o volumi da un gruppo di accesso può causare la perdita improvvisa dell'accesso ai volumi da parte degli iniziatori. Per verificare che l'accesso al volume non venga perso in modo imprevisto, disconnettersi sempre dalle sessioni iSCSI che saranno interessate dalla modifica di un account o di un gruppo di accesso e verificare che gli iniziatori possano riconnettersi ai volumi dopo aver apportato modifiche alle impostazioni dell'iniziatore e del cluster.
+
+
+IMPORTANT: I volumi persistenti associati ai servizi di gestione vengono assegnati a un nuovo account creato durante l'installazione o l'aggiornamento. Se si utilizzano volumi persistenti, non modificare o eliminare l'account associato.
+
+. Selezionare *Gestione* > *account*.
+. Fare clic sull'icona azioni di un account.
+. Nel menu visualizzato, selezionare *Edit* (Modifica).
+. *Opzionale:* modificare il *Nome utente*.
+. *Opzionale:* fare clic sull'elenco a discesa *Stato* e selezionare un altro stato.
++
+
+IMPORTANT: Se si modifica lo stato su *Locked*, tutte le connessioni iSCSI all'account vengono terminate e l'account non è più accessibile. I volumi associati all'account vengono mantenuti; tuttavia, i volumi non sono rilevabili tramite iSCSI.
+
+. *Opzionale:* in *Impostazioni CHAP*, modificare le credenziali *Segreto iniziatore* e *Segreto di destinazione* utilizzate per l'autenticazione della sessione del nodo.
++
+
+NOTE: Se non si modificano le credenziali *CHAP Settings*, queste rimangono invariate. Se i campi delle credenziali vengono vuoti, il sistema genera nuove password.
+
+. Fare clic su *Save Changes* (Salva modifiche).
+
+
+
+
+== Eliminare un account
+
+È possibile eliminare un account quando non è più necessario.
+
+Eliminare e rimuovere tutti i volumi associati all'account prima di eliminarlo.
+
+
+IMPORTANT: I volumi persistenti associati ai servizi di gestione vengono assegnati a un nuovo account creato durante l'installazione o l'aggiornamento. Se si utilizzano volumi persistenti, non modificare o eliminare l'account associato.
+
+. Selezionare *Gestione* > *account*.
+. Fare clic sull'icona azioni dell'account che si desidera eliminare.
+. Nel menu visualizzato, selezionare *Delete* (Elimina).
+. Confermare l'azione.
+
+
+
+
+== Trova ulteriori informazioni
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
+

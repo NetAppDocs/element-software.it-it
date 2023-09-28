@@ -1,0 +1,132 @@
+---
+permalink: api/reference_element_api_ldapconfiguration.html 
+sidebar: sidebar 
+keywords: object,objects,ldapConfiguration 
+summary: 'L"oggetto ldapConfiguration contiene informazioni sulla configurazione LDAP nel sistema di storage. È possibile recuperare le informazioni LDAP con il metodo GetLdapConfiguration API.' 
+---
+= LdapConfiguration
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto ldapConfiguration contiene informazioni sulla configurazione LDAP nel sistema di storage. È possibile recuperare le informazioni LDAP con `GetLdapConfiguration` Metodo API.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+AuthType
+ a| 
+Identifica il metodo di autenticazione dell'utente da utilizzare. Valori possibili:
+
+* DirectBind
+* SearchAndBind
+
+ a| 
+stringa
+
+
+
+ a| 
+attivato
+ a| 
+Indica se il sistema è configurato per LDAP. Valori possibili:
+
+* vero
+* falso
+
+ a| 
+booleano
+
+
+
+ a| 
+GroupSearchBaseDN
+ a| 
+Il DN di base della struttura per avviare la ricerca di gruppo (il sistema eseguirà una ricerca sotto-struttura da qui).
+ a| 
+stringa
+
+
+
+ a| 
+GroupSearchCustomFilter
+ a| 
+Il filtro di ricerca personalizzato utilizzato.
+ a| 
+stringa
+
+
+
+ a| 
+GroupSearchType
+ a| 
+Controlla il filtro di ricerca di gruppo predefinito utilizzato. Valori possibili:
+
+* NoGroups: Nessun supporto di gruppo.
+* ActiveDirectory: Appartenenza nidificata a tutti i gruppi ad di un utente.
+* MemberDN: Gruppi di stile MemberDN (livello singolo).
+
+ a| 
+stringa
+
+
+
+ a| 
+SearchBindDN
+ a| 
+Un DN completo con cui effettuare l'accesso per eseguire una ricerca LDAP per l'utente (richiede l'accesso in lettura alla directory LDAP).
+ a| 
+stringa
+
+
+
+ a| 
+Server URI
+ a| 
+Un elenco separato da virgole degli URI del server LDAP (ad esempio, `ldap://1.2.3.4` e. `ldaps://1.2.3.4:123`.)
+ a| 
+stringa
+
+
+
+ a| 
+UserDNTemplate
+ a| 
+Stringa utilizzata per formare un DN utente completo.
+ a| 
+stringa
+
+
+
+ a| 
+UserSearchBaseDN
+ a| 
+Il DN di base della struttura utilizzata per avviare la ricerca (esegue una ricerca sotto-struttura da qui).
+ a| 
+stringa
+
+
+
+ a| 
+UserSearchFilter
+ a| 
+Il filtro LDAP utilizzato.
+ a| 
+stringa
+
+|===
+
+
+== Trova ulteriori informazioni
+
+xref:reference_element_api_getldapconfiguration.adoc[GetLdapConfiguration]

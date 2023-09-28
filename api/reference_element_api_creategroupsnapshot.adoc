@@ -1,0 +1,273 @@
+---
+permalink: api/reference_element_api_creategroupsnapshot.html 
+sidebar: sidebar 
+keywords: volume,volumes,snapshot,snapshots,CreateGroupSnapshot,group,create,creating 
+summary: È possibile utilizzare CreateGroupSnapshot per creare una copia point-in-time di un gruppo di volumi. 
+---
+= CreateGroupSnapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `CreateGroupSnapshot` per creare una copia point-in-time di un gruppo di volumi.
+
+È possibile utilizzare questo snapshot in un secondo momento come backup o rollback per garantire che i dati nel gruppo di volumi siano coerenti per il momento in cui è stata creata lo snapshot.
+
+*CLUSTER_FULLNESS*
+
+
+NOTE: È possibile creare snapshot se la completezza del cluster è nella fase 1, 2 o 3. Non è possibile creare snapshot quando la pienezza del cluster raggiunge la fase 4 o 5.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+`attributes`
+ a| 
+Elenco delle coppie nome-valore nel formato oggetto JSON.
+ a| 
+Oggetto JSON
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+`enableRemoteReplication`
+ a| 
+Specifica se lo snapshot verrà replicato o meno nello storage remoto. Valori possibili:
+
+* `true`: Lo snapshot verrà replicato nello storage remoto.
+* `false`: Lo snapshot non verrà replicato nello storage remoto.
+
+ a| 
+booleano
+ a| 
+falso
+ a| 
+No
+
+
+
+| `ensureSerialCreation`  a| 
+Specifica che lo snapshot non deve essere creato se è in corso una replica dello snapshot precedente. I valori possibili sono:
+
+* `true`: In questo modo si garantisce la replica di un solo snapshot alla volta. La creazione di un nuovo snapshot non avrà esito positivo se è ancora in corso la replica di uno snapshot precedente.
+* `false`: Predefinito. Questa creazione di snapshot è consentita se è ancora in corso la replica di un altro snapshot.
+
+| booleano | `false` | No 
+
+
+ a| 
+`expirationTime`
+ a| 
+Specificare il tempo dopo il quale è possibile rimuovere lo snapshot. Non può essere utilizzato con `retention`.
+In caso contrario `expirationTime`, o. `retention` sono specificati, lo snapshot non scadrà. Il formato dell'ora è una stringa di date ISO 8601 per la scadenza basata sull'ora, altrimenti non scadrà. Un valore di `null` fa sì che lo snapshot venga conservato in modo permanente. Un valore di `fifo` Fa in modo che lo snapshot venga conservato in base al principio FIFO (first-in-first-out), rispetto ad altri snapshot FIFO sul volume. L'API non riesce se non è disponibile spazio FIFO.
+ a| 
+Stringa di dati ISO 8601
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+`name`
+ a| 
+Il nome dello snapshot di gruppo. Se non viene immesso alcun nome, vengono utilizzate la data e l'ora in cui è stata eseguita l'istantanea del gruppo. La lunghezza massima consentita per il nome è di 255 caratteri.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+`retention`
+ a| 
+Questo parametro è lo stesso di `expirationTime` Il parametro, ad eccezione del formato dell'ora, è HH:mm:ss. In caso contrario `expirationTime` né così `retention` sono specificati, lo snapshot non scadrà.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+`snapMirrorLabel`
+ a| 
+Etichetta utilizzata dal software SnapMirror per specificare il criterio di conservazione delle snapshot su un endpoint SnapMirror.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+`volumes`
+ a| 
+ID univoco dell'immagine del volume da cui copiare.
+ a| 
+Array volumeID
+ a| 
+Nessuno
+ a| 
+Sì
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo ha i seguenti valori restituiti:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+membri
+ a| 
+Elenco di checksum, volumeID e snapshotID per ciascun membro del gruppo. Valori validi:
+
+* Checksum: Una piccola rappresentazione a stringa dei dati nello snapshot memorizzato. Questo checksum può essere utilizzato in un secondo momento per confrontare altri snapshot al fine di rilevare errori nei dati. (stringa)
+* SnapshotID: ID univoco di uno snapshot da cui viene creato il nuovo snapshot. Lo snapshotID deve provenire da uno snapshot sul volume specificato. (intero)
+* VolumeID (ID volume): L'ID del volume di origine per lo snapshot. (intero)
+
+ a| 
+Array di oggetti JSON
+
+
+
+ a| 
+GroupSnapshotID
+ a| 
+ID univoco del nuovo snapshot di gruppo.
+ a| 
+ID groupSnapshot
+
+
+
+ a| 
+GroupSnapshot
+ a| 
+Oggetto contenente informazioni sullo snapshot di gruppo appena creato.
+ a| 
+xref:reference_element_api_groupsnapshot.adoc[GroupSnapshot]
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+   "method": "CreateGroupSnapshot",
+   "params": {
+      "volumes": [1,2]
+   },
+   "id": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "groupSnapshot": {
+      "attributes": {},
+      "createTime": "2016-04-04T22:43:29Z",
+      "groupSnapshotID": 45,
+      "groupSnapshotUUID": "473b78a3-ef85-4541-9438-077306b2d3ca",
+      "members": [
+        {
+          "attributes": {},
+          "checksum": "0x0",
+          "createTime": "2016-04-04T22:43:29Z",
+          "enableRemoteReplication": false,
+          "expirationReason": "None",
+          "expirationTime": null,
+          "groupID": 45,
+          "groupSnapshotUUID": "473b78a3-ef85-4541-9438-077306b2d3ca",
+          "name": "2016-04-04T22:43:29Z",
+          "snapshotID": 3323,
+          "snapshotUUID": "7599f200-0092-4b41-b362-c431551937d1",
+          "status": "done",
+          "totalSize": 5000658944,
+          "virtualVolumeID": null,
+          "volumeID": 1
+        },
+        {
+          "attributes": {},
+          "checksum": "0x0",
+          "createTime": "2016-04-04T22:43:29Z",
+          "enableRemoteReplication": false,
+          "expirationReason": "None",
+          "expirationTime": null,
+          "groupID": 45,
+          "groupSnapshotUUID": "473b78a3-ef85-4541-9438-077306b2d3ca",
+          "name": "2016-04-04T22:43:29Z",
+          "snapshotID": 3324,
+          "snapshotUUID": "a0776a48-4142-451f-84a6-5315dc37911b",
+          "status": "done",
+          "totalSize": 6001000448,
+          "virtualVolumeID": null,
+          "volumeID": 2
+        }
+      ],
+      "name": "2016-04-04T22:43:29Z",
+      "status": "done"
+    },
+    "groupSnapshotID": 45,
+    "members": [
+      {
+        "checksum": "0x0",
+        "snapshotID": 3323,
+        "snapshotUUID": "7599f200-0092-4b41-b362-c431551937d1",
+        "volumeID": 1
+      },
+      {
+        "checksum": "0x0",
+        "snapshotID": 3324,
+        "snapshotUUID": "a0776a48-4142-451f-84a6-5315dc37911b",
+        "volumeID": 2
+      }
+    ]
+  }
+}
+----
+
+
+== Novità dalla versione
+
+9,6

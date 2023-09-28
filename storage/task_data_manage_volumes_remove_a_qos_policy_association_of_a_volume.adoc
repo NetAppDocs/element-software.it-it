@@ -1,0 +1,30 @@
+---
+permalink: storage/task_data_manage_volumes_remove_a_qos_policy_association_of_a_volume.html 
+sidebar: sidebar 
+keywords: remove qos policy, disassociate from a volume, modify 
+summary: 'È possibile rimuovere un"associazione di policy QoS da un volume selezionando impostazioni QoS personalizzate.' 
+---
+= Rimuovere l'associazione dei criteri QoS di un volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile rimuovere un'associazione di policy QoS da un volume selezionando impostazioni QoS personalizzate.
+
+Il volume che si desidera modificare deve essere associato a un criterio QoS.
+
+. Selezionare *Management* > *Volumes*.
+. Fare clic sull'icona Actions (azioni) per un volume che contiene un criterio QoS che si desidera modificare.
+. Fare clic su *Edit* (Modifica).
+. Nel menu visualizzato sotto *qualità del servizio*, fare clic su *Impostazioni personalizzate*.
+. Modificare *min IOPS*, *Max IOPS* e *Burst IOPS* oppure mantenere le impostazioni predefinite.
+. Fare clic su *Save Changes* (Salva modifiche).
+
+
+
+
+== Trova ulteriori informazioni
+
+xref:task_data_manage_volumes_deleting_a_qos_policy.adoc[Eliminare una policy QoS]

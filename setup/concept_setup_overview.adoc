@@ -1,0 +1,37 @@
+---
+permalink: setup/concept_setup_overview.html 
+sidebar: sidebar 
+keywords: element, solidfire, install, setup, node, cluster 
+summary: Prima di iniziare, potrebbe essere utile conoscere la sequenza di installazione e configurazione del software NetApp Element. 
+---
+= Panoramica dell'installazione
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A questo punto, l'hardware dovrebbe essere installato. L'hardware include anche software Element.
+
+Successivamente, è necessario configurare il sistema di storage per il proprio ambiente. È possibile configurare un cluster con nodi di storage o Fibre Channel e gestirlo utilizzando il software Element dopo l'installazione e l'accensione dei nodi in un'unità rack.
+
+image::../media/sf_and_element_workflow_for_setup_shorter_workflow.png[Diagramma del flusso di lavoro di installazione]
+
+.Procedura per la configurazione dello storage
+. Selezionare una delle seguenti opzioni:
++
+** link:../setup/task_setup_cluster_with_storage_nodes.html["Configurare il cluster con nodi di storage"]
+** link:../setup/task_setup_cluster_with_fibre_channel_nodes.html["Configurare il cluster con nodi Fibre Channel"]
+
+
+. link:../setup/task_setup_determine_which_solidfire_components_to_install.html["Determinare quali componenti di SolidFire installare"]
+. link:../setup/task_setup_gh_redirect_set_up_a_management_node.html["Configurare un nodo di gestione e abilitare la telemetria Active IQ"]
+
+
+
+
+== Trova ulteriori informazioni
+
+* link:../setup/concept_setup_whats_next.html["Scopri i passaggi successivi per l'utilizzo dello storage"]
+* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+

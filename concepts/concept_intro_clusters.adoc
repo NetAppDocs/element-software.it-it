@@ -1,0 +1,83 @@
+---
+permalink: concepts/concept_intro_clusters.html 
+sidebar: sidebar 
+keywords: element, solidfire, cluster, what is, authoritative  cluster, rule of thirds, stranded capacity, storage efficiency, storage cluster quorum 
+summary: 'Un cluster è l"hub di un sistema storage SolidFire ed è costituito da un insieme di nodi. È necessario disporre di almeno quattro nodi in un cluster per ottenere l"efficienza dello storage SolidFire. Un cluster viene visualizzato sulla rete come singolo gruppo logico ed è quindi possibile accedervi come storage a blocchi.' 
+---
+= Cluster
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Un cluster è l'hub di un sistema storage SolidFire ed è costituito da un insieme di nodi. È necessario disporre di almeno quattro nodi in un cluster per ottenere l'efficienza dello storage SolidFire. Un cluster viene visualizzato sulla rete come singolo gruppo logico ed è quindi possibile accedervi come storage a blocchi.
+
+La creazione di un nuovo cluster inizializza un nodo come proprietario delle comunicazioni per un cluster e stabilisce le comunicazioni di rete per ciascun nodo del cluster. Questo processo viene eseguito una sola volta per ogni nuovo cluster. È possibile creare un cluster utilizzando l'interfaccia utente Element o l'API.
+
+È possibile scalare un cluster aggiungendo nodi aggiuntivi. Quando si aggiunge un nuovo nodo, non si verifica alcuna interruzione del servizio e il cluster utilizza automaticamente le prestazioni e la capacità del nuovo nodo.
+
+Gli amministratori e gli host possono accedere al cluster utilizzando indirizzi IP virtuali. Qualsiasi nodo del cluster può ospitare gli indirizzi IP virtuali. L'IP virtuale di gestione (MVIP) consente la gestione del cluster tramite una connessione 1GbE, mentre l'IP virtuale dello storage (SVIP) consente l'accesso dell'host allo storage tramite una connessione 10GbE. Questi indirizzi IP virtuali consentono connessioni coerenti indipendentemente dalle dimensioni o dalla composizione di un cluster SolidFire. Se un nodo che ospita un indirizzo IP virtuale non riesce, un altro nodo del cluster inizia a ospitare l'indirizzo IP virtuale.
+
+
+NOTE: A partire dalla versione 11.0 di Element, i nodi possono essere configurati con indirizzi IPv4, IPv6 o entrambi per la propria rete di gestione. Questo vale sia per i nodi di storage che per i nodi di gestione, ad eccezione del nodo di gestione 11.3 e successivo che non supporta IPv6. Quando si crea un cluster, è possibile utilizzare solo un indirizzo IPv4 o IPv6 singolo per MVIP e il tipo di indirizzo corrispondente deve essere configurato su tutti i nodi.
+
+.Ulteriori informazioni sui cluster
+* <<Cluster di storage autorevoli>>
+* <<Regola dei terzi>>
+* <<Capacità inutilizzata>>
+* <<Efficienza dello storage>>
+* <<Quorum del cluster di storage>>
+
+
+
+
+== Cluster di storage autorevoli
+
+Il cluster di storage autorevole è il cluster di storage utilizzato da NetApp Hybrid Cloud Control per autenticare gli utenti.
+
+Se il nodo di gestione dispone di un solo cluster di storage, si tratta del cluster autorevole. Se il nodo di gestione dispone di due o più cluster di storage, uno di questi viene assegnato come cluster autorevole e solo gli utenti di quel cluster possono accedere a NetApp Hybrid Cloud Control. Per scoprire quale cluster è il cluster autorevole, è possibile utilizzare `GET /mnode/about` API. Nella risposta, l'indirizzo IP in `token_url` Il campo è l'indirizzo IP virtuale di gestione (MVIP) del cluster di storage autorevole. Se si tenta di accedere a NetApp Hybrid Cloud Control come utente che non si trova nel cluster autorevole, il tentativo di accesso non avrà esito positivo.
+
+Molte funzionalità di NetApp Hybrid Cloud Control sono progettate per funzionare con più cluster di storage, ma l'autenticazione e l'autorizzazione hanno dei limiti. Il limite dell'autenticazione e dell'autorizzazione è che l'utente del cluster autorevole può eseguire azioni su altri cluster legati a NetApp Hybrid Cloud Control anche se non è un utente degli altri cluster di storage.
+
+Prima di procedere con la gestione di più cluster di storage, è necessario assicurarsi che gli utenti definiti nei cluster autorevoli siano definiti in tutti gli altri cluster di storage con le stesse autorizzazioni. È possibile gestire gli utenti da link:../storage/concept_system_manage_manage_cluster_administrator_users.html["Interfaccia utente del software Element"].
+
+Vedere link:../mnode/task_mnode_manage_storage_cluster_assets.html["creare e gestire le risorse del cluster di storage"] per ulteriori informazioni sull'utilizzo delle risorse cluster di storage dei nodi di gestione.
+
+
+
+== Regola dei terzi
+
+Quando si mischiano tipi di nodi di storage in un cluster di storage NetApp SolidFire, nessun singolo nodo di storage può contenere oltre il 33% della capacità totale del cluster di storage.
+
+
+
+== Capacità inutilizzata
+
+Se un nodo aggiunto di recente rappresenta oltre il 50% della capacità totale del cluster, una parte della capacità di questo nodo viene resa inutilizzabile ("bloccato"), in modo che sia conforme alla regola di capacità. Questo rimane il caso fino a quando non viene aggiunta una maggiore capacità di storage. Se viene aggiunto un nodo molto grande che disobbedisce anche alla regola di capacità, il nodo precedentemente bloccato non verrà più bloccato, mentre il nodo appena aggiunto viene bloccato. La capacità deve essere sempre aggiunta in coppie per evitare che ciò accada. Quando un nodo viene bloccato, viene generato un guasto appropriato del cluster.
+
+
+
+== Efficienza dello storage
+
+I cluster di storage NetApp SolidFire utilizzano deduplica, compressione e thin provisioning per ridurre la quantità di storage fisico necessaria per l'archiviazione di un volume.
+
+* *Compressione*
++
+La compressione riduce la quantità di storage fisico richiesta per un volume combinando i blocchi di dati in gruppi di compressione, ciascuno dei quali viene memorizzato come blocco singolo.
+
+* *Deduplica*
++
+La deduplica riduce la quantità di storage fisico richiesta per un volume eliminando i blocchi di dati duplicati.
+
+* *Thin provisioning*
++
+Un volume con thin provisioning o LUN è un volume per il quale lo storage non è riservato in anticipo. Invece, lo storage viene allocato in modo dinamico, in base alle esigenze. Lo spazio libero viene nuovamente rilasciato nel sistema di storage quando i dati nel volume o nel LUN vengono cancellati
+
+
+
+
+
+== Quorum del cluster di storage
+
+Element Software crea un cluster di storage da nodi selezionati, che mantiene un database replicato della configurazione del cluster. Per poter mantenere il quorum per la resilienza del cluster, sono necessari almeno tre nodi per partecipare all'ensemble del cluster.

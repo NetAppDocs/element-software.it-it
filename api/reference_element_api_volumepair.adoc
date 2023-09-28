@@ -1,0 +1,99 @@
+---
+permalink: api/reference_element_api_volumepair.html 
+sidebar: sidebar 
+keywords: object,objects,volumePair 
+summary: 'L"oggetto volumePair contiene informazioni su un volume associato a un altro volume su un cluster diverso. Se il volume non è associato, l"oggetto è vuoto. È possibile utilizzare i metodi API ListActivePairedVolumes e ListActiveVolumes per restituire informazioni sui volumi accoppiati.' 
+---
+= VolumePair
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto volumePair contiene informazioni su un volume associato a un altro volume su un cluster diverso. Se il volume non è associato, l'oggetto è vuoto. È possibile utilizzare `ListActivePairedVolumes` e. `ListActiveVolumes` Metodi API per restituire informazioni sui volumi accoppiati.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+ID PairID del clusterPairID
+ a| 
+Il cluster su cui viene associato il volume.
+ a| 
+intero
+
+
+
+ a| 
+Replica remota
+ a| 
+Dettagli sulla replica dei volumi. Membri:
+
+* Mode (modalità): (Stringa) uno tra "Async", "Sync" o "SnapshotsOnly".
+* PauseLimit: (Intero) solo per uso interno.
+* RemoteServiceID: (Intero) l'ID del servizio slice remoto.
+* Riprendi Dettagli: (Stringa) riservato per uso futuro.
+* SnapshotReplication (oggetto JSON)
++
+** state (stato): (Stringa) lo stato della replica dello snapshot in corso, se in corso.
+** StateDetails: (String) riservato per uso futuro.
+
+
+* state (stato): (Stringa) lo stato della replica del volume.
+* StateDetails: (String) riservato per uso futuro.
+
+ a| 
+Oggetto JSON
+
+
+
+ a| 
+RemoteSliceID
+ a| 
+L'ID dello strato definito dal cluster sul cluster remoto.
+ a| 
+intero
+
+
+
+ a| 
+RemoteVolumeID
+ a| 
+L'ID del volume sul cluster remoto a cui è associato il volume locale.
+ a| 
+intero
+
+
+
+ a| 
+RemoteVolumeName
+ a| 
+Il nome del volume remoto.
+ a| 
+stringa
+
+
+
+ a| 
+VolumePairUID
+ a| 
+Identificatore universale definito dal cluster per questa associazione in formato canonico.
+ a| 
+stringa
+
+|===
+
+
+== Trova ulteriori informazioni
+
+* xref:reference_element_api_listactivepairedvolumes.adoc[ListActivePairedVolumes]
+* xref:reference_element_api_listactivevolumes.adoc[ListActiveVolumes]
+

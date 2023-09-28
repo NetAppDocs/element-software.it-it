@@ -1,0 +1,165 @@
+---
+permalink: api/reference_element_api_deletevolumes.html 
+sidebar: sidebar 
+keywords: volumes,volume,delete,deleting,multiple,DeleteVolumes 
+summary: 'È possibile utilizzare il metodo DeleteVolumes per contrassegnare più volumi attivi (fino a 500) per l"eliminazione. Una volta contrassegnato, il volume viene eliminato (definitivamente cancellato) allo scadere dell"intervallo di pulizia.' 
+---
+= DeleteVolumes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `DeleteVolumes` metodo per contrassegnare più (fino a 500) volumi attivi per l'eliminazione. Se contrassegnato, il volume viene eliminato (cancellato in modo permanente) allo scadere dell'intervallo di pulizia.
+
+Dopo aver richiesto di eliminare i volumi, tutte le connessioni iSCSI attive ai volumi vengono immediatamente interrotte e non sono consentite ulteriori connessioni mentre i volumi si trovano in questo stato. Un volume contrassegnato non viene restituito nelle richieste di rilevamento di destinazione.
+
+Gli snapshot di un volume che sono stati contrassegnati per l'eliminazione non sono interessati. Le snapshot vengono conservate fino a quando il volume non viene spurgato dal sistema. Se un volume è contrassegnato per l'eliminazione e dispone di un'operazione di lettura o scrittura di volumi in blocco in corso, l'operazione di lettura o scrittura di volumi in blocco viene interrotta.
+
+Se i volumi eliminati sono associati a un volume, la replica tra i volumi accoppiati viene sospesa e non viene trasferito alcun dato su di essi o da essi mentre si trova in uno stato cancellato. I volumi remoti con cui i volumi cancellati sono stati associati a Enter in uno stato PausedMisconfigured e i dati non vengono più inviati a essi o dai volumi cancellati. Fino alla rimozione dei volumi cancellati, è possibile ripristinarli e riprendere il trasferimento dei dati. Se i volumi cancellati vengono rimossi dal sistema, i volumi con cui sono stati associati entrano in uno stato StoppedMisconfigured e lo stato di associazione del volume viene rimosso. I volumi rimossi diventano permanentemente non disponibili.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input.
+
+
+NOTE: Almeno uno dei seguenti parametri è obbligatorio ed è necessario utilizzare solo uno dei parametri (tutti si escludono a vicenda).
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+ID volume
+ a| 
+L'elenco degli ID dei volumi da eliminare dal sistema.
+ a| 
+array intero
+ a| 
+Nessuno
+ a| 
+Vedere la nota.
+
+
+
+ a| 
+VolumeAccessGroupID
+ a| 
+Elenco degli ID dei gruppi di accesso al volume. Tutti i volumi di tutti i gruppi di accesso ai volumi specificati in questo elenco vengono eliminati dal sistema.
+ a| 
+array intero
+ a| 
+Nessuno
+ a| 
+Vedere la nota.
+
+
+
+ a| 
+AccountID
+ a| 
+Un elenco di ID account. Tutti i volumi di questi account vengono cancellati dal sistema.
+ a| 
+array intero
+ a| 
+Nessuno
+ a| 
+Vedere la nota.
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo ha i seguenti valori restituiti:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+volumi
+ a| 
+Informazioni sul volume appena cancellato.
+ a| 
+xref:reference_element_api_volume.adoc[volume]
+
+
+
+ a| 
+curva
+ a| 
+La curva è un insieme di coppie chiave-valore. Le chiavi sono le dimensioni i/o in byte. I valori rappresentano il costo dell'esecuzione di un IOP a una dimensione i/o specifica. La curva viene calcolata in relazione a un'operazione di 4096 byte impostata su 100 IOPS.
+ a| 
+Oggetto JSON
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+   "method": "DeleteVolumes",
+   "params": {
+      "accountIDs" : [1, 2, 3]
+   },
+   "id" : 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+
+{
+  "id" : 1,
+  "result": {
+    "volumes" : [ {
+      "access": "readWrite",
+      "accountID": 1,
+      "attributes": {},
+      "blockSize": 4096,
+      "createTime": "2015-03-06T18:50:56Z",
+      "deleteTime": "",
+      "enable512e": False,
+      "iqn": "iqn.2010-01.com.solidfire:pzsr.vclient-030-v00001.1",
+      "name": "vclient-030-v00001",
+      "qos": {
+        "burstIOPS": 15000,
+        "burstTime": 60,
+        "curve": {},
+        "maxIOPS": 15000,
+        "minIOPS": 100
+      },
+      "purgeTime": "",
+      "sliceCount": 1,
+      "scsiEUIDeviceID": "707a737200000001f47acc0100000000",
+      "scsiNAADeviceID": "6f47acc100000000707a737200000001",
+      "status": "active",
+      "totalSize": 10000003072,
+      "virtualVolumeID": 5,
+      "volumeAccessGroups": [],
+      "volumePairs": [],
+      "volumeID": 1
+    } ]
+  }
+}
+----
+
+
+== Novità dalla versione
+
+9,6

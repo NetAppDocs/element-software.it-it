@@ -1,0 +1,19 @@
+---
+permalink: storage/concept_mnode_work_with_the_management_node.html 
+sidebar: sidebar 
+keywords: management node,mNode 
+summary: 'È possibile utilizzare il nodo di gestione per aggiornare i servizi di sistema, gestire le risorse e le impostazioni del cluster, eseguire test e utility di sistema, configurare Active IQ per il monitoraggio del sistema e abilitare l"accesso al supporto NetApp per la risoluzione dei problemi.' 
+---
+= Lavorare con il nodo di gestione
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare il nodo di gestione (mNode) per aggiornare i servizi di sistema, gestire le risorse e le impostazioni del cluster, eseguire test e utility di sistema, configurare Active IQ per il monitoraggio del sistema e abilitare l'accesso al supporto NetApp per la risoluzione dei problemi.
+
+
+NOTE: Come Best practice, associare un solo nodo di gestione a un'istanza di VMware vCenter ed evitare di definire le stesse risorse di storage e calcolo o istanze di vCenter in più nodi di gestione.
+
+Vedere link:../mnode/task_mnode_work_overview.html["documentazione del nodo di gestione"] per ulteriori informazioni.

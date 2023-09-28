@@ -1,0 +1,19 @@
+---
+sidebar: sidebar 
+permalink: mnode/task_mnode_enable_alerts.html 
+summary: Non è possibile configurare le impostazioni per monitorare gli avvisi sul sistema di storage all-flash SolidFire. 
+keywords: netapp, Element, management node, mnode, ui, alerts, alert monitoring 
+---
+= Configurare il monitoraggio degli avvisi
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Gli strumenti di monitoraggio degli avvisi sono configurati per il monitoraggio degli avvisi NetApp HCI. Questi strumenti non sono configurati o utilizzati per lo storage all-flash SolidFire. L'esecuzione degli strumenti per questi cluster comporta il seguente errore 405, che è previsto in base alla configurazione: `webUIParseError : Invalid response from server. 405`
+
+Per ulteriori informazioni sulla configurazione del monitoraggio degli avvisi per NetApp HCI, vedere link:https://docs.netapp.com/us-en/hci/docs/task_mnode_enable_alerts.html["Configurare il monitoraggio degli avvisi"^]

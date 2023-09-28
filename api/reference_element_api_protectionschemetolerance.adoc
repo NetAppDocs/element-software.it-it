@@ -1,0 +1,51 @@
+---
+permalink: api/reference_element_api_protectionschemetolerance.html 
+sidebar: sidebar 
+keywords: object,objects,protectionSchemeTolerance 
+summary: 'L"oggetto ProtectionSchemeTolerance contiene informazioni sulla possibilità per un cluster di storage, per uno schema di protezione specifico, di continuare a leggere e scrivere i dati in seguito a errori.' 
+---
+= ProtectionSchemeTolerance
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto ProtectionSchemeTolerance contiene informazioni sulla possibilità per un cluster di storage, per uno schema di protezione specifico, di continuare a leggere e scrivere i dati in seguito a errori.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+ProtectionScheme
+ a| 
+Lo schema di protezione corrente di questo cluster di storage. L'unico valore possibile è doubleHelix.
+ a| 
+stringa
+
+
+
+ a| 
+SostenibileFailuresForBlockData
+ a| 
+Il numero corrente di guasti simultanei che possono verificarsi senza perdere la disponibilità dei dati a blocchi per lo schema di protezione associato.
+ a| 
+intero
+
+
+
+ a| 
+SostenibileFailuresForMetadata
+ a| 
+Il numero corrente di guasti simultanei che possono verificarsi senza perdere la disponibilità dei metadati per lo schema di protezione associato.
+ a| 
+intero
+
+|===

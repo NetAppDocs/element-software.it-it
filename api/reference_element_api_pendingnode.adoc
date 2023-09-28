@@ -1,0 +1,160 @@
+---
+permalink: api/reference_element_api_pendingnode.html 
+sidebar: sidebar 
+keywords: object,objects,pendingNode 
+summary: 'L"oggetto pendingNode contiene informazioni su un nodo che può essere aggiunto a un cluster. Utilizzare il metodo API ListPendingNodes per restituire un elenco di queste informazioni per tutti i nodi in sospeso. È possibile aggiungere qualsiasi nodo elencato a un cluster utilizzando il metodo API AddNodes.' 
+---
+= PendingNode
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto pendingNode contiene informazioni su un nodo che può essere aggiunto a un cluster. Utilizzare `ListPendingNodes` Metodo API per restituire un elenco di queste informazioni per tutti i nodi in sospeso. È possibile aggiungere qualsiasi nodo elencato a un cluster utilizzando `AddNodes` Metodo API.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+cipi
+ a| 
+L'indirizzo IP del cluster assegnato al nodo.
+ a| 
+stringa
+
+
+
+ a| 
+ActiveNodeKey
+ a| 
+Chiave univoca che consente al nodo di unirsi automaticamente al cluster dopo una corretta installazione del software.
+ a| 
+stringa
+
+
+
+ a| 
+AssignedNodeID
+ a| 
+L'ID nodo assegnato per il nodo.
+ a| 
+stringa
+
+
+
+ a| 
+AsyncHandle
+ a| 
+L'handle del metodo asincrono che è possibile utilizzare per eseguire query sullo stato dell'operazione.
+ a| 
+intero
+
+
+
+ a| 
+ChassisName
+ a| 
+Identifica in modo univoco uno chassis; identico per tutti i nodi in un unico chassis.
+ a| 
+stringa
+
+
+
+ a| 
+cip
+ a| 
+L'indirizzo IP del cluster assegnato al nodo.
+ a| 
+stringa
+
+
+
+ a| 
+mip
+ a| 
+L'indirizzo IP di gestione assegnato al nodo.
+ a| 
+stringa
+
+
+
+ a| 
+NodeSlot
+ a| 
+Per le piattaforme HCI, la lettera corrispondente allo slot dello chassis in cui si trova questo nodo ("A", "B", "C" o "D"). Per le piattaforme storage, questo valore è nullo.
+ a| 
+stringa
+
+
+
+ a| 
+PendingActiveNodeID
+ a| 
+L'ID del nodo in sospeso.
+ a| 
+intero
+
+
+
+ a| 
+Informazioni platform
+ a| 
+Informazioni hardware per il nodo. Membri:
+
+* ChassisType: La piattaforma hardware del nodo.
+* CpuModel: Il modello di CPU della piattaforma hardware.
+* NodeMemoryGB: La quantità di memoria installata nella piattaforma fisica in GB.
+* NodeType: Il nome del modello del nodo.
+* PlatformConfigVersion: Versione del software configurato per questo nodo hardware.
+
+ a| 
+Oggetto JSON
+
+
+
+ a| 
+ruolo
+ a| 
+Ruolo del nodo nel cluster. Valori possibili:
+
+* Gestione
+* Storage
+* Calcolo
+* Testimone
+
+ a| 
+
+
+
+ a| 
+sip
+ a| 
+L'indirizzo IP dello storage (iSCSI) assegnato al nodo.
+ a| 
+stringa
+
+
+
+ a| 
+Versione software
+ a| 
+La versione corrente del software Element in esecuzione sul nodo.
+ a| 
+stringa
+
+|===
+
+
+== Trova ulteriori informazioni
+
+* xref:reference_element_api_addnodes.adoc[AddNode]
+* xref:reference_element_api_listpendingnodes.adoc[ListPendingNode]
+

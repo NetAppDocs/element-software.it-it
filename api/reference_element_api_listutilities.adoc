@@ -1,0 +1,81 @@
+---
+permalink: api/reference_element_api_listutilities.html 
+sidebar: sidebar 
+keywords: utilities,list,listing,listutilities 
+summary: 'È possibile utilizzare il metodo ListUtilities per elencare le operazioni disponibili per l"esecuzione su un nodo.' 
+---
+= ListUtilities
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `ListUtilities` metodo per elencare le operazioni disponibili per l'esecuzione su un nodo.
+
+
+
+== Parametri
+
+Questo metodo non ha parametri di input.
+
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+utilità
+ a| 
+Elenco delle utility attualmente disponibili per l'esecuzione sul nodo.
+ a| 
+array di stringhe
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+   "method": "ListUtilities",
+   "params": {},
+   "id" : 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "utilities": [
+      "ResetDrives",
+      "ResetNode",
+      "RestartNetworking",
+      "RestartServices",
+      "CreateSupportBundle",
+      "DeleteAllSupportBundles",
+      "CreateClusterSupportBundle"
+    ]
+  }
+}
+----
+
+
+== Novità dalla versione
+
+9,6

@@ -1,0 +1,149 @@
+---
+permalink: api/reference_element_api_modifyqospolicy.html 
+sidebar: sidebar 
+keywords: modify,modifying,edit,editing,change,changing,qos,policy,policies,modifyqospolicy 
+summary: È possibile utilizzare il metodo ModifyQoSPolicy per modificare un criterio QoS esistente nel sistema. 
+---
+= ModifyQoSPolicy
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `ModifyQoSPolicy` Metodo per modificare un criterio QoS esistente nel sistema.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+
+
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+QosPolicyID
+ a| 
+L'ID del criterio da modificare.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+nome
+ a| 
+Se fornito, il nome della policy QoS (ad esempio oro, platino, argento) viene modificato in questo valore.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+qos
+ a| 
+Se fornite, le impostazioni QoS per questo criterio vengono modificate in queste impostazioni. È possibile fornire valori QoS parziali e modificare solo alcune impostazioni QoS.
+ a| 
+Oggetto QoS
+ a| 
+Nessuno
+ a| 
+No
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo ha i seguenti valori restituiti:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+QosPolicy
+ a| 
+Dettagli della policy QoS appena modificata.
+ a| 
+xref:reference_element_api_qospolicy.adoc[QoSPolicy]
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "id": 1950,
+  "method": "ModifyQoSPolicy",
+  "params": {
+    "qosPolicyID": 2,
+    "qos": {
+      "minIOPS": 51,
+      "maxIOPS": 15002,
+      "burstIOPS": 15002
+    }
+  }
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+  "id": 1950,
+  "result": {
+    "qosPolicy": {
+      "name": "bronze",
+      "qos": {
+        "burstIOPS": 15002,
+        "burstTime": 60,
+        "curve": {
+          "4096": 100,
+          "8192": 160,
+          "16384": 270,
+          "32768": 500,
+          "65536": 1000,
+          "131072": 1950,
+          "262144": 3900,
+          "524288": 7600,
+          "1048576": 15000
+        },
+        "maxIOPS": 15002,
+        "minIOPS": 51
+      },
+      "qosPolicyID": 2,
+      "volumeIDs": [
+        2
+      ]
+    }
+  }
+}
+----
+
+
+== Novità dalla versione
+
+10,0

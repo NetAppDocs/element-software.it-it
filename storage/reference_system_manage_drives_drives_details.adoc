@@ -1,0 +1,55 @@
+---
+permalink: storage/reference_system_manage_drives_drives_details.html 
+sidebar: sidebar 
+keywords: drives, details, manage, filter, cluster 
+summary: 'La pagina Drives (unità) della scheda Cluster (cluster) fornisce un elenco dei dischi attivi nel cluster. È possibile filtrare la pagina selezionando dalle schede attivo, disponibile, Rimozione, cancellazione e non riuscito.' 
+---
+= Dettagli sui dischi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La pagina Drives (unità) della scheda Cluster (cluster) fornisce un elenco dei dischi attivi nel cluster. È possibile filtrare la pagina selezionando dalle schede attivo, disponibile, Rimozione, cancellazione e non riuscito.
+
+Quando si inizializza per la prima volta un cluster, l'elenco delle unità attive è vuoto. È possibile aggiungere dischi non assegnati a un cluster ed elencati nella scheda Available (disponibili) dopo la creazione di un nuovo cluster SolidFire.
+
+I seguenti elementi vengono visualizzati nell'elenco dei dischi attivi.
+
+* *ID unità*
++
+Il numero sequenziale assegnato al disco.
+
+* *ID nodo*
++
+Il numero di nodo assegnato quando il nodo viene aggiunto al cluster.
+
+* *Nome nodo*
++
+Il nome del nodo che ospita l'unità.
+
+* *Slot*
++
+Il numero dello slot in cui si trova fisicamente l'unità.
+
+* *Capacità*
++
+Le dimensioni del disco, in GB.
+
+* *Seriale*
++
+Il numero di serie del disco.
+
+* *Usura residua*
++
+L'indicatore del livello di usura.
+
++
+Il sistema storage indica la quantità approssimativa di usura disponibile su ogni disco a stato solido (SSD) per la scrittura e la cancellazione dei dati. Un disco che ha consumato il 5% dei cicli di scrittura e cancellazione progettati riporta il 95% di usura rimanente. Il sistema non aggiorna automaticamente le informazioni sull'usura del disco; è possibile aggiornare o chiudere e ricaricare la pagina per aggiornare le informazioni.
+
+* *Tipo*
++
+Il tipo di disco. Il tipo può essere blocco o metadati.
+
+

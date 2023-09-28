@@ -1,0 +1,103 @@
+---
+permalink: api/reference_element_api_listauthsessionbyclusteradmin.html 
+sidebar: sidebar 
+keywords: cluster admin,sessions,auth sessions,list 
+summary: È possibile utilizzare il metodo ListAuthSessionsByClusterAdmin per elencare tutte le sessioni auth associate al ClusterAdminID specificato. Se ClusterAdminID specificato viene mappato a un gruppo di utenti, verranno elencate tutte le sessioni auth per tutti i membri di quel gruppo. 
+---
+= ListAuthSessionsByClusterAdmin
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `ListAuthSessionsByClusterAdmin` metodo per elencare tutte le sessioni di autenticazione associate a quelle specificate `ClusterAdminID`. Se specificato `ClusterAdminID` viene mappato a un gruppo di utenti, verranno elencate tutte le sessioni di autenticazione per tutti i membri di quel gruppo.
+
+
+
+== Parametri
+
+Questo metodo ha il seguente parametro di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+ID clusterAdminID
+ a| 
+Identificatore univoco dell'amministratore del cluster.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+Sì
+
+|===
+
+
+== Valori restituiti
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+sessioni
+ a| 
+Elenco delle informazioni sulla sessione per le sessioni auth.
+ a| 
+link:reference_element_api_authsessioninfo.html["AuthSessionInfo"]
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+    "method": "ListAuthSessionsByClusterAdmin",
+    "clusterAdminID": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+"sessions": [
+      {
+        "accessGroupList": [
+          "administrator"
+        ],
+        "authMethod": "Cluster",
+        "clusterAdminIDs": [
+          1
+        ],
+        "finalTimeout": "2020-03-14T19:21:24Z",
+        "idpConfigVersion": 0,
+        "lastAccessTimeout": "2020-03-11T19:51:24Z",
+        "sessionCreationTime": "2020-03-11T19:21:24Z",
+        "sessionID": "b12bfc64-f233-44df-8b9f-6fb6c011abf7",
+        "username": "admin"
+      }
+    ]
+}
+----
+
+
+== Novità dalla versione
+
+12,0

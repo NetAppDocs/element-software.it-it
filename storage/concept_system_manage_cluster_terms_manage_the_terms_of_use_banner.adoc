@@ -1,0 +1,73 @@
+---
+permalink: storage/concept_system_manage_cluster_terms_manage_the_terms_of_use_banner.html 
+sidebar: sidebar 
+keywords: element, terms of use, banner, config, edit, terms of use, disable, enable 
+summary: 'È possibile attivare, modificare o configurare un banner contenente un messaggio per l"utente.' 
+---
+= Gestire il banner Termini di utilizzo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile attivare, modificare o configurare un banner contenente un messaggio per l'utente.
+
+.Opzioni
+<<Attivare il banner Termini di utilizzo>>
+<<Modificare il banner Termini di utilizzo>>
+<<Disattiva il banner Termini di utilizzo>>
+
+
+
+== Attivare il banner Termini di utilizzo
+
+È possibile attivare un banner Termini di utilizzo che viene visualizzato quando un utente accede all'interfaccia utente di Element. Quando l'utente fa clic sul banner, viene visualizzata una finestra di dialogo contenente il messaggio configurato per il cluster. Il banner può essere ignorato in qualsiasi momento.
+
+Per attivare la funzionalità Termini di utilizzo, è necessario disporre dei privilegi di amministratore del cluster.
+
+. Fare clic su *utenti* > *Termini di utilizzo*.
+. Nel modulo *Termini di utilizzo*, inserire il testo da visualizzare nella finestra di dialogo Termini di utilizzo.
++
+
+NOTE: Non superare i 4096 caratteri.
+
+. Fare clic su *Enable* (attiva).
+
+
+
+
+== Modificare il banner Termini di utilizzo
+
+Puoi modificare il testo visualizzato dall'utente quando seleziona il banner di accesso Termini di utilizzo.
+
+.Di cosa hai bisogno
+* Per configurare le Condizioni d'uso, è necessario disporre dei privilegi di amministratore del cluster.
+* Assicurarsi che la funzione Termini di utilizzo sia attivata.
+
+
+.Fasi
+. Fare clic su *utenti* > *Termini di utilizzo*.
+. Nella finestra di dialogo *Termini di utilizzo*, modificare il testo che si desidera visualizzare.
++
+
+NOTE: Non superare i 4096 caratteri.
+
+. Fare clic su *Save Changes* (Salva modifiche).
+
+
+
+
+== Disattiva il banner Termini di utilizzo
+
+È possibile disattivare il banner Termini di utilizzo. Con il banner disattivato, non viene più richiesto all'utente di accettare i termini di utilizzo quando si utilizza l'interfaccia utente di Element.
+
+.Di cosa hai bisogno
+* Per configurare le Condizioni d'uso, è necessario disporre dei privilegi di amministratore del cluster.
+* Assicurarsi che le condizioni d'uso siano attivate.
+
+
+.Fasi
+. Fare clic su *utenti* > *Termini di utilizzo*.
+. Fare clic su *Disable* (Disattiva).
+

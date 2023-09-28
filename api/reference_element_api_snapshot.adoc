@@ -1,0 +1,223 @@
+---
+permalink: api/reference_element_api_snapshot.html 
+sidebar: sidebar 
+keywords: object,objects,snapshot 
+summary: 'L"oggetto snapshot contiene informazioni su uno snapshot creato per un volume. È possibile utilizzare il metodo API ListSnapshots per recuperare un elenco di informazioni di snapshot per un volume o per tutti i volumi. L"oggetto include informazioni sullo snapshot attivo e su ogni snapshot creato per un volume.' 
+---
+= snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto snapshot contiene informazioni su uno snapshot creato per un volume. È possibile utilizzare `ListSnapshots` Metodo API per recuperare un elenco di informazioni di snapshot per un volume o per tutti i volumi. L'oggetto include informazioni sullo snapshot attivo e su ogni snapshot creato per un volume.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+attributi
+ a| 
+Elenco delle coppie nome-valore nel formato oggetto JSON.
+ a| 
+Oggetto JSON
+
+
+
+ a| 
+checksum
+ a| 
+Una piccola rappresentazione a stringa dei dati nello snapshot memorizzato. Questo checksum può essere utilizzato in un secondo momento per confrontare altri snapshot al fine di rilevare errori nei dati.
+ a| 
+stringa
+
+
+
+ a| 
+CreateTime
+ a| 
+Il tempo formattato UTC+0 per la creazione dello snapshot.
+ a| 
+Stringa di dati ISO 8601
+
+
+
+ a| 
+EnableRemoteReplication
+ a| 
+Identifica se lo snapshot è abilitato per la replica remota.
+ a| 
+booleano
+
+
+
+ a| 
+ExpirationReason
+ a| 
+Indica come viene impostata la scadenza dello snapshot. Valori possibili:
+
+* API: La scadenza viene impostata utilizzando l'API.
+* None (Nessuna): Non viene impostata alcuna scadenza.
+* Test: Il tempo di scadenza è impostato per il test.
+* fifo: La scadenza si verifica in base al principio first-in-first-out.
+
+ a| 
+stringa
+
+
+
+ a| 
+ExpirationTime (tempo di scadenza)
+ a| 
+L'ora in cui lo snapshot scadrà e verrà deposto dal cluster.
+ a| 
+Stringa di dati ISO 8601
+
+
+
+ a| 
+GROUPID
+ a| 
+L'ID del gruppo se lo snapshot è membro di uno snapshot di gruppo.
+ a| 
+intero
+
+
+
+ a| 
+GroupsnapshotUID
+ a| 
+Contiene informazioni su ogni snapshot del gruppo. Ciascuno di questi membri disporrà di un parametro UUID per l'UUID dello snapshot.
+ a| 
+stringa
+
+
+
+ a| 
+InstanceCreateTime
+ a| 
+L'ora in cui lo snapshot è stato creato sul cluster locale.
+ a| 
+Stringa di dati ISO 8601
+
+
+
+ a| 
+InstanceSnapshotUID
+ a| 
+ID universalmente univoco dello snapshot sul cluster locale. Questo ID non viene replicato in altri cluster.
+ a| 
+stringa
+
+
+
+ a| 
+nome
+ a| 
+Il nome univoco assegnato allo snapshot. Se non viene specificato alcun nome, il nome corrisponde all'indicatore orario formattato UTC+0 del momento in cui è stata creata la snapshot.
+ a| 
+stringa
+
+
+
+ a| 
+RemoteStatuses
+ a| 
+Array contenente l'identificatore universale e lo stato di replica di ogni snapshot remoto sul cluster di destinazione, come visualizzato dal cluster di origine.
+ a| 
+xref:reference_element_api_remoteclustersnapshotstatus.adoc[RemoteClusterSnapshotStatus] array
+
+
+
+ a| 
+SnapMirrorLabel
+ a| 
+Etichetta utilizzata dal software SnapMirror per specificare il criterio di conservazione delle snapshot sugli endpoint SnapMirror. Se non impostato, questo valore è nullo.
+ a| 
+stringa
+
+
+
+ a| 
+SnapshotID
+ a| 
+L'ID univoco di uno snapshot esistente.
+ a| 
+stringa
+
+
+
+ a| 
+SnapshotUID
+ a| 
+ID universalmente univoco di uno snapshot esistente. Quando lo snapshot viene replicato tra i cluster, questo ID viene replicato insieme a esso e viene utilizzato per identificare lo snapshot tra i cluster.
+ a| 
+stringa
+
+
+
+ a| 
+stato
+ a| 
+Stato corrente dello snapshot. Valori possibili:
+
+* Sconosciuto: Si è verificato un errore durante l'ottenimento dello stato dello snapshot.
+* Preparazione: Questo snapshot è in fase di preparazione e non è ancora scrivibile.
+* RemoteSyncing: Questo snapshot viene replicato da un cluster remoto.
+* Fatto: Questo snapshot ha terminato la preparazione o la replica ed è ora utilizzabile.
+* Attivo: Questo snapshot è il ramo attivo.
+* Cloning (clonazione): Questo snapshot è coinvolto in un'operazione CopyVolume.
+
+ a| 
+stringa
+
+
+
+ a| 
+TotalSize (dimensioni totale)
+ a| 
+La dimensione totale in byte dello snapshot.
+ a| 
+intero
+
+
+
+ a| 
+VirtualVolumeID
+ a| 
+L'ID del volume virtuale associato a questo snapshot.
+ a| 
+UUID
+
+
+
+ a| 
+ID volume
+ a| 
+L'ID del volume da cui è stato creato lo snapshot.
+ a| 
+intero
+
+
+
+ a| 
+VolumeName
+ a| 
+Il nome del volume al momento della creazione dello snapshot.
+ a| 
+stringa
+
+|===
+
+
+== Trova ulteriori informazioni
+
+xref:reference_element_api_listsnapshots.adoc[ListSnapshot]

@@ -1,0 +1,114 @@
+---
+permalink: api/reference_element_api_getqospolicy.html 
+sidebar: sidebar 
+keywords: qos,policy,policies,get,getting,getqospolicy 
+summary: È possibile utilizzare il metodo GetQoSPolicy per ottenere informazioni dettagliate su una policy QoS specifica dal sistema. 
+---
+= Policy GetQoS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `GetQoSPolicy` Metodo per ottenere dettagli su una policy QoS specifica dal sistema.
+
+
+
+== Parametro
+
+Questo metodo ha il seguente parametro di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+QosPolicyID
+ a| 
+L'ID del criterio da recuperare.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+Sì
+
+|===
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+QosPolicy
+ a| 
+Dettagli della policy QoS richiesta.
+ a| 
+xref:reference_element_api_qospolicy.adoc[QoSPolicy]
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+	"method": "GetQoSPolicy",
+    "params": {
+    	"qosPolicyID": 2
+    },
+    "id": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "qosPolicy": {
+      "name": "bronze",
+      "qos": {
+        "burstIOPS": 15002,
+        "burstTime": 60,
+        "curve": {
+          "4096": 100,
+          "8192": 160,
+          "16384": 270,
+          "32768": 500,
+          "65536": 1000,
+          "131072": 1950,
+          "262144": 3900,
+          "524288": 7600,
+          "1048576": 15000
+        },
+        "maxIOPS": 15002,
+        "minIOPS": 51
+      },
+      "qosPolicyID": 2,
+      "volumeIDs": [
+          2
+      ]
+    }
+  }
+}
+----
+
+
+== Novità dalla versione
+
+10,0

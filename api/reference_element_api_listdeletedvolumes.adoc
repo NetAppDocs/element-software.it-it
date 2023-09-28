@@ -1,0 +1,128 @@
+---
+permalink: api/reference_element_api_listdeletedvolumes.html 
+sidebar: sidebar 
+keywords: volume,volumes,marked,delete,deleted,deletion,list,listing,listdeletedvolumes 
+summary: 'È possibile utilizzare il metodo ListDeletedVolumes per recuperare l"elenco dei volumi contrassegnati per l"eliminazione e rimossi dal sistema.' 
+---
+= ListDeletedVolumes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `ListDeletedVolumes` metodo per recuperare l'elenco dei volumi contrassegnati per l'eliminazione e rimossi dal sistema.
+
+
+
+== Parametro
+
+Questo metodo ha il seguente parametro di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+Include VirtualVolumes
+ a| 
+Per impostazione predefinita, i volumi virtuali sono inclusi nella risposta. Per escludere i volumi virtuali, impostare su false.
+ a| 
+booleano
+ a| 
+vero
+ a| 
+No
+
+|===
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+volumi
+ a| 
+Elenco dei volumi cancellati.
+ a| 
+xref:reference_element_api_volume.adoc[volume] array
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+   "method": "ListDeletedVolumes",
+   "params": {},
+   "id" : 1
+}
+----
+
+
+== Esempio di risposta
+
+Le risposte per questo metodo sono simili al seguente esempio:
+
+[listing]
+----
+{
+    "id": 1,
+    "result": {
+        "volumes": [
+            {
+                "access": "readWrite",
+                "accountID": 2,
+                "attributes": {},
+                "blockSize": 4096,
+                "createTime": "2018-06-24T03:13:13Z",
+                "deleteTime": "2018-07-22T16:12:39Z",
+                "enable512e": true,
+                "iqn": "iqn.2010-01.com.solidfire:0oto.deletethis.23",
+                "name": "deleteThis",
+                "purgeTime": "2016-07-23T00:12:39Z",
+                "qos": {
+                    "burstIOPS": 15000,
+                    "burstTime": 60,
+                    "curve": {
+                        "4096": 100,
+                        "8192": 160,
+                        "16384": 270,
+                        "32768": 500,
+                        "65536": 1000,
+                        "131072": 1950,
+                        "262144": 3900,
+                        "524288": 7600,
+                        "1048576": 15000
+                    },
+                    "maxIOPS": 15000,
+                    "minIOPS": 50
+                },
+                "scsiEUIDeviceID": "306f746f00000017f47acc0100000000",
+                "scsiNAADeviceID": "6f47acc100000000306f746f00000017",
+                "sliceCount": 1,
+                "status": "deleted",
+                "totalSize": 1396703232,
+                "virtualVolumeID": null,
+                "volumeAccessGroups": [],
+                "volumeID": 23,
+                "volumePairs": []
+            }
+        ]
+    }
+}
+----
+
+
+== Novità dalla versione
+
+9,6

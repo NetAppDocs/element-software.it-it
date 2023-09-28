@@ -1,0 +1,27 @@
+---
+permalink: storage/task_system_manage_fips_enable_encryption_at_rest.html 
+sidebar: sidebar 
+keywords: fips, security, encryption at rest, enable, disable, drives 
+summary: È possibile attivare e disattivare la crittografia a livello di cluster a riposo. Questa funzione non è attivata per impostazione predefinita. Per supportare le unità FIPS, è necessario attivare la crittografia a riposo. 
+---
+= Abilitare la crittografia a riposo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile attivare e disattivare la crittografia a livello di cluster a riposo. Questa funzione non è attivata per impostazione predefinita. Per supportare le unità FIPS, è necessario attivare la crittografia a riposo.
+
+. Nell'interfaccia utente del software NetApp Element, fare clic su *cluster* > *Impostazioni*.
+. Fare clic su *Enable Encryption at REST (attiva crittografia a riposo)
+
+
+
+
+== Trova ulteriori informazioni
+
+* xref:task_system_manage_cluster_enable_and_disable_encryption_for_a_cluster.adoc[Attivare e disattivare la crittografia per un cluster]
+* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
+

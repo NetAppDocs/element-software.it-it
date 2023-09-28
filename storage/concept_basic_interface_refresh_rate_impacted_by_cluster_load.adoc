@@ -1,0 +1,18 @@
+---
+permalink: storage/concept_basic_interface_refresh_rate_impacted_by_cluster_load.html 
+sidebar: sidebar 
+keywords: data refresh interval, cluster, interval controls, API requests, heavy load cluster, cluster credentials 
+summary: 'A seconda dei tempi di risposta delle API, il cluster potrebbe regolare automaticamente l"intervallo di aggiornamento dei dati per alcune parti della pagina del software NetApp Element che si sta visualizzando.' 
+---
+= Frequenza di refresh dell'interfaccia influenzata dal carico del cluster
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A seconda dei tempi di risposta delle API, il cluster potrebbe regolare automaticamente l'intervallo di aggiornamento dei dati per alcune parti della pagina del software NetApp Element che si sta visualizzando.
+
+L'intervallo di refresh viene ripristinato ai valori predefiniti quando si ricarica la pagina nel browser. Per visualizzare l'intervallo di aggiornamento corrente, fare clic sul nome del cluster nell'angolo superiore destro della pagina. Si noti che l'intervallo controlla la frequenza con cui vengono effettuate le richieste API, non la velocità con cui i dati vengono ripristinati dal server.
+
+Quando un cluster è sottoposto a un carico pesante, potrebbe mettere in coda le richieste API dall'interfaccia utente di Element. In rari casi, quando la risposta del sistema viene ritardata in modo significativo, ad esempio una connessione di rete lenta combinata con un cluster occupato, è possibile che l'utente venga disconnesso dall'interfaccia utente di Element se il sistema non risponde alle richieste API in coda in modo sufficientemente rapido. Se si viene reindirizzati alla schermata di disconnessione, è possibile effettuare nuovamente l'accesso dopo aver disperso qualsiasi richiesta iniziale di autenticazione del browser. Quando si torna alla pagina di panoramica, potrebbe essere richiesto di inserire le credenziali del cluster se non vengono salvate dal browser.

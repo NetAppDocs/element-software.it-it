@@ -1,0 +1,37 @@
+---
+permalink: storage/concept_intro_solidfire_system_overview.html 
+sidebar: sidebar 
+keywords: drives, nodes, unified cluster, nodes, storage nodes, Fibre Channel nodes, FC, cluster, management, Active IQ, system components, components, hardware, storage resources, storage, Element UI, Element software, Element 
+summary: 'Un sistema di storage all-flash SolidFire è composto da componenti hardware discreti (dischi e nodi) che vengono combinati in un singolo pool di risorse di storage attraverso il software NetApp Element in esecuzione indipendente su ciascun nodo. Questo cluster unificato si presenta come un singolo sistema storage per l"utilizzo da parte di client esterni ed è gestito come una singola entità attraverso l"interfaccia utente del software Element, API e altri strumenti di gestione.' 
+---
+= Sistema storage SolidFire
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Un sistema di storage all-flash SolidFire è composto da componenti hardware discreti (dischi e nodi) che vengono combinati in un singolo pool di risorse di storage attraverso il software NetApp Element in esecuzione indipendente su ciascun nodo. Questo cluster unificato si presenta come un singolo sistema storage per l'utilizzo da parte di client esterni ed è gestito come una singola entità attraverso l'interfaccia utente del software Element, API e altri strumenti di gestione.
+
+Utilizzando l'interfaccia utente del software NetApp Element, è possibile configurare e monitorare la capacità e le performance dello storage del cluster SolidFire e gestire l'attività dello storage in un'infrastruttura multi-tenant.
+
+image::../media/solidfire_concepts_architecture_image.gif[Diagramma dell'architettura di Element Software]
+
+Un sistema storage all-flash SolidFire include i seguenti componenti:
+
+* Nodi: Hardware fisico che fornisce le risorse di storage per un cluster. Esistono due tipi di nodi:
++
+** Nodi di storage: Server che contengono una raccolta di dischi.
+** Nodi Fibre Channel (FC): Utilizzati per connettere client FC tramite uno switch Fibre Channel.
+
+
+* Cluster: Hub del sistema storage SolidFire costituito da almeno quattro nodi.
+* Nodo di gestione: Consente di aggiornare e fornire servizi di sistema tra cui monitoraggio e telemetria, gestire le risorse e le impostazioni del cluster, eseguire test e utility di sistema e fornire l'accesso al supporto NetApp per la risoluzione dei problemi. Il nodo di gestione (mNode) è una macchina virtuale che viene eseguita in tandem con un cluster di storage basato su software Element.
+* Active IQ: Uno strumento basato su web che offre viste storiche costantemente aggiornate dei dati a livello di cluster. È possibile impostare avvisi per eventi, soglie o metriche specifici. Active IQ consente di monitorare le performance e la capacità del sistema, oltre a essere sempre informato sullo stato dei cluster.
+* I dischi vengono utilizzati nei nodi di storage e memorizzano i dati per il cluster. Un nodo di storage contiene due tipi di dischi:
++
+** I dischi di metadati dei volumi memorizzano informazioni che definiscono i volumi e altri oggetti all'interno di un cluster.
+** I dischi a blocchi memorizzano i blocchi di dati per i volumi delle applicazioni.
+
+
+

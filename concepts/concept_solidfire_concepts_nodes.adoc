@@ -1,0 +1,99 @@
+---
+permalink: concepts/concept_solidfire_concepts_nodes.html 
+sidebar: sidebar 
+keywords: what is, node, management node, storage node, fibre channel, state, pending, active 
+summary: 'I nodi sono l"hardware raggruppato in un cluster a cui si accede come storage a blocchi o risorse di calcolo.' 
+---
+= Nodi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+I nodi sono risorse hardware o virtuali raggruppate in un cluster per fornire funzionalità di calcolo e storage a blocchi.
+
+Il software NetApp Element definisce diversi ruoli di nodo per un cluster. I tipi di ruoli dei nodi sono i seguenti:
+
+* <<Nodo di gestione>>
+* <<Nodo storage>>
+* <<Nodo Fibre Channel>>
+
+
+<<stato operativo del nodo,stati dei nodi>> varia in base all'associazione del cluster.
+
+
+
+== Nodo di gestione
+
+Un nodo di gestione è una macchina virtuale utilizzata per aggiornare e fornire servizi di sistema tra cui monitoraggio e telemetria, gestire le risorse e le impostazioni del cluster, eseguire test e utility di sistema e abilitare l'accesso al supporto NetApp per la risoluzione dei problemi.
+link:../concepts/concept_intro_management_node.html["Scopri di più"]
+
+
+
+== Nodo storage
+
+Un nodo di storage SolidFire è un server che contiene una raccolta di dischi che comunicano tra loro attraverso l'interfaccia di rete Bond10G. I dischi nel nodo contengono spazio di blocchi e metadati per lo storage e la gestione dei dati. Ogni nodo contiene un'immagine di fabbrica del software NetApp Element.
+
+I nodi di storage hanno le seguenti caratteristiche:
+
+* Ogni nodo ha un nome univoco. Se il nome di un nodo non viene specificato da un amministratore, per impostazione predefinita è SF-XXXX, dove XXXX è costituito da quattro caratteri casuali generati dal sistema.
+* Ogni nodo dispone di una propria cache di scrittura NVRAM (non-volatile Random Access Memory) dalle performance elevate per migliorare le prestazioni generali del sistema e ridurre la latenza di scrittura.
+* Ogni nodo è collegato a due reti, storage e gestione, ciascuna con due collegamenti indipendenti per ridondanza e performance. Ciascun nodo richiede un indirizzo IP su ciascuna rete.
+* È possibile creare un cluster con nuovi nodi di storage o aggiungere nodi di storage a un cluster esistente per aumentare la capacità e le performance dello storage.
+* È possibile aggiungere o rimuovere nodi dal cluster in qualsiasi momento senza interrompere il servizio.
+
+
+
+
+== Nodo Fibre Channel
+
+I nodi Fibre Channel SolidFire forniscono connettività a uno switch Fibre Channel, che è possibile collegare ai client Fibre Channel. I nodi Fibre Channel fungono da convertitore di protocollo tra i protocolli Fibre Channel e iSCSI, consentendo di aggiungere connettività Fibre Channel a qualsiasi cluster SolidFire nuovo o esistente.
+
+I nodi Fibre Channel hanno le seguenti caratteristiche:
+
+* Gli switch Fibre Channel gestiscono lo stato del fabric, fornendo interconnessioni ottimizzate.
+* Il traffico tra due porte passa solo attraverso gli switch e non viene trasmesso ad altre porte.
+* Il guasto di una porta è isolato e non influisce sul funzionamento di altre porte.
+* Più coppie di porte possono comunicare contemporaneamente in un fabric.
+
+
+
+
+== stato operativo del nodo
+
+[role="lead"]
+Un nodo può trovarsi in uno dei diversi stati a seconda del livello di configurazione.
+
+* *Disponibile*
++
+Il nodo non ha un nome di cluster associato e non fa ancora parte di un cluster.
+
+* *In sospeso*
++
+Il nodo è configurato e può essere aggiunto a un cluster designato.
+
++
+Per accedere al nodo non è richiesta l'autenticazione.
+
+* *Attivo in sospeso*
++
+Il sistema sta installando un software compatibile sul nodo. Al termine, il nodo passa allo stato attivo.
+
+* *Attivo*
++
+Il nodo partecipa a un cluster.
+
++
+L'autenticazione è necessaria per modificare il nodo.
+
+
+
+In ciascuno di questi stati, alcuni campi sono di sola lettura.
+
+[discrete]
+== Trova ulteriori informazioni
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
+

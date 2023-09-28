@@ -1,0 +1,163 @@
+---
+permalink: storage/concept_system_manage_manage_cluster_administrator_users.html 
+sidebar: sidebar 
+keywords: element, solidfire, cluster admin, account, create, change, configure, administrator access, edit permissions, change passwords 
+summary: 'È possibile gestire gli account amministratore del cluster per un sistema storage SolidFire. Le funzioni di gestione degli amministratori del cluster disponibili includono la creazione, l"eliminazione e la modifica degli account degli amministratori del cluster, la modifica della password dell"amministratore del cluster e la configurazione delle impostazioni LDAP per gestire l"accesso al sistema per gli utenti.' 
+---
+= Gestire gli account utente degli amministratori del cluster
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile gestire gli account amministratore del cluster per un sistema storage SolidFire creando, eliminando e modificando gli account amministratore del cluster, modificando la password amministratore del cluster e configurando le impostazioni LDAP per gestire l'accesso al sistema per gli utenti.
+
+
+
+== Tipi di account amministratore del cluster di storage
+
+Esistono due tipi di account amministratore in un cluster di storage che esegue il software NetApp Element: L'account primario dell'amministratore del cluster e un account dell'amministratore del cluster.
+
+* *Account primario amministratore del cluster*
++
+Questo account amministratore viene creato al momento della creazione del cluster. Questo account è l'account amministrativo principale con il livello di accesso più elevato al cluster. Questo account è analogo a un utente root in un sistema Linux. È possibile modificare la password per questo account amministratore.
+
+* *Account amministratore del cluster*
++
+È possibile assegnare a un account amministratore del cluster un intervallo limitato di accesso amministrativo per eseguire attività specifiche all'interno di un cluster. Le credenziali assegnate a ciascun account amministratore del cluster vengono utilizzate per autenticare le richieste API ed Element UI all'interno del sistema di storage.
+
+
+
+
+NOTE: Per accedere ai nodi attivi di un cluster tramite l'interfaccia utente per nodo, è necessario un account amministratore locale (non LDAP). Le credenziali dell'account non sono richieste per accedere a un nodo che non fa ancora parte di un cluster.
+
+
+
+== Visualizzare i dettagli dell'amministratore del cluster
+
+. Per creare un account di amministratore del cluster a livello di cluster (non LDAP), eseguire le seguenti operazioni:
++
+.. Fare clic su *utenti* > *amministratori cluster*.
+
+
+. Nella pagina Cluster Admins della scheda Users (utenti), è possibile visualizzare le seguenti informazioni.
++
+** *ID*: Numero sequenziale assegnato all'account dell'amministratore del cluster.
+** *Username*: Il nome assegnato all'account dell'amministratore del cluster al momento della creazione.
+** *Access*: Le autorizzazioni utente assegnate all'account utente. Valori possibili:
++
+*** leggi
+*** creazione di report
+*** nodi
+*** dischi
+*** volumi
+*** account
+*** ClusterAdmins
+*** amministratore
+*** SupportAdmin
+
+
+
+
++
+
+NOTE: Tutte le autorizzazioni sono disponibili per il tipo di accesso amministratore.
+
++
+** *Type*: Il tipo di amministratore del cluster. Valori possibili:
++
+*** Cluster
+*** LDAP
+
+
+** *Attributes*: Se l'account amministratore del cluster è stato creato utilizzando l'API Element, questa colonna mostra tutte le coppie nome-valore impostate utilizzando tale metodo.
++
+Vedere link:../api/index.html["Riferimento API software NetApp Element"].
+
+
+
+
+
+
+
+== Creare un account amministratore del cluster
+
+È possibile creare nuovi account amministratore del cluster con autorizzazioni per consentire o limitare l'accesso a specifiche aree del sistema di storage. Quando si impostano le autorizzazioni dell'account amministratore del cluster, il sistema concede i diritti di sola lettura per le autorizzazioni non assegnate all'amministratore del cluster.
+
+Se si desidera creare un account amministratore del cluster LDAP, assicurarsi che LDAP sia configurato sul cluster prima di iniziare.
+
+link:task_system_manage_enable_ldap_authentication.html["Abilitare l'autenticazione LDAP con l'interfaccia utente Element"]
+
+In seguito, è possibile modificare i privilegi degli account amministratore del cluster per report, nodi, dischi, volumi, account, e a livello di cluster. Quando si abilita un'autorizzazione, il sistema assegna l'accesso in scrittura per quel livello. Il sistema concede all'utente amministratore l'accesso in sola lettura per i livelli non selezionati.
+
+È inoltre possibile rimuovere in seguito qualsiasi account utente amministratore del cluster creato da un amministratore di sistema. Non è possibile rimuovere l'account amministratore del cluster primario creato al momento della creazione del cluster.
+
+. Per creare un account di amministratore del cluster a livello di cluster (non LDAP), eseguire le seguenti operazioni:
++
+.. Fare clic su *utenti* > *amministratori cluster*.
+.. Fare clic su *Create Cluster Admin* (Crea amministratore cluster).
+.. Selezionare il tipo di utente *Cluster*.
+.. Immettere un nome utente e una password per l'account e confermare la password.
+.. Selezionare le autorizzazioni utente da applicare all'account.
+.. Selezionare la casella di controllo per accettare il Contratto di licenza con l'utente finale.
+.. Fare clic su *Create Cluster Admin* (Crea amministratore cluster).
+
+
+. Per creare un account amministratore del cluster nella directory LDAP, eseguire le seguenti operazioni:
++
+.. Fare clic su *Cluster* > *LDAP*.
+.. Assicurarsi che l'autenticazione LDAP sia attivata.
+.. Fare clic su *Test User Authentication* (verifica autenticazione utente) e copiare il nome distinto visualizzato per l'utente o per uno dei gruppi di cui l'utente è membro in modo da poterlo incollare in un secondo momento.
+.. Fare clic su *utenti* > *amministratori cluster*.
+.. Fare clic su *Create Cluster Admin* (Crea amministratore cluster).
+.. Selezionare il tipo di utente LDAP.
+.. Nel campo Distinguished Name (Nome distinto), seguire l'esempio nella casella di testo per immettere un nome distinto completo per l'utente o il gruppo. In alternativa, incollarlo dal nome distinto precedentemente copiato.
++
+Se il nome distinto fa parte di un gruppo, tutti gli utenti che fanno parte di tale gruppo sul server LDAP disporranno delle autorizzazioni per questo account admin.
+
++
+Per aggiungere utenti o gruppi amministratori cluster LDAP, il formato generale del nome utente è "`LDAP:<Full Distinguished Name>`".
+
+.. Selezionare le autorizzazioni utente da applicare all'account.
+.. Selezionare la casella di controllo per accettare il Contratto di licenza con l'utente finale.
+.. Fare clic su *Create Cluster Admin* (Crea amministratore cluster).
+
+
+
+
+
+
+== Modificare le autorizzazioni di amministratore del cluster
+
+È possibile modificare i privilegi dell'account amministratore del cluster per report, nodi, dischi, volumi, account, e a livello di cluster. Quando si abilita un'autorizzazione, il sistema assegna l'accesso in scrittura per quel livello. Il sistema concede all'utente amministratore l'accesso in sola lettura per i livelli non selezionati.
+
+. Fare clic su *utenti* > *amministratori cluster*.
+. Fare clic sull'icona Actions (azioni) dell'amministratore del cluster che si desidera modificare.
+. Fare clic su *Edit* (Modifica).
+. Selezionare le autorizzazioni utente da applicare all'account.
+. Fare clic su *Save Changes* (Salva modifiche).
+
+
+
+
+== Modificare le password per gli account amministratore del cluster
+
+È possibile utilizzare l'interfaccia utente Element per modificare le password dell'amministratore del cluster.
+
+. Fare clic su *utenti* > *amministratori cluster*.
+. Fare clic sull'icona Actions (azioni) dell'amministratore del cluster che si desidera modificare.
+. Fare clic su *Edit* (Modifica).
+. Nel campo Change Password (Modifica password), immettere una nuova password e confermarla.
+. Fare clic su *Save Changes* (Salva modifiche).
+
+
+
+
+== Trova ulteriori informazioni
+
+* link:task_system_manage_enable_ldap_authentication.html["Abilitare l'autenticazione LDAP con l'interfaccia utente Element"]
+* link:concept_system_manage_manage_ldap.html["Disattivare LDAP"]
+* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
+

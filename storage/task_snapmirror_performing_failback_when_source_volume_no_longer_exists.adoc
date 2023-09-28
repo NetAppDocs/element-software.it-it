@@ -1,0 +1,48 @@
+---
+permalink: storage/task_snapmirror_performing_failback_when_source_volume_no_longer_exists.html 
+sidebar: sidebar 
+keywords: failback, perform, source volume, snapmirror, dr, disaster recovery 
+summary: 'È possibile risincronizzare il volume di origine originale e eseguire il failback utilizzando l"interfaccia utente di NetApp Element. Questa sezione si applica agli scenari in cui il volume di origine originale è stato perso ma il cluster originale è ancora intatto. Per istruzioni su come eseguire il ripristino in un nuovo cluster, consultare la documentazione sul sito del supporto NetApp.' 
+---
+= Eseguire un failback quando il volume di origine non esiste più
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile risincronizzare il volume di origine originale e eseguire il failback utilizzando l'interfaccia utente di NetApp Element. Questa sezione si applica agli scenari in cui il volume di origine originale è stato perso ma il cluster originale è ancora intatto. Per istruzioni su come eseguire il ripristino in un nuovo cluster, consultare la documentazione sul sito del supporto NetApp.
+
+.Di cosa hai bisogno
+* Si dispone di una relazione di replica interrotta tra i volumi Element e ONTAP.
+* Il volume dell'elemento viene irrimediabilmente perso.
+* Il nome del volume originale viene visualizzato come NON TROVATO.
+
+
+.Fasi
+. Nell'interfaccia utente di Element, individuare la relazione che si è spezzata per eseguire il failover.
++
+*Best practice:* prendere nota della policy di SnapMirror e dei dettagli di pianificazione della relazione interrotta originale. Queste informazioni saranno necessarie quando si ricrea la relazione.
+
+. Fare clic sull'icona *azioni* e fare clic su *Reverse Resync* (risincronizzazione inversa).
+. Confermare l'azione.
++
+
+NOTE: L'operazione Reverse Resync crea una nuova relazione in cui i ruoli del volume di origine originale e del volume di destinazione vengono invertiti (questo comporta due relazioni quando la relazione originale persiste). Poiché il volume originale non esiste più, il sistema crea un nuovo volume elemento con lo stesso nome e le stesse dimensioni del volume di origine. Al nuovo volume viene assegnata una policy QoS predefinita chiamata SM-recovery ed è associato a un account predefinito chiamato SM-recovery. Si desidera modificare manualmente l'account e la policy QoS per tutti i volumi creati da SnapMirror per sostituire i volumi di origine distrutti.
+
++
+I dati dell'ultimo snapshot vengono trasferiti al nuovo volume come parte dell'operazione di risincronizzazione inversa. È possibile continuare ad accedere e scrivere i dati nel volume attivo sul lato di destinazione, ma sarà necessario disconnettere tutti gli host nel volume attivo ed eseguire un aggiornamento di SnapMirror prima di ripristinare la relazione primaria originale in un passaggio successivo. Dopo aver completato la risincronizzazione inversa e aver verificato che non vi siano sessioni attive connesse al volume sul lato di destinazione e che i dati più recenti si trovino sul volume primario originale, continuare con i seguenti passaggi per completare il failback e riattivare il volume primario originale:
+
+. Fare clic sull'icona *azioni* della relazione inversa creata durante l'operazione di risincronizzazione inversa e fare clic su *interruzione*.
+. Fare clic sull'icona *azioni* della relazione originale, in cui il volume di origine non esiste, quindi fare clic su *Elimina*.
+. Fare clic sull'icona *Actions* della relazione inversa, che si è spezzata al punto 4, quindi fare clic su *Reverse Resync* (risincronizzazione inversa).
+. In questo modo vengono invertiti l'origine e la destinazione e si ottiene una relazione con la stessa origine e destinazione del volume della relazione originale.
+. Fare clic sull'icona *azioni* e su *Modifica* per aggiornare questa relazione con le impostazioni di pianificazione e policy QoS originali di cui si è preso nota.
+. Ora è possibile eliminare in modo sicuro la relazione inversa risynced al punto 6.
+
+
+
+
+== Trova ulteriori informazioni
+
+xref:concept_snapmirror_failback_scenarios.adoc[Scenari di failback di SnapMirror]

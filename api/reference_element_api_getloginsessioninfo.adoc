@@ -1,0 +1,81 @@
+---
+permalink: api/reference_element_api_getloginsessioninfo.html 
+sidebar: sidebar 
+keywords: cluster,get,getting,login,session,info,getloginsessioninfo 
+summary: 'È possibile utilizzare il metodo GetLoginSessionInfo per restituire il periodo di tempo in cui una sessione di autenticazione dell"accesso è valida sia per le shell di accesso che per l"interfaccia telefonica utente (TUI).' 
+---
+= GetLoginSessionInfo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `GetLoginSessionInfo` Metodo per restituire il periodo di tempo in cui una sessione di autenticazione dell'accesso è valida sia per le shell di accesso che per l'interfaccia telefonica utente (TUI).
+
+
+
+== Parametri
+
+Questo metodo non ha parametri di input.
+
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+LoginSessionInfo
+ a| 
+Oggetto contenente il periodo di scadenza dell'autenticazione. Possibili oggetti restituiti:
+
+* timeout:
++
+L'intervallo di tempo, espresso in minuti, in cui la sessione scadrà. Formattato in H:mm:ss. Ad esempio: 1:30:00, 20:00, 5:00. Tutti gli zeri e i due punti iniziali vengono rimossi indipendentemente dal formato in cui è stato inserito il timeout.
+
+
+ a| 
+Oggetto JSON
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "method": "GetLoginSessionInfo",
+    "params": {},
+  "id" : 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+"id": 1,
+  "result" : {
+    "loginSessionInfo" : {
+      "timeout" : "30:00"
+    }
+  }
+}
+----
+
+
+== Novità dalla versione
+
+9,6

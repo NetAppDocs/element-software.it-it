@@ -1,0 +1,206 @@
+---
+permalink: api/reference_element_api_addvirtualnetwork.html 
+sidebar: sidebar 
+keywords: addvirtualnetwork,cluster,add,adding,virtual,network 
+summary: È possibile utilizzare il metodo AddVirtualNetwork per aggiungere una nuova rete virtuale a una configurazione del cluster. 
+---
+= AddVirtualNetwork
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `AddVirtualNetwork` metodo per aggiungere una nuova rete virtuale a una configurazione del cluster.
+
+Quando si aggiunge una rete virtuale, viene creata un'interfaccia per ciascun nodo e ogni interfaccia richiede un indirizzo IP della rete virtuale. Il numero di indirizzi IP specificati come parametro per questo metodo API deve essere uguale o superiore al numero di nodi nel cluster. Il sistema esegue il provisioning in blocco degli indirizzi di rete virtuali e li assegna automaticamente ai singoli nodi. Non è necessario assegnare manualmente gli indirizzi di rete virtuale ai nodi.
+
+
+NOTE: Il metodo AddVirtualNetwork viene utilizzato solo per creare una nuova rete virtuale. Se si desidera apportare modifiche a una rete virtuale esistente, utilizzare xref:reference_element_api_modifyvirtualnetwork.adoc[ModifyVirtualNetwork] metodo.
+
+
+
+== Parametri
+
+Questo metodo ha i seguenti parametri di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+AddressBllocks
+ a| 
+Intervallo univoco di indirizzi IP da includere nella rete virtuale. Membri richiesti per l'oggetto:
+
+* Start (inizio): Inizio dell'intervallo di indirizzi IP. (stringa)
+* Size (dimensione): Il numero di indirizzi IP da includere nel blocco. (intero)
+
+ a| 
+Array di oggetti JSON
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+attributi
+ a| 
+Elenco delle coppie nome-valore nel formato oggetto JSON.
+ a| 
+Oggetto JSON
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+gateway
+ a| 
+L'indirizzo IP di un gateway della rete virtuale. Questo parametro è valido solo se il parametro namespace è impostato su true.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+nome
+ a| 
+Un nome definito dall'utente per la nuova rete virtuale.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+namespace
+ a| 
+Se impostata su true, attiva la funzionalità delle VLAN di storage instradabili creando e configurando uno spazio dei nomi e la rete virtuale da esso contenuta.
+ a| 
+booleano
+ a| 
+Nessuno
+ a| 
+No
+
+
+
+ a| 
+netmask
+ a| 
+Maschera di rete univoca per la rete virtuale in fase di creazione.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+svip
+ a| 
+Indirizzo IP dello storage univoco per la rete virtuale creata.
+ a| 
+stringa
+ a| 
+Nessuno
+ a| 
+Sì
+
+
+
+ a| 
+VirtualNetworkTag
+ a| 
+Un tag VLAN (Virtual Network) univoco. I valori supportati sono compresi tra 1 e 4094.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+Sì
+
+|===
+*Nota:* i parametri della rete virtuale devono essere univoci per ogni rete virtuale quando si imposta lo spazio dei nomi su false.
+
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+
+
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+VirtualNetworkID
+ a| 
+L'ID della rete virtuale della nuova rete virtuale.
+ a| 
+intero
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+  "method": "AddVirtualNetwork",
+  "params": {
+    "virtualNetworkTag": 2010,
+    "name": "network1",
+    "addressBlocks" : [
+        { "start": "192.86.5.1", "size": 10 },
+        { "start": "192.86.5.50", "size": 20 }
+    ],
+    "netmask" : "255.255.192.0",
+    "gateway" : "10.0.1.254",
+    "svip" : "192.86.5.200",
+    "attributes" : {}
+    "namespace" : true
+  },
+"id": 1
+}
+----
+
+
+== Esempio di risposta
+
+Questo metodo restituisce una risposta simile all'esempio seguente:
+
+[listing]
+----
+{
+   "id": 1,
+   "result":
+      {
+        "virtualNetworkID": 5
+   }
+}
+----
+
+
+== Novità dalla versione
+
+9,6

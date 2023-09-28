@@ -1,0 +1,29 @@
+---
+permalink: storage/task_replication_pair_volumes.html 
+sidebar: sidebar 
+keywords: volume pairings, replication, cluster, cluster pair 
+summary: 'Dopo aver stabilito una connessione tra i cluster di una coppia di cluster, è possibile associare un volume di un cluster a un volume dell"altro cluster della coppia. Quando viene stabilita una relazione di accoppiamento dei volumi, è necessario identificare quale volume è la destinazione della replica.' 
+---
+= Associare i volumi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Dopo aver stabilito una connessione tra i cluster di una coppia di cluster, è possibile associare un volume di un cluster a un volume dell'altro cluster della coppia. Quando viene stabilita una relazione di accoppiamento dei volumi, è necessario identificare quale volume è la destinazione della replica.
+
+È possibile associare due volumi per la replica in tempo reale memorizzati in diversi cluster di storage in una coppia di cluster connessi. Dopo aver associato due cluster, è possibile configurare i volumi attivi su un cluster per la replica continua su un secondo cluster, fornendo una protezione continua dei dati (CDP). È inoltre possibile assegnare un volume come origine o destinazione della replica.
+
+I volumi sono sempre uno a uno. Dopo che un volume fa parte di un'associazione con un volume su un altro cluster, non è possibile associarlo nuovamente con altri volumi.
+
+.Di cosa hai bisogno
+* È stata stabilita una connessione tra i cluster di una coppia di cluster.
+* Si dispone dei privilegi di amministratore del cluster per uno o entrambi i cluster da associare.
+
+
+.Fasi
+. xref:task_replication_create_a_target_volume_with_read_write_access.adoc[Creare un volume di destinazione con accesso in lettura o scrittura]
+. xref:task_replication_pair_volumes_using_volume_id_or_pairing_key.adoc[Associare i volumi utilizzando un ID volume o una chiave di associazione]
+. xref:task_replication_assign_replication_source_and_target_to_paired_volumes.adoc[Assegnare un'origine e una destinazione di replica ai volumi accoppiati]
+

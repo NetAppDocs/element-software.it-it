@@ -1,0 +1,90 @@
+---
+permalink: api/reference_element_api_session_fibre_channel.html 
+sidebar: sidebar 
+keywords: object,objects,session 
+summary: 'L"oggetto sessione contiene informazioni su ogni sessione Fibre Channel visibile al cluster e sulle porte di destinazione su cui è visibile. È possibile recuperare queste informazioni con il metodo API ListFiberChannelSessions.' 
+---
+= Sessione (Fibre Channel)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'oggetto sessione contiene informazioni su ogni sessione Fibre Channel visibile al cluster e sulle porte di destinazione su cui è visibile. È possibile recuperare queste informazioni con `ListFibreChannelSessions` Metodo API.
+
+
+
+== Membri dell'oggetto
+
+Questo oggetto contiene i seguenti membri:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+InitiatorWWPN
+ a| 
+Il World Wide Port Name (WWPN) dell'iniziatore che ha effettuato l'accesso alla porta di destinazione.
+ a| 
+stringa
+
+
+
+ a| 
+ID NodeID
+ a| 
+Nodo proprietario della sessione Fibre Channel.
+ a| 
+intero
+
+
+
+ a| 
+iniziatore
+ a| 
+Informazioni sull'iniziatore server di questa sessione Fibre Channel. Membri:
+
+* Alias: Il nome descrittivo assegnato all'iniziatore.
+* Attributi: Gli attributi di questo iniziatore.
+* InitatorID (ID inizializzatore): L'ID di questo iniziatore.
+* InitiatorName (Nome inizializzatore): Il nome dell'iniziatore.
+* VolumeAccessGroups: Un elenco di gruppi di accesso ai volumi associati a questo iniziatore.
+
+ a| 
+Oggetto JSON
+
+
+
+ a| 
+ID servizio
+ a| 
+L'ID servizio della porta di destinazione coinvolta in questa sessione.
+ a| 
+intero
+
+
+
+ a| 
+TargetWWPN
+ a| 
+Il numero WWPN della porta di destinazione coinvolta in questa sessione.
+ a| 
+stringa
+
+
+
+ a| 
+VolumeAccessGroupID
+ a| 
+L'ID del gruppo di accesso al volume a cui appartiene l'iniziatorWWPN. Se non si trova in un gruppo di accesso al volume, questo valore è nullo.
+ a| 
+intero
+
+|===
+
+
+== Trova ulteriori informazioni
+
+xref:reference_element_api_listfibrechannelsessions.adoc[ListFiberChannelSessions]

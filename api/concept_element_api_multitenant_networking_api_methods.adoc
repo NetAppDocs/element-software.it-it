@@ -1,0 +1,54 @@
+---
+permalink: api/concept_element_api_multitenant_networking_api_methods.html 
+sidebar: sidebar 
+keywords: multitenant,network,networking,api,prerequisites,requirements,virtual,tenant 
+summary: La rete multi-tenant nei cluster di storage Element consente di collegare il traffico tra più client su reti logiche separate a un cluster di storage a un elemento senza routing di livello 3. 
+---
+= Metodi API di rete multi-tenant
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La rete multi-tenant nei cluster di storage Element consente di collegare il traffico tra più client su reti logiche separate a un cluster di storage a un elemento senza routing di livello 3.
+
+Le connessioni al cluster di storage vengono separate nello stack di rete attraverso l'utilizzo del tagging VLAN.
+
+
+
+== Prerequisiti per la configurazione di una rete virtuale multi-tenant
+
+* È necessario aver identificato il blocco di indirizzi IP della rete client da assegnare alle reti virtuali sui nodi di storage.
+* È necessario aver identificato un indirizzo IP della rete di storage client (SVIP) da utilizzare come endpoint per tutto il traffico di storage.
+
+
+
+
+== Ordine delle operazioni di rete virtuale
+
+. Utilizzare il metodo AddVirtualNetwork per eseguire il provisioning in blocco degli indirizzi IP immessi.
++
+Dopo aver aggiunto una rete virtuale, il cluster esegue automaticamente le seguenti operazioni:
+
++
+** Ogni nodo di storage crea un'interfaccia di rete virtuale.
+** A ciascun nodo di storage viene assegnato un indirizzo VLAN a cui è possibile instradare utilizzando l'SVIP virtuale.
+** Gli indirizzi IP della VLAN persistono su ciascun nodo in caso di riavvio del nodo.
+
+
+. Una volta assegnati l'interfaccia di rete virtuale e gli indirizzi VLAN, è possibile assegnare il traffico di rete del client al SVIP virtuale.
+
+
+
+
+== Trova ulteriori informazioni
+
+* xref:concept_element_api_virtual_network_naming_conventions.adoc[Convenzioni di naming della rete virtuale]
+* xref:reference_element_api_addvirtualnetwork.adoc[AddVirtualNetwork]
+* xref:reference_element_api_modifyvirtualnetwork.adoc[ModifyVirtualNetwork]
+* xref:reference_element_api_listvirtualnetworks.adoc[ListVirtualNetworks]
+* xref:reference_element_api_removevirtualnetwork.adoc[RemoveVirtualNetwork]
+* https://www.netapp.com/data-storage/solidfire/documentation/["Pagina delle risorse NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Documentazione per le versioni precedenti dei prodotti SolidFire ed Element di NetApp"^]
+

@@ -1,0 +1,57 @@
+---
+permalink: storage/reference_data_protection_snapshot_schedule_details.html 
+sidebar: sidebar 
+keywords: snapshots, snapshot schedules 
+summary: 'Nella pagina Data Protection > Schedules (protezione dati > programmi), è possibile visualizzare le seguenti informazioni nell"elenco delle pianificazioni di snapshot.' 
+---
+= Dettagli della pianificazione di Snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nella pagina Data Protection > Schedules (protezione dati > programmi), è possibile visualizzare le seguenti informazioni nell'elenco delle pianificazioni di snapshot.
+
+* *ID*
++
+L'ID generato dal sistema per lo snapshot.
+
+* *Tipo*
++
+Il tipo di pianificazione. Snapshot è attualmente l'unico tipo supportato.
+
+* *Nome*
++
+Il nome assegnato alla pianificazione al momento della sua creazione. I nomi delle pianificazioni di Snapshot possono contenere fino a 223 caratteri e contengono caratteri a-z, 0-9 e trattino (-).
+
+* *Frequenza*
++
+La frequenza con cui viene eseguita la pianificazione. La frequenza può essere impostata in ore e minuti, settimane o mesi.
+
+* *Ricorrente*
++
+Indicazione se il programma deve essere eseguito una sola volta o a intervalli regolari.
+
+* *Pausa manuale*
++
+Indicazione se la pianificazione è stata messa in pausa manualmente.
+
+* *ID volume*
++
+L'ID del volume utilizzato dalla pianificazione quando viene eseguita la pianificazione.
+
+* *Ultima esecuzione*
++
+L'ultima volta in cui è stato eseguito il programma.
+
+* *Stato ultima esecuzione*
++
+Il risultato dell'ultima esecuzione del programma. Valori possibili:
+
++
+** Successo
+** Guasto
+
+
+

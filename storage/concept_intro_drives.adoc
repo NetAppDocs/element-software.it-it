@@ -1,0 +1,30 @@
+---
+permalink: storage/concept_intro_drives.html 
+sidebar: sidebar 
+keywords: drives, physical drives, cluster data, storage node, volume metadata, block drives, clusters 
+summary: Un nodo di storage contiene uno o più dischi fisici utilizzati per memorizzare una parte dei dati per il cluster. Il cluster utilizza la capacità e le prestazioni del disco dopo che il disco è stato aggiunto correttamente a un cluster. 
+---
+= Dischi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Un nodo di storage contiene uno o più dischi fisici utilizzati per memorizzare una parte dei dati per il cluster. Il cluster utilizza la capacità e le prestazioni del disco dopo che il disco è stato aggiunto correttamente a un cluster.
+
+Un nodo di storage contiene due tipi di dischi:
+
+* *Unità di metadati del volume*
++
+Queste unità memorizzano informazioni compresse che definiscono ogni volume, clone o snapshot all'interno di un cluster. La capacità totale dei dischi di metadati nel sistema determina la quantità massima di storage che può essere fornita come volumi. La quantità massima di storage che può essere fornita è indipendente dalla quantità di dati effettivamente memorizzati sui dischi a blocchi del cluster. I dischi di metadati dei volumi memorizzano i dati in modo ridondante in un cluster utilizzando la protezione dei dati Double Helix.
+
++
+
+NOTE: Alcuni messaggi di errore e log degli eventi di sistema fanno riferimento ai dischi dei metadati dei volumi come dischi slice.
+
+* *Unità a blocchi*
++
+Questi dischi memorizzano i blocchi di dati compressi e deduplicati per i volumi delle applicazioni server. I dischi a blocchi costituiscono la maggior parte della capacità di storage del sistema. La maggior parte delle richieste di lettura per i dati già memorizzati nel cluster SolidFire, così come le richieste di scrittura dei dati, si verificano sui dischi a blocchi. La capacità totale del disco a blocchi nel sistema determina la quantità massima di dati che è possibile memorizzare, tenendo conto degli effetti di compressione, thin provisioning e deduplica.
+
+

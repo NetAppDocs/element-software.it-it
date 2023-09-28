@@ -1,0 +1,120 @@
+---
+permalink: storage/concept_data_manage_vvol_manage_storage_containers.html 
+sidebar: sidebar 
+keywords: storage container, storage containers, about storage containers, cluster, vvols, create, view details, chap, edit, delete 
+summary: Un container di storage è una rappresentazione del datastore vSphere creata su un cluster che esegue il software Element. 
+---
+= Gestire i container di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Un container di storage è una rappresentazione del datastore vSphere creata su un cluster che esegue il software Element.
+
+I container di storage vengono creati e legati agli account NetApp Element. Un container di storage creato sullo storage Element viene visualizzato come datastore vSphere in vCenter ed ESXi. I container di storage non allocano spazio nello storage degli elementi. Vengono semplicemente utilizzati per associare logicamente i volumi virtuali.
+
+È supportato un massimo di quattro container di storage per cluster. Per abilitare la funzionalità VVol, è necessario almeno un container di storage.
+
+
+
+== Creare un container di storage
+
+È possibile creare contenitori di storage nell'interfaccia utente di Element e rilevarli in vCenter. È necessario creare almeno un container di storage per iniziare il provisioning delle macchine virtuali con supporto Vol.
+
+Prima di iniziare, attivare la funzionalità VVol nell'interfaccia utente Element per il cluster.
+
+.Fasi
+. Selezionare *VVol* > *Storage Containers*.
+. Fare clic sul pulsante *Create Storage Containers* (Crea container di storage).
+. Inserire le informazioni sul contenitore di storage nella finestra di dialogo *Crea un nuovo contenitore di storage*:
++
+.. Immettere un nome per il contenitore di storage.
+.. Configurare i segreti di initiator e target per CHAP.
++
+
+TIP: Lasciare vuoti i campi CHAP Settings (Impostazioni CHAP) per generare automaticamente i segreti.
+
+.. Fare clic sul pulsante *Create Storage Container* (Crea contenitore di storage).
+
+
+. Verificare che il nuovo contenitore di storage venga visualizzato nell'elenco nella sottoscheda *Storage Containers*.
++
+
+NOTE: Poiché un ID account NetApp Element viene creato automaticamente e assegnato al container di storage, non è necessario creare manualmente un account.
+
+
+
+
+
+== Visualizzare i dettagli del container di storage
+
+Nella pagina Storage Containers della scheda VVol, è possibile visualizzare le informazioni relative a tutti i container di storage attivi nel cluster.
+
+* *Account ID*: L'ID dell'account NetApp Element associato al container di storage.
+* *Name*: Il nome del contenitore di storage.
+* *Status*: Lo stato del contenitore di storage. Valori possibili:
++
+** Attivo: Il contenitore di storage è in uso.
+** Bloccato: Il contenitore di storage è bloccato.
+
+
+* *PE Type*: Il tipo di endpoint del protocollo (SCSI è l'unico protocollo disponibile per il software Element).
+* *Storage Container ID*: UUID del container di storage del volume virtuale.
+* *Active Virtual Volumes* (volumi virtuali attivi): Il numero di volumi virtuali attivi associati al container di storage.
+
+
+
+
+== Visualizzare i dettagli dei singoli container di storage
+
+È possibile visualizzare le informazioni sul contenitore di storage per un singolo contenitore selezionandole dalla pagina Storage Containers nella scheda VVols.
+
+* *Account ID*: L'ID dell'account NetApp Element associato al container di storage.
+* *Name*: Il nome del contenitore di storage.
+* *Status*: Lo stato del contenitore di storage. Valori possibili:
++
+** Attivo: Il contenitore di storage è in uso.
+** Bloccato: Il contenitore di storage è bloccato.
+
+
+* *CHAP Initiator Secret*: Il segreto CHAP unico per l'iniziatore.
+* *CHAP Target Secret*: Il segreto CHAP unico per il target.
+* *Storage Container ID*: UUID del container di storage del volume virtuale.
+* *Protocol Endpoint Type* (tipo endpoint protocollo): Indica il tipo di endpoint del protocollo (SCSI è l'unico protocollo disponibile).
+
+
+
+
+== Modificare un container di storage
+
+È possibile modificare l'autenticazione CHAP del container di storage nell'interfaccia utente di Element.
+
+. Selezionare *VVol* > *Storage Containers*.
+. Fare clic sull'icona *azioni* del contenitore di storage che si desidera modificare.
+. Nel menu visualizzato, selezionare *Edit* (Modifica).
+. In Impostazioni CHAP, modificare le credenziali Initiator Secret e Target Secret utilizzate per l'autenticazione.
++
+
+TIP: Se non si modificano le credenziali CHAP Settings, queste rimangono invariate. Se i campi delle credenziali vengono vuoti, il sistema genera automaticamente nuovi segreti.
+
+. Fare clic su *Save Changes* (Salva modifiche).
+
+
+
+
+== Eliminare un contenitore di storage
+
+È possibile eliminare i contenitori di storage dall'interfaccia utente di Element.
+
+.Di cosa hai bisogno
+Assicurarsi che tutte le macchine virtuali siano state rimosse dal datastore Vol.
+
+.Fasi
+. Selezionare *VVol* > *Storage Containers*.
+. Fare clic sull'icona *azioni* del contenitore di storage che si desidera eliminare.
+. Nel menu visualizzato, selezionare *Delete* (Elimina).
+. Confermare l'azione.
+. Aggiornare l'elenco dei contenitori di storage nella sottoscheda *Storage Containers* per confermare che il contenitore di storage è stato rimosso.
+

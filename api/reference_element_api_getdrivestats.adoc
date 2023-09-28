@@ -1,0 +1,147 @@
+---
+permalink: api/reference_element_api_getdrivestats.html 
+sidebar: sidebar 
+keywords: drive,drives,stats,get,getting,getdrivestats 
+summary: 'È possibile utilizzare il metodo GetDriveStats per ottenere misurazioni delle attività di alto livello per un singolo disco. I valori sono cumulativi dall"aggiunta del disco al cluster. Alcuni valori sono specifici dei dischi a blocchi. Quando si esegue questo metodo, vengono restituiti dati statistici per i tipi di unità a blocchi o metadati.' 
+---
+= GetDriveStats
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `GetDriveStats` metodo per ottenere misurazioni di attività di alto livello per un singolo disco. I valori sono cumulativi dall'aggiunta del disco al cluster. Alcuni valori sono specifici dei dischi a blocchi. Quando si esegue questo metodo, vengono restituiti dati statistici per i tipi di unità a blocchi o metadati.
+
+
+
+== Parametro
+
+Questo metodo ha il seguente parametro di input:
+
+|===
+| Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
+
+
+ a| 
+ID del driver
+ a| 
+ID del disco per la richiesta.
+ a| 
+intero
+ a| 
+Nessuno
+ a| 
+Sì
+
+|===
+
+
+== Valore restituito
+
+Questo metodo ha il seguente valore restituito:
+
+|===
+| Nome | Descrizione | Tipo 
+
+
+ a| 
+DriveStats
+ a| 
+Informazioni sull'attività del disco per l'ID unità specificato.
+ a| 
+xref:reference_element_api_drivestats.adoc[DriveStats]
+
+|===
+
+
+== Esempio di richiesta
+
+Le richieste per questo metodo sono simili all'esempio seguente:
+
+[listing]
+----
+{
+   "method": "GetDriveStats",
+   "params": {
+     "driveID": 3
+   },
+   "id" : 1
+}
+----
+
+
+== Esempio di risposta (disco a blocchi)
+
+Questo metodo restituisce una risposta simile all'esempio seguente per un disco a blocchi:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "driveStats": {
+      "driveID": 10,
+      "failedDieCount": 0,
+      "lifeRemainingPercent": 99,
+      "lifetimeReadBytes": 26471661830144,
+      "lifetimeWriteBytes": 13863852441600,
+      "powerOnHours": 33684,
+      "readBytes": 10600432105,
+      "readOps": 5101025,
+      "reallocatedSectors": 0,
+      "reserveCapacityPercent": 100,
+      "timestamp": "2016-10-17T20:23:45.456834Z",
+      "totalCapacity": 300069052416,
+      "usedCapacity": 6112226545,
+      "usedMemory": 114503680,
+      "writeBytes": 53559500896,
+      "writeOps": 25773919
+    }
+  }
+}
+----
+
+
+== Esempio di risposta (unità di metadati del volume)
+
+Questo metodo restituisce una risposta simile all'esempio seguente per un'unità di metadati di un volume:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "driveStats": {
+      "activeSessions": 8,
+      "driveID": 12,
+      "failedDieCount": 0,
+      "lifeRemainingPercent": 100,
+      "lifetimeReadBytes": 2308544921600,
+      "lifetimeWriteBytes": 1120986464256,
+      "powerOnHours": 16316,
+      "readBytes": 1060152152064,
+      "readOps": 258826209,
+      "reallocatedSectors": 0,
+      "reserveCapacityPercent": 100,
+      "timestamp": "2016-10-17T20:34:52.456130Z",
+      "totalCapacity": 134994670387,
+      "usedCapacity": null,
+      "usedMemory": 22173577216,
+      "writeBytes": 353346510848,
+      "writeOps": 86266238
+    }
+  }
+}
+----
+
+
+== Novità dalla versione
+
+9,6
+
+
+
+== Trova ulteriori informazioni
+
+xref:reference_element_api_listdrives.adoc[ListDrive]

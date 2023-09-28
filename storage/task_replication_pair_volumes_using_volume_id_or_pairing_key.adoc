@@ -1,0 +1,34 @@
+---
+permalink: storage/task_replication_pair_volumes_using_volume_id_or_pairing_key.html 
+sidebar: sidebar 
+keywords: volume pairings, pairing key, volume id, replication 
+summary: 'Il processo di associazione prevede l"associazione di due volumi utilizzando un ID volume o una chiave di associazione.' 
+---
+= Associare i volumi utilizzando un ID volume o una chiave di associazione
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il processo di associazione prevede l'associazione di due volumi utilizzando un ID volume o una chiave di associazione.
+
+. Associare i volumi selezionando uno dei seguenti metodi:
++
+** Utilizzo di un ID volume: Utilizzare questo metodo se si dispone dell'accesso dell'amministratore del cluster a entrambi i cluster sui quali devono essere associati i volumi. Questo metodo utilizza l'ID del volume sul cluster remoto per avviare una connessione.
+** Utilizzo di una chiave di accoppiamento: Utilizzare questo metodo se si dispone dell'accesso dell'amministratore del cluster solo al cluster di origine. Questo metodo genera una chiave di accoppiamento che può essere utilizzata sul cluster remoto per completare la coppia di volumi.
++
+
+NOTE: La chiave di accoppiamento del volume contiene una versione crittografata delle informazioni del volume e potrebbe contenere informazioni riservate. Condividere questa chiave solo in modo sicuro.
+
+
+
+
+
+
+
+== Trova ulteriori informazioni
+
+* xref:task_replication_pair_volumes_using_a_volume_id.adoc[Associare i volumi utilizzando un ID volume]
+* xref:task_replication_pair_volumes_using_a_pairing_key.adoc[Associare i volumi utilizzando una chiave di accoppiamento]
+

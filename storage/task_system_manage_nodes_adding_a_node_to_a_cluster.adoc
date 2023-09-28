@@ -1,0 +1,53 @@
+---
+permalink: storage/task_system_manage_nodes_adding_a_node_to_a_cluster.html 
+sidebar: sidebar 
+keywords: nodes, add, config, cluster, pending, pairs, capacity, rule 
+summary: 'È possibile aggiungere nodi a un cluster quando è necessario più storage o dopo la creazione del cluster. I nodi richiedono la configurazione iniziale quando vengono accesi per la prima volta. Una volta configurato, il nodo viene visualizzato nell"elenco dei nodi in sospeso ed è possibile aggiungerlo a un cluster.' 
+---
+= Aggiungere un nodo a un cluster
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile aggiungere nodi a un cluster quando è necessario più storage o dopo la creazione del cluster. I nodi richiedono la configurazione iniziale quando vengono accesi per la prima volta. Una volta configurato, il nodo viene visualizzato nell'elenco dei nodi in sospeso ed è possibile aggiungerlo a un cluster.
+
+La versione software di ciascun nodo di un cluster deve essere compatibile. Quando si aggiunge un nodo a un cluster, il cluster installa la versione del software NetApp Element sul nuovo nodo in base alle necessità.
+
+È possibile aggiungere nodi di capacità inferiore o superiore a un cluster esistente. È possibile aggiungere capacità di nodi maggiori a un cluster per consentire la crescita della capacità. I nodi più grandi aggiunti a un cluster con nodi più piccoli devono essere aggiunti a coppie. Ciò consente a Double Helix di spostare i dati in modo da lasciare spazio sufficiente in caso di guasto di uno dei nodi più grandi. È possibile aggiungere capacità di nodo inferiori a un cluster di nodi più grande per migliorare le performance.
+
+
+NOTE: Se un nodo aggiunto di recente rappresenta oltre il 50% della capacità totale del cluster, una parte della capacità di questo nodo viene resa inutilizzabile ("bloccato"), in modo che sia conforme alla regola di capacità. Questo rimane il caso fino a quando non viene aggiunto ulteriore storage. Se viene aggiunto un nodo molto grande che disobbedisce anche alla regola di capacità, il nodo precedentemente bloccato non verrà più bloccato, mentre il nodo appena aggiunto viene bloccato. La capacità deve essere sempre aggiunta in coppie per evitare che ciò accada. Quando un nodo viene bloccato, viene generato l'errore del cluster strandedCapacity.
+
+https://www.youtube.com/embed/2smVHWkikXY?rel=0["Video di NetApp: Scalabilità in base ai termini: Espansione di un cluster SolidFire"^]
+
+È possibile aggiungere nodi alle appliance NetApp HCI.
+
+.Fasi
+. Selezionare *Cluster* > *Nodes*.
+. Fare clic su *Pending* (in sospeso) per visualizzare l'elenco dei nodi in sospeso.
++
+Una volta completato il processo di aggiunta dei nodi, questi vengono visualizzati nell'elenco nodi attivi. Fino ad allora, i nodi in sospeso vengono visualizzati nell'elenco Pending Active (attivo in sospeso).
+
++
+SolidFire installa la versione software Element del cluster sui nodi in sospeso quando vengono aggiunti a un cluster. L'operazione potrebbe richiedere alcuni minuti.
+
+. Effettuare una delle seguenti operazioni:
++
+** Per aggiungere singoli nodi, fare clic sull'icona *azioni* del nodo che si desidera aggiungere.
+** Per aggiungere più nodi, selezionare la casella di controllo dei nodi da aggiungere, quindi *azioni in blocco*.
+*Nota:* se il nodo che si sta aggiungendo ha una versione del software Element diversa da quella in esecuzione sul cluster, il cluster aggiorna in modo asincrono il nodo alla versione del software Element in esecuzione sul master del cluster. Una volta aggiornato, il nodo si aggiunge automaticamente al cluster. Durante questo processo asincrono, il nodo si trova in uno stato Active pendingActive.
+
+
+. Fare clic su *Aggiungi*.
++
+Il nodo viene visualizzato nell'elenco dei nodi attivi.
+
+
+
+
+
+== Trova ulteriori informazioni
+
+xref:concept_system_manage_nodes_node_versioning_and_compatibility.adoc[Versione e compatibilità dei nodi]
