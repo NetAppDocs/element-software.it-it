@@ -73,7 +73,7 @@ Questo metodo restituisce una risposta simile all'esempio seguente:
            "sliceID":5,
            "srcServiceID":16,
            "stage":"whole",
-           "totalBytes":200278016remote0,
+           "totalBytes":2002780160,
            "type":"slice"
        },
        {
