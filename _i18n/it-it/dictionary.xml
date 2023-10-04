@@ -214,7 +214,6 @@
   <block id="b714fec4d7287a9e6dfc31da8638ac8b" category="paragraph">Comunicazioni iSCSI del client</block>
   <block id="980b3703717b76269490b885f315bb88" category="paragraph">SIP. Nodo storage</block>
   <block id="3fb1292a90b80b9cc1a3f200dfc17b80" category="paragraph">Nodo di gestione</block>
-  <block id="43638993383f845bcd8925bd4e266bc9" category="paragraph">sfsupport.solidfire.com</block>
   <block id="b6d767d2f8ed5d21a44b0e5886680cb9" category="paragraph">22</block>
   <block id="54ea06f86e263d9bc3ed3b50598bbf94" category="paragraph">Tunnel SSH inverso per l'accesso al supporto</block>
   <block id="07823917bf5da074b0e463b5eb9a35b1" category="paragraph">MIP nodo storage</block>
@@ -224,7 +223,6 @@
   <block id="b20a6c801c401908aa3c96f370665e05" category="paragraph">Ricerca DNS</block>
   <block id="c203d8a151612acf12457e4d67635a95" category="paragraph">442</block>
   <block id="3576cff8b205debb58711ff360f51ffd" category="paragraph">Accesso API e UI agli aggiornamenti del software Element e del nodo di storage</block>
-  <block id="00a55ff76496c3c45ca20071f6151bfc" category="paragraph">monitoring.solidfire.com</block>
   <block id="6ac181854a8b48c5ac6018a305f6ae7c" category="paragraph">Report del cluster di storage a Active IQ</block>
   <block id="0c29e1667ad297897573438219b3e1c6" category="paragraph">repo.netapp.com</block>
   <block id="43416d1cebc089588a77207470ee9f35" category="paragraph">Fornisce l'accesso ai componenti necessari per installare/aggiornare l'implementazione on-premise.</block>
@@ -5758,7 +5756,6 @@ Quindi selezionare *Avanti*.</block>
   <block id="1ec8160ad002d3b57b0367c162c7e579" category="open-title">Plug-in Element vCenter 5.0 o versione successiva</block>
   <block id="badb045d93b6de2fe8d2a1a664b92d6f" category="paragraph">Questa procedura di aggiornamento riguarda i seguenti scenari di aggiornamento:</block>
   <block id="61517793d4523320c7cd75e303ad36ff" category="list-text">Si sta eseguendo l'aggiornamento a 8.0 o 7.0 HTML5 vSphere Web Client.</block>
-  <block id="787e0e54cc17d9dd6bbd7cf4c4fbc14d" category="admonition">Element Plug-in per vCenter 5.0 e versioni successive non è compatibile con vCenter Server 6.7 e 6.5.</block>
   <block id="609cfd925544c2aaccb703dcb95eed4d" category="admonition">Quando si esegue l'aggiornamento da Element Plug-in per vCenter Server 4.x a 5.x, i cluster già configurati con il plug-in vengono persi perché i dati non possono essere copiati da un'istanza di vCenter a un plug-in remoto. È necessario aggiungere nuovamente i cluster al plug-in remoto. Si tratta di un'attività singola durante l'aggiornamento da un plug-in locale a un plug-in remoto.</block>
   <block id="e6d87bbd73a5a86fcf1e6cbc75296808" category="open-title">Plug-in Element vCenter 4.10 o versioni precedenti</block>
   <block id="524f8acc9609df7272285a19757aefcb" category="list-text">Si sta eseguendo l'aggiornamento a Element Plug-in per vCenter Server 4.10, 4.9, 4.8, 4.7, 4.6, 4.5 o 4.4.</block>
@@ -11933,7 +11930,6 @@ Se non vengono specificati né expirationTime, né la conservazione sullo snapsh
   <block id="11e18bb72465b19d35f1a1fb2d9a5ccc" category="paragraph">Il numero di secondi dall'inizio del lavoro.</block>
   <block id="703769be5e6210b6a2b6b99e92112954" category="paragraph"><block ref="1ddcb92ade31c8fbd370001f9b29a7d9" prefix="" category="inline-code"></block></block>
   <block id="e553196c9c6aca88c9d5001211caacb9" category="paragraph">Il formato dell'operazione del volume in blocco. Valori possibili:</block>
-  <block id="2b98a4ad988a18c42682f388901f2672" category="list-text">compresso</block>
   <block id="8e5f3adee38c8fccc13c1f3be0143796" category="list-text">nativo</block>
   <block id="b5f22048829ef6db41cb34c651f96faa" category="paragraph"><block ref="3c6e0b8a9c15224a8228b9a98ca1531d" prefix="" category="inline-code"></block></block>
   <block id="7a5bc9d962882cb35fcea421f3f78bd9" category="paragraph">Chiave univoca creata dalla sessione del volume in blocco.</block>
@@ -12078,4 +12074,8 @@ Se non vengono specificati né expirationTime, né la conservazione sullo snapsh
   <block id="eea7cb3a63edf642e1f15162351dfce7" category="list-text">Stai effettuando l'aggiornamento a Element Plug-in per vCenter Server 5,2, 5,1 o 5,0.</block>
   <block id="c9c6a2f6fa07c1f8c580586914c37e79" category="image-alt">Descrive i punti di estensione del plug-in dopo un aggiornamento o un'installazione corretti per Element Plug-in 5,1 o versione successiva</block>
   <block id="f35f89119a6374d18bd89e0103590c61" category="image-alt">Descrive i punti di estensione del plug-in dopo un aggiornamento o un'installazione corretti per Element Plug-in 4,10 o versioni precedenti</block>
+  <block id="1583ff28675a9e24a50fa1079a5dd985" category="paragraph"><block ref="43638993383f845bcd8925bd4e266bc9" prefix="" category="inline-code"></block></block>
+  <block id="86eccd8202a873aee7f9acfbe920bb59" category="paragraph"><block ref="00a55ff76496c3c45ca20071f6151bfc" prefix="" category="inline-code"></block></block>
+  <block id="474ed7ffbbc0fc1d58ad983e7ef700f6" category="admonition">Il plug-in Element per vCenter 5,0 o versioni successive non è compatibile con vCenter Server 6,7 e 6,5.</block>
+  <block id="dfd25ff244b001be7beece9729517779" category="list-text">non compresso</block>
 </blocks>

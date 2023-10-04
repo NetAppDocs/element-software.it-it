@@ -67,7 +67,7 @@ Comunicazioni iSCSI del client
  a| 
 Nodo di gestione
  a| 
-sfsupport.solidfire.com
+`sfsupport.solidfire.com`
  a| 
 22
  a| 
@@ -122,7 +122,7 @@ Accesso API e UI agli aggiornamenti del software Element e del nodo di storage
  a| 
 Nodo di gestione
  a| 
-monitoring.solidfire.com
+`monitoring.solidfire.com`
  a| 
 443
  a| 

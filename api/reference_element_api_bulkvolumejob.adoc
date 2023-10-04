@@ -64,8 +64,8 @@ stringa
  a| 
 Il formato dell'operazione del volume in blocco. Valori possibili:
 
-* compresso
 * nativo
+* non compresso
 
  a| 
 stringa
