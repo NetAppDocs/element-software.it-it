@@ -58,4 +58,5 @@ La direzione di autenticazione, ad esempio, unidirezionale (solo iniziatore) o b
 stringa
 
 |===
-*Disponibile a partire dall'elemento 12,7.
+* Disponibile a partire da Element 12,7.
+

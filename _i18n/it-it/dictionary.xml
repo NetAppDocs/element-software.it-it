@@ -5747,7 +5747,6 @@ Quindi selezionare *Avanti*.</block>
   <block id="30624e21224d847e1b829641269ffe3c" category="inline-link-macro">Avviso per il bundle del firmware di archiviazione 2,27</block>
   <block id="656e3f29cbe522931c455a5e233d1c6f" category="list-text"><block ref="656e3f29cbe522931c455a5e233d1c6f" category="inline-link-macro-rx"></block></block>
   <block id="c6ad545ed5197a02a4f86759e091d934" category="summary">Un sistema storage all-flash SolidFire è composto da componenti hardware come dischi e nodi che vengono combinati in un pool di risorse di storage. Come sistema storage singolo, questo cluster unificato viene gestito con il software NetApp Element.</block>
-  <block id="b7faeba39aadbf9af836a1e70f5708d7" category="doc">Documentazione di SolidFire ed Element Software 12,5 e versioni successive</block>
   <block id="2e78b6f70db7c1550da68540c472fe32" category="summary">Come parte di un upgrade del sistema storage NetApp SolidFire, è possibile aggiornare il plug-in Element per vCenter Server.</block>
   <block id="9e31323b5cbbe61c6c8c43ad2755958b" category="doc">Aggiornare il plug-in Element per vCenter Server</block>
   <block id="9b50fd8de96fcf38bc35a026df14fbc4" category="paragraph">Per gli ambienti vSphere esistenti con un plug-in NetApp Element registrato per VMware vCenter Server, è possibile aggiornare la registrazione del plug-in dopo il primo aggiornamento del pacchetto di servizi di gestione che contiene il servizio plug-in.</block>
@@ -11364,7 +11363,6 @@ Se questo parametro non viene specificato, l'operazione di rekey viene eseguita 
   <block id="e4129684446aea2a0364c5466dc85146" category="paragraph">Il nome utente CHAP specificato dall'iniziatore durante l'accesso a una sessione iSCSI.</block>
   <block id="ef72c37be9d1b9e6e5bbd6ef09448abe" category="paragraph">direzione</block>
   <block id="e7eefd9834440f0ab15e111471053cf0" category="paragraph">La direzione di autenticazione, ad esempio, unidirezionale (solo iniziatore) o bidirezionale (sia iniziatore che destinazione).</block>
-  <block id="cd6217be1698a09a848043a5d6c72040" category="paragraph">*Disponibile a partire dall'elemento 12,7.</block>
   <block id="4cca5670a0a398723ce823b5467e1976" category="summary">L'oggetto QoS contiene informazioni sulle impostazioni QoS (Quality of Service) per i volumi. I volumi creati senza valori QoS specificati vengono creati utilizzando i valori predefiniti. È possibile trovare i valori predefiniti utilizzando il metodo GetDefaultQoS.</block>
   <block id="caf770e6d0c4709b73403346a2624508" category="paragraph">L'oggetto QoS contiene informazioni sulle impostazioni QoS (Quality of Service) per i volumi. I volumi creati senza valori QoS specificati vengono creati utilizzando i valori predefiniti. È possibile trovare i valori predefiniti utilizzando<block ref="343d37e4760eb5d24babaa404f0099a7" prefix=" " category="inline-code"></block> metodo.</block>
   <block id="8f6ea88827085c874d4377d973f0a6a6" category="paragraph">Massimo IOPS di 4 KB "picco" consentito per brevi periodi di tempo. Consente di eseguire burst di attività i/o sul normale valore maxIOPS.</block>
@@ -12060,7 +12058,6 @@ Se non vengono specificati né expirationTime, né la conservazione sullo snapsh
   <block id="ca1fd6fbdda3d71b63bb4ea743cd48e8" category="sidebar">Utilizzare l'API REST del nodo di gestione</block>
   <block id="4c46c9acea33f3a7201c692e8d84806b" category="sidebar">Gestire le connessioni di supporto</block>
   <block id="9282ad3aef7e124a3b2b9c7eab52b33d" category="sidebar">Architettura e componenti</block>
-  <block id="a3fc65b85282a6a88ae5d5d3defca6e5" category="sidebar">Aggiorna il tuo sistema storage all-flash NetApp SolidFire per il software Element versione 12,5 o successiva</block>
   <block id="b837bae0f441ebacd86887d737939282" category="sidebar">Procedure di aggiornamento del sistema</block>
   <block id="2e531c00d20727b760f0fefbb4c65c82" category="sidebar">Visualizza il tuo inventario nella pagina nodi di NetApp Hybrid Cloud Control</block>
   <block id="767682e703a28fefdc1067e1fcf04243" category="sidebar">Monitorate i volumi sul vostro cluster di storage con NetApp Hybrid Cloud Control</block>
@@ -12078,4 +12075,6 @@ Se non vengono specificati né expirationTime, né la conservazione sullo snapsh
   <block id="86eccd8202a873aee7f9acfbe920bb59" category="paragraph"><block ref="00a55ff76496c3c45ca20071f6151bfc" prefix="" category="inline-code"></block></block>
   <block id="474ed7ffbbc0fc1d58ad983e7ef700f6" category="admonition">Il plug-in Element per vCenter 5,0 o versioni successive non è compatibile con vCenter Server 6,7 e 6,5.</block>
   <block id="dfd25ff244b001be7beece9729517779" category="list-text">non compresso</block>
+  <block id="54b283655ec8649a11478759bf661650" category="list-text">Disponibile a partire da Element 12,7.</block>
+  <block id="909a1c829d29d09da00949e5c8b87a0e" category="sidebar">Aggiorna il tuo sistema storage all-flash NetApp SolidFire</block>
 </blocks>
