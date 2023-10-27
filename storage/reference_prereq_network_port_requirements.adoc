@@ -2,7 +2,7 @@
 permalink: storage/reference_prereq_network_port_requirements.html 
 sidebar: sidebar 
 keywords: network port requirements, TCP ports, firewall, utilities, URL, access attempt, ICMP, MIP, SIP, MVIP, SVIP 
-summary: Potrebbe essere necessario consentire le seguenti porte TCP attraverso il firewall edge del data center in modo da poter gestire il sistema in remoto e consentire ai client esterni al data center di connettersi alle risorse. Alcune di queste porte potrebbero non essere necessarie, a seconda delle modalità di utilizzo del sistema. 
+summary: Potrebbe essere necessario abilitare le seguenti porte TCP attraverso il firewall perimetrale del centro dati in modo da poter gestire il sistema in remoto e consentire ai client esterni al centro dati di connettersi alle risorse. Alcune di queste porte potrebbero non essere necessarie, a seconda delle modalità di utilizzo del sistema. 
 ---
 = Requisiti delle porte di rete
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Potrebbe essere necessario consentire le seguenti porte TCP attraverso 
 
 
 [role="lead"]
-Potrebbe essere necessario consentire le seguenti porte TCP e UDP attraverso il firewall edge del data center, in modo da poter gestire il sistema in remoto e consentire ai client esterni al data center di connettersi alle risorse. Alcune di queste porte potrebbero non essere necessarie, a seconda delle modalità di utilizzo del sistema.
+Potrebbe essere necessario abilitare le seguenti porte TCP e UDP attraverso il firewall perimetrale del data center, in modo da poter gestire il sistema in remoto e consentire ai client esterni al data center di connettersi alle risorse. Alcune di queste porte potrebbero non essere necessarie, a seconda delle modalità di utilizzo del sistema.
 
 Tutte le porte sono TCP, se non diversamente specificato, e tutte le porte TCP devono supportare la comunicazione handshake a tre vie tra il server di supporto NetApp, il nodo di gestione e i nodi che eseguono il software Element. Ad esempio, l'host su un'origine del nodo di gestione comunica con l'host su una destinazione MVIP del cluster di storage attraverso la porta TCP 443, e l'host di destinazione comunica nuovamente con l'host di origine attraverso qualsiasi porta.
 
