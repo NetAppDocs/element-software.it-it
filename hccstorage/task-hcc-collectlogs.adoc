@@ -165,5 +165,5 @@ Il pacchetto di log è in un formato di file .tgz UNIX compresso.
 == Trova ulteriori informazioni
 
 * https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
-* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Documentazione software SolidFire ed Element"]
 

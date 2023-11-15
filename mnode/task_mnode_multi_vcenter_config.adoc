@@ -62,5 +62,5 @@ NOTE: In alternativa, è possibile attendere 2 minuti per l'aggiornamento dell'i
 == Trova ulteriori informazioni
 
 * https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
-* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Documentazione software SolidFire ed Element"]
 

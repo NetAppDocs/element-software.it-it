@@ -256,5 +256,5 @@ IMPORTANT: Funzionalità SSH che offre link:task_mnode_enable_remote_support_con
 
 * link:../concepts/concept_solidfire_concepts_volumes.html#persistent-volumes["Volumi persistenti"]
 * https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
-* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Documentazione software SolidFire ed Element"]
 

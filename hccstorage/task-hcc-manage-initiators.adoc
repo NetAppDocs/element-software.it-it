@@ -141,5 +141,5 @@ Un esempio del formato è il seguente:
 * link:../concepts/concept_solidfire_concepts_initiators.html["Scopri di più sugli iniziatori"]
 * link:../concepts/concept_solidfire_concepts_volume_access_groups.html["Informazioni sui gruppi di accesso ai volumi"]
 * https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
-* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Documentazione software SolidFire ed Element"]
 

@@ -84,5 +84,5 @@ Se si associa un iniziatore al gruppo di accesso al volume, tale iniziatore può
 * link:../concepts/concept_solidfire_concepts_volume_access_groups.html["Informazioni sui gruppi di accesso ai volumi"]
 * link:task-hcc-manage-initiators.html#add-initiators-to-a-volume-access-group["Aggiungere l'iniziatore a un gruppo di accesso al volume"]
 * https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
-* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Documentazione software SolidFire ed Element"]
 

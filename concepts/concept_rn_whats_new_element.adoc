@@ -133,7 +133,7 @@ Con Element 12.5, è possibile automatizzare il flusso di lavoro di aggiornament
 
 * https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Management_services_for_Element_Software_and_NetApp_HCI/Management_Services_Release_Notes["Note sulla versione di NetApp Hybrid Cloud Control and Management Services"^]
 * https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
-* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Documentazione software SolidFire ed Element"]
 * https://docs.netapp.com/us-en/element-software/index.html["Documentazione software SolidFire ed Element"^]
 * http://docs.netapp.com/sfe-122/index.jsp["Centro di documentazione software SolidFire ed Element per le versioni precedenti"^]
 * https://www.netapp.com/us/documentation/hci.aspx["Pagina delle risorse NetApp HCI"^]

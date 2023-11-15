@@ -19,6 +19,6 @@ La configurazione di rete per un sistema SolidFire comprende i requisiti di swit
 
 * link:../storage/concept_prereq_switch_configuration_for_solidfire_clusters.html["Configurazione dello switch per i cluster che eseguono il software Element"]
 * link:../storage/reference_prereq_network_port_requirements.html["Requisiti delle porte di rete"]
-* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Documentazione software SolidFire ed Element"]
 * https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
 

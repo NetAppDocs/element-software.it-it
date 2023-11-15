@@ -71,6 +71,6 @@ Alcuni nodi offrono funzionalità di gestione out-of-band aggiuntive tramite una
 == Per ulteriori informazioni
 
 * https://docs.netapp.com/us-en/hci/docs/hci_prereqs_network_switch.html["Requisiti di rete e switch NetApp HCI"^]
-* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Documentazione software SolidFire ed Element"]
 * https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
 

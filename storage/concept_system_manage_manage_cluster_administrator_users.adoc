@@ -158,6 +158,6 @@ Per aggiungere utenti o gruppi amministratori cluster LDAP, il formato generale 
 
 * link:task_system_manage_enable_ldap_authentication.html["Abilitare l'autenticazione LDAP con l'interfaccia utente Element"]
 * link:concept_system_manage_manage_ldap.html["Disattivare LDAP"]
-* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Documentazione software SolidFire ed Element"]
 * https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
 

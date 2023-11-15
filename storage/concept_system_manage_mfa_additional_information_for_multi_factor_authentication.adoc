@@ -27,6 +27,6 @@ NOTE: Se il cluster utilizza un certificato precedente all'aggiornamento a meno 
 == Trova ulteriori informazioni
 
 * link:../api/index.html["Gestione dello storage con l'API Element"]
-* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Documentazione software SolidFire ed Element"]
 * https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
 

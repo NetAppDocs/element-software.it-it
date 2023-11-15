@@ -29,6 +29,6 @@ Utilizzando l'interfaccia utente del software NetApp Element, è possibile visua
 
 * xref:reference_monitor_cluster_fault_codes.adoc[Codici di guasto del cluster]
 * link:../api/index.html["Gestire lo storage con l'API Element"]
-* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Documentazione software SolidFire ed Element"]
 * https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
 

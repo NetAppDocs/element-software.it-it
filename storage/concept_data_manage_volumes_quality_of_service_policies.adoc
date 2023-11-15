@@ -78,6 +78,6 @@ NOTE: Se invece si tenta di disassociare un volume da un criterio QoS, è possib
 == Trova ulteriori informazioni
 
 * link:task_data_manage_volumes_remove_a_qos_policy_association_of_a_volume.html["Rimuovere l'associazione dei criteri QoS di un volume"]
-* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Documentazione software SolidFire ed Element"]
 * https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
 

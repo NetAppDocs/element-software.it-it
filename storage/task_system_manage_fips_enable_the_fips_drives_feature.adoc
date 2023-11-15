@@ -27,6 +27,6 @@ La crittografia a riposo deve essere attivata sul cluster e tutti i nodi e le un
 == Trova ulteriori informazioni
 
 * link:../api/index.html["Gestire lo storage con l'API Element"]
-* https://www.netapp.com/data-storage/solidfire/documentation["Pagina SolidFire and Element Resources"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Documentazione software SolidFire ed Element"]
 * https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
 
