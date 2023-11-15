@@ -93,6 +93,6 @@ NOTE: Questo processo è asincrono e restituisce una risposta prima del completa
 == Trova ulteriori informazioni
 
 * link:../api/concept_element_api_about_the_api.html["Gestire lo storage con l'API Element"]
-* https://www.netapp.com/data-storage/solidfire/documentation/["Pagina delle risorse NetApp SolidFire"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Documentazione software SolidFire ed Element"]
 * https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Documentazione per le versioni precedenti dei prodotti SolidFire ed Element di NetApp"^]
 
