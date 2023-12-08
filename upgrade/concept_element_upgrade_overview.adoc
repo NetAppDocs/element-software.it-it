@@ -21,6 +21,7 @@ Questi componenti includono servizi di gestione, controllo del cloud ibrido NetA
 
 [NOTE]
 ====
+* A partire dal 2023 novembre, non puoi avviare un aggiornamento dei componenti utilizzando il controllo cloud ibrido di NetApp o l'API REST perché i certificati delle chiavi di firma (privati e pubblici) sono scaduti il 5 novembre 2023. Per risolvere questo problema, seguire la soluzione alternativa descritta nell'articolo della Knowledge base https://kb.netapp.com/onprem/solidfire/Element_OS/SolidFire_and_HCI_upgrades_unable_to_start_due_to_upgrade_package_upload_error["Impossibile avviare gli aggiornamenti di SolidFire e HCI a causa di un errore di caricamento del pacchetto di aggiornamento"^].
 * A partire da Element 12,7, i nodi storage SF2405 e SF9608 e i nodi FC FC0025 e SF-FCN-01 non sono supportati. Se si tenta di aggiornare uno di questi nodi all'elemento 12,7, viene visualizzato un errore che indica che questo nodo non è supportato dall'elemento 12,7.
 * A partire da Element 12.5, NetApp HealthTools non è più supportato per gli aggiornamenti del software Element. Se si esegue Element 11.0 o 11.1, è necessario prima https://docs.netapp.com/us-en/element-software-123/upgrade/task_hcc_upgrade_element_software.html#upgrade-element-software-at-connected-sites-using-healthtools["Eseguire l'aggiornamento a Element 12.3 utilizzando HealthTools"^] E quindi eseguire l'aggiornamento a Element 12.5 o versioni successive utilizzando NetApp Hybrid Cloud Control.
 
