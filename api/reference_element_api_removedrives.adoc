@@ -11,7 +11,7 @@ summary: È possibile utilizzare il metodo RemoveDrives per rimuovere in modo pr
 
 
 [role="lead"]
-È possibile utilizzare `RemoveDrives` metodo per rimuovere in modo proattivo i dischi che fanno parte del cluster. È possibile utilizzare questo metodo per ridurre la capacità del cluster o prepararsi alla sostituzione dei dischi in via di esaurimento. Tutti i dati presenti sui dischi vengono rimossi e migrati su altri dischi del cluster prima che il disco venga rimosso dal cluster.
+È possibile utilizzare `RemoveDrives` metodo per rimuovere in modo proattivo i dischi che fanno parte del cluster. È possibile utilizzare questo metodo per ridurre la capacità del cluster o prepararsi alla sostituzione dei dischi in via di esaurimento. `RemoveDrives` Crea una terza copia dei dati del blocco sugli altri nodi nel cluster e attende il completamento della sincronizzazione prima di spostare le unità nell'elenco "disponibili". Le unità presenti nell'elenco "disponibili" vengono completamente rimosse dal sistema e non dispongono di servizi in esecuzione o di dati attivi.
 
 `RemoveDrives` è un metodo asincrono. A seconda della capacità totale dei dischi da rimuovere, la migrazione di tutti i dati potrebbe richiedere alcuni minuti.
 
