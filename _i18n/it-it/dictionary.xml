@@ -12013,27 +12013,6 @@ Se non vengono specificati né expirationTime, né la conservazione sullo snapsh
   <block id="f0e8a2f025f562374fa58233f9f7cd01" category="sidebar">Gestione dello storage con il plug-in Element per vCenter Server</block>
   <block id="45f40a7365f71f3eafc4489e01e9aa82" category="sidebar">Monitorare lo storage con NetApp SolidFire Active IQ</block>
   <block id="93168a8084b3e838d2932c4734bd234e" category="sidebar">Versioni precedenti</block>
-  <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">Inizia subito</block>
-  <block id="01064f33f360eefba819bf9542c0486b" category="sidebar">Installazione e manutenzione dell'hardware</block>
-  <block id="111c5671bddfca211130815e5d97e7bc" category="sidebar">Revisioni del firmware supportate per i nodi di storage NetApp H-Series</block>
-  <block id="f54101aa6702c025c4f74ec5ada7bae3" category="sidebar">Gestire lo storage</block>
-  <block id="bfd78ad06fdbded1393f2f3c6bce1cdb" category="sidebar">Utilizzare l'interfaccia utente del software Element</block>
-  <block id="ed4186f75217d239b68544e14bbe38c9" category="sidebar">Utilizza NetApp Hybrid Cloud Control</block>
-  <block id="1d5eadee8dd359da135590100c405785" category="sidebar">USA API software Element</block>
-  <block id="b16427ba775ee26e7f5fa22679a4a605" category="sidebar">USA plug-in Element per vCenter Server</block>
-  <block id="d8d2cf4b5fd1196b5be39dd3b93ba995" category="sidebar">Utilizza NetApp SolidFire Active IQ</block>
-  <block id="6216a3b9e8c46cd0635bc8d3f9c8cf4f" category="sidebar">Utilizzare gli strumenti di integrazione (accesso richiesto)</block>
-  <block id="52e27f272b7f3c0cd5623309ba926677" category="sidebar">SDK di elementi (Java, .NET, Python)</block>
-  <block id="2a9dbfa4b74c53d7304fc8b79a1874d3" category="sidebar">Soluzioni</block>
-  <block id="fcf140abed196b8eba71c45f21312bce" category="sidebar">Soluzioni NetApp</block>
-  <block id="81a123ccab93cd947289b672b0e50348" category="sidebar">Demo e tutorial</block>
-  <block id="a3306879b2c1b46c3e6e86a4c65d51bc" category="sidebar">Training NetApp University SolidFire (accesso obbligatorio)</block>
-  <block id="ab1cf947f75ab4705fc3fcf084c10a01" category="sidebar">Come installare e scalare il tuo cluster NetApp SolidFire (video)</block>
-  <block id="483b680d14606131d42c44dbca0bb4f2" category="sidebar">Installazione di NetApp SolidFire (video)</block>
-  <block id="813011e2103649bb71f124adedcc10ea" category="sidebar">Blog e community</block>
-  <block id="a310588c148d934b9b30c31802d4a30b" category="sidebar">Community di NetApp</block>
-  <block id="213686afc3803be7caa09348765467fe" category="sidebar">Dove ottenere aiuto</block>
-  <block id="b47307258c4d85ffb5f4141d7a660a9b" category="sidebar">Element 11.8.2 e documentazione precedente</block>
   <block id="53b2a4dd7325c2d7325f310860b0b55f" category="sidebar">Ulteriori informazioni per l'autenticazione a più fattori</block>
   <block id="e952835aeeca0b6e6809fe7d7f4ad7f8" category="sidebar">Visualizza i dettagli dei singoli nodi</block>
   <block id="9958041ee70a2259278a77d924dd17fb" category="sidebar">Comandi API esterni per la gestione delle chiavi</block>
@@ -12074,4 +12053,5 @@ Se non vengono specificati né expirationTime, né la conservazione sullo snapsh
   <block id="df0f8acf74958be223bdd3dabcce5038" category="inline-link">Impossibile avviare gli aggiornamenti di SolidFire e HCI a causa di un errore di caricamento del pacchetto di aggiornamento</block>
   <block id="b9bbae8efe5c0f15ffba3f05d619b861" category="list-text">A partire dal 2023 novembre, non puoi avviare un aggiornamento dei componenti utilizzando il controllo cloud ibrido di NetApp o l'API REST perché i certificati delle chiavi di firma (privati e pubblici) sono scaduti il 5 novembre 2023. Per risolvere questo problema, seguire la soluzione alternativa descritta nell'articolo della Knowledge base<block ref="43e83b9864cac922c7475bad0e74a40f" category="inline-link-rx"></block>.</block>
   <block id="9f94ad22fed97f22703d9d145f565bfb" category="paragraph">È possibile utilizzare<block ref="e7d385ef5ac889916654bf5f865952f1" prefix=" " category="inline-code"></block> metodo per rimuovere in modo proattivo i dischi che fanno parte del cluster. È possibile utilizzare questo metodo per ridurre la capacità del cluster o prepararsi alla sostituzione dei dischi in via di esaurimento.<block ref="e7d385ef5ac889916654bf5f865952f1" prefix=" " category="inline-code"></block> Crea una terza copia dei dati del blocco sugli altri nodi nel cluster e attende il completamento della sincronizzazione prima di spostare le unità nell'elenco "disponibili". Le unità presenti nell'elenco "disponibili" vengono completamente rimosse dal sistema e non dispongono di servizi in esecuzione o di dati attivi.</block>
+  <block id="f9beecbb3d1ea8584ca694bab8a73de7" category="sidebar">Versioni del firmware supportate per i nodi storage</block>
 </blocks>

@@ -35,3 +35,5 @@ entries:
     url: "/hardware/task_rtfi_process.html"
   - title: Menu delle opzioni RTFI
     url: "/hardware/task_rtfi_options_menu.html"
+- title: Versioni del firmware supportate per i nodi storage
+  url: "/hardware/fw_storage_nodes.html"
