@@ -102,7 +102,7 @@ No
  a| 
 attributi
  a| 
-Attributi JSON per il processo di volume in blocco.
+Elenco delle coppie nome-valore nel formato oggetto JSON. link:reference_element_api_attributes.html["Scopri di più"].
  a| 
 Oggetto JSON
  a| 

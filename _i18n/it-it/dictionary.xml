@@ -915,25 +915,8 @@
   <block id="aa019f0b19eb20d0995e3c1c7ef29131" category="paragraph">Il numero di volumi contenuti nel cluster che sono accoppiati per la replica.</block>
   <block id="9dfe9847f7db8c5f75fe58aa677d266a" category="list-text">*UUID*</block>
   <block id="e184b6353db6b97eb8014ea10f962324" category="paragraph">Un ID univoco assegnato a ciascun cluster della coppia.</block>
-  <block id="501b98bdb184166086d9ae33cf2360ff" category="summary">Per ulteriori informazioni sull'utilizzo e la gestione dello storage all-flash NetApp HCI e SolidFire, consulta le risorse disponibili nelle pagine dei centri di documentazione e delle risorse per entrambi i prodotti.</block>
-  <block id="7431f7a183aa9cfe2910bb761205485d" category="doc">Dove trovare la documentazione del prodotto e altre informazioni</block>
-  <block id="1c276549c628a78c4d4d38a454a53866" category="paragraph">Nei centri di documentazione sono inoltre disponibili informazioni sull'installazione e la manutenzione dell'hardware, risorse di contenuto aggiuntive, collegamenti a problemi noti e risolti e le ultime note di rilascio. Nelle pagine risorse, è possibile trovare collegamenti a schede tecniche, report tecnici, white paper e video.</block>
-  <block id="ad0a505756223d68dc11afeae3459351" category="inline-link">Documentazione NetApp HCI</block>
-  <block id="69407a8ea5033d98b78f2bec8e414753" category="list-text"><block ref="69407a8ea5033d98b78f2bec8e414753" category="inline-link-rx"></block></block>
   <block id="c93817bbfc3fab71f5f7ca740a11c847" category="inline-link">Pagina delle risorse NetApp HCI</block>
   <block id="bc218e71c18c2f809dffb10d3bc2a6e8" category="list-text"><block ref="bc218e71c18c2f809dffb10d3bc2a6e8" category="inline-link-rx"></block></block>
-  <block id="630892b254754255bd524cb995b1de04" category="inline-link">Centro di documentazione SolidFire ed Element 12.2</block>
-  <block id="b96d5059df63546231a635bb7440dbd4" category="list-text"><block ref="b96d5059df63546231a635bb7440dbd4" category="inline-link-rx"></block></block>
-  <block id="2a967aa6bf55d76db9823f4232586589" category="inline-link">Centro di documentazione di SolidFire ed Element 12,0</block>
-  <block id="a19510c49f28b61467b9471fae60229b" category="list-text"><block ref="a19510c49f28b61467b9471fae60229b" category="inline-link-rx"></block></block>
-  <block id="69695b2e4c70193011d7b658125e9906" category="inline-link">Centro di documentazione di SolidFire ed Element 11,8</block>
-  <block id="6eda8130d86d6c395a1615f6ff53c74a" category="list-text"><block ref="6eda8130d86d6c395a1615f6ff53c74a" category="inline-link-rx"></block></block>
-  <block id="cad93526483d33b276e378bc7f3deaea" category="inline-link">Centro di documentazione di SolidFire ed Element 11,7</block>
-  <block id="a4cba27ccc43d00c0bd0c00a74974b97" category="list-text"><block ref="a4cba27ccc43d00c0bd0c00a74974b97" category="inline-link-rx"></block></block>
-  <block id="275b3db58911d0480b2a907dde87b422" category="inline-link">Centro di documentazione di SolidFire ed Element 11,5</block>
-  <block id="319d00f06f0a5e8e99d071d51fe10259" category="list-text"><block ref="319d00f06f0a5e8e99d071d51fe10259" category="inline-link-rx"></block></block>
-  <block id="de71a625454de99f599dff258c53dbb8" category="inline-link">Pagina delle risorse SolidFire</block>
-  <block id="b81ee69dc01cdd048b45d27758827feb" category="list-text"><block ref="b81ee69dc01cdd048b45d27758827feb" category="inline-link-rx"></block></block>
   <block id="310072108d089c68c1aa4fb9b3d5fa95" category="summary">È possibile visualizzare le statistiche delle performance dei volumi dalla pagina Volume Performance (prestazioni volume) della scheda Reporting (rapporti) nell'interfaccia utente di Element.</block>
   <block id="50a6bc502f172a89b4004b2bb626e0fe" category="doc">Dettagli sulle performance dei volumi</block>
   <block id="f1dfaae4ccc8af0ee8d655854ad48059" category="paragraph">L'elenco seguente descrive i dettagli disponibili:</block>
@@ -5548,21 +5531,6 @@ configurato per l'uso.</block>
   <block id="2b0fe7090c295442b520e1c431f5b990" category="section-title">Account di volume</block>
   <block id="d88a2e3b7b7d5ca1d7f837546cb3b31f" category="paragraph">Gli account specifici del volume sono specifici solo per il cluster di storage in cui sono stati creati. Questi account consentono di impostare autorizzazioni su volumi specifici della rete, ma non hanno alcun effetto al di fuori di tali volumi.</block>
   <block id="682faa8b9dab1247bb831425cb9ffc7e" category="paragraph">Gli account dei volumi vengono gestiti all'interno della tabella NetApp Hybrid Cloud Control Volumes.</block>
-  <block id="a824a1096e208a26b70c360a0da8b545" category="summary">Per ulteriori informazioni sulle attività relative al sistema di storage SolidFire, consultare il Centro di documentazione NetApp SolidFire e le risorse disponibili nella pagina risorse NetApp SolidFire.</block>
-  <block id="4bb047f8c530785002e490ef17fa725e" category="doc">Dove trovare ulteriori informazioni</block>
-  <block id="34515669e219305dec5f0b81dbef8b1e" category="paragraph">Nel Centro di documentazione sono inoltre disponibili informazioni sull'installazione e la manutenzione dell'hardware, risorse di contenuto aggiuntive, collegamenti a problemi noti e risolti e le ultime note di rilascio.</block>
-  <block id="662a5ad8c6ae651da9220e35d3f16a18" category="list-text">*Pagina delle risorse NetApp SolidFire*</block>
-  <block id="c39c68328651c80dceb0f36d050a7109" category="paragraph">Fornisce risorse sul software Element, inclusi collegamenti a contenuti video e report tecnici.</block>
-  <block id="4b3e0d4570a278a1af3fe11601c01d47" category="inline-link">Risorse di storage all-flash SolidFire</block>
-  <block id="c16fe39e6b501b8347fb1dd55ba312c6" category="paragraph"><block ref="c16fe39e6b501b8347fb1dd55ba312c6" category="inline-link-rx"></block></block>
-  <block id="4a9c1435e759b5c6dd543fceea09ea44" category="list-text">*Centro di documentazione NetApp SolidFire*</block>
-  <block id="028b8f4057634cf2f3954305a74dc779" category="paragraph">Fornisce informazioni sull'installazione e la manutenzione dell'hardware, risorse di contenuto aggiuntive disponibili, collegamenti a problemi noti e risolti e le ultime note di rilascio.</block>
-  <block id="99876372740307113d18bf0a8023fbbf" category="inline-link">Centro di documentazione di SolidFire ed Element 11,3</block>
-  <block id="248dd8632f43e9f4128a672b09c790eb" category="paragraph"><block ref="248dd8632f43e9f4128a672b09c790eb" category="inline-link-rx"></block></block>
-  <block id="3bb4917b4da580a3845e4291809fe942" category="list-text">*Problemi noti dell'elemento https://kb.netapp.com/app/answers/answer_view/a_id/1000941/loc/en_US[NetApp SolidFire]*</block>
-  <block id="e4245eba0095196ee103a1119cfa1d87" category="paragraph">Fornisce un elenco di problemi noti nelle versioni correnti e precedenti del software Element.</block>
-  <block id="454d39955c29112d76b1bd6072c2dcdf" category="list-text">*Problemi risolti dell'elemento https://kb.netapp.com/app/answers/answer_view/a_id/1000933[NetApp SolidFire]*</block>
-  <block id="e864e5177c5d98d5b8250b49810e1194" category="paragraph">Fornisce un elenco dei problemi risolti nelle versioni correnti e precedenti del software Element.</block>
   <block id="e44e873b1562276992051bf0eec8c7e2" category="summary">Scopri le risorse e gli strumenti per iniziare a utilizzare il software Element.</block>
   <block id="62bdbe048d174b559cb770f9ebaf0895" category="doc">Provalo</block>
   <block id="6f5f86920704a5057edeb4c22758bd87" category="inline-link">Lab on Demand per la flessibilità dello storage nel cloud privato con Element (accesso richiesto)</block>
@@ -10344,7 +10312,6 @@ I valori validi sono:</block>
   <block id="5ffce89810db963197914e99fa41565d" category="paragraph">Il nome di uno script eseguibile. Se non viene fornito alcun nome di script, la chiave e l'URL sono necessari per accedere ai nodi di storage degli elementi. Lo script viene eseguito sul nodo primario e la chiave e l'URL vengono restituiti allo script in modo da poter contattare il server Web locale.</block>
   <block id="9b479e5e1be54276f914b4a04af63458" category="paragraph">Parametri di scriptParameters</block>
   <block id="2101debca20755a4bf2792764750c8ad" category="paragraph">Parametri JSON da passare allo script.</block>
-  <block id="42c56c6f739ec986c961aefb154dcc6b" category="paragraph">Attributi JSON per il processo di volume in blocco.</block>
   <block id="b8e143ae62ce68a06396ba6b5fc3f89a" category="paragraph">L'ID del processo asincrono da controllare per il completamento.</block>
   <block id="3c6e0b8a9c15224a8228b9a98ca1531d" category="paragraph">chiave</block>
   <block id="1cf67e15c0f74187a6558d9af0d0b5c3" category="paragraph">Chiave opaca che identifica in modo univoco la sessione.</block>
@@ -12054,4 +12021,5 @@ Se non vengono specificati né expirationTime, né la conservazione sullo snapsh
   <block id="b9bbae8efe5c0f15ffba3f05d619b861" category="list-text">A partire dal 2023 novembre, non puoi avviare un aggiornamento dei componenti utilizzando il controllo cloud ibrido di NetApp o l'API REST perché i certificati delle chiavi di firma (privati e pubblici) sono scaduti il 5 novembre 2023. Per risolvere questo problema, seguire la soluzione alternativa descritta nell'articolo della Knowledge base<block ref="43e83b9864cac922c7475bad0e74a40f" category="inline-link-rx"></block>.</block>
   <block id="9f94ad22fed97f22703d9d145f565bfb" category="paragraph">È possibile utilizzare<block ref="e7d385ef5ac889916654bf5f865952f1" prefix=" " category="inline-code"></block> metodo per rimuovere in modo proattivo i dischi che fanno parte del cluster. È possibile utilizzare questo metodo per ridurre la capacità del cluster o prepararsi alla sostituzione dei dischi in via di esaurimento.<block ref="e7d385ef5ac889916654bf5f865952f1" prefix=" " category="inline-code"></block> Crea una terza copia dei dati del blocco sugli altri nodi nel cluster e attende il completamento della sincronizzazione prima di spostare le unità nell'elenco "disponibili". Le unità presenti nell'elenco "disponibili" vengono completamente rimosse dal sistema e non dispongono di servizi in esecuzione o di dati attivi.</block>
   <block id="f9beecbb3d1ea8584ca694bab8a73de7" category="sidebar">Versioni del firmware supportate per i nodi storage</block>
+  <block id="3f42de2af50c4c43d7f7e9e5b724d437" category="paragraph">Elenco delle coppie nome-valore nel formato oggetto JSON. <block ref="65c96e1c78eaa97668865607183bf923" category="inline-link-macro-rx"></block>.</block>
 </blocks>
