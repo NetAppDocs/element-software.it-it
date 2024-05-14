@@ -24,6 +24,19 @@ Questo oggetto contiene i seguenti membri:
 
 
  a| 
+BlocksUpgrade
+ a| 
+L'errore blocca un aggiornamento. Valori possibili:
+
+* Vero: Il guasto blocca un aggiornamento.
+* Falso: Il guasto non blocca un aggiornamento.
+
+ a| 
+booleano
+
+
+
+ a| 
 ID clusterFaultID
  a| 
 L'ID univoco associato a ciascun guasto del cluster.
