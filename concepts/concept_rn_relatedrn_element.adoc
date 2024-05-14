@@ -48,7 +48,8 @@ NOTE: Ti verrà richiesto di effettuare l'accesso utilizzando le credenziali del
 
 == Plug-in NetApp Element per server vCenter
 
-* https://library.netapp.com/ecm/ecm_download_file/ECMLP2886272["VCenter Plug-in 5,2 - Note sulla versione"^] _NUOVO_
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP3316480["VCenter Plug-in 5,3 - Note sulla versione"^] _NUOVO_
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP2886272["VCenter Plug-in 5,2 - Note sulla versione"^]
 * https://library.netapp.com/ecm/ecm_download_file/ECMLP2885734["VCenter Plug-in 5,1 - Note sulla versione"^]
 * https://library.netapp.com/ecm/ecm_download_file/ECMLP2884992["VCenter Plug-in 5,0 - Note sulla versione"^]
 * https://library.netapp.com/ecm/ecm_download_file/ECMLP2884458["VCenter Plug-in 4,10 - Note sulla versione"^]
