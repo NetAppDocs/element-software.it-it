@@ -52,4 +52,4 @@ NOTE: VSphere richiede ulteriori attività di configurazione. Consultare la _Gui
 
 == Trova ulteriori informazioni
 
-https://www.netapp.com/us/media/tr-4642.pdf["Guida alla configurazione dello storage VMware vSphere Virtual Volumes per SolidFire"]
+https://www.netapp.com/pdf.html?item=/media/10516-tr4642pdf.pdf["Guida alla configurazione dello storage VMware vSphere Virtual Volumes per SolidFire"^]
