@@ -12025,7 +12025,6 @@ Se non vengono specificati né expirationTime, né la conservazione sullo snapsh
   <block id="bfb37ae14420b32b4119e40e73553257" category="paragraph">Un URL personalizzato per il plug-in ZIP.</block>
   <block id="8e0d59cc781c5557d1fdc81fdff04d8f" category="paragraph">Viene visualizzato il punto di estensione del plugin remoto di NetApp Element:</block>
   <block id="5770384eddfc0ac7f73f0f6242a52b50" category="paragraph">Vengono visualizzati i punti di estensione della configurazione e della gestione di NetApp Element:</block>
-  <block id="518a4b6a1346e1ad096698dafab107cf" category="sidebar">Un sistema storage all-flash SolidFire è composto da componenti hardware come dischi e nodi che vengono combinati in un pool di risorse di storage. Usando l'interfaccia Element, l'API o altri tool di gestione, puoi gestire questi cluster di risorse storage con il software NetApp Element. Questo sito contiene la documentazione del software Element 12,5 e 12,7.</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">Inizia subito</block>
   <block id="01064f33f360eefba819bf9542c0486b" category="sidebar">Installazione e manutenzione dell'hardware</block>
   <block id="111c5671bddfca211130815e5d97e7bc" category="sidebar">Revisioni del firmware supportate per i nodi di storage NetApp H-Series</block>
@@ -12051,5 +12050,9 @@ Se non vengono specificati né expirationTime, né la conservazione sullo snapsh
   <block id="3d08f19c985682eb2a632e36184cedd2" category="paragraph"><block ref="3d08f19c985682eb2a632e36184cedd2" category="inline-link-rx"></block></block>
   <block id="b456d131470ee117b6ff900f949b80c5" category="paragraph"><block ref="b456d131470ee117b6ff900f949b80c5" category="inline-link-rx"></block></block>
   <block id="1791fd435a83f3ee701165e29bb05b2f" category="list-text"><block ref="1791fd435a83f3ee701165e29bb05b2f" category="inline-link-rx"></block></block>
-  <block id="da48b15f3631c91c5b2ce7d522d3a734" category="sidebar">Documentazione software SolidFire ed Element 12,5 e 12,7</block>
+  <block id="30486cdfdde2444e4151845599ac5bf5" category="inline-link">Documentazione di Element 12,5</block>
+  <block id="7923ddc778825f970802562c563718d7" category="list-text"><block ref="7923ddc778825f970802562c563718d7" category="inline-link-rx"></block></block>
+  <block id="cafb4d76dc2f8321d0134957e0bf3f5d" category="sidebar">Un sistema storage all-flash SolidFire è composto da componenti hardware come dischi e nodi che vengono combinati in un pool di risorse di storage. Usando l'interfaccia Element, l'API o altri tool di gestione, puoi gestire questi cluster di risorse storage con il software NetApp Element. Questo sito contiene la documentazione per il software Element.</block>
+  <block id="ab8cbf6e7f3310f1970fbef383696645" category="sidebar">Documentazione del software SolidFire ed Element 12,7</block>
+  <block id="f46f40c99ef0e96fdc79a2f007e1939a" category="sidebar">Documentazione software SolidFire ed Element 12,7</block>
 </blocks>
