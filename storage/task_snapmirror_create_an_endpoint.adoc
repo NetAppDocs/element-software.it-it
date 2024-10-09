@@ -1,7 +1,7 @@
 ---
 permalink: storage/task_snapmirror_create_an_endpoint.html 
 sidebar: sidebar 
-keywords: endpoints, create, snapmirror, ui 
+keywords: element, endpoints, create, snapmirror, ui 
 summary: 'Prima di creare una relazione, è necessario creare un endpoint SnapMirror nell"interfaccia utente di NetApp Element.' 
 ---
 = Creare un endpoint SnapMirror

@@ -1,0 +1,25 @@
+---
+permalink: storage/task-element-replication-create-snapmirror-endpoint.html 
+sidebar: sidebar 
+keywords: ontap, cli, create, snapmirror, endpoint 
+summary: 'È necessario creare un endpoint SnapMirror prima di poter creare una relazione di replica. È possibile eseguire questa attività solo nell"interfaccia utente Web del software Element o utilizzando i metodi API.' 
+---
+= Creare un endpoint SnapMirror
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È necessario creare un endpoint SnapMirror prima di poter creare una relazione di replica. È possibile eseguire questa attività solo nell'interfaccia utente Web del software Element o utilizzando link:../api/concept_element_api_snapmirror_api_methods.html["Metodi API di SnapMirror"].
+
+.Prima di iniziare
+È necessario aver attivato SnapMirror sul cluster di elementi.
+
+.Fasi
+. Fare clic su *Data Protection* > *SnapMirror Endpoints*.
+. Fare clic su *Create Endpoint* (Crea endpoint).
+. Nella finestra di dialogo *Crea nuovo endpoint*, immettere l'indirizzo IP di gestione del cluster ONTAP.
+. Inserire l'ID utente e la password dell'amministratore del cluster ONTAP.
+. Fare clic su *Create Endpoint* (Crea endpoint).
+

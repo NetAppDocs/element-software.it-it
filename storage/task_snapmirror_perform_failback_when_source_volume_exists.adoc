@@ -1,7 +1,7 @@
 ---
 permalink: storage/task_snapmirror_perform_failback_when_source_volume_exists.html 
 sidebar: sidebar 
-keywords: failback, perform, source volume, snapmirror, ui 
+keywords: element, ui, failback, perform, source volume, snapmirror 
 summary: 'È possibile risincronizzare il volume di origine originale e eseguire il failback utilizzando l"interfaccia utente di NetApp Element. Questa procedura si applica agli scenari in cui il volume di origine originale esiste ancora.' 
 ---
 = Eseguire un failback quando il volume di origine esiste ancora

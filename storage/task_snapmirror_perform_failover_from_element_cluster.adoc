@@ -1,7 +1,7 @@
 ---
 permalink: storage/task_snapmirror_perform_failover_from_element_cluster.html 
 sidebar: sidebar 
-keywords: failover, cluster, perform a failover, snapmirror 
+keywords: element, ui, failover, cluster, perform a failover, snapmirror 
 summary: È possibile eseguire un failover dal cluster di elementi per rendere il volume di destinazione di lettura/scrittura e accessibile agli host sul lato di destinazione. Prima di eseguire un failover dal cluster di elementi, è necessario interrompere la relazione SnapMirror. 
 ---
 = Eseguire un failover da un cluster di elementi

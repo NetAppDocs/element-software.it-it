@@ -1,0 +1,241 @@
+---
+permalink: storage/element-replication-index.html 
+sidebar: sidebar 
+keywords: ontap, cli, replication, element, software, ontap, business continuity, snapmirror, replicate, snapshot, copies, volume 
+summary: Puoi garantire la business continuity su un sistema Element utilizzando SnapMirror per replicare le copie Snapshot di un volume Element in una destinazione ONTAP. 
+---
+= Replica tra software NetApp Element e panoramica di ONTAP (CLI ONTAP)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puoi garantire la business continuity su un sistema Element utilizzando SnapMirror per replicare le copie Snapshot di un volume Element in una destinazione ONTAP. In caso di disastro nel sito Element, è possibile inviare i dati ai client dal sistema ONTAP, quindi riattivare il sistema Element al ripristino del servizio.
+
+A partire da ONTAP 9.4, è possibile replicare le copie snapshot di un LUN creato su un nodo ONTAP di nuovo in un sistema Element. È possibile che sia stata creata una LUN durante un'interruzione del servizio presso il sito Element o che si stia utilizzando una LUN per migrare i dati da ONTAP a Element Software.
+
+Si consiglia di utilizzare il backup Element to ONTAP se si applicano le seguenti condizioni:
+
+* Si desidera utilizzare le Best practice, non esplorare tutte le opzioni disponibili.
+* Si desidera utilizzare l'interfaccia della riga di comando (CLI) di ONTAP, non Gestione di sistema o uno strumento di scripting automatico.
+* Si sta utilizzando iSCSI per fornire dati ai client.
+
+
+Se sono necessarie ulteriori informazioni concettuali o sulla configurazione di SnapMirror, vedere link:https://docs.netapp.com/us-en/ontap/data-protection-disaster-recovery/index.html["Panoramica sulla protezione dei dati"^].
+
+
+
+== Sulla replica tra Element e ONTAP
+
+A partire da ONTAP 9.3, è possibile utilizzare SnapMirror per replicare le copie snapshot di un volume Element in una destinazione ONTAP. In caso di disastro nel sito Element, è possibile inviare i dati ai client dal sistema ONTAP, quindi riattivare il volume di origine Element al ripristino del servizio.
+
+A partire da ONTAP 9.4, è possibile replicare le copie snapshot di un LUN creato su un nodo ONTAP di nuovo in un sistema Element. È possibile che sia stata creata una LUN durante un'interruzione del servizio presso il sito Element o che si stia utilizzando una LUN per migrare i dati da ONTAP a Element Software.
+
+
+
+=== Tipi di relazione di protezione dei dati
+
+SnapMirror offre due tipi di relazione per la protezione dei dati. Per ogni tipo, SnapMirror crea una copia snapshot del volume di origine dell'elemento prima di inizializzare o aggiornare la relazione:
+
+* In una relazione di protezione dei dati di _disaster recovery (DR)_, il volume di destinazione contiene solo la copia snapshot creata da SnapMirror, dalla quale è possibile continuare a fornire i dati in caso di disastro presso il sito primario.
+* In una relazione di data Protection _conservazione a lungo termine_, il volume di destinazione contiene copie Snapshot point-in-time create dal software Element, nonché la copia Snapshot creata da SnapMirror. Ad esempio, potresti voler conservare copie snapshot mensili create in un arco di 20 anni.
+
+
+
+
+=== Policy predefinite
+
+La prima volta che si richiama SnapMirror, esegue un _trasferimento baseline_ dal volume di origine al volume di destinazione. La _policy SnapMirror_ definisce il contenuto della linea di base e gli eventuali aggiornamenti.
+
+È possibile utilizzare una policy predefinita o personalizzata quando si crea una relazione di protezione dei dati. Il _tipo di policy_ determina quali copie snapshot includere e quante copie conservare.
+
+La tabella seguente mostra i criteri predefiniti. Utilizza `MirrorLatest` il policy per creare una relazione di disaster recovery tradizionale. Utilizza `MirrorAndVault` il criterio OR `Unified7year` per creare una relazione di replica unificata, in cui il DR e la conservazione a lungo termine sono configurati sullo stesso volume di destinazione.
+
+[cols="25,25,50"]
+|===
+
+
+| Policy | Tipo di policy | Comportamento degli aggiornamenti 
+
+
+ a| 
+MirrorLatest
+ a| 
+mirror asincrono
+ a| 
+Trasferisci la copia Snapshot creata da SnapMirror.
+
+
+
+ a| 
+MirrorAndVault
+ a| 
+vault mirror
+ a| 
+Trasferire la copia istantanea creata da SnapMirror e le eventuali copie istantanee meno recenti effettuate dall'ultimo aggiornamento, a condizione che abbiano etichette SnapMirror "daily" o "`weekly'".
+
+
+
+ a| 
+Unified7year
+ a| 
+vault mirror
+ a| 
+Trasferire la copia istantanea creata da SnapMirror e le eventuali copie istantanee meno recenti effettuate dall'ultimo aggiornamento, a condizione che abbiano le etichette SnapMirror "daily", "`weekly'" o "mensile".
+
+|===
+[NOTE]
+====
+Per informazioni complete sui criteri SnapMirror, incluse le indicazioni sui criteri da utilizzare, vedere link:https://docs.netapp.com/us-en/ontap/data-protection-disaster-recovery/index.html["Panoramica sulla protezione dei dati"^].
+
+====
+
+
+=== Informazioni sulle etichette SnapMirror
+
+Ogni criterio con il tipo di criterio "specing-vault" deve avere una regola che specifica quali copie di snapshot replicare. La regola "daily", ad esempio, indica che devono essere replicate solo le copie snapshot assegnate all'etichetta SnapMirror "daily". L'etichetta SnapMirror viene assegnata quando si configurano le copie delle istantanee degli elementi.
+
+
+
+=== Replica da un cluster di origine elemento a un cluster di destinazione ONTAP
+
+SnapMirror può essere utilizzato per replicare le copie Snapshot di un volume Element in un sistema di destinazione ONTAP. In caso di disastro nel sito Element, è possibile inviare i dati ai client dal sistema ONTAP, quindi riattivare il volume di origine Element al ripristino del servizio.
+
+Un volume Element equivale approssimativamente a un LUN ONTAP. SnapMirror crea un LUN con il nome del volume Element quando viene inizializzata una relazione di protezione dei dati tra il software Element e ONTAP. SnapMirror replica i dati su un LUN esistente se il LUN soddisfa i requisiti per la replica Element to ONTAP.
+
+Le regole di replica sono le seguenti:
+
+* Un volume ONTAP può contenere dati provenienti da un solo volume elemento.
+* Non è possibile replicare i dati da un volume ONTAP a più volumi di elementi.
+
+
+
+
+=== Replica da un cluster di origine ONTAP a un cluster di destinazione elemento
+
+A partire da ONTAP 9.4, è possibile replicare le copie snapshot di un LUN creato in un sistema ONTAP di nuovo in un volume Element:
+
+* Se esiste già una relazione SnapMirror tra un'origine elemento e una destinazione ONTAP, un LUN creato durante la fornitura dei dati dalla destinazione viene replicato automaticamente quando l'origine viene riattivata.
+* In caso contrario, è necessario creare e inizializzare una relazione SnapMirror tra il cluster di origine ONTAP e il cluster di destinazione degli elementi.
+
+
+Le regole di replica sono le seguenti:
+
+* La relazione di replica deve avere una policy di tipo "`async-mirror`".
++
+Le policy di tipo "`mirror-vault`" non sono supportate.
+
+* Sono supportati solo i LUN iSCSI.
+* Non è possibile replicare più di un LUN da un volume ONTAP a un volume Element.
+* Non è possibile replicare un LUN da un volume ONTAP a più volumi di elementi.
+
+
+
+
+=== Prerequisiti
+
+Prima di configurare una relazione di protezione dei dati tra Element e ONTAP, è necessario aver completato le seguenti attività:
+
+* Il cluster di elementi deve eseguire il software NetApp Element versione 10.1 o successiva.
+* Il cluster ONTAP deve eseguire ONTAP 9.3 o versione successiva.
+* SnapMirror deve essere stato concesso in licenza sul cluster ONTAP.
+* È necessario configurare volumi nei cluster Element e ONTAP sufficientemente grandi per gestire i trasferimenti di dati anticipati.
+* Se si utilizza il tipo di criterio "speculare-vault", è necessario configurare un'etichetta SnapMirror per la replica delle copie snapshot dell'elemento.
++
+[NOTE]
+====
+È possibile eseguire questa attività solo in link:concept_snapmirror_labels.html["UI web del software Element"]o utilizzando link:../api/concept_element_api_snapshots_overview.html["Metodi API"].
+
+====
+* È necessario assicurarsi che la porta 5010 sia disponibile.
+* Se si prevede che potrebbe essere necessario spostare un volume di destinazione, è necessario assicurarsi che la connettività full-mesh esista tra l'origine e la destinazione. Ogni nodo del cluster di origine degli elementi deve essere in grado di comunicare con ogni nodo del cluster di destinazione ONTAP.
+
+
+
+
+=== Dettagli del supporto
+
+La seguente tabella mostra i dettagli del supporto per il backup Element to ONTAP.
+
+[cols="25,75"]
+|===
+
+
+| Risorsa o funzione | Dettagli del supporto 
+
+
+ a| 
+SnapMirror
+ a| 
+* La funzione di ripristino di SnapMirror non è supportata.
+* I `MirrorAllSnapshots` criteri e `XDPDefault` non sono supportati.
+* Il tipo di policy "`vault`" non è supportato.
+* La regola definita dal sistema "`all_source_snapshot`" non è supportata.
+* Il tipo di policy "`mirror-vault`" è supportato solo per la replica dal software Element a ONTAP. Utilizzare "`async-mirror`" per la replica da ONTAP al software Element.
+* Le `-schedule` opzioni e `-prefix` per `snapmirror policy add-rule` non sono supportate.
+* Le `-preserve` opzioni e `-quick-resync` per `snapmirror resync` non sono supportate.
+* L'efficienza dello storage non viene preservata.
+* Le implementazioni di protezione dei dati fan-out e cascata non sono supportate.
+
+
+
+
+ a| 
+ONTAP
+ a| 
+* ONTAP Select è supportato a partire da ONTAP 9.4 ed Element 10.3.
+* Cloud Volumes ONTAP è supportato a partire da ONTAP 9.5 ed Element 11.0.
+
+
+
+
+ a| 
+Elemento
+ a| 
+* Il limite delle dimensioni del volume è 8 TIB.
+* La dimensione del blocco di volume deve essere di 512 byte. Le dimensioni di un blocco di 4K byte non sono supportate.
+* Le dimensioni del volume devono essere un multiplo di 1 MiB.
+* Gli attributi del volume non vengono conservati.
+* Il numero massimo di copie snapshot da replicare è 30.
+
+
+
+
+ a| 
+Rete
+ a| 
+* È consentita una singola connessione TCP per ogni trasferimento.
+* Il nodo Element deve essere specificato come indirizzo IP. La ricerca del nome host DNS non è supportata.
+* Gli IPspaces non sono supportati.
+
+
+
+
+ a| 
+SnapLock
+ a| 
+I volumi SnapLock non sono supportati.
+
+
+
+ a| 
+FlexGroup
+ a| 
+I volumi FlexGroup non sono supportati.
+
+
+
+ a| 
+DR. SVM
+ a| 
+I volumi ONTAP in una configurazione DR SVM non sono supportati.
+
+
+
+ a| 
+MetroCluster
+ a| 
+I volumi ONTAP in una configurazione MetroCluster non sono supportati.
+
+|===

@@ -105,7 +105,7 @@ I sistemi che eseguono Element 10.1 e versioni successive includono codice in gr
 
 A partire dai sistemi Element 10.3 e ONTAP 9.4, è possibile replicare i volumi originati da ONTAP in volumi di elementi in casi di utilizzo specifici con funzionalità limitate.
 
-Per ulteriori informazioni, consultare la documentazione di ONTAP.
+Per ulteriori informazioni, vedere link:../storage/element-replication-index.html["Replica tra software NetApp Element e ONTAP (interfaccia a riga di comando di ONTAP)"].
 
 
 
