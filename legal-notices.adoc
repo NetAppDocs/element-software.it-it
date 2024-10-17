@@ -65,6 +65,7 @@ I file di avviso forniscono informazioni sul copyright e sulle licenze di terze 
 * link:./media/mgmt-216.pdf["Avviso per i servizi di gestione 2.16 (plug-in NetApp Element per vCenter Server 4.6.29)"^]
 * link:./media/mgmt-214.pdf["Avviso per i servizi di gestione 2,14 (plug-in NetApp Element per vCenter Server 4,5.42)"^]
 * link:./media/mgmt-213.pdf["Avviso per i servizi di gestione 2.13 (plug-in NetApp Element per vCenter Server 4.5.42)"^]
+* link:./media/storage_firmware_bundle_2.182.0_notices.pdf["Avviso per il bundle del firmware di archiviazione 2.182.0"^]
 * link:./media/storage_firmware_bundle_2.175.0_notices.pdf["Avviso per Storage firmware Bundle 2.175.0"^]
 * link:./media/storage_firmware_bundle_2.164.0_notices.pdf["Avviso per il bundle del firmware di archiviazione 2.164.0"^]
 * link:./media/storage_firmware_bundle_2.150_notices.pdf["Avviso per il bundle del firmware di archiviazione 2,150"^]
