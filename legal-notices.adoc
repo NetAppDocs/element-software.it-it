@@ -52,6 +52,7 @@ I file di avviso forniscono informazioni sul copyright e sulle licenze di terze 
 * link:./media/mNode_12.7.pdf["Avviso per il nodo di gestione 12,7"^]
 * link:./media/Element_Software_12.5.pdf["Avviso per il software Element 12.5"^]
 * link:./media/mNode_12.5.pdf["Avviso per il nodo di gestione 12,5"^]
+* link:./media/mgmt_svcs_2.26_notice.pdf["Avviso per i servizi di gestione 2.26.30 (plug-in NetApp Element per VMware vCenter Server 5,4.1)"^]
 * link:./media/mgmt_svcs_2.25_notice.pdf["Avviso per i servizi di gestione 2.25.42 (plug-in NetApp Element per VMware vCenter Server 5,3.9)"^]
 * link:./media/mgmt_svcs_2.24_notice.pdf["Avviso per i servizi di gestione 2.24.40 (plug-in NetApp Element per VMware vCenter Server 5,2.12)"^]
 * link:./media/mgmt_svcs_2.23_notice.pdf["Avviso per i servizi di gestione 2.23.64 (plug-in NetApp Element per VMware vCenter Server 5.1.12)"^]
