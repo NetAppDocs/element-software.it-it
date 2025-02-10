@@ -55,6 +55,10 @@ L'indirizzo IP del nodo che ospita il volume.
 +
 L'IQN del volume.
 
+* *CHAP*
++
+Algoritmo CHAP per una sessione iSCSI. Se non viene utilizzato un algoritmo CHAP, viene visualizzato un trattino (-). Disponibile a partire da Element 12,8.
+
 * *Creato il*
 +
 Data in cui è stata stabilita la sessione.

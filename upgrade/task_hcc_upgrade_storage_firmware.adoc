@@ -61,7 +61,12 @@ NOTE: Per una matrice completa di firmware e firmware del driver per l'hardware,
 ^2^se si combina un cluster con un carico IOPS in scrittura pesante con un tempo di aggiornamento del firmware più lungo, il tempo di sincronizzazione dei dati aumenterà.
 
 +
-^3^a partire dall'elemento 12,7, i nodi di storage SF2405 e SF9608 e i nodi FC FC0025 e SF-FCN-01 non sono supportati. Se si tenta di aggiornare uno di questi nodi all'elemento 12,7, viene visualizzato un errore che indica che questo nodo non è supportato dall'elemento 12,7.
+^3^ i seguenti nodi non sono supportati. Se si tenta di aggiornare uno di questi nodi a una versione di elemento non supportata, viene visualizzato un errore che indica che il nodo non è supportato da Element 12.x:
+
++
+** A partire dai nodi storage 12,8, SF4805, SF9605, SF19210 e SF38410 elementi.
+** A partire dai nodi storage Element 12,7, SF2405 e SF9608 e dai nodi FC FC0025 e SF-FCN-01.
+
 
 * *Contratto di licenza con l'utente finale (EULA)*: A partire dai servizi di gestione 2.20.69, è necessario accettare e salvare l'EULA prima di utilizzare l'interfaccia utente o l'API di NetApp Hybrid Cloud Control per aggiornare il firmware dello storage:
 +

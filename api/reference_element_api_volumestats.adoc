@@ -27,6 +27,7 @@ L'oggetto volumeStats contiene dati statistici per un singolo volume.
 
 Questo oggetto contiene i seguenti membri:
 
+[cols="20,50,15,15"]
 |===
 | Nome | Descrizione | Calcolo | Tipo 
 
@@ -231,6 +232,33 @@ La durata del periodo di campionamento, in millisecondi.
 N/A.
  a| 
 intero
+
+
+
+ a| 
+SliceIopsStats
+ a| 
+Statistiche di utilizzo di i/o per un volume. Disponibile a partire da Element 12,8. Valori possibili per le sliceIopsStats:
+
+* LargeStatistics (Statistiche LargeStatistica): Le statistiche i/o del volume misurate su un periodo di tempo più lungo, di solito le ultime 24 ore.
+* SmallStatistics (Statistiche piccole): Statistiche i/o del volume misurate in un periodo di tempo più breve, di solito l'ultima ora.
+
+
+Valori possibili per largeStatistics e smallStatistics:
+
+* AverageReadIops: Gli IOPS medi in lettura per il volume.
+* AverageTotalIops: Gli IOPS totali medi (lettura + scrittura) per il volume.
+* AverageWriteIops: Gli IOPS medi in scrittura per il volume.
+* NSamples: Il numero di campioni inclusi nel calcolo statistico.
+* PeakReadIops: Il numero massimo di IOPS in lettura osservati in un intervallo statistico.
+* PeakTotalIops (IOPS totali peak): Il numero massimo di IOPS osservati in un intervallo statistico.
+* PeakWriteIops: Il numero massimo di IOPS in scrittura osservati in un intervallo statistico.
+* SliceID: ID volume o ID sezione
+
+ a| 
+Point-in-time
+ a| 
+Oggetto JSON
 
 
 

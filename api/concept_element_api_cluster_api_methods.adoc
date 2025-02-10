@@ -19,6 +19,7 @@ Alcuni metodi API del cluster operano su nodi che fanno parte di un cluster o ch
 * xref:reference_element_api_clearclusterfaults.adoc[ClearClusterFaults]
 * xref:reference_element_api_createclusterinterfacepreference.adoc[CreateClusterInterfacePreference]
 * xref:reference_element_api_deleteclusterinterfacepreference.adoc[DeleteClusterInterfacePreference]
+* xref:reference_element_api_disablefeature.adoc[DisableFeature]
 * xref:reference_element_api_enablefeature.adoc[EnableFeature]
 * xref:reference_element_api_getclustercapacity.adoc[GetClusterCapacity]
 * xref:reference_element_api_getclusterfullthreshold.adoc[GetClusterFullThreshold]

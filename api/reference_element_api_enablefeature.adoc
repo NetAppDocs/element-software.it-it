@@ -22,6 +22,7 @@ Questo metodo ha il seguente parametro di input.
 
 NOTE: Per i sistemi che eseguono il software Element 11.x, l'abilitazione dei volumi virtuali prima o dopo l'impostazione del monitoraggio del dominio di protezione fa sì che la funzione dei domini di protezione del cluster funzioni solo a livello di nodo.
 
+[cols="1a,3a,1a,1a,1a"]
 |===
 | Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
 
@@ -34,6 +35,7 @@ Attivare una funzione del cluster. Valori possibili:
 * `fips`: Attiva la crittografia certificata FIPS 140-2 per le comunicazioni HTTPS.
 * `FipsDrives`: Abilitare il supporto del disco FIPS 140-2 per il cluster di storage.
 * `SnapMirror`: Attivare la funzione del cluster di replica di SnapMirror.
+* `VolumeLoadBalanceOnActualIOPS`: Attiva il bilanciamento degli strati sugli IOPS effettivi anziché sugli IOPS minimi. Disponibile a partire da Element 12,8.
 * `vvols`: Attivare la funzione cluster di VVols del software Element.
 
  a| 

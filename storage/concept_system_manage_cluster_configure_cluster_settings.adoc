@@ -19,6 +19,7 @@ summary: 'È possibile visualizzare e modificare le impostazioni a livello di cl
 * xref:concept_data_manage_vvol_work_virtual_volumes.adoc[Lavorare con volumi virtuali]
 * xref:task_snapmirror_use_replication_between_element_and_ontap_clusters.adoc[Utilizzare la replica SnapMirror tra cluster Element e ONTAP]
 * xref:task_system_manage_cluster_set_the_cluster_full_threshold.adoc[Impostare la soglia completa del cluster]
+* xref:task_system_manage_cluster_volume_load_balancing.adoc[Attiva e disattiva il bilanciamento del carico volume]
 * xref:task_system_manage_cluster_enable_and_disable_support_access.adoc[Abilitare e disabilitare l'accesso al supporto]
 * https://kb.netapp.com/Advice_and_Troubleshooting/Flash_Storage/SF_Series/How_are_the_blockSpace_thresholds_calculated_for_Element["Come vengono calcolate le soglie blockSpace per l'elemento"]
 * xref:task_system_manage_cluster_enable_and_disable_encryption_for_a_cluster.adoc[Attivare e disattivare la crittografia per un cluster]
@@ -27,8 +28,8 @@ summary: 'È possibile visualizzare e modificare le impostazioni a livello di cl
 * xref:concept_system_manage_snmp_manage_snmp.adoc[Manage SNMP (Gestisci SNMP)]
 * xref:concept_system_manage_drives_managing_drives.adoc[Gestire i dischi]
 * xref:concept_system_manage_nodes_manage_nodes.adoc[Gestire i nodi]
-* xref:concept_system_manage_virtual_manage_virtual_networks.adoc[Gestire le reti virtuali]
 * xref:task_system_manage_fc_view_fibre_channel_ports_details.adoc[Visualizza i dettagli delle porte Fibre Channel]
+* xref:concept_system_manage_virtual_manage_virtual_networks.adoc[Gestire le reti virtuali]
 
 
 

@@ -1,0 +1,43 @@
+---
+permalink: storage/task_system_manage_cluster_volume_load_balancing.html 
+sidebar: sidebar 
+keywords: cluster, volume, volumes, load, balancing, actual, IOPS 
+summary: 'A partire dall"elemento 12,8, è possibile abilitare il bilanciamento del carico del volume per bilanciare i volumi tra i nodi in base agli IOPS effettivi di ciascun volume invece degli IOPS minimi configurati nella policy QoS.' 
+---
+= Attiva e disattiva il bilanciamento del carico volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A partire dall'elemento 12,8, è possibile utilizzare il bilanciamento del carico del volume per bilanciare i volumi tra i nodi in base agli IOPS effettivi di ciascun volume e non agli IOPS minimi configurati nella policy di QoS. È possibile attivare e disattivare il bilanciamento del carico del volume, disattivato per impostazione predefinita, utilizzando l'interfaccia utente o l'API di Element.
+
+.Fasi
+. Selezionare *Cluster* > *Settings*.
+. Nella sezione Cluster Specific (specifico cluster), modificare lo stato per Volume Load Balancing (bilanciamento carico volume):
++
+[role="tabbed-block"]
+====
+.Attiva il bilanciamento del carico dei volumi
+--
+Selezionare *Enable Load Balancing on Actual IOPS* (attiva bilanciamento del carico sugli IOPS effettivi) e confermare la selezione.
+
+--
+.Disattiva bilanciamento del carico volume:
+--
+Selezionare *Disattiva bilanciamento del carico sugli IOPS effettivi* e confermare la selezione.
+
+--
+====
+. In alternativa, selezionare *Reporting* > *Overview* per confermare la modifica dello stato per il bilanciamento degli IOPS effettivi. Potrebbe essere necessario scorrere le informazioni relative allo stato del cluster per visualizzare lo stato.
+
+
+
+
+== Trova ulteriori informazioni
+
+* link:../api/reference_element_api_enablefeature.html["Attivare il bilanciamento del carico dei volumi utilizzando l'API"]
+* https://docs.netapp.com/us-en/element-software/api/reference_element_api_disablefeature.html["Disattivare il bilanciamento del carico del volume utilizzando l'API"]
+* link:../hccstorage/task-hcc-qos-policies.html["Creare e gestire policy di QoS per volumi"]
+

@@ -235,5 +235,5 @@ NOTE: SSH rimane attivato sul nodo di gestione se non viene disattivato. La conf
 == Trova ulteriori informazioni
 
 * https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["Pagina delle risorse NetApp HCI"^]
+* https://docs.netapp.com/us-en/hci/index.html["Documentazione NetApp HCI"^]
 

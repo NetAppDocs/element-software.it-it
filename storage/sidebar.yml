@@ -53,6 +53,8 @@ entries:
       url: "/storage/task_system_manage_cluster_enable_and_disable_encryption_for_a_cluster.html"
     - title: Impostare la soglia completa del cluster
       url: "/storage/task_system_manage_cluster_set_the_cluster_full_threshold.html"
+    - title: Attiva e disattiva il bilanciamento del carico volume
+      url: "/storage/task_system_manage_cluster_volume_load_balancing.html"
     - title: Abilitare e disabilitare l'accesso al supporto
       url: "/storage/task_system_manage_cluster_enable_and_disable_support_access.html"
     - title: Gestire il banner Termini di utilizzo

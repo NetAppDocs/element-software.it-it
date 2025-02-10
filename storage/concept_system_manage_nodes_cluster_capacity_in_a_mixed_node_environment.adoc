@@ -24,6 +24,15 @@ A seconda della versione del software Element, i seguenti nodi storage SF-Series
 | A partire da... | Nodo storage non supportato... 
 
 
+| Elemento 12,8  a| 
+* SF4805
+* SF9605
+* SF19210
+* SF38410
+
+
+
+
 | Elemento 12,7  a| 
 * SF2405
 * SF9608
@@ -38,4 +47,4 @@ A seconda della versione del software Element, i seguenti nodi storage SF-Series
 
 
 |===
-Se si tenta di aggiornare uno di questi nodi a una versione di elemento non supportata, viene visualizzato un errore che indica che questo nodo non è supportato da Element 12.x
+Se si tenta di aggiornare uno di questi nodi a una versione di elemento non supportata, viene visualizzato un errore che indica che il nodo non è supportato da Element 12.x

@@ -115,7 +115,7 @@ NOTE: Se è necessaria una scheda di rete aggiuntiva per isolare il traffico di 
 
 == Configurare la sincronizzazione dell'ora
 
-. Assicurarsi che il tempo sia sincronizzato tra il nodo di gestione e il cluster di storage utilizzando NTP:
+. Verificare che l'ora sia sincronizzata tra il nodo di gestione e il cluster di storage utilizzando NTP:
 
 
 

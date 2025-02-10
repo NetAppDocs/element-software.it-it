@@ -123,6 +123,21 @@ intero
 
 
  a| 
+NodeHeat
+ a| 
+Informazioni sull'utilizzo dei nodi. Disponibile a partire da Element 12,8. Membri:
+
+* PrimaryTotalHeat: IOPS totali primari del nodo / IOPS configurati nel nodo in media nell'arco di 24 ore
+* RecentPrimaryTotalHeat: IOPS totali primari del nodo / IOPS configurati nel nodo mediati in un'ora
+* RecentTotalHeat: Valore medio degli IOPS totali dei nodi / IOPS configurati dei nodi in un'ora
+* TotalHeat: IOPS totali dei nodi / IOPS configurati a livello di nodo in media nell'arco di 24 ore
+
+ a| 
+Oggetto JSON
+
+
+
+ a| 
 ReadLatencyUSecTotal
  a| 
 Aumento monotonico del valore del tempo totale impiegato per eseguire operazioni di lettura al nodo.

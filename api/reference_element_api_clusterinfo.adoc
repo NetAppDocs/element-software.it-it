@@ -198,11 +198,20 @@ Identificatore univoco del cluster.
  a| 
 UUID
 
+
+
+ a| 
+VolumeLoadBalanceOnActualIopsState
+ a| 
+Stato per il bilanciamento delle slice in base agli IOPS effettivi e non alla funzionalità min IOPS. Disponibile a partire da Element 12,8.
+ a| 
+stringa
+
 |===
 [discrete]
 == Trova ulteriori informazioni
 
 * link:../api/reference_element_api_getclusterinfo.html["GetClusterInfo"]
-* https://docs.netapp.com/us-en/element-software/index.html["Documentazione software SolidFire ed Element"]presentazione]
+* https://docs.netapp.com/us-en/element-software/index.html["Documentazione software SolidFire ed Element"^]
 * https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Documentazione per le versioni precedenti dei prodotti SolidFire ed Element di NetApp"^]
 

@@ -19,6 +19,7 @@ summary: È possibile utilizzare il metodo GetFeatureStatus per recuperare lo st
 
 Questo metodo ha il seguente parametro di input:
 
+[cols="1a,3a,1a,1a,1a"]
 |===
 | Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
 
@@ -28,10 +29,11 @@ funzione
  a| 
 Lo stato di una funzione del cluster. Se non viene fornito alcun valore, il sistema restituisce lo stato di tutte le funzioni. Valori possibili:
 
-* Vvols: Recuperare lo stato della funzione cluster VVols.
-* SnapMirror: Recuperare lo stato della funzione del cluster di replica di SnapMirror.
-* FIPS: Recuperare lo stato della crittografia FIPS 140-2 per la funzione di comunicazione HTTPS.
-* FipsDrives: Recupera lo stato della funzione di crittografia del disco FIPS 140-2.
+* `Vvols`: Recupero dello stato per la funzione cluster VVol.
+* `SnapMirror`: Recupero dello stato per la funzione del cluster di replica SnapMirror.
+* `Fips`: Recupera stato per la funzione di crittografia FIPS 140-2 per la comunicazione HTTPS.
+* `FipsDrives`: Recupero dello stato per la funzione di crittografia dell'unità FIPS 140-2.
+* `VolumeLoadBalanceOnActualIOPS`: Recupera stato per il bilanciamento degli strati sulla funzione IOPS effettivo anziché la funzione IOPS min. Disponibile a partire da Element 12,8.
 
  a| 
 stringa
@@ -105,6 +107,10 @@ Questo metodo restituisce una risposta simile all'esempio seguente:
             {
                 "enabled": true,
                 "feature": "FipsDrives"
+            },
+            {
+                "enabled": true,
+                "feature": "VolumeLoadBalanceOnActualIOPS"
             }
         ]
     }
