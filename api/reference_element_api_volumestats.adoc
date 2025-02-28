@@ -99,17 +99,6 @@ intero
 
 
  a| 
-ClusterUtilization
- a| 
-La quantità di capacità del cluster utilizzata.
- a| 
-N/A.
- a| 
-fluttuare
-
-
-
- a| 
 DesiredMetadataHost
  a| 
 I servizi di metadati (slice) in cui viene eseguita la migrazione dei metadati del volume tra i servizi di metadati. Un valore "nullo" indica che il volume non sta migrando.
@@ -144,6 +133,17 @@ Servizi di metadati (slice) su cui risiedono i metadati del volume. Valori possi
 N/A.
  a| 
 Oggetto JSON
+
+
+
+ a| 
+NormalizzatoIOPS
+ a| 
+Numero medio di IOPS per l'intero cluster negli ultimi 500 millisecondi.
+ a| 
+Point-in-time
+ a| 
+intero
 
 
 

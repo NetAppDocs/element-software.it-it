@@ -9439,7 +9439,6 @@ I valori validi sono:</block>
   <block id="3c625a13e6a27d16b31373132f1450a8" category="paragraph">Indica se la pianificazione verrà eseguita o meno alla successiva attivazione dello scheduler. Se true, la pianificazione verrà eseguita la prossima volta che lo scheduler sarà attivo, quindi questo valore viene reimpostato su false. Valori possibili:</block>
   <block id="714fceb471c374698251d925d8d05403" category="paragraph">L'ID univoco della pianificazione.</block>
   <block id="3e31245b25836087aa43d5d4565230c2" category="paragraph">ScheduleInfo</block>
-  <block id="29a9c6e40ddc0f47741633f0b0bd0699" category="paragraph">Include il nome univoco assegnato alla pianificazione, il periodo di conservazione per lo snapshot creato e l'ID del volume del volume da cui è stato creato lo snapshot.</block>
   <block id="b06b56d23b646ad4c7c629956c9fb6a3" category="paragraph">Il nome univoco assegnato alla pianificazione.</block>
   <block id="01223b82a664dc5c4bb0d162a44002d1" category="paragraph">Al momento sono supportati solo i tipi di snapshot pianificati.</block>
   <block id="0608ae69120a8f0e68c586e1bed7676b" category="paragraph">L'etichetta SnapMirrorLabel da applicare all'istantanea o all'istantanea di gruppo creata, contenuta in scheduleInfo. Se non impostato, questo valore è nullo.</block>
@@ -9638,7 +9637,6 @@ I valori validi sono:</block>
   <block id="596b858c2e5a9adba143102768b4dfd1" category="paragraph">Il numero totale di crediti IOP disponibili per l'utente. Quando i volumi non utilizzano un massimo di maxIOPS configurati, vengono accumulati crediti.</block>
   <block id="e3610a84890c0cb8e31ba5e2825ef82e" category="paragraph">ClientQueueDepth</block>
   <block id="895b9fd9bd82498f2637ee71223fca99" category="paragraph">ClusterUtilization</block>
-  <block id="53559c487d6329ff8a95081175ee8072" category="paragraph">La quantità di capacità del cluster utilizzata.</block>
   <block id="f6e65c6017cbd8accff3dedbaa7c9157" category="paragraph">DesiredMetadataHost</block>
   <block id="27921d101d13cbcdde780f0bf7b74051" category="paragraph">I servizi di metadati (slice) in cui viene eseguita la migrazione dei metadati del volume tra i servizi di metadati. Un valore "nullo" indica che il volume non sta migrando.</block>
   <block id="d6768553ce2e9167b5c9051355cc39a0" category="paragraph">LatencyUSec</block>
@@ -12430,4 +12428,25 @@ Se non vengono specificati né expirationTime, né la conservazione sullo snapsh
   <block id="d5bdcd035d3751961b201dd1c2261aa3" category="paragraph">Scegliere una delle seguenti opzioni di aggiornamento:</block>
   <block id="8c5a891df58bfda1762ec23302a952b6" category="sidebar">Un sistema storage all-flash SolidFire è composto da componenti hardware come dischi e nodi che vengono combinati in un pool di risorse di storage. Usando l'interfaccia Element, l'API o altri tool di gestione, puoi gestire questi cluster di risorse storage con il software NetApp Element. Questo sito contiene la documentazione del software Element 12,8.</block>
   <block id="83214fe0ca2841bff645ee69075302da" category="sidebar">Documentazione software SolidFire ed Element 12,8</block>
+  <block id="d9a22d7a8178d5b42a8750123cbfe5b1" category="list-text">completo</block>
+  <block id="acbccd83186c34328efe61415e4f06c3" category="paragraph">IosInProgress</block>
+  <block id="efadf566bdff7cd45611bcf2ea26634b" category="paragraph">Il numero di i/o dell'unità in corso.</block>
+  <block id="0fb9cf5f04f61bb6f1151da57ceb1ca1" category="paragraph">letture</block>
+  <block id="2e63b183661efd0e03c30a8933592b67" category="paragraph">Il numero di chiamate Read() al secondo per questa unità.</block>
+  <block id="0557cc41212e450b334e6cfd03e28356" category="paragraph">ReadsCombined</block>
+  <block id="2d65b6a0c4e91c801de77a9d9219d227" category="paragraph">Il numero di chiamate Read() a settori adiacenti che potrebbero essere combinati in una lettura più grande.</block>
+  <block id="89892cc60750e3ae3839fe1bd6f0e295" category="paragraph">ReadMsec</block>
+  <block id="c30d492a58003b8cb74286227b4474f4" category="paragraph">Il numero di millisecondi trascorsi per la lettura.</block>
+  <block id="4dcc865dcd8a0440f3e955e66928b6a9" category="paragraph">scritture</block>
+  <block id="2723fa53100ce7b4222053e0cae1fe2a" category="paragraph">Il numero di chiamate write() al secondo su questa unità.</block>
+  <block id="90355908c2c641db38cd1f8d115e8288" category="paragraph">Scritti Combined</block>
+  <block id="dff2bd7a729604d5144c21832c60771e" category="paragraph">Il numero di chiamate write() a settori adiacenti che potrebbero essere combinate in una scrittura più grande.</block>
+  <block id="48c52f79a065697f974edffe9baa1840" category="paragraph">WriteMsec</block>
+  <block id="a104ca42a35244c8eaac66b37a617289" category="paragraph">Il numero di millisecondi trascorsi per la scrittura.</block>
+  <block id="cbe31e551cb8a7eda07f7c2fbae6f80b" category="list-text"><block ref="dcd44d342c90672f6b7613a3fda7d755" prefix="" category="inline-code"></block>: Specifica se deve essere consentita la creazione di un nuovo snapshot se è in corso una replica snapshot precedente. (booleano)</block>
+  <block id="e9eb5370de2e3375a67adb6b46c54033" category="list-text"><block ref="6366ebc98be76ca376a9a50b148937ea" prefix="" category="inline-code"></block>: Periodo di tempo durante il quale l'istantanea viene conservata. A seconda dell'ora, viene visualizzato in uno dei seguenti formati:</block>
+  <block id="a284d3e41f479772896829e0c83474be" category="list-text">fifo: L'istantanea viene conservata in base al FIFO (First-in-First-out). Se vuoto, lo snapshot viene conservato per sempre. (stringa)</block>
+  <block id="7ed79c16ce9b38d79b10c8f36aa9049a" category="list-text">HH:mm:ss</block>
+  <block id="99eb6e1c13e9ae0bb02e022566f20121" category="paragraph">Include il nome univoco assegnato alla pianificazione, il periodo di conservazione per lo snapshot creato e l'ID del volume del volume da cui è stato creato lo snapshot. Valori validi:</block>
+  <block id="65dc2083558f47cd1151751a12c24549" category="paragraph">float o integer a seconda del tipo di operazione di sincronizzazione</block>
 </blocks>

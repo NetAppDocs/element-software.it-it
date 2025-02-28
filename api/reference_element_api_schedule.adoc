@@ -150,7 +150,20 @@ intero
  a| 
 ScheduleInfo
  a| 
-Include il nome univoco assegnato alla pianificazione, il periodo di conservazione per lo snapshot creato e l'ID del volume del volume da cui è stato creato lo snapshot.
+Include il nome univoco assegnato alla pianificazione, il periodo di conservazione per lo snapshot creato e l'ID del volume del volume da cui è stato creato lo snapshot. Valori validi:
+
+* `enableRemoteReplication`Indica se lo snapshot deve essere incluso nella replica remota. (booleano)
+* `ensureSerialCreation`: Specifica se deve essere consentita la creazione di un nuovo snapshot se è in corso una replica snapshot precedente. (booleano)
+* `name`: Il nome dello snapshot da utilizzare. (stringa)
+* `retention`: Periodo di tempo durante il quale l'istantanea viene conservata. A seconda dell'ora, viene visualizzato in uno dei seguenti formati:
++
+** fifo: L'istantanea viene conservata in base al FIFO (First-in-First-out). Se vuoto, lo snapshot viene conservato per sempre. (stringa)
+** HH:mm:ss
+
+
+* `volumeID`: L'ID del volume da includere nello snapshot. (intero)
+* `volumes`: Un elenco di ID volume da includere nello snapshot di gruppo. (array intero)
+
  a| 
 Oggetto JSON
 

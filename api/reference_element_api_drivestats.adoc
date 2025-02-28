@@ -51,6 +51,15 @@ intero
 
 
  a| 
+IosInProgress
+ a| 
+Il numero di i/o dell'unità in corso.
+ a| 
+intero
+
+
+
+ a| 
 LifeRemainingPercent
  a| 
 Indicatore di usura dei supporti dell'unità.
@@ -87,9 +96,36 @@ intero
 
 
  a| 
+letture
+ a| 
+Il numero di chiamate Read() al secondo per questa unità.
+ a| 
+intero
+
+
+
+ a| 
 ReadByte
  a| 
 Byte totali letti dal disco a causa delle operazioni del client.
+ a| 
+intero
+
+
+
+ a| 
+ReadsCombined
+ a| 
+Il numero di chiamate Read() a settori adiacenti che potrebbero essere combinati in una lettura più grande.
+ a| 
+intero
+
+
+
+ a| 
+ReadMsec
+ a| 
+Il numero di millisecondi trascorsi per la lettura.
  a| 
 intero
 
@@ -168,9 +204,36 @@ intero
 
 
  a| 
+scritture
+ a| 
+Il numero di chiamate write() al secondo su questa unità.
+ a| 
+intero
+
+
+
+ a| 
 WriteByte
  a| 
 Byte totali scritti sul disco a causa dell'attività del client.
+ a| 
+intero
+
+
+
+ a| 
+Scritti Combined
+ a| 
+Il numero di chiamate write() a settori adiacenti che potrebbero essere combinate in una scrittura più grande.
+ a| 
+intero
+
+
+
+ a| 
+WriteMsec
+ a| 
+Il numero di millisecondi trascorsi per la scrittura.
  a| 
 intero
 
@@ -189,3 +252,5 @@ intero
 == Trova ulteriori informazioni
 
 xref:reference_element_api_getdrivestats.adoc[GetDriveStats]
+
+ // 2025 FEB 27, DOC-4778

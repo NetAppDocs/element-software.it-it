@@ -114,8 +114,8 @@ intero
 Lo stato dell'operazione. Valori possibili:
 
 * preparazione in corso
-* attivo
-* fatto
+* in esecuzione
+* completo
 * non riuscito
 
  a| 

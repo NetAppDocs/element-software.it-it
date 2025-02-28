@@ -30,7 +30,7 @@ BlocksPerSecond
  a| 
 Il numero di blocchi di dati trasferiti al secondo dal cluster di origine al cluster di destinazione. Presente solo se il membro del tipo è impostato su remoto.
  a| 
-fluttuare
+intero
 
 
 
@@ -97,7 +97,7 @@ SedelapTime
  a| 
 Il tempo trascorso, in secondi, dall'avvio del processo di sincronizzazione.
  a| 
-fluttuare
+float o integer a seconda del tipo di operazione di sincronizzazione
 
 
 
@@ -124,7 +124,7 @@ PercentComplete
  a| 
 La percentuale di completamento del processo di sincronizzazione.
  a| 
-intero
+float o integer a seconda del tipo di operazione di sincronizzazione
 
 
 
@@ -133,7 +133,7 @@ Tempo residuo
  a| 
 Il tempo stimato, in secondi, per completare l'operazione.
  a| 
-intero
+fluttuare
 
 
 
