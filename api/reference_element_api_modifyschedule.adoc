@@ -20,8 +20,6 @@ summary: È possibile utilizzare ModifySchedule per modificare gli intervalli in
 Questo metodo ha i seguenti parametri di input:
 
 |===
-
-
 | Nome | Descrizione | Tipo | Valore predefinito | Obbligatorio 
 
 
@@ -187,7 +185,7 @@ Il nome univoco assegnato alla pianificazione, il periodo di conservazione per l
 * `name`: Il nome dello snapshot da utilizzare. (stringa)
 * `retention`: Periodo di tempo durante il quale l'istantanea viene conservata. A seconda dell'ora, viene visualizzato in uno dei seguenti formati:
 +
-** fifo: L'istantanea viene conservata in base al FIFO (First-in-First-out). Se vuoto, lo snapshot viene conservato per sempre. (stringa)
+** `fifo`: L'istantanea viene conservata in base al FIFO (First-in-First-out). Se vuoto, lo snapshot viene conservato per sempre. (stringa)
 ** HH:mm:ss
 
 
