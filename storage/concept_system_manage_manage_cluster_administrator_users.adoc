@@ -61,9 +61,13 @@ NOTE: Per accedere ai nodi attivi di un cluster tramite l'interfaccia utente per
 
 
 +
+[NOTE]
+====
+Tutte le autorizzazioni sono disponibili per il tipo di accesso amministratore.
 
-NOTE: Tutte le autorizzazioni sono disponibili per il tipo di accesso amministratore.
+Ci sono tipi di accesso disponibili tramite l'API che non sono disponibili nell'interfaccia utente di Element.
 
+====
 +
 ** *Type*: Il tipo di amministratore del cluster. Valori possibili:
 +
@@ -152,12 +156,9 @@ Per aggiungere utenti o gruppi amministratori cluster LDAP, il formato generale 
 . Fare clic su *Save Changes* (Salva modifiche).
 
 
-
-
-== Trova ulteriori informazioni
-
+.Informazioni correlate
+* link:../api/reference_element_api_app_b_access_control.html["Informazioni sui tipi di accesso disponibili per le API Element"]
 * link:task_system_manage_enable_ldap_authentication.html["Abilitare l'autenticazione LDAP con l'interfaccia utente Element"]
 * link:concept_system_manage_manage_ldap.html["Disattivare LDAP"]
-* https://docs.netapp.com/us-en/element-software/index.html["Documentazione software SolidFire ed Element"]
 * https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
 

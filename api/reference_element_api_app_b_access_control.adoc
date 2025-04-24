@@ -14,6 +14,9 @@ summary: I metodi API Element disponibili variano in base al tipo di accesso imp
 I metodi API Element disponibili variano in base al tipo di accesso impostato.
 
 
+NOTE: Ci sono tipi di accesso disponibili tramite l'API che non sono disponibili nell'interfaccia utente di Element.
+
+
 
 == account
 
@@ -1108,3 +1111,5 @@ GetAsyncResult
 RemoveDrives
 
 |===
+.Informazioni correlate
+link:../storage/concept_system_manage_manage_cluster_administrator_users.html#view-cluster-admin-details["Informazioni sui tipi di accesso disponibili nell'interfaccia utente di Element"]
