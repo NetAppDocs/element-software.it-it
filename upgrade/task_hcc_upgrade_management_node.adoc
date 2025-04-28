@@ -29,12 +29,17 @@ Se si sta eseguendo un aggiornamento sul posto di un nodo di gestione esistente 
 
 .Fasi
 . Accedere a vSphere Web Client come vCenter Administrator.
-. Dal menu vSphere Client, selezionare *VM* > *modelli*.
+. Dal menu vSphere Client, selezionare *VM e modelli*.
+. Fare clic con il pulsante destro del mouse sulla macchina virtuale (VM) e selezionare *alimentazione* > *Arresta il sistema operativo guest*.
++
+Attendere fino allo spegnimento della VM.
+
 . Fare clic con il pulsante destro del mouse sulla macchina virtuale e selezionare *compatibilità* > *Aggiorna compatibilità VM*.
 . Selezionare *Sì*.
 . Selezionare ESXi 6,7 o una versione successiva, a seconda della versione dell'ambiente vSphere in uso.
 . Selezionare *OK*.
-. Al termine dell'aggiornamento, selezionare *vSphere client refresh* e verificare che la compatibilità VM sia la versione desiderata.
+. Al termine dell'aggiornamento, fare clic con il pulsante destro del mouse sulla macchina virtuale e selezionare *alimentazione* > *accensione*.
+. Selezionare *vSphere client refresh* e verificare che la compatibilità VM sia la versione desiderata.
 
 
 
@@ -57,7 +62,7 @@ NOTE: Se non si aggiornano in sequenza i servizi di gestione seguiti dallo stora
 
 === Aggiornare un nodo di gestione alla versione 12.5 o successiva dalla versione 12.3.x o successiva
 
-È possibile eseguire un aggiornamento in-place del nodo di gestione dalla versione 12.3.x o successiva alla versione 12.5 o successiva senza dover eseguire il provisioning di una nuova macchina virtuale con nodo di gestione.
+Puoi eseguire un upgrade in-place del nodo di gestione dalla versione 12,3.x o successiva alla versione 12,5 o successiva senza eseguire il provisioning di una nuova macchina virtuale per il nodo di gestione.
 
 
 NOTE: Il nodo di gestione Element 12.5 o versione successiva è un aggiornamento opzionale. Non è richiesto per le implementazioni esistenti.
@@ -80,8 +85,8 @@ NOTE: I volumi persistenti potrebbero richiedere un adattatore di rete aggiuntiv
 
 
 .Fasi
-. Accedere alla macchina virtuale del nodo di gestione utilizzando l'accesso a SSH o alla console.
-. Scaricare il https://mysupport.netapp.com/site/products/all/details/element-software/downloads-tab["Nodo di gestione ISO"^] Per il software Element dal sito di supporto NetApp alla macchina virtuale del nodo di gestione.
+. Accedere alla VM del nodo di gestione utilizzando SSH o accesso alla console.
+. Scaricare il https://mysupport.netapp.com/site/products/all/details/element-software/downloads-tab["Nodo di gestione ISO"^] software for Element dal sito di supporto NetApp sulla VM del nodo di gestione.
 +
 
 NOTE: Il nome dell'ISO è simile a. `solidfire-fdva-<Element release>-patchX-XX.X.X.XXXX.iso`

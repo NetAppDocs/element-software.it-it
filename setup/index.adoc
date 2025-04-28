@@ -39,11 +39,3 @@ voci:
 
 
 
-
-
-
-== Trova ulteriori informazioni
-
-* https://www.netapp.com/data-storage/solidfire/["Panoramica dello storage all-flash SolidFire"^]
-* https://docs.netapp.com/us-en/element-software/index.html["Documentazione software SolidFire ed Element"]
-
