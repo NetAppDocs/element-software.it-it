@@ -62,7 +62,7 @@ Prima di seguire questa procedura, è necessario conoscere e capire link:../conc
 Scaricare l'ISO o l'OVA appropriato dal sito di supporto NetApp e installare la VM.
 
 .Fasi
-. Scaricare OVA o ISO per l'installazione dalla link:https://mysupport.netapp.com/site/products/all/details/element-software/downloads-tab["Software Element"^]pagina del sito di supporto NetApp. Il nuovo OVA contiene un certificato SSL aggiornato.
+. Scaricare OVA o ISO per l'installazione dalla link:https://mysupport.netapp.com/site/products/all/details/element-software/downloads-tab["Software Element"^]pagina del sito di supporto NetApp.
 +
 .. Selezionare *Download Latest Release* (Scarica ultima versione) e accettare il contratto EULA.
 .. Selezionare l'immagine del nodo di gestione che si desidera scaricare.

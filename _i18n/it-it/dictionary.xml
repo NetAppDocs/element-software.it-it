@@ -12372,7 +12372,6 @@ Se non vengono specificati né expirationTime, né la conservazione sullo snapsh
   <block id="906ea05443e4b488a42f3f06305353ee" category="paragraph">Prima di seguire questa procedura, è necessario conoscere e capire <block ref="6cc910c0977361227d631be0efac7242" category="inline-link-macro-rx"></block>se si desidera utilizzarli o meno. I volumi persistenti sono opzionali ma consigliati per il ripristino dei dati di configurazione del nodo di gestione in caso di perdita di una macchina virtuale (VM).</block>
   <block id="6d8cd87a85946daeae42cb54aade3baa" category="section-title">Passaggio 1: Scaricare ISO o OVA e distribuire la VM</block>
   <block id="90c4d8ddd76d9f5f86c144316cec5657" category="paragraph">Scaricare l'ISO o l'OVA appropriato dal sito di supporto NetApp e installare la VM.</block>
-  <block id="4aee9657f267c579c49541b5f19ca32c" category="list-text">Scaricare OVA o ISO per l'installazione dalla <block ref="00b11b6abe7f0003872aa657422c59ae" category="inline-link-macro-rx"></block>pagina del sito di supporto NetApp. Il nuovo OVA contiene un certificato SSL aggiornato.</block>
   <block id="c6913d34fefabb7329dba971ad99632d" category="section-title">Fase 2: Creare il nodo di gestione admin e configurare la rete</block>
   <block id="8e1cc7b20e9f183452b777f8a4fb586d" category="paragraph">Una volta completata l'installazione della VM, creare l'utente amministratore del nodo di gestione e configurare la rete del nodo di gestione.</block>
   <block id="5e0472334bca93d0d28d3eeaaf723518" category="section-title">Passaggio 3: Configurare la sincronizzazione dell'ora</block>
@@ -12455,4 +12454,5 @@ Se non vengono specificati né expirationTime, né la conservazione sullo snapsh
   <block id="a879c8e657832d392ef358d2440c3faf" category="paragraph">Puoi eseguire un upgrade in-place del nodo di gestione dalla versione 12,3.x o successiva alla versione 12,5 o successiva senza eseguire il provisioning di una nuova macchina virtuale per il nodo di gestione.</block>
   <block id="6a309ddf9d0a46d94d5772dacb71dbc0" category="list-text">Accedere alla VM del nodo di gestione utilizzando SSH o accesso alla console.</block>
   <block id="7258351fe62749f68f4b75a51c56912b" category="list-text">Scaricare il<block ref="ef86b20d3f4c031a449af5dec98fb6d8" category="inline-link-rx"></block> software for Element dal sito di supporto NetApp sulla VM del nodo di gestione.</block>
+  <block id="e43f2538484fde027e53efbedb634fce" category="list-text">Scaricare OVA o ISO per l'installazione dalla <block ref="00b11b6abe7f0003872aa657422c59ae" category="inline-link-macro-rx"></block>pagina del sito di supporto NetApp.</block>
 </blocks>
