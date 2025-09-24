@@ -9,14 +9,14 @@ entries:
   - title: Eseguire i controlli dello stato dello storage Element prima di aggiornare
       lo storage
     url: "/upgrade/task_hcc_upgrade_element_prechecks.html"
-  - title: Aggiornare il software Element
-    url: "/upgrade/task_hcc_upgrade_element_software.html"
-  - title: Servizi di gestione degli aggiornamenti
-    url: "/upgrade/task_hcc_update_management_services.html"
-  - title: Aggiornare il firmware dello storage
-    url: "/upgrade/task_hcc_upgrade_storage_firmware.html"
   - title: Aggiornare un nodo di gestione
     url: "/upgrade/task_hcc_upgrade_management_node.html"
+  - title: Servizi di gestione degli aggiornamenti
+    url: "/upgrade/task_hcc_update_management_services.html"
+  - title: Aggiornare il software Element
+    url: "/upgrade/task_hcc_upgrade_element_software.html"
+  - title: Aggiornare il firmware dello storage
+    url: "/upgrade/task_hcc_upgrade_storage_firmware.html"
   - title: Aggiornare il plug-in Element per vCenter Server
     url: "/upgrade/task_vcp_upgrade_plugin.html"
 - title: Aggiorna i componenti vSphere per un sistema storage NetApp SolidFire con
