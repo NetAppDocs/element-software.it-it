@@ -63,7 +63,7 @@ Puoi utilizzare la seguente sequenza per aggiornare il sistema storage all-flash
 . link:task_hcc_upgrade_management_node.html["(Facoltativo) Aggiorna il nodo di gestione"].
 +
 
-NOTE: L'aggiornamento del sistema operativo del nodo di gestione non è più necessario per aggiornare il software Element sul cluster di storage. Se il nodo di gestione è la versione 11.3 o superiore, è sufficiente aggiornare i servizi di gestione alla versione più recente per eseguire gli aggiornamenti degli elementi utilizzando NetApp Hybrid Cloud Control. Se si desidera aggiornare il sistema operativo del nodo di gestione per altri motivi, ad esempio la risoluzione dei problemi di protezione, seguire la procedura di aggiornamento del nodo di gestione per lo scenario in uso.
+NOTE: Non è più necessario aggiornare il sistema operativo del nodo di gestione per aggiornare il software Element sul cluster di archiviazione. Se il nodo di gestione è versione 11.3 o successiva, è sufficiente aggiornare i servizi di gestione alla versione più recente per eseguire gli aggiornamenti di Element utilizzando NetApp Hybrid Cloud Control. Seguire la procedura di aggiornamento del nodo di gestione per il proprio scenario se è necessario aggiornare il sistema operativo del nodo di gestione per altri motivi, ad esempio per correggere problemi di sicurezza.
 
 . link:task_hcc_update_management_services.html["Servizi di gestione degli aggiornamenti da Hybrid Cloud Control"].
 +

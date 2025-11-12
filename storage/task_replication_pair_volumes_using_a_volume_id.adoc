@@ -11,7 +11,7 @@ summary: È possibile associare un volume a un altro volume su un cluster remoto
 
 
 [role="lead"]
-È possibile associare un volume a un altro volume su un cluster remoto se si dispone delle credenziali di amministratore del cluster per il cluster remoto.
+È possibile associare un volume a un altro volume su un cluster remoto se si dispone dell'accesso come amministratore del cluster a entrambi i cluster su cui si desidera associare i volumi. Questo metodo utilizza l'ID del volume sul cluster remoto per avviare una connessione.
 
 .Di cosa hai bisogno
 * Assicurarsi che i cluster contenenti i volumi siano associati.

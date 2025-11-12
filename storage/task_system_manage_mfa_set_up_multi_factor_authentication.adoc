@@ -11,9 +11,11 @@ summary: 'È possibile utilizzare questi passaggi di base tramite l"API Element 
 
 
 [role="lead"]
+L'autenticazione a più fattori (MFA) utilizza un provider di identità (IdP) di terze parti tramite il linguaggio SAML (Security Assertion Markup Language) per gestire le sessioni utente. MFA consente agli amministratori di configurare ulteriori fattori di autenticazione, come password e SMS, password e messaggi di posta elettronica.
+
 È possibile utilizzare questi passaggi di base tramite l'API Element per configurare il cluster in modo che utilizzi l'autenticazione a più fattori.
 
-I dettagli di ciascun metodo API sono disponibili nella link:../api/index.html["Riferimento API dell'elemento"].
+I dettagli di ciascun metodo API possono essere trovati in link:../api/concept_element_api_about_the_api.html["Riferimento API dell'elemento"].
 
 . Creare una nuova configurazione IdP (Identity Provider) di terze parti per il cluster chiamando il seguente metodo API e passando i metadati IdP in formato JSON: `CreateIdpConfiguration`
 +

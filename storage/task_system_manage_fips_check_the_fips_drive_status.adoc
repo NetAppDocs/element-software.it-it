@@ -31,7 +31,7 @@ summary: 'È possibile verificare se la funzione delle unità FIPS è attivata s
 
 == Trova ulteriori informazioni
 
-* link:../api/index.html["Gestire lo storage con l'API Element"]
+* link:../api/concept_element_api_about_the_api.html["Gestire lo storage con l'API Element"]
 * https://docs.netapp.com/us-en/element-software/index.html["Documentazione software SolidFire ed Element"]
 * https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
 

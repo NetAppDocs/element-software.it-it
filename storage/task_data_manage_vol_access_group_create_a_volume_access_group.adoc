@@ -61,7 +61,7 @@ TIP: È possibile trovare l'IQN iniziatore per ciascun volume selezionando *View
 
 Quando si modifica un iniziatore, è possibile impostare l'attributo requiredCHAP su True, che consente di impostare il segreto dell'iniziatore di destinazione. Per ulteriori informazioni, vedere informazioni API sul metodo ModifyInitator API.
 
-link:../api/index.html["Gestire lo storage con l'API Element"]
+link:../api/concept_element_api_about_the_api.html["Gestire lo storage con l'API Element"]
 
 |===
 . *Opzionale:* aggiungere altri iniziatori secondo necessità.

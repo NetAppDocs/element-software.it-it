@@ -13,8 +13,8 @@ summary: 'È possibile gestire il sistema nell"interfaccia utente di Element. Ci
 [role="lead"]
 È possibile gestire il sistema nell'interfaccia utente di Element. Ciò include l'abilitazione dell'autenticazione a più fattori, la gestione delle impostazioni del cluster, il supporto degli standard FIPS (Federal Information Processing Standards) e l'utilizzo della gestione esterna delle chiavi.
 
-* link:concept_system_manage_mfa_enable_multi_factor_authentication.html["Abilitare l'autenticazione a più fattori"]
-* link:concept_system_manage_cluster_configure_cluster_settings.html["Configurare le impostazioni del cluster"]
+* link:task_system_manage_mfa_set_up_multi_factor_authentication.html["Abilitare l'autenticazione a più fattori"]
+* link:task_system_manage_cluster_enable_and_disable_encryption_for_a_cluster.html["Configurare le impostazioni del cluster"]
 * link:task_system_manage_fips_create_a_cluster_supporting_fips_drives.html["Creare un cluster che supporti i dischi FIPS"]
 * link:concept_system_manage_key_get_started_with_external_key_management.html["Inizia a utilizzare la gestione esterna delle chiavi"]
 

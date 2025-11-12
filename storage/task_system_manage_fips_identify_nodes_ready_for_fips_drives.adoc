@@ -31,7 +31,7 @@ Il report risultante mostra uno dei seguenti stati:
 ** Utilizzando l'API Element, immettere: `GetHardwareList`
 ** Annotare il valore di *DriveEncryptionCapabilityType*. Se si tratta di "fips", l'hardware può supportare la funzione dei dischi FIPS.
 +
-Vedere i dettagli su `GetFipsReport` oppure `ListDriveHardware` in link:../api/index.html["Riferimento API dell'elemento"].
+Vedi i dettagli su `GetFipsReport` O `ListDriveHardware` nel link:../api/concept_element_api_about_the_api.html["Riferimento API dell'elemento"].
 
 
 

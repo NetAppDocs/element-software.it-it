@@ -58,7 +58,7 @@ L'autenticazione a più fattori (MFA) consente di richiedere agli utenti di pres
 
 È possibile associare l'autenticazione a più fattori con i comuni provider di identità compatibili con SAML 2.0 (IDP), come Microsoft Active Directory Federation Services (ADFS) e Shibboleth.
 
-Per configurare MFA, vedere link:../storage/concept_system_manage_mfa_enable_multi_factor_authentication.html["attiva l'autenticazione a più fattori"] documentazione.
+Per configurare MFA, vedere link:../storage/task_system_manage_mfa_set_up_multi_factor_authentication.html["attiva l'autenticazione a più fattori"] documentazione.
 
 
 

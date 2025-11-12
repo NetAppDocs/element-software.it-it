@@ -13,7 +13,7 @@ summary: È possibile modificare le impostazioni di rete del nodo di storage per
 [role="lead"]
 È possibile modificare le impostazioni di rete del nodo di storage per assegnare al nodo un nuovo set di attributi di rete.
 
-Le impostazioni di rete per un nodo di storage sono visualizzate nella pagina *Impostazioni di rete* quando si effettua l'accesso al nodo (https://<node[] IP>:442/hcc/Node/network-settings). È possibile selezionare le impostazioni *Bond1G* (gestione) o *Bond10G* (storage). L'elenco seguente descrive le impostazioni che è possibile modificare quando un nodo di storage si trova nello stato Available (disponibile), Pending (in sospeso) o Active (attivo):
+È possibile visualizzare le impostazioni di rete per un nodo di archiviazione nella pagina *Impostazioni di rete* quando si accede al nodo (`https://<node_IP>:442/hcc/node/network-settings`). È possibile selezionare le impostazioni *Bond1G* (gestione) o *Bond10G* (archiviazione). L'elenco seguente descrive le impostazioni che è possibile modificare quando un nodo di archiviazione è nello stato Disponibile, In sospeso o Attivo:
 
 * *Metodo*
 +

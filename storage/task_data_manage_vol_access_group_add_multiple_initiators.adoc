@@ -22,7 +22,7 @@ TIP: È possibile trovare l'iniziatore per ciascun volume facendo clic sull'icon
 
 È possibile assegnare attributi CHAP basati su initator utilizzando una chiamata API. Per aggiungere un nome account CHAP e le credenziali per ogni iniziatore, è necessario utilizzare la chiamata API ModifyInitator per rimuovere e aggiungere gli attributi e l'accesso CHAP.
 
-Per ulteriori informazioni, vedere link:../api/index.html["Gestire lo storage con l'API Element"].
+Per i dettagli, vederelink:../api/concept_element_api_about_the_api.html["Gestire lo storage con l'API Element"] .
 
 .Fasi
 . Fare clic su *Gestione* > *iniziatori*.

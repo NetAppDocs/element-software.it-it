@@ -21,7 +21,7 @@ summary: È necessario monitorare il sistema a scopo diagnostico e ottenere info
 * link:task_monitor_iscsi_sessions.html["Visualizzare le sessioni iSCSI"]
 * link:task_monitor_fibre_channel_sessions.html["Visualizzare le sessioni Fibre Channel"]
 * link:concept_troubleshoot_drives.html["Risolvere i problemi relativi ai dischi"]
-* link:concept_troubleshoot_nodes.html["Risolvere i problemi dei nodi"]
+* link:concept_remove_nodes_from_cluster.html["Risolvere i problemi dei nodi"]
 * link:concept_per_node_work_with_utilities.html["Utilizzo di utility per nodo per nodi di storage"]
 * link:concept_mnode_work_with_the_management_node.html["Lavorare con il nodo di gestione"]
 * link:concept_monitor_understand_cluster_fullness_levels.html["Comprendere i livelli di completezza del cluster"]

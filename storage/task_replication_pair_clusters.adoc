@@ -28,6 +28,20 @@ NOTE: L'associazione dei cluster richiede una connettività completa tra i nodi 
 
 
 
+== Associare i cluster utilizzando MVIP o una chiave di accoppiamento
+
+È possibile associare un cluster di origine e di destinazione utilizzando l'MVIP del cluster di destinazione se è disponibile l'accesso dell'amministratore del cluster a entrambi i cluster. Se l'accesso dell'amministratore del cluster è disponibile solo su un cluster di una coppia di cluster, è possibile utilizzare una chiave di accoppiamento sul cluster di destinazione per completare l'associazione del cluster.
+
+. Selezionare uno dei seguenti metodi per associare i cluster:
++
+** link:task_replication_pair_cluster_using_mvip.html["Associare i cluster utilizzando MVIP"]: Utilizzare questo metodo se l'amministratore del cluster ha accesso a entrambi i cluster. Questo metodo utilizza l'MVIP del cluster remoto per accoppiare due cluster.
+** link:task_replication_pair_cluster_using_pairing_key.html["Associare i cluster utilizzando una chiave di accoppiamento"]: Utilizzare questo metodo se l'amministratore del cluster ha accesso solo a uno dei cluster. Questo metodo genera una chiave di associazione che può essere utilizzata sul cluster di destinazione per completare l'associazione del cluster.
+
+
+
+
+
+
 == Trova ulteriori informazioni
 
 xref:reference_prereq_network_port_requirements.adoc[Requisiti delle porte di rete]

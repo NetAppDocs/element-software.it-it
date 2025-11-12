@@ -34,7 +34,7 @@ voci:
 
 
 ** xref:task_setup_determine_which_solidfire_components_to_install.adoc[Determinare quali componenti di SolidFire installare]
-** xref:/task_setup_gh_redirect_set_up_a_management_node.adoc[Configurare un nodo di gestione]
+** xref:task_setup_gh_redirect_set_up_a_management_node.adoc[Configurare un nodo di gestione]
 ** xref:concept_setup_whats_next.adoc[Quali sono le prossime novità?]
 
 

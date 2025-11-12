@@ -13,7 +13,7 @@ summary: È possibile verificare le impostazioni del cluster per un nodo di stor
 [role="lead"]
 È possibile verificare le impostazioni del cluster per un nodo di storage dopo la configurazione del cluster e modificare il nome host del nodo.
 
-Il seguente elenco descrive le impostazioni del cluster per un nodo di storage indicate nella pagina *Cluster Settings* dell'interfaccia utente per nodo (https://<node[] IP>:442/hcc/Node/cluster-settings).
+L'elenco seguente descrive le impostazioni del cluster per un nodo di archiviazione indicato dalla pagina *Impostazioni cluster* dell'interfaccia utente per nodo (`https://<node_IP>:442/hcc/node/cluster-settings`).
 
 * *Ruolo*
 +

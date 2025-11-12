@@ -62,7 +62,6 @@ I nodi Fibre Channel hanno le seguenti caratteristiche:
 
 == stato operativo del nodo
 
-[role="lead"]
 Un nodo può trovarsi in uno dei diversi stati a seconda del livello di configurazione.
 
 * *Disponibile*
@@ -91,7 +90,8 @@ L'autenticazione è necessaria per modificare il nodo.
 
 In ciascuno di questi stati, alcuni campi sono di sola lettura.
 
-[discrete]
+
+
 == Trova ulteriori informazioni
 
 * https://docs.netapp.com/us-en/element-software/index.html["Documentazione software SolidFire ed Element"]

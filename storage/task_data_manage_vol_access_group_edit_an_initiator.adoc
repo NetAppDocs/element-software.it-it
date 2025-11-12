@@ -15,7 +15,7 @@ summary: 'È possibile modificare l"alias di un iniziatore esistente o aggiunger
 
 Per aggiungere un nome account CHAP e le credenziali per ogni iniziatore, è necessario utilizzare `ModifyInitiator` Chiamata API per rimuovere e aggiungere l'accesso e gli attributi CHAP.
 
-Vedere link:../api/index.html["Gestire lo storage con l'API Element"].
+Vederelink:../api/concept_element_api_about_the_api.html["Gestire lo storage con l'API Element"] .
 
 .Fasi
 . Fare clic su *Gestione* > *iniziatori*.

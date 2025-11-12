@@ -41,4 +41,4 @@ Utilizzato per la creazione e la manutenzione di provider di chiavi che gestisco
 * TestKeyProviderKmip
 
 
-Per informazioni sui metodi API, vedere link:../api/index.html["Informazioni di riferimento API"].
+Per informazioni sui metodi API, vedere link:../api/concept_element_api_about_the_api.html["Informazioni di riferimento API"].

@@ -1,13 +1,15 @@
 ---
 section: storage
 title: Gestire lo storage con il software Element
-url: "/storage/index.html"
 entries:
+- title: Scopri come gestire lo storage
+  url: "/storage/index.html"
 - title: Accedere all'interfaccia utente del software Element
   url: "/storage/task_post_deploy_access_the_element_software_user_interface.html"
 - title: Configurare le opzioni del sistema SolidFire dopo l'implementazione
-  url: "/storage/task_post_deploy_configure_system_options.html"
   entries:
+  - title: Scopri di più sulle opzioni di configurazione dopo la distribuzione
+    url: "/storage/task_post_deploy_configure_system_options.html"
   - title: Modificare le credenziali in NetApp HCI e NetApp SolidFire
     url: "/storage/task_post_deploy_credentials.html"
   - title: Modificare il certificato SSL predefinito del software Element
@@ -15,11 +17,13 @@ entries:
   - title: Modificare la password IPMI per i nodi
     url: "/storage/task_post_deploy_credential_change_ipmi_password.html"
 - title: Utilizzare le opzioni di base nell'interfaccia utente del software Element
-  url: "/storage/task_intro_use_basic_options_in_the_element_software_ui.html"
   entries:
-  - title: Visualizzare l'attività API
-    url: "/storage/task_intro_view_api_activity_in_real_time.html"
+  - title: Scopri come utilizzare le opzioni di base
+    url: "/storage/task_intro_use_basic_options_in_the_element_software_ui.html"
+  - title: Attività API
     entries:
+    - title: Visualizzare l'attività API
+      url: "/storage/task_intro_view_api_activity_in_real_time.html"
     - title: Frequenza di refresh dell'interfaccia influenzata dal carico del cluster
       url: "/storage/concept_basic_interface_refresh_rate_impacted_by_cluster_load.html"
   - title: Icone nell'interfaccia degli elementi
@@ -27,27 +31,26 @@ entries:
   - title: Fornire un feedback
     url: "/storage/task_intro_provide_feedback.html"
 - title: Gestire gli account
-  url: "/storage/concept_system_manage_accounts_overview.html"
   entries:
+  - title: Scopri come gestire gli account
+    url: "/storage/concept_system_manage_accounts_overview.html"
   - title: Utilizzare gli account con CHAP
     url: "/storage/task_data_manage_accounts_work_with_accounts_task.html"
   - title: Gestire gli account utente degli amministratori del cluster
     url: "/storage/concept_system_manage_manage_cluster_administrator_users.html"
-    entries:
-    - title: Gestire LDAP
-      url: "/storage/concept_system_manage_manage_ldap.html"
+  - title: Gestire LDAP
+    url: "/storage/concept_system_manage_manage_ldap.html"
 - title: Gestire il sistema
-  url: "/storage/concept_system_manage_system_management.html"
   entries:
+  - title: Scopri come gestire il tuo sistema
+    url: "/storage/concept_system_manage_system_management.html"
   - title: Abilitare l'autenticazione a più fattori
-    url: "/storage/concept_system_manage_mfa_enable_multi_factor_authentication.html"
     entries:
     - title: Impostare l'autenticazione a più fattori
       url: "/storage/task_system_manage_mfa_set_up_multi_factor_authentication.html"
     - title: Ulteriori informazioni per l'autenticazione a più fattori
       url: "/storage/concept_system_manage_mfa_additional_information_for_multi_factor_authentication.html"
   - title: Configurare le impostazioni del cluster
-    url: "/storage/concept_system_manage_cluster_configure_cluster_settings.html"
     entries:
     - title: Attivare e disattivare la crittografia per un cluster
       url: "/storage/task_system_manage_cluster_enable_and_disable_encryption_for_a_cluster.html"
@@ -60,16 +63,14 @@ entries:
     - title: Gestire il banner Termini di utilizzo
       url: "/storage/concept_system_manage_cluster_terms_manage_the_terms_of_use_banner.html"
     - title: Impostare Network Time Protocol
-      url: "/storage/task_system_manage_cluster_ntp_set_the_network_time_protocol.html"
       entries:
       - title: Configurare i server Network Time Protocol per il cluster da interrogare
         url: "/storage/task_system_manage_cluster_ntp_configure.html"
       - title: Configurare il cluster in modo che sia in attesa di trasmissioni NTP
         url: "/storage/task_system_manage_cluster_ntp_configure_to_listen_for_ntp_broadcasts.html"
     - title: Manage SNMP (Gestisci SNMP)
-      url: "/storage/concept_system_manage_snmp_manage_snmp.html"
       entries:
-      - title: Dettagli SNMP
+      - title: Scopri di più su SNMP
         url: "/storage/reference_system_manage_snmp_snmp_details.html"
       - title: Configurare un richiedente SNMP
         url: "/storage/task_system_manage_snmp_configure_an_snmp_requestor.html"
@@ -82,12 +83,10 @@ entries:
         url: "/storage/task_system_manage_snmp_view_managed_object_data.html"
     - title: Gestire i dischi
       url: "/storage/concept_system_manage_drives_managing_drives.html"
-      entries:
-      - title: Dettagli sui dischi
-        url: "/storage/reference_system_manage_drives_drives_details.html"
     - title: Gestire i nodi
-      url: "/storage/concept_system_manage_nodes_manage_nodes.html"
       entries:
+      - title: Scopri come gestire i nodi
+        url: "/storage/concept_system_manage_nodes_manage_nodes.html"
       - title: Aggiungere un nodo a un cluster
         url: "/storage/task_system_manage_nodes_adding_a_node_to_a_cluster.html"
       - title: Versione e compatibilità dei nodi
@@ -99,8 +98,9 @@ entries:
     - title: Visualizza i dettagli delle porte Fibre Channel
       url: "/storage/task_system_manage_fc_view_fibre_channel_ports_details.html"
     - title: Gestire le reti virtuali
-      url: "/storage/concept_system_manage_virtual_manage_virtual_networks.html"
       entries:
+      - title: Scopri come gestire le reti virtuali
+        url: "/storage/concept_system_manage_virtual_manage_virtual_networks.html"
       - title: Aggiungere una rete virtuale
         url: "/storage/task_system_manage_virtual_add_a_virtual_network.html"
       - title: Abilitare il routing e l'inoltro virtuale
@@ -112,10 +112,9 @@ entries:
       - title: Eliminare una rete virtuale
         url: "/storage/task_system_manage_virtual_delete_a_virtual_network.html"
   - title: Creare un cluster che supporti i dischi FIPS
-    url: "/storage/task_system_manage_fips_create_a_cluster_supporting_fips_drives.html"
     entries:
-    - title: Evitare la combinazione di nodi per i dischi FIPS
-      url: "/storage/task_system_manage_fips_avoid_mixing_nodes_for_fips_drives.html"
+    - title: Preparare il cluster
+      url: "/storage/task_system_manage_fips_create_a_cluster_supporting_fips_drives.html"
     - title: Abilitare la crittografia a riposo
       url: "/storage/task_system_manage_fips_enable_encryption_at_rest.html"
     - title: Identificare se i nodi sono pronti per la funzionalità dei dischi FIPS
@@ -126,14 +125,16 @@ entries:
       url: "/storage/task_system_manage_fips_check_the_fips_drive_status.html"
     - title: Risolvere i problemi relativi alla funzione del disco FIPS
       url: "/storage/task_system_manage_fips_troubleshoot_the_fips_drive_feature.html"
-  - title: Abilitare FIPS 140-2 per HTTPS sul cluster
-    url: "/storage/task_system_manage_fips_enable_fips_140_2_for_https.html"
+  - title: Stabilire una comunicazione sicura
     entries:
+    - title: Abilitare FIPS 140-2 per HTTPS sul cluster
+      url: "/storage/task_system_manage_fips_enable_fips_140_2_for_https.html"
     - title: Crittografie SSL
       url: "/storage/reference_system_manage_fips_ssl_cipher_changes.html"
   - title: Inizia a utilizzare la gestione esterna delle chiavi
-    url: "/storage/concept_system_manage_key_get_started_with_external_key_management.html"
     entries:
+    - title: Scopri di più sulla gestione delle chiavi esterne
+      url: "/storage/concept_system_manage_key_get_started_with_external_key_management.html"
     - title: Impostare la gestione esterna delle chiavi
       url: "/storage/task_system_manage_key_set_up_external_key_management.html"
     - title: Ridigita la chiave master di crittografia software a riposo
@@ -143,10 +144,10 @@ entries:
     - title: Comandi API esterni per la gestione delle chiavi
       url: "/storage/concept_system_manage_key_external_key_management_api_commands.html"
 - title: Gestire volumi e volumi virtuali
-  url: "/storage/concept_data_manage_data_management.html"
   entries:
+  - title: Scopri di più sulla gestione dei volumi e dei volumi virtuali
+    url: "/storage/concept_data_manage_data_management.html"
   - title: Lavorare con i volumi
-    url: "/storage/task_data_manage_volumes_work_with_volumes_task.html"
     entries:
     - title: Gestire le policy di qualità del servizio
       url: "/storage/concept_data_manage_volumes_quality_of_service_policies.html"
@@ -159,7 +160,6 @@ entries:
     - title: Rimuovere l'associazione dei criteri QoS di un volume
       url: "/storage/task_data_manage_volumes_remove_a_qos_policy_association_of_a_volume.html"
   - title: Lavorare con volumi virtuali
-    url: "/storage/concept_data_manage_vvol_work_virtual_volumes.html"
     entries:
     - title: Abilitare i volumi virtuali
       url: "/storage/task_data_manage_vvol_enable_virtual_volumes.html"
@@ -170,19 +170,20 @@ entries:
     - title: Gestire i container di storage
       url: "/storage/concept_data_manage_vvol_manage_storage_containers.html"
     - title: Endpoint del protocollo
-      url: "/storage/concept_data_manage_vvol_protocol_endpoints.html"
       entries:
+      - title: Scopri di più sugli endpoint del protocollo
+        url: "/storage/concept_data_manage_vvol_protocol_endpoints.html"
       - title: Dettagli degli endpoint del protocollo
         url: "/storage/reference_data_manage_vvol_protocol_endpoints_details.html"
     - title: Associazioni
-      url: "/storage/concept_data_manage_vvol_bindings.html"
       entries:
+      - title: Scopri di più sulle associazioni
+        url: "/storage/concept_data_manage_vvol_bindings.html"
       - title: Dettagli sui binding
         url: "/storage/reference_data_manage_vvol_bindings_details.html"
     - title: Dettagli host
       url: "/storage/reference_data_manage_vvol_host_details.html"
   - title: Lavorare con gli iniziatori e i gruppi di accesso ai volumi
-    url: "/storage/concept_data_manage_vol_access_group_work_with_volume_access_groups_and_initiators.html"
     entries:
     - title: Creare un gruppo di accesso al volume
       url: "/storage/task_data_manage_vol_access_group_create_a_volume_access_group.html"
@@ -207,14 +208,17 @@ entries:
     - title: Eliminare un iniziatore
       url: "/storage/task_data_manage_vol_access_group_delete_an_initiator.html"
 - title: Proteggi i tuoi dati
-  url: "/storage/concept_data_protection.html"
   entries:
+  - title: Scopri come proteggere i tuoi dati
+    url: "/storage/concept_data_protection.html"
   - title: Utilizzare le snapshot dei volumi per la protezione dei dati
-    url: "/storage/task_data_protection_using_volume_snapshots.html"
     entries:
+    - title: Scopri come utilizzare gli snapshot del volume
+      url: "/storage/task_data_protection_using_volume_snapshots.html"
     - title: Utilizzare snapshot di singoli volumi per la protezione dei dati
-      url: "/storage/task_data_protection_use_individual_volume_snapshots.html"
       entries:
+      - title: Scopri come utilizzare gli snapshot dei singoli volumi
+        url: "/storage/task_data_protection_use_individual_volume_snapshots.html"
       - title: Creare un'istantanea del volume
         url: "/storage/task_data_protection_create_a_volume_snapshot.html"
       - title: Modifica la conservazione delle snapshot
@@ -226,8 +230,9 @@ entries:
       - title: Eseguire il rollback di un volume in uno snapshot
         url: "/storage/task_data_protection_roll_back_a_volume_to_a_snapshot.html"
       - title: Eseguire il backup di uno snapshot di un volume
-        url: "/storage/concept_data_protection_volume_snapshot_backup_operations.html"
         entries:
+        - title: Scopri come eseguire il backup di uno snapshot del volume
+          url: "/storage/concept_data_protection_volume_snapshot_backup_operations.html"
         - title: Eseguire il backup di uno snapshot di volume in un archivio di oggetti
             Amazon S3
           url: "/storage/task_data_protection_back_up_a_volume_snapshot_to_an_amazon_s3_object_store.html"
@@ -237,8 +242,9 @@ entries:
         - title: Eseguire il backup di uno snapshot di volume in un cluster SolidFire
           url: "/storage/task_data_protection_back_up_volume_snapshot_to_solidfire.html"
     - title: USA snapshot di gruppo per la protezione dei dati
-      url: "/storage/task_data_protection_use_group_snapshots_for_data_protection.html"
       entries:
+      - title: Scopri come utilizzare gli snapshot di gruppo
+        url: "/storage/task_data_protection_use_group_snapshots_for_data_protection.html"
       - title: Dettagli snapshot di gruppo
         url: "/storage/reference_data_protection_group_snapshot_details.html"
       - title: Creare un'istantanea di gruppo
@@ -256,8 +262,9 @@ entries:
       - title: Clonare più volumi da uno snapshot di gruppo
         url: "/storage/task_data_protection_clone_multiple_volumes_from_a_group_snapshot.html"
     - title: Pianifica un'istantanea
-      url: "/storage/task_data_protection_schedule_a_snapshot_task.html"
       entries:
+      - title: Scopri come pianificare uno snapshot
+        url: "/storage/task_data_protection_schedule_a_snapshot_task.html"
       - title: Dettagli della pianificazione di Snapshot
         url: "/storage/reference_data_protection_snapshot_schedule_details.html"
       - title: Creare una pianificazione di snapshot
@@ -270,30 +277,29 @@ entries:
         url: "/storage/task_data_protection_delete_a_snapshot_schedule.html"
   - title: Eseguire la replica remota tra cluster che eseguono il software NetApp
       Element
-    url: "/storage/task_replication_perform_remote_replication_between_element_clusters.html"
     entries:
+    - title: Scopri come eseguire la replica remota
+      url: "/storage/task_replication_perform_remote_replication_between_element_clusters.html"
     - title: Pianificare l'associazione di cluster e volumi per la replica in tempo
         reale
       url: "/storage/task_replication_plan_cluster_and_volume_pairing.html"
     - title: Associare i cluster per la replica
-      url: "/storage/task_replication_pair_clusters.html"
       entries:
-      - title: Associare i cluster utilizzando MVIP o una chiave di accoppiamento
-        url: "/storage/task_replication_pair_clusters_using_mvip_or_a_pairing_key.html"
-        entries:
-        - title: Associare i cluster utilizzando MVIP
-          url: "/storage/task_replication_pair_cluster_using_mvip.html"
-        - title: Associare i cluster utilizzando una chiave di accoppiamento
-          url: "/storage/task_replication_pair_cluster_using_pairing_key.html"
+      - title: Scopri di più sui cluster di accoppiamento
+        url: "/storage/task_replication_pair_clusters.html"
+      - title: Associare i cluster utilizzando MVIP
+        url: "/storage/task_replication_pair_cluster_using_mvip.html"
+      - title: Associare i cluster utilizzando una chiave di accoppiamento
+        url: "/storage/task_replication_pair_cluster_using_pairing_key.html"
       - title: Convalidare la connessione della coppia di cluster
         url: "/storage/task_replication_validate_the_cluster_pair_connection.html"
     - title: Associare i volumi
-      url: "/storage/task_replication_pair_volumes.html"
       entries:
+      - title: Scopri di più sull'associazione dei volumi
+        url: "/storage/task_replication_pair_volumes.html"
       - title: Creare un volume di destinazione con accesso in lettura o scrittura
         url: "/storage/task_replication_create_a_target_volume_with_read_write_access.html"
       - title: Associare i volumi utilizzando un ID volume o una chiave di associazione
-        url: "/storage/task_replication_pair_volumes_using_volume_id_or_pairing_key.html"
         entries:
         - title: Associare i volumi utilizzando un ID volume
           url: "/storage/task_replication_pair_volumes_using_a_volume_id.html"
@@ -306,7 +312,6 @@ entries:
     - title: Eliminare una relazione di volume dopo la replica
       url: "/storage/task_replication_delete_volume_relationship_after_replication.html"
     - title: Gestire le relazioni dei volumi
-      url: "/storage/task_replication_manage_volume_relationships.html"
       entries:
       - title: Mettere in pausa la replica
         url: "/storage/task_replication_pause_replication.html"
@@ -318,16 +323,18 @@ entries:
         url: "/storage/task_replication_delete_cluster_pair.html"
       - title: Dettagli della coppia di cluster
         url: "/storage/reference_replication_cluster_pair_details.html"
-      - title: Dettagli della coppia di volumi
-        url: "/storage/reference_replication_volume_pair_details.html"
+      - title: Coppie di volumi
         entries:
+        - title: Dettagli della coppia di volumi
+          url: "/storage/reference_replication_volume_pair_details.html"
         - title: Messaggi di associazione del volume
           url: "/storage/reference_replication_volume_pairing_messages.html"
         - title: Avvisi di associazione del volume
           url: "/storage/reference_replication_volume_pairing_warnings.html"
   - title: Utilizzare la replica SnapMirror tra cluster Element e ONTAP (UI Element)
-    url: "/storage/task_snapmirror_use_replication_between_element_and_ontap_clusters.html"
     entries:
+    - title: Scopri come utilizzare la replica SnapMirror
+      url: "/storage/task_snapmirror_use_replication_between_element_and_ontap_clusters.html"
     - title: Panoramica di SnapMirror
       url: "/storage/concept_snapmirror_overview.html"
     - title: Attivare SnapMirror sul cluster
@@ -341,22 +348,23 @@ entries:
     - title: Azioni di relazione di SnapMirror
       url: "/storage/reference_snapmirror_relationship_actions.html"
     - title: Etichette SnapMirror
-      url: "/storage/concept_snapmirror_labels.html"
       entries:
+      - title: Scopri di più sulle etichette SnapMirror
+        url: "/storage/concept_snapmirror_labels.html"
       - title: Aggiungere le etichette SnapMirror alle snapshot
         url: "/storage/task_snapmirror_add_labels_to_snapshots.html"
       - title: Aggiunta di etichette SnapMirror alle pianificazioni di snapshot
         url: "/storage/task_snapmirror_add_labels_to_snapshot_schedules.html"
     - title: Disaster recovery con SnapMirror
-      url: "/storage/concept_snapmirror_disaster_recovery.html"
       entries:
+      - title: Scopri di più sul disaster recovery
+        url: "/storage/concept_snapmirror_disaster_recovery.html"
       - title: Eseguire un failover da un cluster di elementi
         url: "/storage/task_snapmirror_perform_failover_from_element_cluster.html"
       - title: Eseguire un failback a Element
-        url: "/storage/task_snapmirror_perform_failback_to_element.html"
         entries:
-        - title: Scenari di failback di SnapMirror
-          url: "/storage/concept_snapmirror_failback_scenarios.html"
+        - title: Scopri come eseguire un failback
+          url: "/storage/task_snapmirror_perform_failback_to_element.html"
         - title: Eseguire un failback quando il volume di origine esiste ancora
           url: "/storage/task_snapmirror_perform_failback_when_source_volume_exists.html"
         - title: Eseguire un failback quando il volume di origine non esiste più
@@ -366,7 +374,7 @@ entries:
   - title: Replica tra software NetApp Element e ONTAP (interfaccia a riga di comando
       di ONTAP)
     entries:
-    - title: Panoramica
+    - title: Scopri di più sulla replicazione tramite ONTAP CLI
       url: "/storage/element-replication-index.html"
     - title: Workflow
       url: "/storage/concept-element-replication-workflow.html"
@@ -409,8 +417,9 @@ entries:
     - title: Risincronizzare una relazione di replica
       url: "/storage/task-element-replication-resynchronize-data-protection-relationship.html"
   - title: Backup e ripristino dei volumi
-    url: "/storage/task_data_protection_back_up_and_restore_volumes.html"
     entries:
+    - title: Scopri di più sul backup e sul ripristino dei volumi
+      url: "/storage/task_data_protection_back_up_and_restore_volumes.html"
     - title: Eseguire il backup di un volume in un archivio di oggetti Amazon S3
       url: "/storage/task_data_protection_back_up_volume_to_amazon_s3.html"
     - title: Eseguire il backup di un volume in un archivio di oggetti OpenStack Swift
@@ -427,40 +436,45 @@ entries:
   - title: Configurare domini di protezione personalizzati
     url: "/storage/task_data_protection_configure_custom_protection_domains.html"
 - title: Risolvere i problemi del sistema
-  url: "/storage/concept_system_monitoring_and_troubleshooting.html"
   entries:
-  - title: Visualizza informazioni sugli eventi di sistema
-    url: "/storage/task_monitor_information_about_system_events.html"
+  - title: Eventi di sistema
     entries:
+    - title: Visualizza informazioni sugli eventi di sistema
+      url: "/storage/task_monitor_information_about_system_events.html"
     - title: Tipi di evento
       url: "/storage/reference_monitor_event_types.html"
   - title: Visualizzare lo stato delle attività in esecuzione
     url: "/storage/reference_monitor_status_of_running_tasks.html"
-  - title: Visualizzare gli avvisi di sistema
-    url: "/storage/task_monitor_system_alerts.html"
+  - title: Avvisi di sistema
     entries:
+    - title: Visualizzare gli avvisi di sistema
+      url: "/storage/task_monitor_system_alerts.html"
     - title: Codici di guasto del cluster
       url: "/storage/reference_monitor_cluster_fault_codes.html"
   - title: Visualizzare l'attività delle performance dei nodi
     url: "/storage/task_monitor_node_performance_activity.html"
-  - title: Visualizza le performance dei volumi
-    url: "/storage/task_monitor_volume_performance.html"
+  - title: Prestazioni di volume
     entries:
+    - title: Visualizza le performance dei volumi
+      url: "/storage/task_monitor_volume_performance.html"
     - title: Dettagli sulle performance dei volumi
       url: "/storage/reference_monitor_volume_performance_details.html"
-  - title: Visualizzare le sessioni iSCSI
-    url: "/storage/task_monitor_iscsi_sessions.html"
+  - title: sessioni iSCSI
     entries:
+    - title: Visualizzare le sessioni iSCSI
+      url: "/storage/task_monitor_iscsi_sessions.html"
     - title: Dettagli della sessione iSCSI
       url: "/storage/reference_monitor_iscsi_session_details.html"
-  - title: Visualizzare le sessioni Fibre Channel
-    url: "/storage/task_monitor_fibre_channel_sessions.html"
+  - title: Sessioni Fibre Channel
     entries:
+    - title: Visualizzare le sessioni Fibre Channel
+      url: "/storage/task_monitor_fibre_channel_sessions.html"
     - title: Dettagli della sessione Fibre Channel
       url: "/storage/reference_monitor_fibre_channel_session_details.html"
   - title: Risolvere i problemi relativi ai dischi
-    url: "/storage/concept_troubleshoot_drives.html"
     entries:
+    - title: Scopri di più sulla risoluzione dei problemi delle unità
+      url: "/storage/concept_troubleshoot_drives.html"
     - title: Rimuovere i dischi guasti dal cluster
       url: "/storage/task_troubleshoot_remove_failed_drives.html"
     - title: Risoluzione dei problemi di base dei dischi MDSS
@@ -470,13 +484,15 @@ entries:
     - title: Rimuovere i dischi MDSS
       url: "/storage/task_troubleshoot_remove_mdss_drives.html"
   - title: Risolvere i problemi dei nodi
-    url: "/storage/concept_troubleshoot_nodes.html"
     entries:
+    - title: Rimuovere i nodi da un cluster
+      url: "/storage/concept_remove_nodes_from_cluster.html"
     - title: Spegnere un cluster
       url: "/storage/task_troubleshoot_power_down_a_cluster.html"
   - title: Utilizzo di utility per nodo per nodi di storage
-    url: "/storage/concept_per_node_work_with_utilities.html"
     entries:
+    - title: Imparare a lavorare con le utilità per nodo
+      url: "/storage/concept_per_node_work_with_utilities.html"
     - title: Accedere alle impostazioni per nodo utilizzando l'interfaccia utente
         per nodo
       url: "/storage/task_per_node_access_settings.html"

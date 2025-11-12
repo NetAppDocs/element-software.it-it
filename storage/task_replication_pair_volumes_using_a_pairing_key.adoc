@@ -11,7 +11,7 @@ summary: Se non si dispone delle credenziali di amministratore del cluster per u
 
 
 [role="lead"]
-Se non si dispone delle credenziali di amministratore del cluster per un cluster remoto, è possibile associare un volume a un altro volume di un cluster remoto utilizzando una chiave di accoppiamento.
+Se si dispone dell'accesso come amministratore del cluster solo al cluster di origine (non si dispone delle credenziali di amministratore del cluster per un cluster remoto), è possibile associare un volume a un altro volume su un cluster remoto utilizzando una chiave di associazione.
 
 .Di cosa hai bisogno
 * Assicurarsi che i cluster contenenti i volumi siano associati.

@@ -20,7 +20,7 @@ Un endpoint SnapMirror è un cluster ONTAP che funge da destinazione di replica 
 
 NOTE: Se un endpoint esistente è stato originariamente creato utilizzando l'API e le credenziali non sono state salvate, è possibile visualizzare l'endpoint nell'interfaccia utente dell'elemento e verificarne l'esistenza, ma non può essere gestito utilizzando l'interfaccia utente dell'elemento. Questo endpoint può quindi essere gestito solo utilizzando l'API Element.
 
-Per ulteriori informazioni sui metodi API, vedere link:../api/index.html["Gestire lo storage con l'API Element"].
+Per i dettagli sui metodi API, vedere link:../api/concept_element_api_about_the_api.html["Gestire lo storage con l'API Element"].
 
 .Di cosa hai bisogno
 * È necessario aver attivato SnapMirror nell'interfaccia utente Element per il cluster di storage.

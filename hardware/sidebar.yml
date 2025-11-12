@@ -1,10 +1,8 @@
 ---
 section: hardware
 title: Installazione e manutenzione dell'hardware
-url: "/hardware/index.html"
 entries:
 - title: Informazioni sull'hardware H410S e H610S
-  url: "/hardware/concept_h410s_h610s_info.html"
   entries:
   - title: Installare i nodi H410S e H610S
     url: "/hardware/task_h410s_h610s_install.html"
@@ -17,7 +15,6 @@ entries:
   - title: Sostituire un alimentatore
     url: "/hardware/task_psu_repl.html"
 - title: Informazioni sull'hardware della serie SF
-  url: "/hardware/concept_sfseries_info.html"
   entries:
   - title: Sostituire uno chassis
     url: "/hardware/task_sfseries_chassisrepl.html"

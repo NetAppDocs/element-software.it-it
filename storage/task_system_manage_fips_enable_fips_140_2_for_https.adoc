@@ -39,7 +39,7 @@ Una volta attivata questa modalità operativa, tutte le comunicazioni HTTPS util
 == Trova ulteriori informazioni
 
 * xref:reference_system_manage_fips_ssl_cipher_changes.adoc[Crittografie SSL]
-* link:../api/index.html["Gestire lo storage con l'API Element"]
+* link:../api/concept_element_api_about_the_api.html["Gestire lo storage con l'API Element"]
 * https://docs.netapp.com/us-en/element-software/index.html["Documentazione software SolidFire ed Element"]
 * https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
 

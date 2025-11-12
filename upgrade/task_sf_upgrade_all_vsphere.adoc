@@ -14,7 +14,7 @@ keywords: netapp, solidfire, vsphere components, upgrade, vCenter, ESXi
 
 
 [role="lead"]
-Quando si aggiornano i componenti VMware vSphere dell'installazione dello storage SolidFire Element, è necessario eseguire alcuni passaggi aggiuntivi per i sistemi con plug-in Element per vCenter Server.
+Quando si aggiornano i componenti VMware vSphere, è necessario completare passaggi aggiuntivi. Questi passaggi sono necessari per i sistemi dotati di Element Plug-in per vCenter Server.
 
 .Fasi
 . Per gli aggiornamenti vCSA, https://docs.netapp.com/us-en/vcp/vcp_task_qossioc.html#clear-qossioc-settings["chiaro"^] Impostazioni QoSSIOC nel plug-in (*Configurazione NetApp Element > Impostazioni QoSSIOC*). Viene visualizzato il campo *QoSSIOC Status* `Not Configured` al termine del processo.
@@ -25,7 +25,7 @@ Quando si aggiornano i componenti VMware vSphere dell'installazione dello storag
 ====
 È necessario eseguire l'aggiornamento al plug-in NetApp Element per vCenter Server 5.0 o versioni successive per consentire di implementare il plug-in con VMware vCenter 7.0 Update 3 senza applicare una soluzione alternativa.
 
-Con Element Plug-in per vCenter Server 4.x, quando si esegue l'aggiornamento a VMware vCenter Server 7.0 Update 3, il plug-in non viene implementato. Per risolvere questo problema utilizzando Spring Framework 4, vedere https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/NetApp_HCI/vCenter_plug-in_deployment_fails_after_upgrading_vCenter_to_version_7.0_U3["Questo articolo della Knowledge base"^].
+Quando si esegue l'aggiornamento a VMware vCenter Server 7.0 Update 3, il plug-in Element per vCenter Server 4.x non riesce a distribuire. Per risolvere questo problema utilizzando Spring Framework 4, vedere https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/NetApp_HCI/vCenter_plug-in_deployment_fails_after_upgrading_vCenter_to_version_7.0_U3["Questo articolo della Knowledge base"^].
 
 ====
 . https://docs.netapp.com/us-en/vcp/vcp_task_getstarted.html#register-the-plug-in-with-vcenter["Registrati"^] Il plug-in Element per vCenter Server con vCenter.

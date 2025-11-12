@@ -15,7 +15,7 @@ summary: 'È necessario configurare singoli nodi prima di aggiungerli a un clust
 
 Sono disponibili due opzioni per la configurazione dei nodi di storage:
 
-* <<Configurare un nodo di storage utilizzando l'interfaccia utente per nodo,UI per nodo>>: Utilizzare l'interfaccia utente per nodo (https://<node_management_IP>:442[]) per configurare le impostazioni di rete del nodo.
+* <<Configurare un nodo di storage utilizzando l'interfaccia utente per nodo,UI per nodo>>: Utilizza l'interfaccia utente per nodo (`https://<node_management_IP>:442`) per configurare le impostazioni di rete del nodo.
 * <<Configurare un nodo di storage utilizzando l'interfaccia telefonica utente (TUI),TUI>>: Utilizzare l'interfaccia utente del terminale del nodo (TUI) per configurare il nodo.
 
 
@@ -44,7 +44,7 @@ IMPORTANT: È necessario configurare le interfacce di gestione (Bond1G) e storag
 .Fasi
 . In una finestra del browser, inserire l'indirizzo IP DHCP di un nodo.
 +
-È necessario aggiungere l'interno `:442` per accedere al nodo, ad esempio https://172.25.103.6:442[].
+Devi aggiungere l'estensione `:442` per accedere al nodo; ad esempio, `https://172.25.103.6:442`.
 
 +
 Viene visualizzata la scheda *Network Settings* (Impostazioni di rete) con la sezione *Bond1G*.

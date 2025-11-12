@@ -102,5 +102,5 @@ Dopo che il sistema ha risolto un avviso, tutte le informazioni relative all'avv
 == Trova ulteriori informazioni
 
 * xref:reference_monitor_cluster_fault_codes.adoc[Codici di guasto del cluster]
-* link:../api/index.html["Gestire lo storage con l'API Element"]
+* link:../api/concept_element_api_about_the_api.html["Gestire lo storage con l'API Element"]
 

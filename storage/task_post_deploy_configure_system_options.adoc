@@ -25,7 +25,7 @@ Inoltre, è consigliabile aggiornare le password quando necessario.
 * link:task_post_deploy_credentials.html["Modificare le credenziali in NetApp HCI e NetApp SolidFire"]
 * link:reference_post_deploy_change_default_ssl_certificate.html["Modificare il certificato SSL predefinito del software Element"]
 * link:task_post_deploy_credential_change_ipmi_password.html["Modificare la password IPMI per i nodi"]
-* link:concept_system_manage_mfa_enable_multi_factor_authentication.html["Abilitare l'autenticazione a più fattori"]
+* link:task_system_manage_mfa_set_up_multi_factor_authentication.html["Abilitare l'autenticazione a più fattori"]
 * link:concept_system_manage_key_get_started_with_external_key_management.html["Inizia a utilizzare la gestione esterna delle chiavi"]
 * link:task_system_manage_fips_create_a_cluster_supporting_fips_drives.html["Creare un cluster che supporti i dischi FIPS"]
 

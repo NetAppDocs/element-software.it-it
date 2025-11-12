@@ -1,7 +1,6 @@
 ---
 section: hccstorage
 title: Gestione e monitoraggio dello storage con NetApp Hybrid Cloud Control
-url: "/hccstorage/index.html"
 entries:
 - title: Aggiungi e gestisci cluster di storage utilizzando NetApp Hybrid Cloud Control
   url: "/hccstorage/task-hcc-manage-storage-clusters.html"

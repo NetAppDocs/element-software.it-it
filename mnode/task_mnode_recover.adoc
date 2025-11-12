@@ -226,6 +226,9 @@ echo '{"trident": true, "mvip": "[mvip IP address]", "account_name": "[persisten
 
 
 
+
+
+[[step_6_recover_mnode_redeploy]]
 . Configurare ed eseguire il comando di ridistribuzione del nodo di gestione per connettersi ai volumi persistenti ospitati sul cluster e avviare i servizi con i dati di configurazione del nodo di gestione precedenti:
 +
 

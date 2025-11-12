@@ -39,6 +39,6 @@ IMPORTANT: I sistemi storage SolidFire non supportano la rimozione di un disco s
 * xref:task_troubleshoot_remove_mdss_drives.adoc[Rimuovere i dischi MDSS]
 * https://library.netapp.com/ecm/ecm_download_file/ECMLP2844771["Sostituzione delle unità per i nodi di storage SolidFire"]
 * https://library.netapp.com/ecm/ecm_download_file/ECMLP2846859["Sostituzione delle unità per i nodi storage della serie H600S"]
-* link:../hardware/concept_h410s_h610s_info.html["Informazioni sull'hardware H410S e H610S"]
-* link:../hardware/concept_sfseries_info.html["Informazioni sull'hardware della serie SF"]
+* link:../hardware/task_h410s_h610s_install.html["Informazioni sull'hardware H410S e H610S"]
+* link:../hardware/task_sfseries_chassisrepl.html["Informazioni sull'hardware della serie SF"]
 

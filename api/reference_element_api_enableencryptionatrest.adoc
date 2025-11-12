@@ -13,12 +13,13 @@ summary: 'È possibile utilizzare il metodo EnableEncryptionAtRest per attivare 
 [role="lead"]
 È possibile utilizzare `EnableEncryptionAtRest` Metodo per attivare la crittografia AES (Advanced Encryption Standard) a 256 bit sul cluster in modo che il cluster possa gestire la chiave di crittografia utilizzata per i dischi su ciascun nodo. Questa funzione non è attivata per impostazione predefinita.
 
+[NOTE]
+====
+* Questo metodo non attiva la crittografia software a riposo. Questa operazione può essere eseguita solo utilizzando link:../api/reference_element_api_createcluster.html["creare il metodo del cluster"^] con `enableSoftwareEncryptionAtRest` impostare su `true`.
+* Per visualizzare lo stato corrente della crittografia a riposo, della crittografia software a riposo o di entrambe sul cluster, utilizzare link:../api/reference_element_api_getclusterinfo.html["ottieni il metodo delle informazioni sul cluster"]. Puoi usare il `GetSoftwareEncryptionAtRestInfo` link:../api/reference_element_api_getsoftwareencryptionatrestinfo.html["metodo per ottenere informazioni utilizzate dal cluster per crittografare i dati inattivi"].
 
-TIP: Per visualizzare lo stato corrente della crittografia a riposo e/o della crittografia software a riposo nel cluster, utilizzare link:../api/reference_element_api_getclusterinfo["ottieni il metodo delle informazioni sul cluster"^]. È possibile utilizzare `GetSoftwareEncryptionAtRestInfo` link:../api/reference_element_api_getsoftwareencryptionatrestinfo["metodo per ottenere informazioni utilizzate dal cluster per crittografare i dati inattivi"^].
 
-
-NOTE: Questo metodo non attiva la crittografia software a riposo. Questa operazione può essere eseguita solo utilizzando link:../api/reference_element_api_createcluster.html["creare il metodo del cluster"^] con `enableSoftwareEncryptionAtRest` impostare su `true`.
-
+====
 Quando si attiva la crittografia a riposo, il cluster gestisce automaticamente le chiavi di crittografia interne per i dischi su ciascun nodo del cluster.
 
 Se viene specificato keyProviderID, la password viene generata e recuperata in base al tipo di provider di chiavi. In genere, questa operazione viene eseguita utilizzando un server di chiavi KMIP (Key Management Interoperability Protocol) nel caso di un provider di chiavi KMIP. Dopo questa operazione, il provider specificato viene considerato attivo e non può essere eliminato fino a quando la crittografia a riposo non viene disattivata tramite `DisableEncryptionAtRest` metodo.

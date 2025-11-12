@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: element, solidfire, install, setup, node, cluster 
 summary: Prima di iniziare, potrebbe essere utile conoscere la sequenza di installazione e configurazione del software NetApp Element. 
 ---
-= Panoramica dell'installazione
+= Scopri come impostare l'archiviazione
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -20,8 +20,14 @@ image::../media/sf_and_element_workflow_for_setup_shorter_workflow.png[Diagramma
 .Procedura per la configurazione dello storage
 . Selezionare una delle seguenti opzioni:
 +
-** link:../setup/task_setup_cluster_with_storage_nodes.html["Configurare il cluster con nodi di storage"]
-** link:../setup/task_setup_cluster_with_fibre_channel_nodes.html["Configurare il cluster con nodi Fibre Channel"]
+** link:../setup/concept_setup_configure_a_storage_node.html["Configurare il cluster con nodi di storage"]
++
+È possibile configurare un cluster con nodi di storage e gestirlo utilizzando il software Element dopo aver installato e collegato i nodi in un'unità rack e averli accesi. È quindi possibile installare e configurare componenti aggiuntivi nel sistema di storage.
+
+** link:../setup/concept_setup_fc_configure_a_fibre_channel_node.html["Configurare il cluster con nodi Fibre Channel"]
++
+È possibile configurare un cluster con nodi Fibre Channel e gestirlo tramite il software Element dopo aver installato e cablato i nodi in un'unità rack e averli accesi. È quindi possibile installare e configurare componenti aggiuntivi nel sistema di archiviazione.
+
 
 
 . link:../setup/task_setup_determine_which_solidfire_components_to_install.html["Determinare quali componenti di SolidFire installare"]

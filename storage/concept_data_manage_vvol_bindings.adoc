@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: bindings, vvols, bound virtual volumes 
 summary: Per eseguire operazioni di i/o con un volume virtuale, un host ESXi deve prima associare il volume virtuale. 
 ---
-= Associazioni
+= Scopri di più sulle associazioni
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

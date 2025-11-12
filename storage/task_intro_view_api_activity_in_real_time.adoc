@@ -15,7 +15,7 @@ Il sistema Element utilizza l'API NetApp Element come base per le sue funzionali
 
 È possibile utilizzare il log API per identificare i metodi API utilizzati per determinate attività e vedere come utilizzare i metodi e gli oggetti API per creare applicazioni personalizzate.
 
-Per informazioni su ciascun metodo, vedere link:../api/index.html["Riferimento API di Element Software"].
+Per informazioni su ciascun metodo, vedere link:../api/concept_element_api_about_the_api.html["Riferimento API di Element Software"].
 
 . Dalla barra di navigazione dell'interfaccia utente di Element, fare clic su *API Log*.
 . Per modificare il tipo di attività API visualizzata nella finestra API Log (Registro API), attenersi alla seguente procedura:
@@ -37,7 +37,7 @@ Per informazioni su ciascun metodo, vedere link:../api/index.html["Riferimento A
 
 == Trova ulteriori informazioni
 
-* link:../api/index.html["Gestione dello storage con l'API Element"]
+* link:../api/concept_element_api_about_the_api.html["Gestione dello storage con l'API Element"]
 * https://docs.netapp.com/us-en/element-software/index.html["Documentazione software SolidFire ed Element"]
 * https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element per server vCenter"^]
 
