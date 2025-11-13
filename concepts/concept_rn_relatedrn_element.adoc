@@ -20,6 +20,7 @@ NOTE: Ti verrà richiesto di effettuare l'accesso utilizzando le credenziali del
 
 == Software NetApp Element
 
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP3362264["Note sulla versione NetApp Element Software 12.9"^]_Nuovo_
 * https://library.netapp.com/ecm/ecm_download_file/ECMLP2886996["Note sulla versione del software NetApp Element 12,8"^]
 * https://library.netapp.com/ecm/ecm_download_file/ECMLP2884468["Note sulla versione del software NetApp Element 12,7"^]
 * https://library.netapp.com/ecm/ecm_download_file/ECMLP2882193["Note sulla versione del software NetApp Element 12,5"^]
@@ -49,7 +50,7 @@ NOTE: Ti verrà richiesto di effettuare l'accesso utilizzando le credenziali del
 
 == Plug-in NetApp Element per server vCenter
 
-* https://library.netapp.com/ecm/ecm_download_file/ECMLP3344864["Note sulla versione del plug-in vCenter 5.5"^]_Nuovo_
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP3344864["Note sulla versione del plug-in vCenter 5.5"^]
 * https://library.netapp.com/ecm/ecm_download_file/ECMLP3330676["VCenter Plug-in 5,4 - Note sulla versione"^]
 * https://library.netapp.com/ecm/ecm_download_file/ECMLP3316480["VCenter Plug-in 5,3 - Note sulla versione"^]
 * https://library.netapp.com/ecm/ecm_download_file/ECMLP2886272["VCenter Plug-in 5,2 - Note sulla versione"^]
@@ -78,7 +79,7 @@ NOTE: Ti verrà richiesto di effettuare l'accesso utilizzando le credenziali del
 * https://docs.netapp.com/us-en/hci/docs/rn_storage_firmware_2.76.html["Note sulla versione di Storage firmware Bundle 2.76"^]
 * https://docs.netapp.com/us-en/hci/docs/rn_storage_firmware_2.27.html["Note di rilascio del bundle del firmware di archiviazione 2,27"^]
 * https://docs.netapp.com/us-en/hci/docs/rn_H610S_BMC_3.84.07.html["H610S BMC 3.84.07 Release Notes"^]
-* https://docs.netapp.com/us-en/hci/docs/firmware_driver_versions.html["Versioni del firmware e dei driver ESXi supportate"] _NUOVO_
+* https://docs.netapp.com/us-en/hci/docs/firmware_driver_versions.html["Versioni del firmware e dei driver ESXi supportate"]
 
 
 

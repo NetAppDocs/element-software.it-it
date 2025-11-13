@@ -18,9 +18,9 @@ Per aggiornare il software NetApp Element, è possibile utilizzare l'interfaccia
 
 [CAUTION]
 ====
-Il bundle dei servizi di gestione 2.27 include Element Plug-in per vCenter Server 5.5, compatibile solo con il nodo di gestione 12.8. Quando si esegue l'aggiornamento ai servizi di gestione 2.27, è necessario modificare la sequenza di aggiornamento e aggiornare il bundle dei servizi di gestione _dopo_ l'aggiornamento a Element 12.8 per garantire la compatibilità tra il nodo di gestione e i servizi di gestione.
+Il bundle dei servizi di gestione 2.27 include Element Plug-in per vCenter Server 5.5, compatibile solo con il nodo di gestione 12.8 o versioni successive. Quando si esegue l'aggiornamento ai servizi di gestione 2.27, è necessario modificare la sequenza di aggiornamento e aggiornare il bundle dei servizi di gestione _dopo_ l'aggiornamento a Element 12.9 per garantire la compatibilità tra il nodo di gestione e i servizi di gestione.
 
-Se si esegue l'aggiornamento ai servizi di gestione dalla versione 2.21.61 alla versione 2.26.40, è necessario aggiornare il bundle dei servizi di gestione _prima_ di eseguire l'aggiornamento a Element 12.8.
+Se si esegue l'aggiornamento ai servizi di gestione dalla versione 2.21.61 alla versione 2.26.40, è necessario aggiornare il bundle dei servizi di gestione _prima_ di eseguire l'aggiornamento a Element 12.9.
 
 ====
 .Prima di iniziare

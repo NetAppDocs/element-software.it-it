@@ -17,13 +17,13 @@ summary: 'È possibile utilizzare il metodo GetRemoteLoggingHost per ottenere l"
 
 == Parametri
 
-Questo metodo non ha parametri di input.
+Non ci sono parametri di input per `GetRemoteLoggingHosts` .
 
 
 
 == Valore restituito
 
-Questo metodo ha il seguente valore restituito:
+IL `GetRemoteLoggingHosts` il metodo ha il seguente valore di ritorno:
 
 |===
 | Nome | Descrizione | Tipo 
@@ -32,7 +32,7 @@ Questo metodo ha il seguente valore restituito:
  a| 
 Remote
  a| 
-Elenco di indirizzi IP e informazioni sulle porte relative agli host configurati per ricevere informazioni di registrazione inoltrate.
+Elenca l'indirizzo IP, il nome di dominio completo e le informazioni sulla porta degli host configurati per ricevere le informazioni di registrazione inoltrate
  a| 
 xref:reference_element_api_loggingserver.adoc[Server di loggingServer] array
 
@@ -69,6 +69,10 @@ Questo metodo restituisce una risposta simile all'esempio seguente:
          },
          {
            "host": "172.16.1.25"
+         },
+         {
+            "host": "syslogs.lab.company.net",
+            "port": 514
          }
       ]
    }
@@ -78,7 +82,7 @@ Questo metodo restituisce una risposta simile all'esempio seguente:
 
 == Novità dalla versione
 
-9,6
+Disponibile a partire da ONTAP 9.6.
 
 
 

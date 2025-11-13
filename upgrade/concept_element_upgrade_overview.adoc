@@ -20,9 +20,9 @@ Questi componenti includono servizi di gestione, controllo del cloud ibrido NetA
 
 [NOTE]
 ====
-* A partire dal 2023 novembre, non puoi avviare un aggiornamento dei componenti utilizzando il controllo del cloud ibrido di NetApp o l'API REST perché i certificati delle chiavi di firma (privati e pubblici) sono scaduti il 5 novembre 2023. Puoi risolvere questo problema link:task_hcc_upgrade_management_node.html["eseguire un upgrade in-place del nodo di gestione"]alla versione 12,8 prima di utilizzare il controllo cloud ibrido di NetApp o l'API REST per aggiornare i servizi di gestione, il software Element e il firmware storage.
+* A partire da novembre 2023, non sarà più possibile avviare l'aggiornamento di un componente tramite NetApp Hybrid Cloud Control o REST API, poiché i certificati delle chiavi di firma (privati ​​e pubblici) sono scaduti il ​​5 novembre 2023. Puoi aggirare questo problemalink:task_hcc_upgrade_management_node.html["eseguire un upgrade in-place del nodo di gestione"] alla versione 12.8 o successiva prima di utilizzare NetApp Hybrid Cloud Control o REST API per aggiornare i servizi di gestione, il software Element e il firmware di storage.
 +
-Se stai implementando un nuovo nodo di gestione con la versione 12,8, puoi utilizzare il controllo cloud ibrido NetApp o l'API REST per eseguire gli aggiornamenti dei componenti nell'ordine elencato nella <<sys_upgrade,sequenza di aggiornamento del sistema>>.
+Se si sta distribuendo un nuovo nodo di gestione con la versione 12.8 o successiva, è possibile utilizzare NetApp Hybrid Cloud Control o REST API per eseguire gli aggiornamenti dei componenti nell'ordine elencato in<<sys_upgrade,sequenza di aggiornamento del sistema>> .
 
 * I seguenti nodi non sono supportati. Se si tenta di aggiornare uno di questi nodi a una versione di elemento non supportata, viene visualizzato un errore che indica che il nodo non è supportato da Element 12.x:
 +
@@ -69,8 +69,8 @@ NOTE: Non è più necessario aggiornare il sistema operativo del nodo di gestion
 +
 [IMPORTANT]
 ====
-** Il bundle dei servizi di gestione 2.27 include Element Plug-in per vCenter Server 5.5, compatibile solo con il nodo di gestione 12.8. Quando si esegue l'aggiornamento ai servizi di gestione 2.27, è necessario modificare la sequenza di aggiornamento e aggiornare il bundle dei servizi di gestione _dopo_ l'aggiornamento a Element 12.8 per garantire la compatibilità tra il nodo di gestione e i servizi di gestione.
-** Se si esegue l'aggiornamento ai servizi di gestione dalla versione 2.21.61 alla versione 2.26.40, è necessario aggiornare il bundle dei servizi di gestione _prima_ di eseguire l'aggiornamento a Element 12.8.
+** Il bundle dei servizi di gestione 2.27 include Element Plug-in per vCenter Server 5.5, compatibile solo con il nodo di gestione 12.8 o versioni successive. Quando si esegue l'aggiornamento ai servizi di gestione 2.27, è necessario modificare la sequenza di aggiornamento e aggiornare il bundle dei servizi di gestione _dopo_ l'aggiornamento a Element 12.9 per garantire la compatibilità tra il nodo di gestione e i servizi di gestione.
+** Se si esegue l'aggiornamento ai servizi di gestione dalla versione 2.21.61 alla versione 2.26.40, è necessario aggiornare il bundle dei servizi di gestione _prima_ di eseguire l'aggiornamento a Element 12.9.
 
 
 ====

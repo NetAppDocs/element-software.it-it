@@ -60,6 +60,10 @@ Le richieste per questo metodo sono simili all'esempio seguente:
         },
         {
           "host": "172.16.1.25"
+        },
+        {
+          "host": "syslogs.lab.company.net",
+          "port": 514
         }
       ]
    }

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade/task_hcc_upgrade_management_node.html 
 summary: Come parte di un upgrade del sistema storage NetApp SolidFire, è possibile aggiornare il nodo di gestione. 
-keywords: netapp, cluster, management node, mNode, upgrade, 10, 11.0, 11.1, 11.3, 11.5, 11.7, 12.0, 12.2, 12.3, 12.3.1, 12.3.2, 12.3.x, 12.5, 12.7, 12.8 
+keywords: netapp, cluster, management node, mNode, upgrade, 10, 11.0, 11.1, 11.3, 11.5, 11.7, 12.0, 12.2, 12.3, 12.3.1, 12.3.2, 12.3.x, 12.5, 12.7, 12.8, 12.9 
 ---
 = Aggiornare un nodo di gestione
 :hardbreaks:
@@ -25,7 +25,7 @@ NOTE: Per informazioni sull'aggiornamento dei nodi di gestione 12.2 o versioni p
 
 == Fase 1: Aggiornare la versione hardware della macchina virtuale su un nodo di gestione
 
-Se si sta eseguendo un aggiornamento sul posto di un nodo di gestione esistente all'elemento 12,8, prima di eseguire l'aggiornamento, è necessario assicurarsi che la versione hardware della VM sul nodo di gestione sia compatibile con ESXi 6,7 (VM hardware versione 14) o successiva, a seconda dell'ambiente in uso.
+Se si esegue un aggiornamento sul posto di un nodo di gestione esistente a Element 12.9, prima di eseguire l'aggiornamento è necessario assicurarsi che la versione hardware della VM sul nodo di gestione sia compatibile con ESXi 6.7 (versione hardware della VM 14) o successiva, a seconda dell'ambiente.
 
 .Fasi
 . Accedere a vSphere Web Client come vCenter Administrator.
